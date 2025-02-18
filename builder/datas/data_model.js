@@ -75,7 +75,7 @@ export const classData = {
     "Ouginak": {
       "Voies": {
         "DPT Poison": ["Constant", "Offtank", "Rall PM", "Poison"],
-        "DPT Melee": ["Burst", "Rall PM"],
+        "DPT Melee": ["Burst", "Melee", "Rall PM"],
         "Support": ["Rall PM", "Buff DI"]
       }
     },
