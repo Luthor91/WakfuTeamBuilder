@@ -1,0 +1,302 @@
+import { classData } from './datas/data_model.js';
+
+// Variables globales
+let teamRoles = Array(6).fill({ class: null, voie: null });
+let selectedSlot = null;
+let simpMode = false;
+
+
+// Fonction pour calculer la balance Melee/Ranged
+function calculateMeleeRangedBalance() {
+    let balance = 0;
+    
+    teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.classes[slot.class].Voies;
+            if (classVoies[slot.voie] && slot.voie.includes('DPT')) {
+                const voieValues = classVoies[slot.voie];
+                if (voieValues.includes('Melee')) {
+                    balance -= 1;
+                }
+                if (voieValues.includes('Ranged')) {
+                    balance += 1;
+                }
+            }
+        }
+    });
+    
+    return balance;
+}
+
+// Fonction pour mettre à jour la jauge
+function updateBalanceGauge() {
+    const balance = calculateMeleeRangedBalance();
+    const gaugeContainer = document.querySelector('.balance-gauge-container');
+    if (!gaugeContainer) return;
+
+    const cursor = gaugeContainer.querySelector('.gauge-cursor');
+    
+    // Calculer la position du curseur (50% est le centre)
+    let position = 50; // Position de base (centre)
+    position += (balance * 10); // Chaque point déplace de 10%
+    position = Math.max(0, Math.min(100, position)); // Limiter entre 0 et 100%
+    
+    cursor.style.left = `${position}%`;
+}
+
+// Fonction pour créer la jauge
+function createBalanceGauge() {
+    const container = document.createElement('div');
+    container.className = 'balance-gauge-container';
+    
+    // Structure de la jauge
+    container.innerHTML = `
+        <div class="balance-gauge">
+            <div class="gauge-marker"></div>
+            <div class="gauge-cursor"></div>
+        </div>
+        <div class="gauge-labels">
+            <span>Melee</span>
+            <span>Ranged</span>
+        </div>
+    `;
+    
+    return container;
+}
+
+
+// Fonction pour compter les rôles DPT et Support
+function countRoles() {
+    let dptCount = 0;
+    let supportCount = 0;
+
+    teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.classes[slot.class].Voies;
+            if (classVoies[slot.voie]) {
+                if (slot.voie.startsWith('DPT')) {
+                    dptCount++;
+                } else if (slot.voie === 'Support') {
+                    supportCount++;
+                }
+            }
+        }
+    });
+
+    return { dptCount, supportCount };
+}
+
+// Fonction pour vider un slot
+function clearSlot(slotIndex) {
+    const slot = document.querySelector(`.slot[data-slot="${slotIndex}"]`);
+    slot.innerHTML = "";
+    teamRoles[slotIndex] = { class: null, voie: null };
+    updateRolesPanel();
+    updateRolesSummary();
+    updateBalanceGauge();
+}
+
+// Fonction pour obtenir le nom de la classe à partir du nom de fichier
+function getClassNameFromFile(filename) {
+    const classMatch = filename.match(/(male|female)_(\w+)\.png/);
+    if (classMatch) {
+        return classMatch[2].charAt(0).toUpperCase() + classMatch[2].slice(1);
+    }
+    return null;
+}
+
+// Mettre à jour le résumé des rôles
+function updateRolesSummary() {
+    const summaryContainer = document.getElementById('roles-summary');
+    summaryContainer.innerHTML = '<h3>Résumé des rôles</h3>';
+    
+    const presentRoles = new Set();
+    teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.classes[slot.class].Voies;
+            if (classVoies[slot.voie]) {
+                if (slot.voie.startsWith('DPT')) {
+                    presentRoles.add('DPT');
+                } else if (classVoies[slot.voie].includes('Heal')) {
+                    presentRoles.add('Heal');
+                } else if (classVoies[slot.voie].includes('Shield')) {
+                    presentRoles.add('Shield');
+                }
+                if (classVoies[slot.voie].includes('Placeur')) {
+                    presentRoles.add('Placeur');
+                }
+                if (classVoies[slot.voie].includes('Rall Resistance')) {
+                    presentRoles.add('Rall Resistance');
+                }
+            }
+        }
+    });
+
+    const { dptCount, supportCount } = countRoles();
+    if (dptCount > supportCount) {
+        const warningDiv = document.createElement('div');
+        warningDiv.textContent = "Nombre de DPT supérieur aux Supports";
+        warningDiv.style.color = '#ff0000';
+        warningDiv.style.fontWeight = 'bold';
+        warningDiv.style.marginBottom = '10px';
+        summaryContainer.appendChild(warningDiv);
+    }
+
+    const rolesToCheck = [
+        "Rall Resistance",
+        "Placeur",
+        "Heal",
+        "Shield",
+        "DPT"
+    ];
+
+    rolesToCheck.forEach(role => {
+        const roleDiv = document.createElement('div');
+        roleDiv.textContent = role;
+        roleDiv.className = presentRoles.has(role) ? 'role-present' : 'role-missing';
+        summaryContainer.appendChild(roleDiv);
+    });
+}
+
+// Mettre à jour le panneau des rôles
+function updateRolesPanel() {
+    const rolesPanel = document.getElementById('roles-panel');
+    rolesPanel.innerHTML = '<h3>Choix des rôles</h3>';
+
+    teamRoles.forEach((slot, index) => {
+        const slotImg = document.querySelector(`.slot[data-slot="${index}"] img`);
+        if (slotImg) {
+            const container = document.createElement('div');
+            container.className = 'role-selection';
+            
+            const thumbnail = document.createElement('img');
+            thumbnail.src = slotImg.src;
+            thumbnail.className = 'role-thumbnail';
+            
+            const select = document.createElement('select');
+            select.className = 'voie-select';
+            const className = getClassNameFromFile(slotImg.src.split('/').pop());
+            
+            select.innerHTML = '<option value="">Choisir une voie</option>';
+            
+            if (className && classData.classes[className]) {
+                Object.keys(classData.classes[className].Voies).forEach(voie => {
+                    const option = document.createElement('option');
+                    option.value = voie;
+                    option.textContent = voie;
+                    if (teamRoles[index].voie === voie) {
+                        option.selected = true;
+                    }
+                    select.appendChild(option);
+                });
+            }
+            
+            select.onchange = (e) => {
+                teamRoles[index] = {
+                    class: className,
+                    voie: e.target.value
+                };
+                updateRolesSummary();
+                updateBalanceGauge();
+            };
+            
+            container.appendChild(thumbnail);
+            container.appendChild(select);
+            rolesPanel.appendChild(container);
+        }
+    });
+}
+
+function selectClass(imgSrc) {
+    if (selectedSlot !== null) {
+        const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
+        slot.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = `assets/${imgSrc}`;
+        slot.appendChild(img);
+        
+        const className = getClassNameFromFile(imgSrc);
+        teamRoles[selectedSlot] = {
+            class: className,
+            voie: null
+        };
+        
+        updateRolesPanel();
+        updateRolesSummary();
+        updateBalanceGauge();
+    }
+    closeSelectionMenu();
+}
+
+function openSelectionMenu(slotIndex) {
+    selectedSlot = slotIndex;
+    const menu = document.getElementById("selection-menu");
+    const menuContent = document.getElementById("menu-content");
+
+    menuContent.innerHTML = "";
+
+    Object.keys(classData.classes).forEach(className => {
+        const imgSrc = simpMode ? 
+            `female_${className.toLowerCase()}.png` : 
+            `male_${className.toLowerCase()}.png`;
+        const img = createClassImage(imgSrc);
+        menuContent.appendChild(img);
+    });
+
+    menu.classList.remove("hidden");
+}
+
+function createClassImage(imgSrc) {
+    const img = document.createElement("img");
+    img.src = `assets/${imgSrc}`;
+    img.onclick = () => selectClass(imgSrc);
+    return img;
+}
+
+function closeSelectionMenu() {
+    document.getElementById("selection-menu").classList.add("hidden");
+}
+
+function toggleSimpMode() {
+    simpMode = !simpMode;
+    const btn = document.getElementById("simp-mode-btn");
+    btn.textContent = simpMode ? "Simp Mode: ON" : "Simp Mode: OFF";
+    
+    document.querySelectorAll('.slot img').forEach(img => {
+        const currentSrc = img.src;
+        const fileName = currentSrc.split('/').pop();
+        const className = fileName.split('_')[1];
+        img.src = `assets/${simpMode ? 'female' : 'male'}_${className}`;
+    });
+}
+
+// Initialisation des événements
+document.addEventListener('DOMContentLoaded', () => {
+    // Gestionnaire pour les slots
+    document.querySelectorAll('.slot').forEach(slot => {
+        slot.addEventListener('click', () => {
+            openSelectionMenu(parseInt(slot.dataset.slot));
+        });
+        
+        // Ajout du gestionnaire de clic droit
+        slot.addEventListener('contextmenu', (e) => {
+            e.preventDefault(); // Empêche l'apparition du menu contextuel par défaut
+            const slotIndex = parseInt(slot.dataset.slot);
+            clearSlot(slotIndex);
+        });
+    });
+
+    const teamContainer = document.getElementById('team-container');
+    teamContainer.after(createBalanceGauge());
+
+    // Gestionnaire pour le bouton Simp Mode
+    document.getElementById('simp-mode-btn').addEventListener('click', toggleSimpMode);
+
+    // Gestionnaire pour le bouton Fermer
+    document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
+
+    // Initialisation des panneaux
+    updateRolesPanel();
+    updateRolesSummary();
+    updateBalanceGauge();
+});
