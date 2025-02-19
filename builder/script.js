@@ -4,13 +4,14 @@ import { classData } from './datas/data_model.js';
 
 // Définition des rôles importants et optionnels
 const IMPORTANT_ROLES = [
-    "Zone", "Burst", "Ranged", "Melee", 
+    "Zone", "Burst", 
     "Heal", "Shield", "Placeur", "Resurection",
     "Buff DI", "Rall Resistance"
 ];
 
 const OPTIONAL_ROLES = [
-    "Constant", "Off Shield", "Off Heal", "Off DPT", "Off Tank", "Off Placeur", 
+    "Constant", "Ranged", "Melee", 
+    "Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur", 
     "Buff PA", "Buff Crit", "Buff PM", "Buff PO", "Buff PW", "Buff Resistance",
     "Rall PA", "Rall PM", "Rall DI", "Rall PO", "Rall Crit",
     "Anti Shield", "Anti Heal"

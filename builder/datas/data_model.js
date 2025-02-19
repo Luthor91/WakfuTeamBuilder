@@ -12,7 +12,7 @@ export const classData = {
         "DPT Elementary": ["Constant", "Melee", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff PW"],
         "DPT Ranged": ["Constant", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection"],
         "DPT Melee": ["Constant", "Melee", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff PW"],
-        "Support Heal": ["Heal", "Off Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff PW", "Resurection"]
+        "Support Heal": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff PW", "Resurection"]
       },
       "Elements" : ["Fire", "Water", "Earth"]
     },
@@ -68,8 +68,8 @@ export const classData = {
     },
     "Masqueraider": {
       "Voies": {
-        "Support Placeur": ["Sub Heal", "Off Shield", "Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
-        "Support Heal": ["Heal", "Off Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
+        "Support Placeur": ["Sub Heal", "Sub Shield", "Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
+        "Support Heal": ["Heal", "Sub Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
         "Support Shield": ["Sub Heal", "Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
         "DPT Melee": ["Melee", "Sub Heal", "Resurection", "Sub DPT", "Anti Shield"]
       }
@@ -78,7 +78,7 @@ export const classData = {
       "Voies": {
         "DPT Invoc": ["Constant", "Ranged"],
         "DPT Melee": ["Zone", "Constant", "Melee"],
-        "Support": ["Sub Heal", "Off Shield", "Sub Placeur", "Buff DI", "Buff PA", "Buff PM", "Buff Crit", "Buff DI Melee", "Rall PM", "Anti Shield", "Anti Heal"]
+        "Support": ["Sub Heal", "Sub Shield", "Sub Placeur", "Buff DI", "Buff PA", "Buff PM", "Buff Crit", "Buff DI Melee", "Rall PM", "Anti Shield", "Anti Heal"]
       }
     },
     "Ouginak": {
@@ -112,7 +112,7 @@ export const classData = {
       "Voies": {
         "DPT Poison": ["Poison", "Constant", "Rall Res", "Rall PO", "Rall PM", "Sub Heal", "Buff DI", "Resurection"],
         "DPT Invoc": ["Constant", "Rall Res", "Rall PO", "Rall PM", "Sub Heal", "Resurection"],
-        "Support Heal": ["Heal", "Off Shield", "Sub DPT", "Buff DI", "Rall DI", "Rall Resistance", "Rall PM", "Rall PO", "Resurection"]
+        "Support Heal": ["Heal", "Sub Shield", "Sub DPT", "Buff DI", "Rall DI", "Rall Resistance", "Rall PM", "Rall PO", "Resurection"]
       }
     },
     "Sram": {
