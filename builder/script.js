@@ -12,7 +12,8 @@ const IMPORTANT_ROLES = [
 const OPTIONAL_ROLES = [
     "Constant", "Off Shield", "Off Heal", "Off DPT", "Off Tank", "Off Placeur", 
     "Buff PA", "Buff Crit", "Buff PM", "Buff PO", "Buff PW", "Buff Resistance",
-    "Rall PA", "Rall PM", "Rall DI", "Rall PO", "Rall Crit", "Rall Shield"
+    "Rall PA", "Rall PM", "Rall DI", "Rall PO", "Rall Crit",
+    "Anti Shield", "Anti Heal"
 ];
 
 

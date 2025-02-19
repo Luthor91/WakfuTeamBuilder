@@ -3,7 +3,7 @@ export const classData = {
     "Cra": {
       "Voies": {
         "DPT Ranged": ["Zone", "Burst", "Constant", "Ranged", "Rall PO", "Buff PO"],
-        "Support": ["Rall Shield", "Rall PO", "Buff PO", "Rall Crit", "Sub Placeur"]
+        "Support": ["Sub DPT", "Rall PO", "Buff PO", "Rall Crit", "Sub Placeur"]
       },
       "Elements" : ["Fire", "Earth", "Air"]
     },
@@ -27,7 +27,7 @@ export const classData = {
     },
     "Eniripsa": {
       "Voies": {
-        "Support Heal": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Rall Shield"],
+        "Support Heal": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT"],
         "DPT Poison": ["DPT Poison", "Burst", "Resurection"]
       },
       "Elements" : ["Fire", "Water", "Air"]
@@ -47,45 +47,45 @@ export const classData = {
     },
     "Foggernaut": {
       "Voies": {
-        "DPT Elementary": ["Constant", "Zone", "Ranged", "Melee", "Off Tank"],
-        "DPT Ranged": ["Constant", "Zone", "Ranged"],
-        "DPT Melee": ["Constant", "Zone", "Melee", "Off Tank"],
-        "Support": ["Shield", "Rall PM", "Rall Resistance", "Buff PO", "Buff DI Range", "Sub Placeur"]
+        "DPT Elementary": ["Constant", "Zone", "Ranged", "Melee", "Off Tank", "Rall PO"],
+        "DPT Ranged": ["Constant", "Zone", "Ranged", "Rall PO"],
+        "DPT Melee": ["Constant", "Zone", "Melee", "Off Tank", "Rall PO"],
+        "Support": ["Shield", "Rall PM", "Rall Resistance", "Buff PO", "Buff DI Range", "Sub Placeur", "Anti Heal"]
       }
     },
     "Huppermage": {
       "Voies": {
-        "DPT Elementary": ["Zone", "Constant", "Melee", "Ranged", "Buff PA", "Buff PM", "Buff Resistance", "Rall Shield"],
-        "DPT Ranged": ["Zone", "Burst", "Ranged", "Buff PA", "Buff PM", "Buff Resistance", "Rall Shield"],
-        "DPT Melee": ["Constant", "Burst", "Melee", "Off Tank", "Buff PA", "Buff PM", "Buff Resistance", "Rall Shield"],
-        "Support": ["Sub DPT", "Rall PM", "Buff PM", "Buff PA", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall PO", "Buff Crit", "Rall Shield"]
+        "DPT Elementary": ["Zone", "Constant", "Melee", "Ranged", "Buff PA", "Buff PM", "Buff Resistance", "Anti Shield", "Anti Heal"],
+        "DPT Ranged": ["Zone", "Burst", "Ranged", "Buff PA", "Buff PM", "Buff Resistance", "Anti Shield", "Anti Heal"],
+        "DPT Melee": ["Constant", "Burst", "Melee", "Off Tank", "Buff PA", "Buff PM", "Buff Resistance", "Anti Shield", "Anti Heal"],
+        "Support": ["Sub DPT", "Rall PM", "Buff PM", "Buff PA", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal"]
       }
     },
     "Iop": {
       "Voies": {
-        "DPT Melee": ["Constant", "Melee", "Off Tank", "Rall Shield"]
+        "DPT Melee": ["Constant", "Melee", "Off Tank", "Sub DPT"]
       }
     },
     "Masqueraider": {
       "Voies": {
-        "Support Placeur": ["Sub Heal", "Off Shield", "Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Rall Shield"],
-        "Support Heal": ["Heal", "Off Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Rall Shield"],
-        "Support Shield": ["Sub Heal", "Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Rall Shield"],
-        "DPT Melee": ["Melee", "Sub Heal", "Resurection", "Rall Shield"]
+        "Support Placeur": ["Sub Heal", "Off Shield", "Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
+        "Support Heal": ["Heal", "Off Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
+        "Support Shield": ["Sub Heal", "Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
+        "DPT Melee": ["Melee", "Sub Heal", "Resurection", "Sub DPT", "Anti Shield"]
       }
     },
     "Osamodas": {
       "Voies": {
         "DPT Invoc": ["Constant", "Ranged"],
         "DPT Melee": ["Zone", "Constant", "Melee"],
-        "Support": ["Sub Heal", "Off Shield", "Sub Placeur", "Buff DI", "Buff PA", "Buff PM", "Buff Crit", "Buff DI Melee", "Rall PM"]
+        "Support": ["Sub Heal", "Off Shield", "Sub Placeur", "Buff DI", "Buff PA", "Buff PM", "Buff Crit", "Buff DI Melee", "Rall PM", "Anti Shield", "Anti Heal"]
       }
     },
     "Ouginak": {
       "Voies": {
         "DPT Poison": ["Constant", "Off Tank", "Rall PM", "Poison"],
-        "DPT Melee": ["Burst", "Melee", "Rall PM", "Rall Shield"],
-        "Support": ["Rall PM", "Buff DI", "Rall Shield"]
+        "DPT Melee": ["Burst", "Melee", "Rall PM", "Sub DPT", "Anti Shield", "Anti Heal"],
+        "Support": ["Rall PM", "Buff DI", "Sub DPT", "Anti Shield", "Anti Heal"]
       }
     },
     "Pandawa": {
