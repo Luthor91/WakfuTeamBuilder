@@ -8,10 +8,10 @@ export const classData = {
     },
     "Ecaflip": {
       "Voies": {
-        "DPT Elementary": ["Constant", "Melee", "Ranged", "Off Heal", "Buff Crit", "Buff DI", "Resurection"],
+        "DPT Elementary": ["Constant", "Melee", "Ranged", "Off Heal", "Buff Crit", "Buff DI", "Resurection", "Buff PW"],
         "DPT Ranged": ["Constant", "Ranged", "Off Heal", "Buff Crit", "Buff DI", "Resurection"],
-        "DPT Melee": ["Constant", "Melee", "Off Heal", "Buff Crit", "Buff DI", "Resurection"],
-        "Support Heal": ["Heal", "Off Shield", "Off DPT", "Buff Crit", "Buff DI", "Resurection"]
+        "DPT Melee": ["Constant", "Melee", "Off Heal", "Buff Crit", "Buff DI", "Resurection", "Buff PW"],
+        "Support Heal": ["Heal", "Off Shield", "Off DPT", "Buff Crit", "Buff DI", "Buff PW", "Resurection"]
       }
     },
     "Eliotrope": {
