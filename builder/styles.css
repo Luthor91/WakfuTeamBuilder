@@ -174,9 +174,20 @@ h3 {
     margin-top: 20px;
 }
 
+
+.role-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
 .role-item {
-    font-size: 1.2rem;
-    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
 }
 
 .role-filled {
