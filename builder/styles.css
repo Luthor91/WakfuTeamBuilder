@@ -169,6 +169,29 @@ h3 {
 }
 
 
+/* Style pour la section des rôles sous la jauge */
+#roles-under-gauge {
+    margin-top: 20px;
+}
+
+.role-item {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.role-filled {
+    color: #28a745;
+}
+
+.role-missing-important {
+    color: #dc3545;
+}
+
+.role-missing-optional {
+    color: #ffc107;
+}
+
+
 /* Styles pour le panneau de droite */
 #roles-summary {
     max-width: 250px;
@@ -183,12 +206,12 @@ h3 {
 }
 
 .role-present {
-    background-color: #2a5;
+    background-color: green;
     color: white;
 }
 
 .role-missing {
-    background-color: #a25;
+    background-color: red;
     color: white;
 }
 

@@ -1,9 +1,96 @@
 import { classData } from './datas/data_model.js';
 
 // Variables globales
+
+// Définition des rôles importants et optionnels
+const IMPORTANT_ROLES = [
+    "Zone", "Burst", "Constant", "Ranged", "Melee", "Heal", "Shield",
+    "Rall Resistance", "Buff DI", "Buff Crit", "Buff PA", "Placeur"
+];
+
+const OPTIONAL_ROLES = [
+    "Buff PO", "Off Shield", "Off Heal", "Off DPT", "Rall PA", "Rall PM",
+    "Rall DI", "Buff Crit", "Buff PM", "Buff PO"
+];
+
+
 let teamRoles = Array(6).fill({ class: null, voie: null });
 let selectedSlot = null;
 let simpMode = false;
+
+
+// Fonction pour mettre à jour les rôles sous la jauge
+function updateTeamRoles() {
+    const rolesContainer = document.getElementById('roles-under-gauge');
+    rolesContainer.innerHTML = ''; // Réinitialiser la section des rôles
+
+    const currentRoles = [];
+
+    // On passe en revue les rôles de l'équipe
+    teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.classes[slot.class].Voies;
+            if (classVoies[slot.voie]) {
+                const voieRoles = classVoies[slot.voie];
+                console.log("voieRoles : ", voieRoles);
+
+                // Vérification des rôles dans la voie et ajout à currentRoles
+                voieRoles.forEach(role => {
+                    currentRoles.push(role);
+                });
+            }
+        }
+    });
+
+    // Tri des rôles : on commence par les rôles remplis, puis on ajoute les manquants importants et optionnels
+    const teamRolesToDisplay = [...IMPORTANT_ROLES.filter(role => currentRoles.includes(role)), 
+                                ...OPTIONAL_ROLES.filter(role => currentRoles.includes(role))];
+
+    const missingImportantRoles = IMPORTANT_ROLES.filter(role => !currentRoles.includes(role));
+    const missingOptionalRoles = OPTIONAL_ROLES.filter(role => !currentRoles.includes(role));
+
+    // Fonction pour afficher les rôles dans l'ordre et ajouter une ligne vide entre les catégories
+    const displayRoles = (roles, roleType) => {
+        roles.forEach(role => {
+            const roleElement = document.createElement('div');
+            roleElement.classList.add('role-item');
+            roleElement.textContent = role;
+
+            // Vérifier si le rôle est rempli par l'équipe
+            if (currentRoles.includes(role)) {
+                roleElement.classList.add('role-filled'); // Colorier en vert si rempli
+            } else {
+                if (IMPORTANT_ROLES.includes(role)) {
+                    roleElement.classList.add('role-missing-important'); // Manquant mais important
+                } else {
+                    roleElement.classList.add('role-missing-optional'); // Manquant mais optionnel
+                }
+            }
+
+            // Ajouter l'élément de rôle à la section
+            rolesContainer.appendChild(roleElement);
+        });
+
+        // Ajouter une ligne vide après chaque catégorie
+        const newlineElement = document.createElement('div');
+        newlineElement.classList.add('newline');
+        rolesContainer.appendChild(newlineElement);
+    };
+
+    // 1. Afficher les rôles de l'équipe (remplis)
+    displayRoles(teamRolesToDisplay, 'filled');
+
+    // 2. Afficher les rôles importants manquants
+    displayRoles(missingImportantRoles, 'missing-important');
+
+    // 3. Afficher les rôles optionnels manquants
+    displayRoles(missingOptionalRoles, 'missing-optional');
+
+    // Appliquer un style CSS pour un affichage horizontal
+    rolesContainer.style.display = 'flex';
+    rolesContainer.style.flexWrap = 'wrap';
+    rolesContainer.style.gap = '10px'; // Optionnel, pour espacer les rôles
+}
 
 
 // Fonction pour calculer la balance Melee/Ranged
@@ -44,25 +131,6 @@ function updateBalanceGauge() {
     cursor.style.left = `${position}%`;
 }
 
-// Fonction pour créer la jauge
-function createBalanceGauge() {
-    const container = document.createElement('div');
-    container.className = 'balance-gauge-container';
-    
-    // Structure de la jauge
-    container.innerHTML = `
-        <div class="balance-gauge">
-            <div class="gauge-marker"></div>
-            <div class="gauge-cursor"></div>
-        </div>
-        <div class="gauge-labels">
-            <span>Melee</span>
-            <span>Ranged</span>
-        </div>
-    `;
-    
-    return container;
-}
 
 
 // Fonction pour compter les rôles DPT et Support
@@ -94,6 +162,7 @@ function clearSlot(slotIndex) {
     updateRolesPanel();
     updateRolesSummary();
     updateBalanceGauge();
+    updateTeamRoles();
 }
 
 // Fonction pour obtenir le nom de la classe à partir du nom de fichier
@@ -132,6 +201,8 @@ function updateRolesSummary() {
         }
     });
 
+    updateTeamRoles();
+
     const { dptCount, supportCount } = countRoles();
     if (dptCount > supportCount) {
         const warningDiv = document.createElement('div');
@@ -156,6 +227,7 @@ function updateRolesSummary() {
         roleDiv.className = presentRoles.has(role) ? 'role-present' : 'role-missing';
         summaryContainer.appendChild(roleDiv);
     });
+    
 }
 
 // Mettre à jour le panneau des rôles
@@ -286,8 +358,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const teamContainer = document.getElementById('team-container');
-    teamContainer.after(createBalanceGauge());
 
     // Gestionnaire pour le bouton Simp Mode
     document.getElementById('simp-mode-btn').addEventListener('click', toggleSimpMode);

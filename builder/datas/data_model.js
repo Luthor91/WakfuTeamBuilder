@@ -7,10 +7,10 @@ export const classData = {
     },
     "Ecaflip": {
       "Voies": {
-        "DPT Elementary": ["Constant", "Melee", "Ranged", "Off heal", "Buffer Crit", "Buffer DI"],
-        "DPT Ranged": ["Constant", "Ranged", "Off heal", "Buffer Crit", "Buffer DI"],
-        "DPT Melee": ["Constant", "Melee", "Off heal", "Buffer Crit", "Buffer DI"],
-        "Support Heal": ["Heal", "Off Shield", "Off DPT", "Buffer Crit", "Buffer DI"]
+        "DPT Elementary": ["Constant", "Melee", "Ranged", "Off Heal", "Buff Crit", "Buff DI"],
+        "DPT Ranged": ["Constant", "Ranged", "Off Heal", "Buff Crit", "Buff DI"],
+        "DPT Melee": ["Constant", "Melee", "Off Heal", "Buff Crit", "Buff DI"],
+        "Support Heal": ["Heal", "Off Shield", "Off DPT", "Buff Crit", "Buff DI"]
       }
     },
     "Eliotrope": {
@@ -18,24 +18,24 @@ export const classData = {
         "DPT Elementary": ["Zone", "Burst", "Monocible", "Zone", "Ranged", "Melee"],
         "DPT Ranged": ["Zone", "Burst", "Monocible", "Zone", "Ranged"],
         "DPT Melee": ["Zone", "Burst", "Monocible", "Zone", "Melee"],
-        "Support Placeur": ["Placeur"]
+        "Support Placeur": ["Placeur", "Buff PA"]
       }
     },
     "Eniripsa": {
       "Voies": {
-        "Support Heal": ["Heal", "Buffer DI", "Rall DI", "Rall Resistance"],
+        "Support Heal": ["Heal", "Buff DI", "Rall DI", "Rall Resistance"],
         "DPT Poison": ["DPT Poison", "Burst"]
       }
     },
     "Enutrof": {
       "Voies": {
-        "Support": ["Buffer DI", "Buffer PA", "Buffer PM", "Rall Resistance", "Rall PM"],
+        "Support": ["Buff DI", "Buff PA", "Buff PM", "Rall Resistance", "Rall PM"],
         "DPT Melee": ["Constant", "Monocible", "Melee"]
       }
     },
     "Feca": {
       "Voies": {
-        "Support Shield": ["Buffer DI", "Buffer Crit", "Shield", "Buffer Resistance"]
+        "Support Shield": ["Buff DI", "Buff Crit", "Shield", "Buff Resistance"]
       }
     },
     "Foggernaut": {
@@ -43,7 +43,7 @@ export const classData = {
         "DPT Elementary": ["Constant", "Zone", "Ranged", "Melee"],
         "DPT Ranged": ["Constant", "Zone", "Ranged"],
         "DPT Melee": ["Constant", "Zone", "Melee"],
-        "Support": ["Shield", "Rall PM", "Rall Resistance"]
+        "Support": ["Shield", "Rall PM", "Rall Resistance", "Buff PO", "Buff DI"]
       }
     },
     "Huppermage": {
