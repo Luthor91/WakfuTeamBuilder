@@ -147,6 +147,25 @@ function countRoles() {
     return { dptCount, supportCount };
 }
 
+
+// Fonction pour compter les rôles DPT et Support
+function hasRole(roleName) {
+    teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.classes[slot.class].Voies;
+            if (classVoies[slot.voie]) {
+                if (slot.voie.startsWith(roleName)) {
+                    return true;
+                }
+            }
+        }
+    });
+    
+
+    return false;
+}
+
+
 // Fonction pour vider un slot
 function clearSlot(slotIndex) {
     const slot = document.querySelector(`.slot[data-slot="${slotIndex}"]`);
@@ -190,6 +209,9 @@ function updateRolesSummary() {
                 if (classVoies[slot.voie].includes('Rall Resistance')) {
                     presentRoles.add('Rall Resistance');
                 }
+                if (classVoies[slot.voie].includes('Resurection')) {
+                    presentRoles.add('Resurection');
+                }
             }
         }
     });
@@ -199,19 +221,21 @@ function updateRolesSummary() {
     const { dptCount, supportCount } = countRoles();
     if (dptCount > supportCount) {
         const warningDiv = document.createElement('div');
-        warningDiv.textContent = "Nombre de DPT supérieur aux Supports";
+        warningDiv.textContent = "Number of DPT greater than Supports";
         warningDiv.style.color = '#ff0000';
         warningDiv.style.fontWeight = 'bold';
         warningDiv.style.marginBottom = '10px';
         summaryContainer.appendChild(warningDiv);
     }
 
+
     const rolesToCheck = [
         "Rall Resistance",
         "Placeur",
         "Heal",
         "Shield",
-        "DPT"
+        "DPT",
+        "Resurection"
     ];
 
     rolesToCheck.forEach(role => {

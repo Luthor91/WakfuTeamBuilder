@@ -3,16 +3,18 @@ export const classData = {
     "Cra": {
       "Voies": {
         "DPT Ranged": ["Zone", "Burst", "Constant", "Ranged", "Rall PO", "Buff PO"],
-        "Support": ["Rall Shield", "Rall PO", "Buff PO", "Rall Crit", "Rall Shield", "Off Placeur"]
-      }
+        "Support": ["Rall Shield", "Rall PO", "Buff PO", "Rall Crit", "Sub Placeur"]
+      },
+      "Elements" : ["Fire", "Earth", "Air"]
     },
     "Ecaflip": {
       "Voies": {
-        "DPT Elementary": ["Constant", "Melee", "Ranged", "Off Heal", "Buff Crit", "Buff DI", "Resurection", "Buff PW"],
-        "DPT Ranged": ["Constant", "Ranged", "Off Heal", "Buff Crit", "Buff DI", "Resurection"],
-        "DPT Melee": ["Constant", "Melee", "Off Heal", "Buff Crit", "Buff DI", "Resurection", "Buff PW"],
-        "Support Heal": ["Heal", "Off Shield", "Off DPT", "Buff Crit", "Buff DI", "Buff PW", "Resurection"]
-      }
+        "DPT Elementary": ["Constant", "Melee", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff PW"],
+        "DPT Ranged": ["Constant", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection"],
+        "DPT Melee": ["Constant", "Melee", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff PW"],
+        "Support Heal": ["Heal", "Off Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff PW", "Resurection"]
+      },
+      "Elements" : ["Fire", "Water", "Earth"]
     },
     "Eliotrope": {
       "Voies": {
@@ -20,23 +22,26 @@ export const classData = {
         "DPT Ranged": ["Zone", "Burst", "Monocible", "Zone", "Ranged"],
         "DPT Melee": ["Zone", "Burst", "Monocible", "Zone", "Melee"],
         "Support Placeur": ["Placeur", "Buff PA", "Buff PA"]
-      }
+      },
+      "Elements" : ["Earth", "Water", "Air"]
     },
     "Eniripsa": {
       "Voies": {
-        "Support Heal": ["Heal", "Off DPT", "Buff DI", "Buff Resistance", "Buff PO", "Rall DI", "Rall Resistance", "Resurection"],
+        "Support Heal": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Rall Shield"],
         "DPT Poison": ["DPT Poison", "Burst", "Resurection"]
-      }
+      },
+      "Elements" : ["Fire", "Water", "Air"]
     },
     "Enutrof": {
       "Voies": {
         "Support": ["Buff DI", "Buff PA", "Buff PM", "Rall Resistance", "Rall PA", "Rall PM", "Rall PO"],
         "DPT Melee": ["Constant", "Monocible", "Melee", "Off Tank", "Rall Resistance", "Rall PM"]
-      }
+      },
+      "Elements" : ["Fire", "Water", "Earth"]
     },
     "Feca": {
       "Voies": {
-        "Support Shield": ["Buff DI Melee", "Buff Crit", "Shield", "Buff Resistance", "Rall PM"],
+        "Support Shield": ["Buff DI Melee", "Buff Crit", "Shield", "Buff Resistance", "Rall PM", "Buff PW"],
         "DPT Ranged": ["Zone", "Ranged", "Buff DI Melee", "Buff Resistance", "Rall PM"]
       }
     },
@@ -45,54 +50,54 @@ export const classData = {
         "DPT Elementary": ["Constant", "Zone", "Ranged", "Melee", "Off Tank"],
         "DPT Ranged": ["Constant", "Zone", "Ranged"],
         "DPT Melee": ["Constant", "Zone", "Melee", "Off Tank"],
-        "Support": ["Shield", "Rall PM", "Rall Resistance", "Buff PO", "Buff DI Range", "Off Placeur"]
+        "Support": ["Shield", "Rall PM", "Rall Resistance", "Buff PO", "Buff DI Range", "Sub Placeur"]
       }
     },
     "Huppermage": {
       "Voies": {
-        "DPT Elementary": ["Zone", "Constant", "Melee", "Ranged", "Buff PA", "Buff PM", "Buff Resistance"],
-        "DPT Ranged": ["Zone", "Burst", "Ranged", "Buff PA", "Buff PM", "Buff Resistance"],
-        "DPT Melee": ["Constant", "Burst", "Melee", "Off Tank", "Buff PA", "Buff PM", "Buff Resistance"],
-        "Support": ["Off DPT", "Rall PM", "Buff PM", "Buff PA", "Buff Resistance", "Off Placeur", "Rall Crit", "Rall PO", "Buff Crit"]
+        "DPT Elementary": ["Zone", "Constant", "Melee", "Ranged", "Buff PA", "Buff PM", "Buff Resistance", "Rall Shield"],
+        "DPT Ranged": ["Zone", "Burst", "Ranged", "Buff PA", "Buff PM", "Buff Resistance", "Rall Shield"],
+        "DPT Melee": ["Constant", "Burst", "Melee", "Off Tank", "Buff PA", "Buff PM", "Buff Resistance", "Rall Shield"],
+        "Support": ["Sub DPT", "Rall PM", "Buff PM", "Buff PA", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall PO", "Buff Crit", "Rall Shield"]
       }
     },
     "Iop": {
       "Voies": {
-        "DPT Melee": ["Constant", "Melee", "Off Tank"]
+        "DPT Melee": ["Constant", "Melee", "Off Tank", "Rall Shield"]
       }
     },
     "Masqueraider": {
       "Voies": {
-        "Support Placeur": ["Off Heal", "Off Shield", "Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection"],
-        "Support Heal": ["Heal", "Off Shield", "Off Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection"],
-        "Support Shield": ["Off Heal", "Shield", "Off Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection"],
-        "DPT Melee": ["Melee", "Off Heal", "Resurection"]
+        "Support Placeur": ["Sub Heal", "Off Shield", "Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Rall Shield"],
+        "Support Heal": ["Heal", "Off Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Rall Shield"],
+        "Support Shield": ["Sub Heal", "Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Rall Shield"],
+        "DPT Melee": ["Melee", "Sub Heal", "Resurection", "Rall Shield"]
       }
     },
     "Osamodas": {
       "Voies": {
         "DPT Invoc": ["Constant", "Ranged"],
         "DPT Melee": ["Zone", "Constant", "Melee"],
-        "Support": ["Off Heal", "Off Shield", "Off Placeur", "Buff DI", "Buff PA", "Buff PM", "Buff Crit", "Buff DI Melee", "Rall PM"]
+        "Support": ["Sub Heal", "Off Shield", "Sub Placeur", "Buff DI", "Buff PA", "Buff PM", "Buff Crit", "Buff DI Melee", "Rall PM"]
       }
     },
     "Ouginak": {
       "Voies": {
         "DPT Poison": ["Constant", "Off Tank", "Rall PM", "Poison"],
-        "DPT Melee": ["Burst", "Melee", "Rall PM"],
-        "Support": ["Rall PM", "Buff DI"]
+        "DPT Melee": ["Burst", "Melee", "Rall PM", "Rall Shield"],
+        "Support": ["Rall PM", "Buff DI", "Rall Shield"]
       }
     },
     "Pandawa": {
       "Voies": {
-        "Support Placeur": ["Placeur", "Off Heal", "Rall Res", "Buff PM", "Rall PM"],
-        "DPT Melee": ["Melee", "Off Heal"]
+        "Support Placeur": ["Placeur", "Sub Heal", "Rall Res", "Buff PM", "Rall PM"],
+        "DPT Melee": ["Melee", "Sub Heal"]
       }
     },
     "Rogue": {
       "Voies": {
         "DPT Elem": ["Zone", "Constant", "Burst", "Off Tank", "Rall PM", "Ranged", "Melee"],
-        "Support": ["Buff DI", "Rall PM", "Rall PO", "Off Placeur"]
+        "Support": ["Buff DI", "Rall PM", "Rall PO", "Sub Placeur"]
       }
     },
     "Sacrier": {
@@ -105,9 +110,9 @@ export const classData = {
     },
     "Sadida": {
       "Voies": {
-        "DPT Poison": ["Poison", "Constant", "Rall Res", "Rall PO", "Rall PM", "Off Heal", "Buff DI", "Resurection"],
-        "DPT Invoc": ["Constant", "Rall Res", "Rall PO", "Rall PM", "Off Heal", "Resurection"],
-        "Support Heal": ["Heal", "Off Shield", "Off DPT", "Buff DI", "Rall DI", "Rall Resistance", "Rall PM", "Rall PO", "Resurection"]
+        "DPT Poison": ["Poison", "Constant", "Rall Res", "Rall PO", "Rall PM", "Sub Heal", "Buff DI", "Resurection"],
+        "DPT Invoc": ["Constant", "Rall Res", "Rall PO", "Rall PM", "Sub Heal", "Resurection"],
+        "Support Heal": ["Heal", "Off Shield", "Sub DPT", "Buff DI", "Rall DI", "Rall Resistance", "Rall PM", "Rall PO", "Resurection"]
       }
     },
     "Sram": {
