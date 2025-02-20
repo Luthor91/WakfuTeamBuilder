@@ -203,6 +203,46 @@ h3 {
 }
 
 
+.legend {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.legend p {
+    font-size: 14px;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre chaque élément */
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.legend-green, .legend-red, .legend-yellow {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.legend-green { background-color: green; }
+.legend-red { background-color: red; }
+.legend-yellow { background-color: yellow; }
+
+
 /* Styles pour le panneau de droite */
 #roles-summary {
     max-width: 250px;
@@ -292,3 +332,11 @@ h3 {
 }
 
 
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
