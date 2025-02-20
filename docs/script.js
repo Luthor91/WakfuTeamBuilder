@@ -4,13 +4,14 @@ import { classData } from './datas/data_model.js';
 
 // Définition des rôles importants et optionnels
 const IMPORTANT_ROLES = [
-    "Zone", "Burst", 
+    "Zone", "Constant", 
     "Heal", "Shield", "Placeur", "Resurection",
     "Buff DI", "Rall Resistance"
 ];
 
 const OPTIONAL_ROLES = [
-    "Constant", "Ranged", "Melee", 
+    "Constant", "Ranged", "Melee", "Indirect", 
+    "Stabilized", "Self Stabilized", "Invulnerability",
     "Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur", 
     "Buff PA", "Buff Crit", "Buff PM", "Buff PO", "Buff PW", "Buff Resistance",
     "Rall PA", "Rall PM", "Rall DI", "Rall PO", "Rall Crit",
@@ -162,6 +163,21 @@ function countRoles() {
 }
 
 
+// Fonction pour compter les rôles DPT et Support
+function hasStabilizedRole() {
+    teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.classes[slot.class].Voies;
+            if (classVoies[slot.voie].includes("Stabilized") || classVoies[slot.voie].includes("Self Stabilized")) {
+                return true;
+            }
+        }
+    });
+    
+    return false;
+}
+
+
 // Fonction pour vider un slot
 function clearSlot(slotIndex) {
     const slot = document.querySelector(`.slot[data-slot="${slotIndex}"]`);
@@ -185,7 +201,6 @@ function getClassNameFromFile(filename) {
 // Mettre à jour le résumé des rôles
 function updateRolesSummary() {
     const summaryContainer = document.getElementById('roles-summary');
-    summaryContainer.innerHTML = '<h3>Résumé des rôles</h3>';
     
     const presentRoles = new Set();
     teamRoles.forEach(slot => {
@@ -244,6 +259,17 @@ function updateRolesSummary() {
         summaryContainer.appendChild(warningDiv);
     }
 
+    const hasStabilized = hasStabilizedRole();
+
+    if (!hasStabilized) {
+        const warningDiv = document.createElement('div');
+        warningDiv.textContent = "Need Stabilized Class";
+        warningDiv.style.color = 'yellow';
+        warningDiv.style.fontWeight = 'bold';
+        warningDiv.style.marginBottom = '10px';
+        summaryContainer.appendChild(warningDiv);
+    }
+
     const rolesToCheck = [
         "Rall Resistance",
         "Placeur",
@@ -265,7 +291,6 @@ function updateRolesSummary() {
 // Mettre à jour le panneau des rôles
 function updateRolesPanel() {
     const rolesPanel = document.getElementById('roles-panel');
-    rolesPanel.innerHTML = '<h3>Choix des rôles</h3>';
 
     teamRoles.forEach((slot, index) => {
         const slotImg = document.querySelector(`.slot[data-slot="${index}"] img`);
