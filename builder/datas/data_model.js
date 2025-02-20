@@ -55,10 +55,10 @@ export const classData = {
     },
     "Huppermage": {
       "Voies": {
-        "DPT Elementary": ["Zone", "Constant", "Melee", "Ranged", "Buff PA", "Buff PM", "Buff Resistance", "Anti Shield", "Anti Heal"],
+        "DPT Elementary": ["Zone", "Constant", "Melee", "Ranged", "Buff PA", "Buff PM", "Buff Resistance", "Rall PA", "Anti Shield", "Anti Heal"],
         "DPT Ranged": ["Zone", "Burst", "Ranged", "Buff PA", "Buff PM", "Buff Resistance", "Anti Shield", "Anti Heal"],
-        "DPT Melee": ["Constant", "Burst", "Melee", "Off Tank", "Buff PA", "Buff PM", "Buff Resistance", "Anti Shield", "Anti Heal"],
-        "Support": ["Sub DPT", "Rall PM", "Buff PM", "Buff PA", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal"]
+        "DPT Melee": ["Constant", "Burst", "Melee", "Off Tank", "Buff PA", "Buff PM", "Buff Resistance", "Rall PA", "Anti Shield", "Anti Heal"],
+        "Support": ["Sub DPT", "Rall PM", "Buff PM", "Buff PA", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall PA", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal"]
       }
     },
     "Iop": {
@@ -68,9 +68,9 @@ export const classData = {
     },
     "Masqueraider": {
       "Voies": {
-        "Support Placeur": ["Sub Heal", "Sub Shield", "Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
-        "Support Heal": ["Heal", "Sub Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
-        "Support Shield": ["Sub Heal", "Shield", "Sub Placeur", "Rall Resistance", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
+        "Support Placeur": ["Sub Heal", "Sub Shield", "Placeur", "Rall Resistance", "Rall PA", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
+        "Support Heal": ["Heal", "Sub Shield", "Sub Placeur", "Rall Resistance", "Rall PA", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
+        "Support Shield": ["Sub Heal", "Shield", "Sub Placeur", "Rall Resistance", "Rall PA", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield"],
         "DPT Melee": ["Melee", "Sub Heal", "Resurection", "Sub DPT", "Anti Shield"]
       }
     },
