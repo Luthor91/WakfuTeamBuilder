@@ -21,7 +21,7 @@ const CATEGORIES = {
     'Damage Type': ["Constant", "Zone", "Burst", "Melee", "Ranged"],
     'Buff': ["Buff DI", "Buff PA", "Buff Crit", "Buff PM", "Buff PO", "Buff PW", "Buff Resistance"],
     'Rall': ["Rall Resistance", "Rall PA", "Rall PM", "Rall DI", "Rall PO", "Rall Crit"],
-    'Sub Roles': ["Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur"]
+    'Sub Roles': ["Sub Shield", "Sub Heal", "Sub DPT", "Off Tank", "Sub Placeur"]
 };
 
 
@@ -116,6 +116,27 @@ function updateBalanceGauge() {
     cursor.style.left = `${position}%`;
 }
 
+// Fonction pour compter les rôles DPT et Support
+function getElementsDPT() {
+    let elementsDPT = [];
+
+    teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.classes[slot.class].Voies;
+            const classElements = classData.classes[slot.class].Elements;
+            if (classVoies[slot.voie]) {
+                if (slot.voie.startsWith('DPT')) {
+                    elementsDPT.push(...classElements)
+                }
+            }
+        }
+    });
+    
+    console.log(elementsDPT);
+    
+
+    return elementsDPT;
+}
 
 
 // Fonction pour compter les rôles DPT et Support
@@ -197,12 +218,31 @@ function updateRolesSummary() {
     if (dptCount > supportCount) {
         const warningDiv = document.createElement('div');
         warningDiv.textContent = "Number of DPT greater than Supports";
-        warningDiv.style.color = '#ff0000';
+        warningDiv.style.color = 'red';
         warningDiv.style.fontWeight = 'bold';
         warningDiv.style.marginBottom = '10px';
         summaryContainer.appendChild(warningDiv);
     }
 
+    const elementsDPT = getElementsDPT();
+    const requiredElements = ["Fire", "Water", "Earth", "Air"];
+    const missingElements = requiredElements.filter(el => !elementsDPT.includes(el));
+    
+    if (missingElements.length > 0) {
+        const warningDiv = document.createElement('div');
+        warningDiv.textContent = `Lack of ${missingElements.join(', ')} element(s)`;
+        warningDiv.style.color = 'yellow';
+        warningDiv.style.fontWeight = 'bold';
+        warningDiv.style.marginBottom = '10px';
+        summaryContainer.appendChild(warningDiv);
+    } else {
+        const warningDiv = document.createElement('div');
+        warningDiv.textContent = `DPT Multi Elements`;
+        warningDiv.style.color = 'green';
+        warningDiv.style.fontWeight = 'bold';
+        warningDiv.style.marginBottom = '10px';
+        summaryContainer.appendChild(warningDiv);
+    }
 
     const rolesToCheck = [
         "Rall Resistance",
