@@ -3,7 +3,7 @@ export const classData = {
     "Cra": {
       "Voies": {
         "DPT Ranged": ["Zone", "Burst", "Constant", "Ranged", "Rall PO", "Buff PO"],
-        "Support": ["Sub DPT", "Rall PO", "Buff PO", "Rall Crit", "Sub Placeur"]
+        "Support": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur"]
       },
       "Elements" : ["Fire", "Earth", "Air"]
     },
@@ -27,8 +27,8 @@ export const classData = {
     },
     "Eniripsa": {
       "Voies": {
-        "Support Heal": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT"],
-        "DPT Poison": ["DPT Poison", "Burst", "Resurection"]
+        "Support Heal": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield"],
+        "DPT Poison": ["DPT Poison", "Burst", "Resurection", "Anti Shield"]
       },
       "Elements" : ["Fire", "Water", "Air"]
     },
@@ -78,7 +78,7 @@ export const classData = {
       "Voies": {
         "DPT Invoc": ["Constant", "Ranged"],
         "DPT Melee": ["Zone", "Constant", "Melee"],
-        "Support": ["Sub Heal", "Sub Shield", "Sub Placeur", "Buff DI", "Buff PA", "Buff PM", "Buff Crit", "Buff DI Melee", "Rall PM", "Anti Shield", "Anti Heal"]
+        "Support": ["Sub Heal", "Sub Shield", "Sub Placeur", "Buff DI", "Buff PA", "Buff PM", "Buff Crit", "Buff DI Melee", "Rall PM", "Rall Resistance", "Anti Shield", "Anti Heal"]
       }
     },
     "Ouginak": {

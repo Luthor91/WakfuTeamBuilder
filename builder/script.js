@@ -17,74 +17,65 @@ const OPTIONAL_ROLES = [
     "Anti Shield", "Anti Heal"
 ];
 
+const CATEGORIES = {
+    'Damage Type': ["Constant", "Zone", "Burst", "Melee", "Ranged"],
+    'Buff': ["Buff DI", "Buff PA", "Buff Crit", "Buff PM", "Buff PO", "Buff PW", "Buff Resistance"],
+    'Rall': ["Rall Resistance", "Rall PA", "Rall PM", "Rall DI", "Rall PO", "Rall Crit"],
+    'Sub Roles': ["Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur"]
+};
+
 
 let teamRoles = Array(6).fill({ class: null, voie: null });
 let selectedSlot = null;
 let simpMode = false;
 
 
-// Fonction pour mettre à jour les rôles sous la jauge
 function updateTeamRoles() {
     const rolesContainer = document.getElementById('roles-under-gauge');
     rolesContainer.innerHTML = ''; // Réinitialiser la section des rôles
+    
+    // Initialiser un tableau de rôles actuels
     const currentRoles = [];
-
-    // On passe en revue les rôles de l'équipe
     teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
             const classVoies = classData.classes[slot.class].Voies;
             if (classVoies[slot.voie]) {
-                const voieRoles = classVoies[slot.voie];
-                voieRoles.forEach(role => {
+                classVoies[slot.voie].forEach(role => {
                     currentRoles.push(role);
                 });
             }
         }
     });
 
-    // Tri des rôles : on commence par les rôles remplis, puis on ajoute les manquants importants et optionnels
-    const teamRolesToDisplay = [...IMPORTANT_ROLES.filter(role => currentRoles.includes(role)),
-                                ...OPTIONAL_ROLES.filter(role => currentRoles.includes(role))];
-    const missingImportantRoles = IMPORTANT_ROLES.filter(role => !currentRoles.includes(role));
-    const missingOptionalRoles = OPTIONAL_ROLES.filter(role => !currentRoles.includes(role));
-
-    // Fonction pour créer une ligne de rôles
-    const createRoleLine = (roles, roleType) => {
-        if (roles.length === 0) return; // Ne pas créer de ligne si pas de rôles
-
-        const lineContainer = document.createElement('div');
-        lineContainer.classList.add('role-line');
+    // Pour chaque catégorie de rôle, filtrer et afficher les rôles correspondants
+    Object.keys(CATEGORIES).forEach(category => {
+        const categoryRoles = CATEGORIES[category].filter(role => currentRoles.includes(role));
+        const missingImportant = CATEGORIES[category].filter(role => !currentRoles.includes(role) && IMPORTANT_ROLES.includes(role));
+        const missingOptional = CATEGORIES[category].filter(role => !currentRoles.includes(role) && OPTIONAL_ROLES.includes(role));
         
-        roles.forEach(role => {
-            const roleElement = document.createElement('div');
-            roleElement.classList.add('role-item');
-            roleElement.textContent = role;
-            
-            // Appliquer la classe appropriée
-            if (roleType === 'filled') {
-                roleElement.classList.add('role-filled');
-            } else if (roleType === 'missing-important') {
-                roleElement.classList.add('role-missing-important');
-            } else {
-                roleElement.classList.add('role-missing-optional');
-            }
-            
-            lineContainer.appendChild(roleElement);
-        });
+        // Si la catégorie contient des rôles, on crée un titre de catégorie
+        if (categoryRoles.length || missingImportant.length || missingOptional.length) {
+            const categoryTitle = document.createElement('h4');
+            categoryTitle.textContent = category;
+            rolesContainer.appendChild(categoryTitle);
+        }
+        
+        // Fonction pour ajouter les rôles dans la section
+        const displayRoles = (roles, colorRole) => {
+            roles.forEach(role => {
+                const roleElement = document.createElement('div');
+                roleElement.classList.add('role-item');
+                roleElement.style.color = colorRole;
+                roleElement.textContent = role;
+                rolesContainer.appendChild(roleElement);
+            });
+        };
 
-        rolesContainer.appendChild(lineContainer);
-    };
-
-    // Créer les trois lignes distinctes
-    if (teamRolesToDisplay.length > 0) {
-        createRoleLine(teamRolesToDisplay, 'filled');
-    }
-    if (missingImportantRoles.length > 0) {
-        createRoleLine(missingImportantRoles, 'missing-important');
-    }
-    if (missingOptionalRoles.length > 0) {
-        createRoleLine(missingOptionalRoles, 'missing-optional');
-    }
+        // Afficher les rôles remplis et manquants
+        displayRoles(categoryRoles, 'green');
+        displayRoles(missingImportant, 'red');
+        displayRoles(missingOptional, 'yellow');
+    });
 }
 
 // Fonction pour calculer la balance Melee/Ranged
@@ -147,24 +138,6 @@ function countRoles() {
     
 
     return { dptCount, supportCount };
-}
-
-
-// Fonction pour compter les rôles DPT et Support
-function hasRole(roleName) {
-    teamRoles.forEach(slot => {
-        if (slot.class && slot.voie) {
-            const classVoies = classData.classes[slot.class].Voies;
-            if (classVoies[slot.voie]) {
-                if (slot.voie.startsWith(roleName)) {
-                    return true;
-                }
-            }
-        }
-    });
-    
-
-    return false;
 }
 
 
@@ -268,7 +241,7 @@ function updateRolesPanel() {
             select.className = 'voie-select';
             const className = getClassNameFromFile(slotImg.src.split('/').pop());
             
-            select.innerHTML = '<option value="">Choisir une voie</option>';
+            select.innerHTML = '<option value="">Choose main role</option>';
             
             if (className && classData.classes[className]) {
                 Object.keys(classData.classes[className].Voies).forEach(voie => {
@@ -389,3 +362,4 @@ document.addEventListener('DOMContentLoaded', () => {
     updateRolesSummary();
     updateBalanceGauge();
 });
+

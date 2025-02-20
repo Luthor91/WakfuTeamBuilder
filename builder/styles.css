@@ -172,34 +172,34 @@ h3 {
 /* Style pour la section des rôles sous la jauge */
 #roles-under-gauge {
     margin-top: 20px;
+    text-align: left;
+}
+
+#roles-under-gauge h4 {
+    margin: 15px 0 8px 0;
+    color: #aaa;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+
+#roles-under-gauge .role-item {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 8px;
+    border-radius: 3px;
+    font-weight: bold;
 }
 
 
 .role-line {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
 }
 
 .role-item {
     padding: 5px 10px;
     border-radius: 3px;
     font-weight: bold;
-}
-
-.role-filled {
-    color: #28a745;
-}
-
-.role-missing-important {
-    color: #dc3545;
-}
-
-.role-missing-optional {
-    color: #ffc107;
+    color: white;
 }
 
 
