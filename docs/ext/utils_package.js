@@ -31,8 +31,8 @@ export const classData = {
     },
     "Eniripsa": {
       "Voies": {
-        "Support Heal": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield", "Invulnerability"],
-        "DPT Poison": ["Indirect", "Burst", "Resurection", "Anti Shield", "Rall Resistance", "Invulnerability"]
+        "Support Heal": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield", "Invulnerability", "Rall Parade"],
+        "DPT Poison": ["Indirect", "Burst", "Resurection", "Anti Shield", "Rall Resistance", "Invulnerability", "Rall Parade"]
       },
       "Elements" : ["Fire", "Water", "Air"],
       "Mobility" : 1
@@ -56,11 +56,11 @@ export const classData = {
     },
     "Foggernaut": {
       "Voies": {
-        "DPT Elementary": ["Constant", "Area", "Ranged", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Stabilized"],
-        "DPT Burst": ["Burst", "Area", "Ranged", "Melee", "Rall Resistance", "Rall PO", "Stabilized"],
-        "DPT Ranged": ["Constant", "Area", "Ranged", "Rall Resistance", "Rall PO", "Stabilized"],
-        "DPT Melee": ["Constant", "Area", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Stabilized"],
-        "Support": ["Shield", "Rall MP", "Rall Resistance", "Buff PO", "Buff DI Range", "Sub Placeur", "Anti Heal", "Stabilized", "Support Constant", "Support Area"]
+        "DPT Elementary": ["Constant", "Area", "Ranged", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Stabilized", "Rall Parade"],
+        "DPT Burst": ["Burst", "Area", "Ranged", "Melee", "Rall Resistance", "Rall PO", "Stabilized", "Rall Parade"],
+        "DPT Ranged": ["Constant", "Area", "Ranged", "Rall Resistance", "Rall PO", "Stabilized", "Rall Parade"],
+        "DPT Melee": ["Constant", "Area", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Stabilized", "Rall Parade"],
+        "Support": ["Shield", "Rall MP", "Rall Resistance", "Buff PO", "Buff DI Range", "Sub Placeur", "Anti Heal", "Stabilized", "Support Constant", "Support Area", "Rall Parade"]
       },
       "Elements" : ["Fire", "Water", "Earth", "Stasis"],
       "Mobility" : 1
@@ -68,10 +68,10 @@ export const classData = {
     },
     "Huppermage": {
       "Voies": {
-        "DPT Elementary": ["Area", "Constant", "Melee", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Stabilized"],
-        "DPT Ranged": ["Area", "Burst", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall DI", "Anti Shield", "Anti Heal", "Stabilized"],
-        "DPT Melee": ["Constant", "Burst", "Melee", "Off Tank", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Stabilized"],
-        "Support": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Stabilized", "Support Burst", "Support Area"]
+        "DPT Elementary": ["Area", "Constant", "Melee", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Stabilized", "Rall Parade"],
+        "DPT Ranged": ["Area", "Burst", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall DI", "Anti Shield", "Anti Heal", "Stabilized", "Rall Parade"],
+        "DPT Melee": ["Constant", "Burst", "Melee", "Off Tank", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Stabilized", "Rall Parade"],
+        "Support": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Stabilized", "Support Burst", "Support Area", "Rall Parade"]
       },
       "Elements" : ["Fire", "Water", "Earth", "Air"],
       "Mobility" : 1
@@ -96,10 +96,10 @@ export const classData = {
     },
     "Osamodas": {
       "Voies": {
-        "DPT Invoc": ["Ranged", "Melee", "Sub Heal", "Stabilized"],
+        "DPT Invoc": ["Ranged", "Melee", "Sub Heal", "Stabilized", "Rall Parade"],
         "DPT Enfla": ["Melee", "Indirect", "Stabilized"],
         "DPT Melee": ["Area", "Constant", "Melee"],
-        "Support": ["Sub Heal", "Sub Shield", "Sub Placeur", "Buff DI", "Buff AP", "Buff MP", "Buff Crit", "Buff DI Melee", "Buff PO", "Rall MP", "Rall Resistance", "Anti Shield", "Anti Heal", "Stabilized", "Support Burst", "Support Area"]
+        "Support": ["Sub Heal", "Sub Shield", "Sub Placeur", "Buff DI", "Buff AP", "Buff MP", "Buff Crit", "Buff DI Melee", "Buff PO", "Rall MP", "Rall Resistance", "Anti Shield", "Anti Heal", "Stabilized", "Support Burst", "Support Area", "Rall Parade"]
       },
       "Elements" : ["Fire", "Earth", "Air"],
       "Mobility" : 1
@@ -158,6 +158,7 @@ export const classData = {
     "Xelor": {
       "Voies": {
         "DPT Ranged": ["Indirect", "Ranged", "Burst", "Area", "Buff AP", "Rall AP", "Self Stabilized"],
+        "DPT Cog": ["Indirect", "Ranged", "Constant", "Area", "Buff AP", "Self Stabilized"],
         "Support": ["Placeur", "Buff DI", "Rall AP", "Rall DI", "Self Stabilized", "Support Area", "Support Constant"]
       },
       "Elements" : ["Fire", "Water", "Air"],
