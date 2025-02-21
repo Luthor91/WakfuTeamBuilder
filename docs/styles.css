@@ -332,6 +332,22 @@ h3 {
 }
 
 
+#language-selector {
+    position: absolute;
+    top: 20px;
+    right: 140px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+}
+
+#language-selector:hover {
+    border-color: #666;
+}
+
+
 footer {
     margin-top: 20px;
     padding: 10px;
@@ -340,3 +356,5 @@ footer {
     color: white;
     font-size: 14px;
 }
+
+

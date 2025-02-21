@@ -1,10 +1,8 @@
-import { classData } from './datas/data_model.js';
+import { classData, LANGUAGES, TRANSLATIONS, translate } from './ext/utils_package.js';
 
-// Variables globales
 
-// Définition des rôles importants et optionnels
 const IMPORTANT_ROLES = [
-    "Zone", "Constant", 
+    "Area", "Constant", 
     "Heal", "Shield", "Placeur", "Resurection",
     "Buff DI", "Rall Resistance"
 ];
@@ -13,23 +11,79 @@ const OPTIONAL_ROLES = [
     "Constant", "Ranged", "Melee", "Indirect", 
     "Stabilized", "Self Stabilized", "Invulnerability",
     "Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur", 
-    "Buff PA", "Buff Crit", "Buff PM", "Buff PO", "Buff PW", "Buff Resistance",
-    "Rall PA", "Rall PM", "Rall DI", "Rall PO", "Rall Crit",
+    "Buff AP", "Buff Crit", "Buff MP", "Buff PO", "Buff WP", "Buff Resistance",
+    "Rall AP", "Rall MP", "Rall DI", "Rall PO", "Rall Crit",
     "Anti Shield", "Anti Heal"
 ];
 
 const CATEGORIES = {
-    'Damage Type': ["Constant", "Zone", "Burst", "Melee", "Ranged"],
-    'Buff': ["Buff DI", "Buff PA", "Buff Crit", "Buff PM", "Buff PO", "Buff PW", "Buff Resistance"],
-    'Rall': ["Rall Resistance", "Rall PA", "Rall PM", "Rall DI", "Rall PO", "Rall Crit"],
+    'Damage Type': ["Constant", "Area", "Burst", "Melee", "Ranged"],
+    'Buff': ["Buff DI", "Buff AP", "Buff Crit", "Buff MP", "Buff PO", "Buff WP", "Buff Resistance"],
+    'Rall': ["Rall Resistance", "Rall AP", "Rall MP", "Rall DI", "Rall PO", "Rall Crit"],
     'Sub Roles': ["Sub Shield", "Sub Heal", "Sub DPT", "Off Tank", "Sub Placeur"]
 };
 
 
-let teamRoles = Array(6).fill({ class: null, voie: null });
+let currentLanguage = LANGUAGES.EN;
+let teamRoles = Array(6).fill({ class: null, voie: null, image: null });
 let selectedSlot = null;
 let simpMode = false;
 
+function changeLanguage(language) {
+    currentLanguage = language;
+    updateUI();
+}
+
+// Fonction pour mettre à jour l'interface
+function updateUI() {
+    // Mettre à jour les titres
+    document.querySelector('h1').textContent = translate('TEAM_BUILDER', currentLanguage);
+    document.querySelectorAll('h3').forEach(h3 => {
+        if (h3.textContent.includes('Roles choice')) {
+            h3.textContent = translate('ROLES_CHOICE', currentLanguage);
+        } else if (h3.textContent.includes('Team composition')) {
+            h3.textContent = translate('TEAM_COMPOSITION', currentLanguage);
+        } else if (h3.textContent.includes('Team roles')) {
+            h3.textContent = translate('TEAM_ROLES', currentLanguage);
+        } else if (h3.textContent.includes('Summary of roles')) {
+            h3.textContent = translate('ROLES_SUMMARY', currentLanguage);
+        }
+    });
+
+    // Mettre à jour la légende
+    document.querySelectorAll('.legend span').forEach(span => {
+        const text = span.textContent.trim();
+        if (text.includes('Role filled')) {
+            span.lastChild.textContent = translate('ROLE_FILLED', currentLanguage);
+        } else if (text.includes('Important role')) {
+            span.lastChild.textContent = translate('ROLE_IMPORTANT_MISSING', currentLanguage);
+        } else if (text.includes('Optional role')) {
+            span.lastChild.textContent = translate('ROLE_OPTIONAL_MISSING', currentLanguage);
+        }
+    });
+
+    // Mettre à jour les labels de la jauge
+    const gaugeLabels = document.querySelectorAll('.gauge-labels span');
+    gaugeLabels[0].textContent = translate('MELEE', currentLanguage);
+    gaugeLabels[1].textContent = translate('RANGED', currentLanguage);
+
+    // Mettre à jour le bouton Simp Mode
+    const simpModeBtn = document.getElementById('simp-mode-btn');
+    simpModeBtn.textContent = `${translate('SIMP_MODE', currentLanguage)} ${simpMode ? translate('ON', currentLanguage) : translate('OFF', currentLanguage)}`;
+
+    // Mettre à jour le bouton de fermeture
+    document.getElementById('close-menu-btn').textContent = translate('CLOSE', currentLanguage);
+
+    // Mettre à jour les sélecteurs de rôles
+    document.querySelectorAll('.voie-select option[value=""]').forEach(option => {
+        option.textContent = translate('CHOOSE_ROLE', currentLanguage);
+    });
+
+    // Mettre à jour le résumé des rôles et autres éléments dynamiques
+    updateRolesSummary();
+    updateRolesPanel();
+    updateTeamRoles();
+}
 
 function updateTeamRoles() {
     const rolesContainer = document.getElementById('roles-under-gauge');
@@ -201,6 +255,7 @@ function getClassNameFromFile(filename) {
 // Mettre à jour le résumé des rôles
 function updateRolesSummary() {
     const summaryContainer = document.getElementById('roles-summary');
+    summaryContainer.innerHTML = ''; // Vider le contenu existant
     
     const presentRoles = new Set();
     teamRoles.forEach(slot => {
@@ -232,7 +287,7 @@ function updateRolesSummary() {
     const { dptCount, supportCount } = countRoles();
     if (dptCount > supportCount) {
         const warningDiv = document.createElement('div');
-        warningDiv.textContent = "Number of DPT greater than Supports";
+        warningDiv.textContent = translate('DPT_SUPPORT_WARNING', currentLanguage);
         warningDiv.style.color = 'red';
         warningDiv.style.fontWeight = 'bold';
         warningDiv.style.marginBottom = '10px';
@@ -291,6 +346,7 @@ function updateRolesSummary() {
 // Mettre à jour le panneau des rôles
 function updateRolesPanel() {
     const rolesPanel = document.getElementById('roles-panel');
+    rolesPanel.innerHTML = ''; // Vider le contenu existant avant de le mettre à jour
 
     teamRoles.forEach((slot, index) => {
         const slotImg = document.querySelector(`.slot[data-slot="${index}"] img`);
@@ -365,9 +421,7 @@ function openSelectionMenu(slotIndex) {
     menuContent.innerHTML = "";
 
     Object.keys(classData.classes).forEach(className => {
-        const imgSrc = simpMode ? 
-            `female_${className.toLowerCase()}.png` : 
-            `male_${className.toLowerCase()}.png`;
+        const imgSrc = `male_${className.toLowerCase()}.png`;
         const img = createClassImage(imgSrc);
         menuContent.appendChild(img);
     });
@@ -378,12 +432,41 @@ function openSelectionMenu(slotIndex) {
 function createClassImage(imgSrc) {
     const img = document.createElement("img");
     img.src = `assets/${imgSrc}`;
-    img.onclick = () => selectClass(imgSrc);
+    let newImgSrc = null
+    
+    // Clic droit pour changer le genre
+    img.oncontextmenu = (e) => {
+        e.preventDefault();
+        const [gender, className] = imgSrc.split('_');
+        let newGender = gender;
+        if (newGender === 'male')          newGender = 'female';
+        else if (newGender === 'female')   newGender = 'male';
+
+
+        newImgSrc = `${newGender}_${className}`;
+        img.src = `assets/${newImgSrc}`;
+
+        teamRoles[selectedSlot].image = `assets/${newImgSrc}`; 
+    };
+
+    // Clic gauche normal
+    img.onclick = () => {
+
+        if (newImgSrc)  selectClass(newImgSrc);
+        else            selectClass(imgSrc);
+        
+    }
+    
     return img;
 }
 
 function closeSelectionMenu() {
-    document.getElementById("selection-menu").classList.add("hidden");
+    console.log("hidden");
+    
+    const menu = document.getElementById("selection-menu");
+    if (menu) {
+        menu.classList.add("hidden");
+    }
 }
 
 function toggleSimpMode() {
@@ -401,7 +484,13 @@ function toggleSimpMode() {
 
 // Initialisation des événements
 document.addEventListener('DOMContentLoaded', () => {
-    // Gestionnaire pour les slots
+    
+    const languageSelector = document.getElementById('language-selector');
+    languageSelector.value = currentLanguage;
+    languageSelector.addEventListener('change', (e) => {
+        changeLanguage(e.target.value);
+    });
+
     document.querySelectorAll('.slot').forEach(slot => {
         slot.addEventListener('click', () => {
             openSelectionMenu(parseInt(slot.dataset.slot));
@@ -415,9 +504,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-    // Gestionnaire pour le bouton Simp Mode
-    document.getElementById('simp-mode-btn').addEventListener('click', toggleSimpMode);
 
     // Gestionnaire pour le bouton Fermer
     document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
