@@ -8,18 +8,18 @@ const IMPORTANT_ROLES = [
 ];
 
 const OPTIONAL_ROLES = [
-    "Constant", "Ranged", "Melee", "Indirect", 
+    "Burst", "Ranged", "Melee", "Indirect", 
     "Stabilized", "Self Stabilized", "Invulnerability",
     "Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur", 
-    "Buff AP", "Buff Crit", "Buff MP", "Buff PO", "Buff WP", "Buff Resistance",
-    "Rall AP", "Rall MP", "Rall DI", "Rall PO", "Rall Crit",
+    "Buff AP", "Buff Crit", "Buff Parade", "Buff MP", "Buff PO", "Buff WP", "Buff Resistance",
+    "Rall AP", "Rall MP", "Rall DI", "Rall PO", "Rall Crit", "Rall Parade", "Rall Resistance",
     "Anti Shield", "Anti Heal"
 ];
 
 const CATEGORIES = {
     'Damage Type': ["Constant", "Area", "Burst", "Melee", "Ranged"],
-    'Buff': ["Buff DI", "Buff AP", "Buff Crit", "Buff MP", "Buff PO", "Buff WP", "Buff Resistance"],
-    'Rall': ["Rall Resistance", "Rall AP", "Rall MP", "Rall DI", "Rall PO", "Rall Crit"],
+    'Buff': ["Buff AP", "Buff DI", "Buff Crit", "Buff MP", "Buff PO", "Buff WP", "Buff Resistance", "Buff Parade"],
+    'Rall': ["Rall Resistance", "Rall AP", "Rall MP", "Rall DI", "Rall PO", "Rall Crit", "Rall Parade"],
     'Sub Roles': ["Sub Shield", "Sub Heal", "Sub DPT", "Off Tank", "Sub Placeur"]
 };
 
@@ -187,9 +187,6 @@ function getElementsDPT() {
         }
     });
     
-    console.log(elementsDPT);
-    
-
     return elementsDPT;
 }
 
@@ -219,17 +216,34 @@ function countRoles() {
 
 // Fonction pour compter les rôles DPT et Support
 function hasStabilizedRole() {
-    teamRoles.forEach(slot => {
+    for (const slot of teamRoles) {
         if (slot.class && slot.voie) {
             const classVoies = classData.classes[slot.class].Voies;
-            if (classVoies[slot.voie].includes("Stabilized") || classVoies[slot.voie].includes("Self Stabilized")) {
+            if (classVoies[slot.voie].includes("Stabilized") 
+                || classVoies[slot.voie].includes("Self Stabilized")
+            ) {
                 return true;
             }
         }
-    });
+    };
     
     return false;
 }
+
+
+// Fonction pour compter les rôles DPT et Support
+function hasInvulnerabilityRole() {
+    for (const slot of teamRoles) {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.classes[slot.class].Voies;
+            if (classVoies[slot.voie].includes("Invulnerability")) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 
 
 // Fonction pour vider un slot
@@ -255,7 +269,7 @@ function getClassNameFromFile(filename) {
 // Mettre à jour le résumé des rôles
 function updateRolesSummary() {
     const summaryContainer = document.getElementById('roles-summary');
-    summaryContainer.innerHTML = ''; // Vider le contenu existant
+    summaryContainer.innerHTML = ''; // Vider le contenu existant    
     
     const presentRoles = new Set();
     teamRoles.forEach(slot => {
@@ -315,7 +329,6 @@ function updateRolesSummary() {
     }
 
     const hasStabilized = hasStabilizedRole();
-
     if (!hasStabilized) {
         const warningDiv = document.createElement('div');
         warningDiv.textContent = "Need Stabilized Class";
@@ -324,6 +337,17 @@ function updateRolesSummary() {
         warningDiv.style.marginBottom = '10px';
         summaryContainer.appendChild(warningDiv);
     }
+
+    const hasInvulnerability = hasInvulnerabilityRole();    
+    if (!hasInvulnerability) {
+        const warningDiv = document.createElement('div');
+        warningDiv.textContent = "Need Invulnerability Class";
+        warningDiv.style.color = 'yellow';
+        warningDiv.style.fontWeight = 'bold';
+        warningDiv.style.marginBottom = '10px';
+        summaryContainer.appendChild(warningDiv);
+    }
+
 
     const rolesToCheck = [
         "Rall Resistance",
@@ -460,9 +484,7 @@ function createClassImage(imgSrc) {
     return img;
 }
 
-function closeSelectionMenu() {
-    console.log("hidden");
-    
+function closeSelectionMenu() {    
     const menu = document.getElementById("selection-menu");
     if (menu) {
         menu.classList.add("hidden");

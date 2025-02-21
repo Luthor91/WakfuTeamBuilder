@@ -14,7 +14,7 @@ export const classData = {
         "DPT Elementary": ["Constant", "Melee", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"],
         "DPT Ranged": ["Constant", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Rall Resistance", "Self Stabilized"],
         "DPT Melee": ["Constant", "Melee", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"],
-        "Support Heal": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnarability"]
+        "Support Heal": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
       },
       "Elements" : ["Fire", "Water", "Earth"],
       "Mobility" : 1
