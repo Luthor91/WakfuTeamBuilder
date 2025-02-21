@@ -437,6 +437,7 @@ function selectClass(imgSrc) {
     closeSelectionMenu();
 }
 
+
 function openSelectionMenu(slotIndex) {
     selectedSlot = slotIndex;
     const menu = document.getElementById("selection-menu");
@@ -447,42 +448,40 @@ function openSelectionMenu(slotIndex) {
     Object.keys(classData.classes).forEach(className => {
         const imgSrc = `male_${className.toLowerCase()}.png`;
         const img = createClassImage(imgSrc);
+        //img.classList.add("half-image"); // Appliquer le style
         menuContent.appendChild(img);
     });
 
     menu.classList.remove("hidden");
 }
 
+
 function createClassImage(imgSrc) {
     const img = document.createElement("img");
     img.src = `assets/${imgSrc}`;
-    let newImgSrc = null
-    
+    img.dataset.src = imgSrc;  // Stocker l'image actuelle
+
     // Clic droit pour changer le genre
     img.oncontextmenu = (e) => {
         e.preventDefault();
-        const [gender, className] = imgSrc.split('_');
-        let newGender = gender;
-        if (newGender === 'male')          newGender = 'female';
-        else if (newGender === 'female')   newGender = 'male';
+        const [gender, className] = img.dataset.src.split('_');
+        let newGender = gender === 'male' ? 'female' : 'male';
 
-
-        newImgSrc = `${newGender}_${className}`;
+        let newImgSrc = `${newGender}_${className}`;
         img.src = `assets/${newImgSrc}`;
+        img.dataset.src = newImgSrc;  // Mettre à jour l'image actuelle
 
         teamRoles[selectedSlot].image = `assets/${newImgSrc}`; 
     };
 
     // Clic gauche normal
     img.onclick = () => {
-
-        if (newImgSrc)  selectClass(newImgSrc);
-        else            selectClass(imgSrc);
-        
+        selectClass(img.dataset.src); // Toujours utiliser l'image actuelle
     }
     
     return img;
 }
+
 
 function closeSelectionMenu() {    
     const menu = document.getElementById("selection-menu");
@@ -491,18 +490,6 @@ function closeSelectionMenu() {
     }
 }
 
-function toggleSimpMode() {
-    simpMode = !simpMode;
-    const btn = document.getElementById("simp-mode-btn");
-    btn.textContent = simpMode ? "Simp Mode: ON" : "Simp Mode: OFF";
-    
-    document.querySelectorAll('.slot img').forEach(img => {
-        const currentSrc = img.src;
-        const fileName = currentSrc.split('/').pop();
-        const className = fileName.split('_')[1];
-        img.src = `assets/${simpMode ? 'female' : 'male'}_${className}`;
-    });
-}
 
 // Initialisation des événements
 document.addEventListener('DOMContentLoaded', () => {
