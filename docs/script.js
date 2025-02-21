@@ -504,7 +504,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
     // Gestionnaire pour le bouton Fermer
     document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
 
