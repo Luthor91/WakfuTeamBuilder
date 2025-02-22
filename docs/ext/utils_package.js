@@ -486,7 +486,7 @@ export const classData = {
         },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield", "Invulnerability", "Rall Parade"]
+        "Roles": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield", "Anti Heal", "Invulnerability", "Rall Parade"]
       },
       "DPT Indirect": {
         "notes": {
@@ -525,7 +525,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Indirect", "Single Target", "Burst", "Resurection", "Anti Shield", "Rall Resistance", "Invulnerability", "Rall Parade"]
+        "Roles": ["Indirect", "Single Target", "Burst", "Resurection", "Anti Shield", "Anti Heal", "Rall Resistance", "Invulnerability", "Rall Parade"]
       }
     },
     "Elements": ["Fire", "Water", "Air"],
