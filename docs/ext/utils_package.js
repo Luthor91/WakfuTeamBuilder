@@ -1,172 +1,2416 @@
 export const classData = {
-  "classes": {
+  "Classes": {
     "Cra": {
       "Voies": {
-        "DPT Ranged": ["Area", "Burst", "Ranged", "Rall PO", "Buff PO", "Stabilized"],
-        "DPT Burst": ["Area", "Burst", "Ranged", "Rall PO", "Buff PO", "Stabilized"],
-        "Support": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur", "Stabilized"]
+        "DPT Ranged Area": {
+          "notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 2,
+              "Area": 2,
+              "Single_Target": 0,
+              "Constant": 0,
+              "Burst": 1
+            },
+            "Support": {
+              "Heal": 0,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 0,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 0,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 1,
+              "Support_Heal": 0,
+              "Support_Shield": 0,
+              "Support_Single_Target": 0,
+              "Support_Melee": 0,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Area", "Burst", "Ranged", "Rall PO", "Buff PO", "Entity Stabilized"]
+        },
+        "DPT Ranged Single Target": {
+          "notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 2,
+              "Area": 0,
+              "Single_Target": 2,
+              "Constant": 1,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 0,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 0,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 0,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 0,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Single Target", "Constant", "Rall PO", "Buff PO", "Entity Stabilized"]
+        },
+        "Support": {
+          "notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 0,
+              "Constant": 0,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 0,
+              "Shield": 0,
+              "Placeur": 1,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 0,
+              "Protection": 1
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 0,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 0,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 1,
+          "Mobility": 1,
+          "Roles": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur", "Entity Stabilized"]
+        }
       },
-      "Elements" : ["Fire", "Earth", "Air"],
-      "Mobility" : 1
+      "Elements": ["Fire", "Earth", "Air"],
+      "Mobility": 1
     },
     "Ecaflip": {
       "Voies": {
-        "DPT Elementary": ["Constant", "Melee", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"],
-        "DPT Ranged": ["Constant", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Rall Resistance", "Self Stabilized"],
-        "DPT Melee": ["Constant", "Melee", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"],
-        "Support Heal": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
+        "DPT Elementary": {
+          "notes": {
+            "DPT": {
+              "Melee": 1,
+              "Ranged": 1,
+              "Area": 0,
+              "Single_Target": 2,
+              "Constant": 2,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 1,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 1,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 1,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Constant", "Single Target", "Melee", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"]
+        },
+        "DPT Ranged": {
+          "notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 2,
+              "Area": 0,
+              "Single_Target": 2,
+              "Constant": 2,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 1,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 1,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Constant", "Single Target", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Rall Resistance", "Self Stabilized"]
+        },
+        "DPT Melee": {
+          "notes": {
+            "DPT": {
+              "Melee": 2,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 2,
+              "Constant": 2,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 1,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 1,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 1,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Constant", "Single Target", "Melee", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"]
+        },
+        "Support Heal": {
+          "notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 1,
+              "Constant": 0,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 2,
+              "Shield": 1,
+              "Placeur": 0,
+              "Buff_MP": 1,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 1
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 2,
+              "Support_Shield": 1,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 1,
+          "Mobility": 1,
+          "Roles": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
+        }
       },
-      "Elements" : ["Fire", "Water", "Earth"],
-      "Mobility" : 1
+      "Elements": ["Fire", "Water", "Earth"],
+      "Mobility": 1
     },
     "Eliotrope": {
       "Voies": {
-        "DPT Elementary": ["Area", "Burst", "Ranged", "Melee", "Stabilized"],
-        "DPT Ranged": ["Area", "Burst", "Ranged", "Stabilized"],
-        "DPT Melee": ["Area", "Burst", "Melee", "Stabilized"],
-        "Support Placeur": ["Placeur", "Buff AP", "Sub Shield", "Stabilized"]
-      },
-      "Elements" : ["Water", "Earth", "Air"],
-      "Mobility" : 1
+        "DPT Elementary": {
+          "notes": {
+            "DPT": {
+              "Melee": 1,
+              "Ranged": 1,
+              "Area": 2,
+              "Single_Target": 2,
+              "Constant": 0,
+              "Burst": 2
+            },
+            "Support": {
+              "Heal": 0,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 0,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 0,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 1,
+              "Support_Heal": 0,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 1,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Area", "Single Target", "Burst", "Ranged", "Melee", "Entity Stabilized"]
+        },
+        "DPT Ranged": {
+          "notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 2,
+              "Area": 2,
+              "Single_Target": 2,
+              "Constant": 0,
+              "Burst": 2
+            },
+            "Support": {
+              "Heal": 0,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 0,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 0,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 1,
+              "Support_Heal": 0,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Area", "Single Target", "Burst", "Ranged", "Entity Stabilized"]
+        },
+        "DPT Melee": {
+          "notes": {
+            "DPT": {
+              "Melee": 2,
+              "Ranged": 0,
+              "Area": 2,
+              "Single_Target": 2,
+              "Constant": 0,
+              "Burst": 2
+            },
+            "Support": {
+              "Heal": 0,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 0,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 0,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 1,
+              "Support_Heal": 0,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 1,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Area", "Single Target", "Burst", "Melee", "Entity Stabilized"]
+        },
+        "Support Placeur": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 1,
+            "Placeur": 2,
+            "Buff_MP": 0,
+            "Buff_AP": 1,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 1,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Placeur", "Buff AP", "Sub Shield", "Entity Stabilized"]
+      }
     },
-    "Eniripsa": {
-      "Voies": {
-        "Support Heal": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield", "Invulnerability", "Rall Parade"],
-        "DPT Poison": ["Indirect", "Burst", "Resurection", "Anti Shield", "Rall Resistance", "Invulnerability", "Rall Parade"]
+    "Elements": ["Water", "Earth", "Air"],
+    "Mobility": 1
+    },
+   "Eniripsa": {
+    "Voies": {
+      "Support Heal": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 1,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 2,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 0,
+            "Buff_DI": 2,
+            "Protection": 2
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 1,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 2,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield", "Invulnerability", "Rall Parade"]
       },
-      "Elements" : ["Fire", "Water", "Air"],
-      "Mobility" : 1
+      "DPT Indirect": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 1,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Indirect", "Single Target", "Burst", "Resurection", "Anti Shield", "Rall Resistance", "Invulnerability", "Rall Parade"]
+      }
+    },
+    "Elements": ["Fire", "Water", "Air"],
+    "Mobility": 1
     },
     "Enutrof": {
-      "Voies": {
-        "Support": ["Buff DI", "Buff AP", "Buff MP", "Rall Resistance", "Rall DI", "Rall AP", "Rall MP", "Rall PO", "Support Constant"],
-        "DPT Melee": ["Constant", "Melee", "Off Tank", "Rall Resistance", "Rall DI", "Rall MP"]
+    "Voies": {
+      "Support": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 1,
+            "Buff_DI": 2,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 1,
+            "Rall_DI": 1,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Buff DI", "Buff AP", "Buff MP", "Rall Resistance", "Rall DI", "Rall AP", "Rall MP", "Rall PO", "Support Constant"]
       },
-      "Elements" : ["Fire", "Water", "Earth"],
-      "Mobility" : 1
+      "DPT Melee": {
+        "notes": {
+          "DPT": {
+            "Melee": 2,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 0,
+            "Rall_DI": 1,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Rall Resistance", "Rall DI", "Rall MP"]
+      }
+    },
+    "Elements": ["Fire", "Water", "Earth"],
+    "Mobility": 1
     },
     "Feca": {
-      "Voies": {
-        "Support Shield": ["Buff DI Melee", "Buff Crit", "Shield", "Buff Resistance", "Rall MP", "Buff WP", "Stabilized", "Invulnerability", "Support Constant"],
-        "DPT Ranged": ["Indirect", "Area", "Ranged", "Buff DI Melee", "Buff Resistance", "Rall MP", "Stabilized", "Invulnerability"]
+    "Voies": {
+      "Support Shield": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 2,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 2,
+            "Protection": 2
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 2,
+            "Support_Single_Target": 1,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Buff DI Melee", "Buff Crit", "Shield", "Buff Resistance", "Rall MP", "Buff WP", "Entity Stabilized", "Invulnerability", "Support Constant"]
       },
-      "Elements" : ["Fire", "Water", "Earth"],
-      "Mobility" : 1
-
+      "DPT Ranged": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 2,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 1,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Indirect", "Area", "Ranged", "Buff DI Melee", "Buff Resistance", "Rall MP", "Entity Stabilized", "Invulnerability"]
+      }
+    },
+    "Elements": ["Fire", "Water", "Earth"],
+    "Mobility": 1
     },
     "Foggernaut": {
-      "Voies": {
-        "DPT Elementary": ["Constant", "Area", "Ranged", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Stabilized", "Rall Parade"],
-        "DPT Burst": ["Burst", "Area", "Ranged", "Melee", "Rall Resistance", "Rall PO", "Stabilized", "Rall Parade"],
-        "DPT Ranged": ["Constant", "Area", "Ranged", "Rall Resistance", "Rall PO", "Stabilized", "Rall Parade"],
-        "DPT Melee": ["Constant", "Area", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Stabilized", "Rall Parade"],
-        "Support": ["Shield", "Rall MP", "Rall Resistance", "Buff PO", "Buff DI Range", "Sub Placeur", "Anti Heal", "Stabilized", "Support Constant", "Support Area", "Rall Parade"]
+    "Voies": {
+      "DPT Elementary": {
+        "notes": {
+          "DPT": {
+            "Melee": 1,
+            "Ranged": 1,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Area", "Ranged", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Entity Stabilized", "Rall Parade"]
       },
-      "Elements" : ["Fire", "Water", "Earth", "Stasis"],
-      "Mobility" : 1
-
+      "DPT Burst": {
+        "notes": {
+          "DPT": {
+            "Melee": 1,
+            "Ranged": 1,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Burst", "Area", "Ranged", "Melee", "Rall Resistance", "Rall PO", "Entity Stabilized", "Rall Parade"]
+      },
+      "DPT Ranged": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 2,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Area", "Ranged", "Rall Resistance", "Rall PO", "Entity Stabilized", "Rall Parade"]
+      },
+      "DPT Melee": {
+        "notes": {
+          "DPT": {
+            "Melee": 2,
+            "Ranged": 0,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Area", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Entity Stabilized", "Rall Parade"]
+      },
+      "Support": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 2,
+            "Placeur": 1,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 1,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 2,
+            "Support_Heal": 0,
+            "Support_Shield": 2,
+            "Support_Single_Target": 0,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Shield", "Rall MP", "Rall Resistance", "Buff PO", "Buff DI Range", "Sub Placeur", "Anti Heal", "Entity Stabilized", "Support Constant", "Support Area", "Rall Parade"]
+      }
+    },
+    "Elements": ["Fire", "Water", "Earth", "Stasis"],
+    "Mobility": 1
     },
     "Huppermage": {
-      "Voies": {
-        "DPT Elementary": ["Area", "Constant", "Melee", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Stabilized", "Rall Parade"],
-        "DPT Ranged": ["Area", "Burst", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall DI", "Anti Shield", "Anti Heal", "Stabilized", "Rall Parade"],
-        "DPT Melee": ["Constant", "Burst", "Melee", "Off Tank", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Stabilized", "Rall Parade"],
-        "Support": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Stabilized", "Support Burst", "Support Area", "Rall Parade"]
+    "Voies": {
+      "DPT Elementary": {
+        "notes": {
+          "DPT": {
+            "Melee": 1,
+            "Ranged": 1,
+            "Area": 2,
+            "Single_Target": 2,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 1,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 1,
+            "Rall_DI": 1,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 1,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Area", "Single Target", "Constant", "Melee", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
       },
-      "Elements" : ["Fire", "Water", "Earth", "Air"],
-      "Mobility" : 1
+      "DPT Ranged": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 2,
+            "Area": 2,
+            "Single_Target": 2,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 1,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 1,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Area", "Single Target", "Burst", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
+      },
+      "DPT Melee": {
+        "notes": {
+          "DPT": {
+            "Melee": 2,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 2,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 1,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 1,
+            "Rall_DI": 1,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Single Target", "Burst", "Melee", "Off Tank", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
+      },
+      "Support": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 1,
+            "Constant": 0,
+            "Burst": 1
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 1,
+            "Buff_MP": 2,
+            "Buff_AP": 2,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 1,
+            "Rall_DI": 1,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 2,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Entity Stabilized", "Support Burst", "Support Area", "Rall Parade"]
+      }
+    },
+    "Elements": ["Fire", "Water", "Earth", "Air"],
+    "Mobility": 1
     },
     "Iop": {
-      "Voies": {
-        "DPT Melee": ["Constant", "Melee", "Off Tank", "Buff AP", "Buff DI", "Stabilized"],
-        "Support": ["Buff AP", "Buff DI", "Sub Shield", "Anti Shield", "Stabilized"]
+    "Voies": {
+      "DPT Melee": {
+        "notes": {
+          "DPT": {
+            "Melee": 2,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 1,
+            "Buff_DI": 1,
+            "Protection": 0
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Buff AP", "Buff DI", "Entity Stabilized"]
       },
-      "Elements" : ["Fire", "Earth", "Air"],
-      "Mobility" : 1
+      "Support": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 1,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 2,
+            "Buff_DI": 2,
+            "Protection": 0
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 1,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Buff AP", "Buff DI", "Sub Shield", "Anti Shield", "Entity Stabilized"]
+      }
+    },
+    "Elements": ["Fire", "Earth", "Air"],
+    "Mobility": 1
     },
     "Masqueraider": {
-      "Voies": {
-        "Support Placeur": ["Sub Heal", "Sub Shield", "Placeur", "Rall Resistance", "Rall AP", "Rall MP", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield", "Stabilized", "Support Area"],
-        "Support Heal": ["Heal", "Sub Shield", "Sub Placeur", "Rall Resistance", "Rall AP", "Rall MP", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield", "Stabilized", "Support Area"],
-        "Support Shield": ["Sub Heal", "Shield", "Sub Placeur", "Rall Resistance", "Rall AP", "Rall MP", "Buff DI", "Buff Crit", "Resurection", "Sub DPT", "Anti Shield", "Stabilized", "Support Area"],
-        "DPT Melee": ["Melee", "Sub Heal", "Resurection", "Sub DPT", "Anti Shield"]
+    "Voies": {
+      "DPT Melee": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 2,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 1
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 0
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Melee", "Resurection", "Sub Heal"]
       },
-      "Elements" : ["Fire", "Water", "Air"],
-      "Mobility" : 1
+      "Support Heal": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 2,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 1,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 0
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Single Target", "Constant", "Rall PO", "Buff PO", "Entity Stabilized"]
+      },
+      "Support Shield": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 1,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur", "Entity Stabilized"]
+      },
+      "Support Placeur": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 1,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur", "Entity Stabilized"]
+      }
+    },
+    "Elements": ["Fire", "Water", "Air"],
+    "Mobility": 1
     },
     "Osamodas": {
       "Voies": {
-        "DPT Invoc": ["Ranged", "Melee", "Sub Heal", "Stabilized", "Rall Parade"],
-        "DPT Enfla": ["Melee", "Indirect", "Stabilized"],
-        "DPT Melee": ["Area", "Constant", "Melee"],
-        "Support": ["Sub Heal", "Sub Shield", "Sub Placeur", "Buff DI", "Buff AP", "Buff MP", "Buff Crit", "Buff DI Melee", "Buff PO", "Rall MP", "Rall Resistance", "Anti Shield", "Anti Heal", "Stabilized", "Support Burst", "Support Area", "Rall Parade"]
+        "DPT Invoc": {
+          "notes": {
+            "DPT": {
+              "Melee": 1,
+              "Ranged": 1,
+              "Area": 0,
+              "Single_Target": 2,
+              "Constant": 2,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 1,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 1,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 1,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Constant", "Single Target", "Melee", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"]
+        },
+        "DPT Melee": {
+          "notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 2,
+              "Area": 0,
+              "Single_Target": 2,
+              "Constant": 2,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 1,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 1,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Constant", "Single Target", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Rall Resistance", "Self Stabilized"]
+        },
+        "DPT Flame": {
+          "notes": {
+            "DPT": {
+              "Melee": 2,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 2,
+              "Constant": 2,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 1,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 1,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 1,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Constant", "Single Target", "Melee", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"]
+        },
+        "Support Heal": {
+          "notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 1,
+              "Constant": 0,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 2,
+              "Shield": 1,
+              "Placeur": 0,
+              "Buff_MP": 1,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 1
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 2,
+              "Support_Shield": 1,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 1,
+          "Mobility": 1,
+          "Roles": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
+        },
+        "Support": {
+          "notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 1,
+              "Constant": 0,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 2,
+              "Shield": 1,
+              "Placeur": 0,
+              "Buff_MP": 1,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 1
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 2,
+              "Support_Shield": 1,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 1,
+          "Mobility": 1,
+          "Roles": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
+        }
       },
-      "Elements" : ["Fire", "Earth", "Air"],
-      "Mobility" : 1
+      "Elements": ["Fire", "Earth", "Air"],
+      "Mobility": 1
     },
     "Ouginak": {
       "Voies": {
-        "DPT Poison": ["Melee", "Indirect", "Off Tank", "Rall MP", "Stabilized"],
-        "DPT Melee": ["Burst", "Melee", "Rall MP", "Sub DPT", "Anti Shield", "Anti Heal", "Stabilized"],
-        "Support": ["Rall MP", "Buff DI", "Sub DPT", "Anti Shield", "Anti Heal", "Stabilized"]
-      },
-      "Elements" : ["Water", "Earth", "Air"],
-      "Mobility" : 1
+        "DPT Indirect": {
+          "notes": {
+            "DPT": {
+              "Melee": 1,
+              "Ranged": 1,
+              "Area": 2,
+              "Single_Target": 2,
+              "Constant": 0,
+              "Burst": 2
+            },
+            "Support": {
+              "Heal": 0,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 0,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 0,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 1,
+              "Support_Heal": 0,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 1,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Area", "Single Target", "Burst", "Ranged", "Melee", "Entity Stabilized"]
+        },
+        "DPT Melee": {
+          "notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 2,
+              "Area": 2,
+              "Single_Target": 2,
+              "Constant": 0,
+              "Burst": 2
+            },
+            "Support": {
+              "Heal": 0,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 0,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 0,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 1,
+              "Support_Heal": 0,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 1
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Area", "Single Target", "Burst", "Ranged", "Entity Stabilized"]
+        },
+        "Support": {
+          "notes": {
+            "DPT": {
+              "Melee": 2,
+              "Ranged": 0,
+              "Area": 2,
+              "Single_Target": 2,
+              "Constant": 0,
+              "Burst": 2
+            },
+            "Support": {
+              "Heal": 0,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 0,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 0,
+              "Lock": 0
+            },
+            "Team_Support": {
+              "Support_Area": 1,
+              "Support_Heal": 0,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 1,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Area", "Single Target", "Burst", "Melee", "Entity Stabilized"]
+        }
+    },
+    "Elements": ["Water", "Earth", "Air"],
+    "Mobility": 1
     },
     "Pandawa": {
-      "Voies": {
-        "Support Placeur": ["Placeur", "Sub Heal", "Rall Resistance", "Buff MP", "Rall MP", "Stabilized"],
-        "DPT Melee": ["Melee", "Sub Heal", "Stabilized"]
+    "Voies": {
+      "Support Heal": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 1,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 2,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 0,
+            "Buff_DI": 2,
+            "Protection": 2
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 1,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 2,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield", "Invulnerability", "Rall Parade"]
       },
-      "Elements" : ["Fire", "Water", "Earth"],
-      "Mobility" : 1
+      "DPT Melee": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 1,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Indirect", "Single Target", "Burst", "Resurection", "Anti Shield", "Rall Resistance", "Invulnerability", "Rall Parade"]
+      },
+      "Support Placeur": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 1,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Indirect", "Single Target", "Burst", "Resurection", "Anti Shield", "Rall Resistance", "Invulnerability", "Rall Parade"]
+      }
+    },
+    "Elements": ["Fire", "Water", "Earth"],
+    "Mobility": 1
     },
     "Rogue": {
-      "Voies": {
-        "DPT Elem": ["Indirect", "Area", "Burst", "Off Tank", "Rall MP", "Ranged", "Melee"],
-        "Support": ["Buff DI", "Rall MP", "Rall PO", "Rall WP", "Sub Placeur", "Support Area"]
+    "Voies": {
+      "Support": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 1,
+            "Buff_DI": 2,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 1,
+            "Rall_DI": 1,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Buff DI", "Buff AP", "Buff MP", "Rall Resistance", "Rall DI", "Rall AP", "Rall MP", "Rall PO", "Support Constant"]
       },
-      "Elements" : ["Fire", "Earth", "Air"],
-      "Mobility" : 1
+      "DPT Melee": {
+        "notes": {
+          "DPT": {
+            "Melee": 2,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 0,
+            "Rall_DI": 1,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Rall Resistance", "Rall DI", "Rall MP"]
+      },
+      "DPT Indirect": {
+        "notes": {
+          "DPT": {
+            "Melee": 2,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 0,
+            "Rall_DI": 1,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Rall Resistance", "Rall DI", "Rall MP"]
+      }
+    },
+    "Elements": ["Fire", "Earth", "Air"],
+    "Mobility": 1
     },
     "Sacrier": {
-      "Voies": {
-        "DPT Elementary": ["Melee", "Ranged", "Constant", "Off Tank", "Stabilized", "Self Stabilized"],
-        "DPT Melee": ["Melee", "Constant", "Off Tank", "Stabilized", "Self Stabilized"],
-        "DPT Enfla": ["Indirect", "Area", "Melee", "Constant", "Off Tank", "Stabilized", "Self Stabilized"],
-        "Support Placeur": ["Placeur", "Rall MP", "Stabilized", "Self Stabilized", "Support Area"]
+    "Voies": {
+      "DPT Melee": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 2,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 2,
+            "Protection": 2
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 2,
+            "Support_Single_Target": 1,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Buff DI Melee", "Buff Crit", "Shield", "Buff Resistance", "Rall MP", "Buff WP", "Entity Stabilized", "Invulnerability", "Support Constant"]
       },
-      "Elements" : ["Fire", "Earth", "Air"],
-      "Mobility" : 1
+      "DPT Flame": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 2,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 1,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Indirect", "Area", "Ranged", "Buff DI Melee", "Buff Resistance", "Rall MP", "Entity Stabilized", "Invulnerability"]
+      },
+      "Support Placeur": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 2,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 1,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Indirect", "Area", "Ranged", "Buff DI Melee", "Buff Resistance", "Rall MP", "Entity Stabilized", "Invulnerability"]
+      }
+    },
+    "Elements": ["Fire", "Earth", "Air"],
+    "Mobility": 1
     },
     "Sadida": {
-      "Voies": {
-        "DPT Poison": ["Melee", "Ranged", "Indirect", "Sub Shield", "Rall Resistance", "Rall PO", "Rall MP", "Sub Heal", "Buff DI", "Buff Resistance", "Resurection", "Self Stabilized"],
-        "DPT Invoc": ["Melee", "Ranged", "Sub Shield", "Rall Resistance", "Buff Resistance", "Rall PO", "Rall MP", "Sub Heal", "Resurection", "Self Stabilized"],
-        "Support Heal": ["Heal", "Sub Shield", "Sub DPT", "Buff DI", "Buff MP", "Buff Resistance", "Rall DI", "Rall Resistance", "Rall MP", "Rall PO", "Resurection", "Self Stabilized", "Support Constant"]
+    "Voies": {
+      "DPT Invoc": {
+        "notes": {
+          "DPT": {
+            "Melee": 1,
+            "Ranged": 1,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Area", "Ranged", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Entity Stabilized", "Rall Parade"]
       },
-      "Elements" : ["Water", "Earth", "Air"],
-      "Mobility" : 1
+      "DPT Indirect": {
+        "notes": {
+          "DPT": {
+            "Melee": 1,
+            "Ranged": 1,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Burst", "Area", "Ranged", "Melee", "Rall Resistance", "Rall PO", "Entity Stabilized", "Rall Parade"]
+      },
+      "Support Heal": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 2,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Area", "Ranged", "Rall Resistance", "Rall PO", "Entity Stabilized", "Rall Parade"]
+      },
+      "Support Shield": {
+        "notes": {
+          "DPT": {
+            "Melee": 2,
+            "Ranged": 0,
+            "Area": 2,
+            "Single_Target": 0,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Area", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Entity Stabilized", "Rall Parade"]
+      }
+    },
+    "Elements": ["Water", "Earth", "Air"],
+    "Mobility": 1
     },
     "Sram": {
-      "Voies": {
-        "DPT Melee": ["Melee", "Constant", "Buff MP"]
+    "Voies": {
+      "DPT Melee": {
+        "notes": {
+          "DPT": {
+            "Melee": 1,
+            "Ranged": 1,
+            "Area": 2,
+            "Single_Target": 2,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 1,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 1,
+            "Rall_DI": 1,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 1,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Area", "Single Target", "Constant", "Melee", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
       },
-      "Elements" : ["Fire", "Water", "Air"],
-      "Mobility" : 1
+      "DPT Indirect": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 2,
+            "Area": 2,
+            "Single_Target": 2,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 1,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 1,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 1,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Area", "Single Target", "Burst", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
+      },
+      "Support": {
+        "notes": {
+          "DPT": {
+            "Melee": 2,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 2,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 1,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 1,
+            "Rall_DI": 1,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Single Target", "Burst", "Melee", "Off Tank", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
+      }
+    },
+    "Elements": ["Fire", "Water", "Air"],
+    "Mobility": 1
     },
     "Xelor": {
-      "Voies": {
-        "DPT Ranged": ["Indirect", "Ranged", "Burst", "Area", "Buff AP", "Rall AP", "Self Stabilized"],
-        "DPT Cog": ["Indirect", "Ranged", "Constant", "Area", "Buff AP", "Self Stabilized"],
-        "Support": ["Placeur", "Buff DI", "Rall AP", "Rall DI", "Self Stabilized", "Support Area", "Support Constant"]
+    "Voies": {
+      "DPT Ranged": {
+        "notes": {
+          "DPT": {
+            "Melee": 2,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 1,
+            "Buff_DI": 1,
+            "Protection": 0
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Buff AP", "Buff DI", "Entity Stabilized"]
       },
-      "Elements" : ["Fire", "Water", "Air"],
-      "Mobility" : 1
-    }
+      "DPT Cog": {
+        "notes": {
+          "DPT": {
+            "Melee": 2,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 2,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 1,
+            "Buff_DI": 1,
+            "Protection": 0
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 0,
+            "Support_Melee": 1,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Buff AP", "Buff DI", "Entity Stabilized"]
+      },
+      "Support": {
+        "notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 1,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 2,
+            "Buff_DI": 2,
+            "Protection": 0
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 0,
+            "Lock": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 1,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Buff AP", "Buff DI", "Sub Shield", "Anti Shield", "Entity Stabilized"]
+      }
+    },
+    "Elements": ["Fire", "Water", "Air"],
+    "Mobility": 1
+    },
   }
 }
-
 
 export const LANGUAGES = {
   FR: 'fr',
@@ -190,11 +2434,11 @@ export const TRANSLATIONS = {
   },
   TEAM_ROLES: {
       fr: 'Rôles d\'équipe',
-      en: 'Team roles'
+      en: 'Team Roles'
   },
   ROLES_SUMMARY: {
       fr: 'Résumé des rôles',
-      en: 'Summary of roles'
+      en: 'Summary of Roles'
   },
 
   // Messages d'avertissement

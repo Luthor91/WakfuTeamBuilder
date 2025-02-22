@@ -8,26 +8,27 @@ const IMPORTANT_ROLES = [
 ];
 
 const OPTIONAL_ROLES = [
-    "Burst", "Ranged", "Melee", "Indirect", 
-    "Stabilized", "Self Stabilized", "Invulnerability",
-    "Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur", 
-    "Buff AP", "Buff Crit", "Buff Parade", "Buff MP", "Buff PO", "Buff WP", "Buff Resistance",
-    "Rall AP", "Rall MP", "Rall DI", "Rall PO", "Rall Crit", "Rall Parade", "Rall Resistance",
+    "Burst", "Ranged", "Melee", "Indirect", "Single Target", 
+    "Entity Stabilized", "Self Stabilized", "Invulnerability",
+    "Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur", "Off Tank",
+    "Buff AP", "Buff MP", "Buff Resistance", "Buff Crit", "Buff PO", "Buff Parade", "Buff WP",
+    "Rall AP", "Rall MP", "Rall DI", "Rall Crit", "Rall PO", "Rall Parade", "Rall WP",
     "Anti Shield", "Anti Heal"
 ];
 
 const CATEGORIES = {
-    'Damage Type': ["Constant", "Area", "Burst", "Melee", "Ranged"],
-    'Buff': ["Buff AP", "Buff DI", "Buff Crit", "Buff MP", "Buff PO", "Buff WP", "Buff Resistance", "Buff Parade"],
-    'Rall': ["Rall Resistance", "Rall AP", "Rall MP", "Rall DI", "Rall PO", "Rall Crit", "Rall Parade"],
-    'Sub Roles': ["Sub Shield", "Sub Heal", "Sub DPT", "Off Tank", "Sub Placeur"]
+    'Damage Type': ["Constant", "Burst", "Single Target", "Area", "Melee", "Ranged", "Indirect"],
+    'Buff': ["Buff DI", "Buff AP", "Buff MP", "Buff Resistance", "Buff Crit", "Buff PO", "Buff Parade", "Buff WP"],
+    'Rall': ["Rall DI", "Rall AP", "Rall MP", "Rall Resistance", "Rall Crit", "Rall PO", "Rall Parade", "Rall WP"],
+    'Sub Roles': ["Off Tank", "Sub Shield", "Sub Heal", "Sub DPT", "Sub Placeur"],
+    'Specific': ["Resurection", "Anti Shield", "Anti Heal", "Entity Stabilized", "Self Stabilized", "Invulnerability"]
 };
 
 
 let currentLanguage = LANGUAGES.EN;
 let teamRoles = Array(6).fill({ class: null, voie: null, image: null });
 let selectedSlot = null;
-let simpMode = false;
+
 
 function changeLanguage(language) {
     currentLanguage = language;
@@ -93,9 +94,9 @@ function updateTeamRoles() {
     const currentRoles = [];
     teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
-            const classVoies = classData.classes[slot.class].Voies;
+            const classVoies = classData.Classes[slot.class].Voies;
             if (classVoies[slot.voie]) {
-                classVoies[slot.voie].forEach(role => {
+                classVoies[slot.voie].Roles.forEach(role => {
                     currentRoles.push(role);
                 });
             }
@@ -108,12 +109,24 @@ function updateTeamRoles() {
         const missingImportant = CATEGORIES[category].filter(role => !currentRoles.includes(role) && IMPORTANT_ROLES.includes(role));
         const missingOptional = CATEGORIES[category].filter(role => !currentRoles.includes(role) && OPTIONAL_ROLES.includes(role));
         
-        // Si la catégorie contient des rôles, on crée un titre de catégorie
-        if (categoryRoles.length || missingImportant.length || missingOptional.length) {
-            const categoryTitle = document.createElement('h4');
-            categoryTitle.textContent = category;
-            rolesContainer.appendChild(categoryTitle);
-        }
+    // Si la catégorie contient des rôles, on crée un titre de catégorie
+    if (categoryRoles.length || missingImportant.length || missingOptional.length) {
+        const categoryTitle = document.createElement('h4');
+        categoryTitle.textContent = category;
+        categoryTitle.style.cursor = "pointer"; // Indique qu'il est cliquable
+
+        // Ajout de l'événement pour replier/déplier
+        categoryTitle.addEventListener("click", function () {
+            let sibling = categoryTitle.nextElementSibling;
+            while (sibling && sibling.tagName !== "H4") {
+                sibling.style.display = sibling.style.display === "none" ? "inline-block" : "none";
+                sibling = sibling.nextElementSibling;
+            }
+        });
+
+        rolesContainer.appendChild(categoryTitle);
+    }
+
         
         // Fonction pour ajouter les rôles dans la section
         const displayRoles = (roles, colorRole) => {
@@ -139,13 +152,13 @@ function calculateMeleeRangedBalance() {
     
     teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
-            const classVoies = classData.classes[slot.class].Voies;
+            const classVoies = classData.Classes[slot.class].Voies;
             if (classVoies[slot.voie] && slot.voie.includes('DPT')) {
                 const voieValues = classVoies[slot.voie];
-                if (voieValues.includes('Melee')) {
+                if (voieValues.Roles.includes('Melee')) {
                     balance -= 1;
                 }
-                if (voieValues.includes('Ranged')) {
+                if (voieValues.Roles.includes('Ranged')) {
                     balance += 1;
                 }
             }
@@ -154,6 +167,7 @@ function calculateMeleeRangedBalance() {
     
     return balance;
 }
+
 
 // Fonction pour mettre à jour la jauge
 function updateBalanceGauge() {
@@ -171,14 +185,15 @@ function updateBalanceGauge() {
     cursor.style.left = `${position}%`;
 }
 
+
 // Fonction pour compter les rôles DPT et Support
 function getElementsDPT() {
     let elementsDPT = [];
 
     teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
-            const classVoies = classData.classes[slot.class].Voies;
-            const classElements = classData.classes[slot.class].Elements;
+            const classVoies = classData.Classes[slot.class].Voies;
+            const classElements = classData.Classes[slot.class].Elements;
             if (classVoies[slot.voie]) {
                 if (slot.voie.startsWith('DPT')) {
                     elementsDPT.push(...classElements)
@@ -198,7 +213,7 @@ function countRoles() {
 
     teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
-            const classVoies = classData.classes[slot.class].Voies;
+            const classVoies = classData.Classes[slot.class].Voies;
             if (classVoies[slot.voie]) {
                 if (slot.voie.startsWith('DPT')) {
                     dptCount++;
@@ -218,9 +233,9 @@ function countRoles() {
 function hasStabilizedRole() {
     for (const slot of teamRoles) {
         if (slot.class && slot.voie) {
-            const classVoies = classData.classes[slot.class].Voies;
-            if (classVoies[slot.voie].includes("Stabilized") 
-                || classVoies[slot.voie].includes("Self Stabilized")
+            const classVoies = classData.Classes[slot.class].Voies;
+            if (classVoies[slot.voie].Roles.includes("Entity Stabilized") 
+                || classVoies[slot.voie].Roles.includes("Self Stabilized")
             ) {
                 return true;
             }
@@ -235,8 +250,8 @@ function hasStabilizedRole() {
 function hasInvulnerabilityRole() {
     for (const slot of teamRoles) {
         if (slot.class && slot.voie) {
-            const classVoies = classData.classes[slot.class].Voies;
-            if (classVoies[slot.voie].includes("Invulnerability")) {
+            const classVoies = classData.Classes[slot.class].Voies;
+            if (classVoies[slot.voie].Roles.includes("Invulnerability")) {
                 return true;
             }
         }
@@ -274,22 +289,22 @@ function updateRolesSummary() {
     const presentRoles = new Set();
     teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
-            const classVoies = classData.classes[slot.class].Voies;
+            const classVoies = classData.Classes[slot.class].Voies;
             if (classVoies[slot.voie]) {
                 if (slot.voie.startsWith('DPT')) {
                     presentRoles.add('DPT');
-                } else if (classVoies[slot.voie].includes('Heal')) {
+                } else if (classVoies[slot.voie].Roles.includes('Heal')) {
                     presentRoles.add('Heal');
-                } else if (classVoies[slot.voie].includes('Shield')) {
+                } else if (classVoies[slot.voie].Roles.includes('Shield')) {
                     presentRoles.add('Shield');
                 }
-                if (classVoies[slot.voie].includes('Placeur')) {
+                if (classVoies[slot.voie].Roles.includes('Placeur')) {
                     presentRoles.add('Placeur');
                 }
-                if (classVoies[slot.voie].includes('Rall Resistance')) {
+                if (classVoies[slot.voie].Roles.includes('Rall Resistance')) {
                     presentRoles.add('Rall Resistance');
                 }
-                if (classVoies[slot.voie].includes('Resurection')) {
+                if (classVoies[slot.voie].Roles.includes('Resurection')) {
                     presentRoles.add('Resurection');
                 }
             }
@@ -388,8 +403,8 @@ function updateRolesPanel() {
             
             select.innerHTML = '<option value="">Choose main role</option>';
             
-            if (className && classData.classes[className]) {
-                Object.keys(classData.classes[className].Voies).forEach(voie => {
+            if (className && classData.Classes[className]) {
+                Object.keys(classData.Classes[className].Voies).forEach(voie => {
                     const option = document.createElement('option');
                     option.value = voie;
                     option.textContent = voie;
@@ -445,7 +460,7 @@ function openSelectionMenu(slotIndex) {
 
     menuContent.innerHTML = "";
 
-    Object.keys(classData.classes).forEach(className => {
+    Object.keys(classData.Classes).forEach(className => {
         const imgSrc = `male_${className.toLowerCase()}.png`;
         const img = createClassImage(imgSrc);
         //img.classList.add("half-image"); // Appliquer le style
