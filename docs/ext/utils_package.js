@@ -2516,7 +2516,7 @@ export const LANGUAGES = {
 export const TRANSLATIONS = {
   // Titres
   TEAM_BUILDER: {
-      fr: 'Constructeur d\'équipe Wakfu',
+      fr: 'Team Builder Wakfu',
       en: 'Wakfu Team Builder'
   },
   ROLES_CHOICE: {
