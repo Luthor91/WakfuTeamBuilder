@@ -1,9 +1,12 @@
 export const classData = {
   "Classes": {
     "Cra": {
+      "Id": 1,
+      "Image": "assets/male_cra.png",
       "Voies": {
         "DPT Ranged Area": {
-          "notes": {
+          "Id": 1,
+          "Notes": {
             "DPT": {
               "Melee": 0,
               "Ranged": 2,
@@ -42,7 +45,8 @@ export const classData = {
           "Roles": ["Area", "Burst", "Ranged", "Rall PO", "Buff PO", "Entity Stabilized"]
         },
         "DPT Ranged Single Target": {
-          "notes": {
+          "Id": 2,
+          "Notes": {
             "DPT": {
               "Melee": 0,
               "Ranged": 2,
@@ -81,7 +85,8 @@ export const classData = {
           "Roles": ["Single Target", "Constant", "Rall PO", "Buff PO", "Entity Stabilized"]
         },
         "Support": {
-          "notes": {
+          "Id": 3,
+          "Notes": {
             "DPT": {
               "Melee": 0,
               "Ranged": 0,
@@ -124,9 +129,12 @@ export const classData = {
       "Mobility": 1
     },
     "Ecaflip": {
+      "Id": 2,
+      "Image": "assets/male_ecaflip.png",
       "Voies": {
         "DPT Elementary": {
-          "notes": {
+          "Id": 1,
+          "Notes": {
             "DPT": {
               "Melee": 1,
               "Ranged": 1,
@@ -165,7 +173,8 @@ export const classData = {
           "Roles": ["Constant", "Single Target", "Melee", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"]
         },
         "DPT Ranged": {
-          "notes": {
+          "Id": 2,
+          "Notes": {
             "DPT": {
               "Melee": 0,
               "Ranged": 2,
@@ -204,7 +213,8 @@ export const classData = {
           "Roles": ["Constant", "Single Target", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Rall Resistance", "Self Stabilized"]
         },
         "DPT Melee": {
-          "notes": {
+          "Id": 3,
+          "Notes": {
             "DPT": {
               "Melee": 2,
               "Ranged": 0,
@@ -243,7 +253,8 @@ export const classData = {
           "Roles": ["Constant", "Single Target", "Melee", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"]
         },
         "Support Heal": {
-          "notes": {
+          "Id": 4,
+          "Notes": {
             "DPT": {
               "Melee": 0,
               "Ranged": 0,
@@ -286,9 +297,12 @@ export const classData = {
       "Mobility": 1
     },
     "Eliotrope": {
+      "Id": 3,
+      "Image": "assets/male_eliotrope.png",
       "Voies": {
         "DPT Elementary": {
-          "notes": {
+          "Id": 1,
+          "Notes": {
             "DPT": {
               "Melee": 1,
               "Ranged": 1,
@@ -327,7 +341,8 @@ export const classData = {
           "Roles": ["Area", "Single Target", "Burst", "Ranged", "Melee", "Entity Stabilized"]
         },
         "DPT Ranged": {
-          "notes": {
+          "Id": 2,
+          "Notes": {
             "DPT": {
               "Melee": 0,
               "Ranged": 2,
@@ -366,7 +381,8 @@ export const classData = {
           "Roles": ["Area", "Single Target", "Burst", "Ranged", "Entity Stabilized"]
         },
         "DPT Melee": {
-          "notes": {
+          "Id": 3,
+          "Notes": {
             "DPT": {
               "Melee": 2,
               "Ranged": 0,
@@ -405,7 +421,8 @@ export const classData = {
           "Roles": ["Area", "Single Target", "Burst", "Melee", "Entity Stabilized"]
         },
         "Support Placeur": {
-        "notes": {
+        "Id": 4,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -448,9 +465,12 @@ export const classData = {
     "Mobility": 1
     },
    "Eniripsa": {
+    "Id": 4,
+    "Image": "assets/male_eniripsa.png",
     "Voies": {
       "Support Heal": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -489,7 +509,8 @@ export const classData = {
         "Roles": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield", "Anti Heal", "Invulnerability", "Rall Parade"]
       },
       "DPT Indirect": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 1,
@@ -532,9 +553,12 @@ export const classData = {
     "Mobility": 1
     },
     "Enutrof": {
+    "Id": 5,
+    "Image": "assets/male_enutrof.png",
     "Voies": {
       "Support": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -573,7 +597,8 @@ export const classData = {
         "Roles": ["Buff DI", "Buff AP", "Buff MP", "Rall Resistance", "Rall DI", "Rall AP", "Rall MP", "Rall PO", "Support Constant"]
       },
       "DPT Melee": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 2,
             "Ranged": 0,
@@ -616,9 +641,12 @@ export const classData = {
     "Mobility": 1
     },
     "Feca": {
+    "Id": 6,
+    "Image": "assets/male_feca.png",
     "Voies": {
       "Support Shield": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -657,7 +685,8 @@ export const classData = {
         "Roles": ["Buff DI Melee", "Buff Crit", "Shield", "Buff Resistance", "Rall MP", "Buff WP", "Entity Stabilized", "Invulnerability", "Support Constant"]
       },
       "DPT Ranged": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 2,
@@ -700,9 +729,12 @@ export const classData = {
     "Mobility": 1
     },
     "Foggernaut": {
+    "Id": 7,
+    "Image": "assets/male_foggernaut.png",
     "Voies": {
       "DPT Elementary": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 1,
             "Ranged": 1,
@@ -741,7 +773,8 @@ export const classData = {
         "Roles": ["Constant", "Area", "Ranged", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Entity Stabilized", "Rall Parade"]
       },
       "DPT Burst": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 1,
             "Ranged": 1,
@@ -780,7 +813,8 @@ export const classData = {
         "Roles": ["Burst", "Area", "Ranged", "Melee", "Rall Resistance", "Rall PO", "Entity Stabilized", "Rall Parade"]
       },
       "DPT Ranged": {
-        "notes": {
+        "Id": 3,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 2,
@@ -819,7 +853,8 @@ export const classData = {
         "Roles": ["Constant", "Area", "Ranged", "Rall Resistance", "Rall PO", "Entity Stabilized", "Rall Parade"]
       },
       "DPT Melee": {
-        "notes": {
+        "Id": 4,
+        "Notes": {
           "DPT": {
             "Melee": 2,
             "Ranged": 0,
@@ -858,7 +893,8 @@ export const classData = {
         "Roles": ["Constant", "Area", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Entity Stabilized", "Rall Parade"]
       },
       "Support": {
-        "notes": {
+        "Id": 5,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -901,9 +937,12 @@ export const classData = {
     "Mobility": 1
     },
     "Huppermage": {
+    "Id": 8,
+    "Image": "assets/male_huppermage.png",
     "Voies": {
       "DPT Elementary": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 1,
             "Ranged": 1,
@@ -942,7 +981,8 @@ export const classData = {
         "Roles": ["Area", "Single Target", "Constant", "Melee", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
       },
       "DPT Ranged": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 2,
@@ -981,7 +1021,8 @@ export const classData = {
         "Roles": ["Area", "Single Target", "Burst", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
       },
       "DPT Melee": {
-        "notes": {
+        "Id": 3,
+        "Notes": {
           "DPT": {
             "Melee": 2,
             "Ranged": 0,
@@ -1020,7 +1061,8 @@ export const classData = {
         "Roles": ["Constant", "Single Target", "Burst", "Melee", "Off Tank", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
       },
       "Support": {
-        "notes": {
+        "Id": 4,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -1063,9 +1105,12 @@ export const classData = {
     "Mobility": 1
     },
     "Iop": {
+    "Id": 9,
+    "Image": "assets/male_iop.png",
     "Voies": {
       "DPT Melee": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 2,
             "Ranged": 0,
@@ -1104,7 +1149,8 @@ export const classData = {
         "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Buff AP", "Buff DI", "Entity Stabilized"]
       },
       "Support": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -1147,9 +1193,12 @@ export const classData = {
     "Mobility": 1
     },
     "Masqueraider": {
+    "Id": 10,
+    "Image": "assets/male_masqueraider.png",
     "Voies": {
       "DPT Melee": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 2,
@@ -1188,7 +1237,8 @@ export const classData = {
         "Roles": ["Melee", "Resurection", "Sub Heal"]
       },
       "Support Heal": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 2,
@@ -1227,7 +1277,8 @@ export const classData = {
         "Roles": ["Single Target", "Constant", "Rall PO", "Buff PO", "Entity Stabilized"]
       },
       "Support Shield": {
-        "notes": {
+        "Id": 3,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -1266,7 +1317,8 @@ export const classData = {
         "Roles": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur", "Entity Stabilized"]
       },
       "Support Placeur": {
-        "notes": {
+       "Id": 4,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -1309,9 +1361,12 @@ export const classData = {
     "Mobility": 1
     },
     "Osamodas": {
+      "Id": 11,
+      "Image": "assets/male_osamodas.png",
       "Voies": {
         "DPT Invoc": {
-          "notes": {
+          "Id": 1,
+          "Notes": {
             "DPT": {
               "Melee": 1,
               "Ranged": 1,
@@ -1350,7 +1405,8 @@ export const classData = {
           "Roles": ["Constant", "Single Target", "Melee", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"]
         },
         "DPT Melee": {
-          "notes": {
+          "Id": 2,
+          "Notes": {
             "DPT": {
               "Melee": 0,
               "Ranged": 2,
@@ -1389,7 +1445,8 @@ export const classData = {
           "Roles": ["Constant", "Single Target", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Rall Resistance", "Self Stabilized"]
         },
         "DPT Flame": {
-          "notes": {
+          "Id": 3,
+          "Notes": {
             "DPT": {
               "Melee": 2,
               "Ranged": 0,
@@ -1428,7 +1485,8 @@ export const classData = {
           "Roles": ["Constant", "Single Target", "Melee", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"]
         },
         "Support Heal": {
-          "notes": {
+          "Id": 4,
+          "Notes": {
             "DPT": {
               "Melee": 0,
               "Ranged": 0,
@@ -1467,7 +1525,8 @@ export const classData = {
           "Roles": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
         },
         "Support": {
-          "notes": {
+          "Id": 5,
+          "Notes": {
             "DPT": {
               "Melee": 0,
               "Ranged": 0,
@@ -1510,9 +1569,12 @@ export const classData = {
       "Mobility": 1
     },
     "Ouginak": {
+      "Id": 12,
+      "Image": "assets/male_ouginak.png",
       "Voies": {
         "DPT Indirect": {
-          "notes": {
+          "Id": 1,
+          "Notes": {
             "DPT": {
               "Melee": 1,
               "Ranged": 1,
@@ -1551,7 +1613,8 @@ export const classData = {
           "Roles": ["Area", "Single Target", "Burst", "Ranged", "Melee", "Entity Stabilized"]
         },
         "DPT Melee": {
-          "notes": {
+          "Id": 2,
+          "Notes": {
             "DPT": {
               "Melee": 0,
               "Ranged": 2,
@@ -1590,7 +1653,8 @@ export const classData = {
           "Roles": ["Area", "Single Target", "Burst", "Ranged", "Entity Stabilized"]
         },
         "Support": {
-          "notes": {
+          "Id": 3,
+          "Notes": {
             "DPT": {
               "Melee": 2,
               "Ranged": 0,
@@ -1633,9 +1697,12 @@ export const classData = {
     "Mobility": 1
     },
     "Pandawa": {
+    "Id": 13,
+    "Image": "assets/male_pandawa.png",
     "Voies": {
       "Support Heal": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -1674,7 +1741,8 @@ export const classData = {
         "Roles": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield", "Invulnerability", "Rall Parade"]
       },
       "DPT Melee": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 1,
@@ -1713,7 +1781,8 @@ export const classData = {
         "Roles": ["Indirect", "Single Target", "Burst", "Resurection", "Anti Shield", "Rall Resistance", "Invulnerability", "Rall Parade"]
       },
       "Support Placeur": {
-        "notes": {
+        "Id": 3,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 1,
@@ -1756,9 +1825,12 @@ export const classData = {
     "Mobility": 1
     },
     "Rogue": {
+    "Id": 14,
+    "Image": "assets/male_rogue.png",
     "Voies": {
       "Support": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -1797,7 +1869,8 @@ export const classData = {
         "Roles": ["Buff DI", "Buff AP", "Buff MP", "Rall Resistance", "Rall DI", "Rall AP", "Rall MP", "Rall PO", "Support Constant"]
       },
       "DPT Melee": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 2,
             "Ranged": 0,
@@ -1836,7 +1909,8 @@ export const classData = {
         "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Rall Resistance", "Rall DI", "Rall MP"]
       },
       "DPT Indirect": {
-        "notes": {
+        "Id": 3,
+        "Notes": {
           "DPT": {
             "Melee": 2,
             "Ranged": 0,
@@ -1879,9 +1953,12 @@ export const classData = {
     "Mobility": 1
     },
     "Sacrier": {
+    "Id": 15,
+    "Image": "assets/male_sacrier.png",
     "Voies": {
       "DPT Melee": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,
@@ -1920,7 +1997,8 @@ export const classData = {
         "Roles": ["Buff DI Melee", "Buff Crit", "Shield", "Buff Resistance", "Rall MP", "Buff WP", "Entity Stabilized", "Invulnerability", "Support Constant"]
       },
       "DPT Flame": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 2,
@@ -1959,7 +2037,8 @@ export const classData = {
         "Roles": ["Indirect", "Area", "Ranged", "Buff DI Melee", "Buff Resistance", "Rall MP", "Entity Stabilized", "Invulnerability"]
       },
       "Support Placeur": {
-        "notes": {
+        "Id": 3,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 2,
@@ -2002,9 +2081,12 @@ export const classData = {
     "Mobility": 1
     },
     "Sadida": {
+    "Id": 16,
+    "Image": "assets/male_sadida.png",
     "Voies": {
       "DPT Invoc": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 1,
             "Ranged": 1,
@@ -2043,7 +2125,8 @@ export const classData = {
         "Roles": ["Constant", "Area", "Ranged", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Entity Stabilized", "Rall Parade"]
       },
       "DPT Indirect": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 1,
             "Ranged": 1,
@@ -2082,7 +2165,8 @@ export const classData = {
         "Roles": ["Burst", "Area", "Ranged", "Melee", "Rall Resistance", "Rall PO", "Entity Stabilized", "Rall Parade"]
       },
       "Support Heal": {
-        "notes": {
+        "Id": 3,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 2,
@@ -2121,7 +2205,8 @@ export const classData = {
         "Roles": ["Constant", "Area", "Ranged", "Rall Resistance", "Rall PO", "Entity Stabilized", "Rall Parade"]
       },
       "Support Shield": {
-        "notes": {
+        "Id": 4,
+        "Notes": {
           "DPT": {
             "Melee": 2,
             "Ranged": 0,
@@ -2164,9 +2249,12 @@ export const classData = {
     "Mobility": 1
     },
     "Sram": {
+    "Id": 17,
+    "Image": "assets/male_sram.png",
     "Voies": {
       "DPT Melee": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 1,
             "Ranged": 1,
@@ -2205,7 +2293,8 @@ export const classData = {
         "Roles": ["Area", "Single Target", "Constant", "Melee", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
       },
       "DPT Indirect": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 2,
@@ -2244,7 +2333,8 @@ export const classData = {
         "Roles": ["Area", "Single Target", "Burst", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
       },
       "Support": {
-        "notes": {
+        "Id": 3,
+        "Notes": {
           "DPT": {
             "Melee": 2,
             "Ranged": 0,
@@ -2287,9 +2377,12 @@ export const classData = {
     "Mobility": 1
     },
     "Xelor": {
+    "Id": 18,
+    "Image": "assets/male_xelor.png",
     "Voies": {
       "DPT Ranged": {
-        "notes": {
+        "Id": 1,
+        "Notes": {
           "DPT": {
             "Melee": 2,
             "Ranged": 0,
@@ -2328,7 +2421,8 @@ export const classData = {
         "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Buff AP", "Buff DI", "Entity Stabilized"]
       },
       "DPT Cog": {
-        "notes": {
+        "Id": 2,
+        "Notes": {
           "DPT": {
             "Melee": 2,
             "Ranged": 0,
@@ -2367,7 +2461,8 @@ export const classData = {
         "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Buff AP", "Buff DI", "Entity Stabilized"]
       },
       "Support": {
-        "notes": {
+        "Id": 3,
+        "Notes": {
           "DPT": {
             "Melee": 0,
             "Ranged": 0,

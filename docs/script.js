@@ -30,10 +30,156 @@ let teamRoles = Array(6).fill({ class: null, voie: null, image: null });
 let selectedSlot = null;
 
 
+// Initialisation des événements
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const languageSelector = document.getElementById('language-selector');
+    languageSelector.value = currentLanguage;
+    languageSelector.addEventListener('change', (e) => {
+        changeLanguage(e.target.value);
+    });
+
+    document.querySelectorAll('.slot').forEach(slot => {
+        slot.addEventListener('click', () => {
+            openSelectionMenu(parseInt(slot.dataset.slot));
+        });
+        
+        // Ajout du gestionnaire de clic droit
+        slot.addEventListener('contextmenu', (e) => {
+            e.preventDefault(); // Empêche l'apparition du menu contextuel par défaut
+            const slotIndex = parseInt(slot.dataset.slot);
+            clearSlot(slotIndex);
+        });
+    });
+
+    // Gestionnaire pour le bouton Fermer
+    document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
+
+    // Initialisation des panneaux
+    updateRolesPanel();
+    updateRolesSummary();
+    updateBalanceGauge();
+});
+
+
 function changeLanguage(language) {
     currentLanguage = language;
     updateUI();
 }
+
+
+document.getElementById('btn_export').onclick = function() {
+    console.log("Export function triggered");
+
+    let result = [];
+
+    teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.Classes[slot.class]?.Voies;
+            if (classVoies && classVoies[slot.voie]) {
+                const classId = classData.Classes[slot.class].Id; // ID de la classe
+                const roleId = classVoies[slot.voie].Id; // ID du rôle dans la classe
+                result.push(`${classId}-${roleId}`);
+            }
+        }
+    });
+
+    const exportString = result.join(";") + ";";
+    
+    // Copier dans le presse-papier
+    navigator.clipboard.writeText(exportString).then(() => {
+        console.log("Exported string copied to clipboard:", exportString);
+    }).catch(err => {
+        console.error("Failed to copy to clipboard:", err);
+    });
+};
+
+
+document.getElementById('btn_import').onclick = function() {
+    console.log("Import function triggered");
+
+    // Récupérer la valeur du champ de texte où l'utilisateur a collé la chaîne exportée
+    const importString = document.getElementById("role-input").value.trim();
+
+    // Vérifier que la chaîne n'est pas vide
+    if (importString === "") {
+        console.log("No data to import");
+        return;
+    }
+
+    // Séparer les rôles par le caractère ";"
+    const rolePairs = importString.split(";").filter(pair => pair !== "");
+
+    // Parcourir chaque rôle et l'ajouter à l'équipe
+    rolePairs.forEach(pair => {
+        const [classId, roleId] = pair.split("-");
+
+        // Assure-toi que classId et roleId sont des valeurs valides et existent dans tes données
+        for (const className in classData.Classes) {
+            if (classData.Classes[className].Id.toString() === classId) {
+                // Ajouter le rôle à l'équipe (ici tu peux ajouter ce rôle dans l'interface graphique)
+                const classVoies = classData.Classes[className]?.Voies;
+
+                // Vérifier si le rôle existe dans les voies de la classe
+                for (const voieName in classVoies) {
+                    if (classVoies[voieName].Id.toString() === roleId) {
+                        // Trouver un slot vide dans l'équipe et affecter la classe et la voie
+                        const emptySlot = teamRoles.findIndex(slot => !slot.class && !slot.voie);
+                        if (emptySlot !== -1) {
+                            teamRoles[emptySlot] = {
+                                class: className,
+                                voie: voieName,
+                                image: classData.Classes[className].Image // Assumer que l'image est dans `classData.Classes[className].Image`
+                            };
+
+                            // Mise à jour de l'élément team-container avec l'image
+                            const teamContainer = document.getElementById("team-container");
+                            const slotElement = teamContainer.children[emptySlot];
+                            if (slotElement) {
+                                // Vérifier s'il y a déjà une image et la remplacer
+                                let imgElement = slotElement.querySelector("img");
+                                if (!imgElement) {
+                                    imgElement = document.createElement("img");
+                                    slotElement.appendChild(imgElement);
+                                }
+                                imgElement.src = classData.Classes[className].Image;
+                            }
+
+                            // Mise à jour du team-roles-panel avec la classe et voie
+                            const rolesPanel = document.getElementById("team-roles-panel");
+                            const panelSlot = rolesPanel.children[emptySlot];
+                            if (panelSlot) {
+                                // Remplir le menu déroulant de la classe et de la voie
+                                const classSelect = panelSlot.querySelector(".class-select");
+                                const voieSelect = panelSlot.querySelector(".voie-select");
+
+                                if (classSelect) {
+                                    classSelect.value = className;
+                                }
+                                if (voieSelect) {
+                                    voieSelect.value = voieName;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    console.log("teamRoles : ", teamRoles);
+    teamRoles = [...teamRoles];
+
+    // Après l'importation, on met à jour l'interface graphique
+    updateRolesPanel();
+    updateRolesSummary();
+    updateBalanceGauge();
+    updateTeamRoles();
+    
+    console.log("Import completed");
+};
+
+
 
 // Fonction pour mettre à jour l'interface
 function updateUI() {
@@ -384,8 +530,8 @@ function updateRolesSummary() {
 
 // Mettre à jour le panneau des rôles
 function updateRolesPanel() {
-    const rolesPanel = document.getElementById('roles-panel');
-    rolesPanel.innerHTML = ''; // Vider le contenu existant avant de le mettre à jour
+    const rolesPanel = document.getElementById('team-roles-panel');
+    rolesPanel.innerHTML = '';
 
     teamRoles.forEach((slot, index) => {
         const slotImg = document.querySelector(`.slot[data-slot="${index}"] img`);
@@ -504,36 +650,4 @@ function closeSelectionMenu() {
         menu.classList.add("hidden");
     }
 }
-
-
-// Initialisation des événements
-document.addEventListener('DOMContentLoaded', () => {
-    
-    const languageSelector = document.getElementById('language-selector');
-    languageSelector.value = currentLanguage;
-    languageSelector.addEventListener('change', (e) => {
-        changeLanguage(e.target.value);
-    });
-
-    document.querySelectorAll('.slot').forEach(slot => {
-        slot.addEventListener('click', () => {
-            openSelectionMenu(parseInt(slot.dataset.slot));
-        });
-        
-        // Ajout du gestionnaire de clic droit
-        slot.addEventListener('contextmenu', (e) => {
-            e.preventDefault(); // Empêche l'apparition du menu contextuel par défaut
-            const slotIndex = parseInt(slot.dataset.slot);
-            clearSlot(slotIndex);
-        });
-    });
-
-    // Gestionnaire pour le bouton Fermer
-    document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
-
-    // Initialisation des panneaux
-    updateRolesPanel();
-    updateRolesSummary();
-    updateBalanceGauge();
-});
 
