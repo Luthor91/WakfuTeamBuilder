@@ -42,16 +42,47 @@
                 <div class="slot" data-slot="4"></div>
                 <div class="slot" data-slot="5"></div>
             </div>
-            <div class="balance-gauge-container">
-                <div class="balance-gauge">
-                    <div class="gauge-marker"></div>
-                    <div class="gauge-cursor"></div>
+            <div id="gauges-container">
+                <div class="main-gauge" id="main-gauge-DPT">
+                    <span>DPT</span>
+                    <div class="gauge-bar" id="gauge-DPT" data-value="0"></div>
+                </div>
+                <div id="sub-gauges-DPT" class="sub-gauges hidden">
+                    <div class="sub-gauge"><span>Melee</span><div class="gauge-bar" id="gauge-Melee" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Ranged</span><div class="gauge-bar" id="gauge-Ranged" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Area</span><div class="gauge-bar" id="gauge-Area" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Single Target</span><div class="gauge-bar" id="gauge-Single_Target" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Constant</span><div class="gauge-bar" id="gauge-Constant" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Burst</span><div class="gauge-bar" id="gauge-Burst" data-value="0"></div></div>
+                </div>
+            
+                <div class="main-gauge" id="main-gauge-Support">
+                    <span>Support</span>
+                    <div class="gauge-bar" id="gauge-Support" data-value="0"></div>
+                </div>
+                <div id="sub-gauges-Support" class="sub-gauges hidden">
+                    <div class="sub-gauge"><span>Heal</span><div class="gauge-bar" id="gauge-Heal" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Shield</span><div class="gauge-bar" id="gauge-Shield" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Placeur</span><div class="gauge-bar" id="gauge-Placeur" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Buff MP</span><div class="gauge-bar" id="gauge-Buff_MP" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Buff AP</span><div class="gauge-bar" id="gauge-Buff_AP" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Buff DI</span><div class="gauge-bar" id="gauge-Buff_DI" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Protection</span><div class="gauge-bar" id="gauge-Protection" data-value="0"></div></div>
+                </div>
+            
+                <div class="main-gauge" id="main-gauge-Entrave">
+                    <span>Entrave</span>
+                    <div class="gauge-bar" id="gauge-Entrave" data-value="0"></div>
+                </div>
+                <div id="sub-gauges-Entrave" class="sub-gauges hidden">
+                    <div class="sub-gauge"><span>Rall MP</span><div class="gauge-bar" id="gauge-Rall_MP" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Rall AP</span><div class="gauge-bar" id="gauge-Rall_AP" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Rall DI</span><div class="gauge-bar" id="gauge-Rall_DI" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Rall Resistance</span><div class="gauge-bar" id="gauge-Rall_Resistance" data-value="0"></div></div>
+                    <div class="sub-gauge"><span>Boringness</span><div class="gauge-bar" id="gauge-Boringness" data-value="0"></div></div>
                 </div>
             </div>
-            <div class="gauge-labels">
-                <span>Melee</span>
-                <span>Ranged</span>
-            </div>
+            
 
             <div class="legend">
                 <span>

@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateRolesPanel();
     updateRolesSummary();
     updateBalanceGauge();
+    updateGauges();
 });
 
 
@@ -180,6 +181,48 @@ document.getElementById('btn_import').onclick = function() {
 };
 
 
+document.getElementById('main-gauge-DPT').onclick = function() {
+    const subGaugeContainer = document.getElementById(`sub-gauges-DPT`);
+    
+    // Cacher toutes les sous-jauges sauf celle cliquée
+    document.querySelectorAll(".sub-gauges").forEach(el => {
+        if (el !== subGaugeContainer) {
+            el.classList.add("hidden");
+        }
+    });
+
+    // Alterner l'affichage de la sous-jauge cliquée
+    subGaugeContainer.classList.toggle("hidden");
+}
+
+document.getElementById('main-gauge-Support').onclick = function() {
+    const subGaugeContainer = document.getElementById(`sub-gauges-Support`);
+    
+    // Cacher toutes les sous-jauges sauf celle cliquée
+    document.querySelectorAll(".sub-gauges").forEach(el => {
+        if (el !== subGaugeContainer) {
+            el.classList.add("hidden");
+        }
+    });
+
+    // Alterner l'affichage de la sous-jauge cliquée
+    subGaugeContainer.classList.toggle("hidden");
+}
+
+document.getElementById('main-gauge-Entrave').onclick = function() {
+    const subGaugeContainer = document.getElementById(`sub-gauges-Entrave`);
+    
+    // Cacher toutes les sous-jauges sauf celle cliquée
+    document.querySelectorAll(".sub-gauges").forEach(el => {
+        if (el !== subGaugeContainer) {
+            el.classList.add("hidden");
+        }
+    });
+
+    // Alterner l'affichage de la sous-jauge cliquée
+    subGaugeContainer.classList.toggle("hidden");
+}
+
 
 // Fonction pour mettre à jour l'interface
 function updateUI() {
@@ -214,10 +257,6 @@ function updateUI() {
     gaugeLabels[0].textContent = translate('MELEE', currentLanguage);
     gaugeLabels[1].textContent = translate('RANGED', currentLanguage);
 
-    // Mettre à jour le bouton Simp Mode
-    const simpModeBtn = document.getElementById('simp-mode-btn');
-    simpModeBtn.textContent = `${translate('SIMP_MODE', currentLanguage)} ${simpMode ? translate('ON', currentLanguage) : translate('OFF', currentLanguage)}`;
-
     // Mettre à jour le bouton de fermeture
     document.getElementById('close-menu-btn').textContent = translate('CLOSE', currentLanguage);
 
@@ -230,6 +269,9 @@ function updateUI() {
     updateRolesSummary();
     updateRolesPanel();
     updateTeamRoles();
+    updateRolesSummary();
+    updateBalanceGauge()
+    updateGauges();
 }
 
 function updateTeamRoles() {
@@ -290,7 +332,40 @@ function updateTeamRoles() {
         displayRoles(missingImportant, 'red');
         displayRoles(missingOptional, 'yellow');
     });
+
+    updateGauges();
 }
+
+function updateGauges() {
+    teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.Classes[slot.class].Voies;
+            if (classVoies[slot.voie]) {
+                const notes = classVoies[slot.voie].Notes;
+                for (const category in notes) {
+                    const categoryData = notes[category];
+                    for (const statName in categoryData) {
+                        const statValue = categoryData[statName];
+                        const statGaugeId = `gauge-${statName}`;
+                        const statElement = document.getElementById(statGaugeId);
+                        if (statElement) {
+                            updateGaugeBar(statElement, statValue);
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function updateGaugeBar(element, value) {
+    // Mettre à jour l'attribut data-value
+    element.setAttribute('data-value', value);
+    
+    // Mettre à jour la largeur via CSS personnalisé
+    element.style.setProperty('--gauge-width', `${Math.min(value, 10) * 10}%`);
+}
+
 
 // Fonction pour calculer la balance Melee/Ranged
 function calculateMeleeRangedBalance() {

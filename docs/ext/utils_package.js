@@ -29,7 +29,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 0,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 1,
@@ -69,7 +69,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 0,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -109,7 +109,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 0,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -157,7 +157,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 1,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -197,7 +197,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 1,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -237,7 +237,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 1,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -277,7 +277,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 1,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -325,7 +325,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 0,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 1,
@@ -365,7 +365,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 0,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 1,
@@ -405,7 +405,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 0,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 1,
@@ -445,7 +445,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -493,7 +493,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 1,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -533,7 +533,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -581,7 +581,7 @@ export const classData = {
             "Rall_AP": 1,
             "Rall_DI": 1,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -621,7 +621,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 1,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -669,7 +669,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -709,7 +709,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -757,7 +757,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -797,7 +797,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -837,7 +837,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -877,7 +877,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -917,7 +917,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 2,
@@ -965,7 +965,7 @@ export const classData = {
             "Rall_AP": 1,
             "Rall_DI": 1,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -1005,7 +1005,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 1,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -1045,7 +1045,7 @@ export const classData = {
             "Rall_AP": 1,
             "Rall_DI": 1,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1085,7 +1085,7 @@ export const classData = {
             "Rall_AP": 1,
             "Rall_DI": 1,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 2,
@@ -1133,7 +1133,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1173,7 +1173,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1221,7 +1221,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -1261,7 +1261,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1301,7 +1301,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1341,7 +1341,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1389,7 +1389,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 1,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -1429,7 +1429,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 1,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -1469,7 +1469,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 1,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -1509,7 +1509,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 1,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -1549,7 +1549,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 1,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 0,
@@ -1597,7 +1597,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 0,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 1,
@@ -1637,7 +1637,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 0,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 1,
@@ -1677,7 +1677,7 @@ export const classData = {
               "Rall_AP": 0,
               "Rall_DI": 0,
               "Rall_Resistance": 0,
-              "Lock": 0
+              "Boringness": 0
             },
             "Team_Support": {
               "Support_Area": 1,
@@ -1725,7 +1725,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 1,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -1765,7 +1765,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1805,7 +1805,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1853,7 +1853,7 @@ export const classData = {
             "Rall_AP": 1,
             "Rall_DI": 1,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1893,7 +1893,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 1,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1933,7 +1933,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 1,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -1981,7 +1981,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -2021,7 +2021,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -2061,7 +2061,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -2109,7 +2109,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -2149,7 +2149,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -2189,7 +2189,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -2229,7 +2229,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 1,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -2277,7 +2277,7 @@ export const classData = {
             "Rall_AP": 1,
             "Rall_DI": 1,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -2317,7 +2317,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 1,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 1,
@@ -2357,7 +2357,7 @@ export const classData = {
             "Rall_AP": 1,
             "Rall_DI": 1,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -2405,7 +2405,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -2445,7 +2445,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,
@@ -2485,7 +2485,7 @@ export const classData = {
             "Rall_AP": 0,
             "Rall_DI": 0,
             "Rall_Resistance": 0,
-            "Lock": 0
+            "Boringness": 0
           },
           "Team_Support": {
             "Support_Area": 0,

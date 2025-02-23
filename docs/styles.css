@@ -207,6 +207,87 @@ h3 {
 }
 
 
+/* Conteneur principal */
+#gauges-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Jauges principales */
+.main-gauge {
+    cursor: pointer;
+    padding: 12px;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.main-gauge:hover {
+    background-color: #555;
+}
+
+/* Jauges secondaires (sub-gauges) */
+.sub-gauges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.sub-gauge {
+    width: 48%; /* Deux jauges par ligne */
+    padding: 8px;
+    background-color: #333;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+.gauge-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #555;
+    border-radius: 6px;
+    border: 1px solid #222;
+    position: relative;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.gauge-bar::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: var(--gauge-width, 0%); /* Utilise une variable CSS pour la largeur */
+    border-radius: 6px;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+
+/* Génère un dégradé de rouge à vert en fonction de la valeur */
+.gauge-bar[data-value="0"]::before { background: #ff0000; }  /* Rouge */
+.gauge-bar[data-value="2"]::before { background: #ff5500; } /* Rouge-Orange */
+.gauge-bar[data-value="5"]::before { background: #ffaa00; } /* Orange */
+.gauge-bar[data-value="7"]::before { background: #aaff00; } /* Vert-Orange */
+.gauge-bar[data-value="10"]::before { background: #00ff00; } /* Vert */
+
+
+/* Masque les jauges secondaires par défaut */
+.hidden {
+    display: none;
+}
+
+
 /* Style pour la section des rôles sous la jauge */
 #roles-under-gauge {
     margin-top: 20px;
