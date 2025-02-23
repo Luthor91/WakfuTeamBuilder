@@ -337,6 +337,10 @@ function updateTeamRoles() {
 }
 
 function updateGauges() {
+    // Objet pour stocker les sommes des statistiques
+    const totalStats = {};
+    
+    // Parcourir tous les membres de l'équipe et additionner leurs stats
     teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
             const classVoies = classData.Classes[slot.class].Voies;
@@ -346,24 +350,53 @@ function updateGauges() {
                     const categoryData = notes[category];
                     for (const statName in categoryData) {
                         const statValue = categoryData[statName];
-                        const statGaugeId = `gauge-${statName}`;
-                        const statElement = document.getElementById(statGaugeId);
-                        if (statElement) {
-                            updateGaugeBar(statElement, statValue);
+                        // Initialiser la stat si elle n'existe pas encore
+                        if (!totalStats[statName]) {
+                            totalStats[statName] = 0;
                         }
+                        // Ajouter la valeur à la somme, en s'assurant de ne pas dépasser 10
+                        console.log("statName : ", totalStats[statName], " + ", statValue);
+                        
+                        totalStats[statName] = Math.min(totalStats[statName] + statValue, 10);
                     }
                 }
             }
         }
     });
+    
+    // Mettre à jour les jauges avec les sommes calculées
+    for (const statName in totalStats) {
+        const statGaugeId = `gauge-${statName}`;
+        const statElement = document.getElementById(statGaugeId);
+        if (statElement) {
+            updateGaugeBar(statElement, totalStats[statName]);
+        }
+    }
 }
 
 function updateGaugeBar(element, value) {
     // Mettre à jour l'attribut data-value
     element.setAttribute('data-value', value);
     
-    // Mettre à jour la largeur via CSS personnalisé
-    element.style.setProperty('--gauge-width', `${Math.min(value, 10) * 10}%`);
+    // Mettre à jour la largeur
+    element.style.setProperty('--gauge-width', `${value * 10}%`);
+    
+    // Déterminer la couleur en fonction de la valeur
+    let color;
+    if (value <= 0) {
+        color = '#ff0000';  // Rouge
+    } else if (value <= 2) {
+        color = '#ff5500';  // Rouge-Orange
+    } else if (value <= 5) {
+        color = '#ffaa00';  // Orange
+    } else if (value <= 7) {
+        color = '#aaff00';  // Vert-Orange
+    } else {
+        color = '#00ff00';  // Vert
+    }
+    
+    // Appliquer la couleur
+    element.style.setProperty('--gauge-color', color);
 }
 
 

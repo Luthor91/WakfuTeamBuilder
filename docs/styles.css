@@ -264,22 +264,16 @@ h3 {
     margin-top: 5px;
 }
 
+/* Remplacer la section des couleurs de jauge par : */
 .gauge-bar::before {
     content: "";
     display: block;
     height: 100%;
-    width: var(--gauge-width, 0%); /* Utilise une variable CSS pour la largeur */
+    width: var(--gauge-width, 0%);
     border-radius: 6px;
     transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    background: var(--gauge-color, #ff0000);
 }
-
-
-/* Génère un dégradé de rouge à vert en fonction de la valeur */
-.gauge-bar[data-value="0"]::before { background: #ff0000; }  /* Rouge */
-.gauge-bar[data-value="2"]::before { background: #ff5500; } /* Rouge-Orange */
-.gauge-bar[data-value="5"]::before { background: #ffaa00; } /* Orange */
-.gauge-bar[data-value="7"]::before { background: #aaff00; } /* Vert-Orange */
-.gauge-bar[data-value="10"]::before { background: #00ff00; } /* Vert */
 
 
 /* Masque les jauges secondaires par défaut */
