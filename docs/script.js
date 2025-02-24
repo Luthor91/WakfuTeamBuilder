@@ -758,4 +758,3 @@ function closeSelectionMenu() {
         menu.classList.add("hidden");
     }
 }
-

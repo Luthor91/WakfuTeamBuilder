@@ -458,7 +458,7 @@ export const classData = {
         },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Placeur", "Buff AP", "Sub Shield", "Entity Stabilized"]
+        "Roles": ["Placeur", "Buff AP", "Sub Heal", "Sub Shield", "Entity Stabilized"]
       }
     },
     "Elements": ["Water", "Earth", "Air"],
@@ -1234,7 +1234,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Melee", "Resurection", "Sub Heal"]
+        "Roles": ["Melee", "Resurection", "Sub Heal", "Rall WP", "Buff Resistance"]
       },
       "Support Heal": {
         "Id": 2,
@@ -1274,7 +1274,8 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Single Target", "Constant", "Rall PO", "Buff PO", "Entity Stabilized"]
+        "Roles": ["Heal", "Resurection", "Sub DPT", "Sub Shield", "Sub Placeur", "Rall WP", "Buff Resistance"]
+
       },
       "Support Shield": {
         "Id": 3,
@@ -1314,7 +1315,8 @@ export const classData = {
         },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur", "Entity Stabilized"]
+        "Roles": ["Shield", "Resurection", "Sub Placeur", "Sub Heal", "Rall WP", "Buff Resistance"]
+
       },
       "Support Placeur": {
        "Id": 4,
@@ -1354,7 +1356,9 @@ export const classData = {
         },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur", "Entity Stabilized"]
+        "Roles": ["Placeur", "Resurection", "Sub Shield", "Sub Heal", "Rall WP", "Buff Resistance"]
+
+
       }
     },
     "Elements": ["Fire", "Water", "Air"],
@@ -1402,7 +1406,7 @@ export const classData = {
           },
           "Autonomy": 2,
           "Mobility": 1,
-          "Roles": ["Constant", "Single Target", "Melee", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"]
+          "Roles": ["Constant", "Single Target", "Melee", "Ranged", "Sub Heal", "Buff AP", "Buff DI"]
         },
         "DPT Melee": {
           "Id": 2,
@@ -1442,7 +1446,8 @@ export const classData = {
           },
           "Autonomy": 2,
           "Mobility": 1,
-          "Roles": ["Constant", "Single Target", "Ranged", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Rall Resistance", "Self Stabilized"]
+          "Roles": ["Constant", "Area", "Melee", "Sub Heal", "Buff AP", "Buff DI"]
+
         },
         "DPT Flame": {
           "Id": 3,
@@ -1482,7 +1487,7 @@ export const classData = {
           },
           "Autonomy": 2,
           "Mobility": 1,
-          "Roles": ["Constant", "Single Target", "Melee", "Sub Heal", "Buff Crit", "Buff DI", "Resurection", "Buff WP", "Rall Resistance", "Self Stabilized"]
+          "Roles": ["Constant", "Area", "Melee", "Sub Heal", "Buff AP", "Buff DI", "Support Area"]
         },
         "Support Heal": {
           "Id": 4,
@@ -1522,9 +1527,9 @@ export const classData = {
           },
           "Autonomy": 1,
           "Mobility": 1,
-          "Roles": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
+          "Roles": ["Heal", "Sub DPT", "Buff AP", "Buff DI", "Rall Resistance", "Sub Placeur", "Buff Crit"]
         },
-        "Support": {
+        "Support Placeur": {
           "Id": 5,
           "Notes": {
             "DPT": {
@@ -1562,7 +1567,48 @@ export const classData = {
           },
           "Autonomy": 1,
           "Mobility": 1,
-          "Roles": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
+          "Roles": ["Placeur", "Buff AP", "Buff DI", "Rall Resistance", "Sub Heal", "Sub Shield", "Buff Crit"]
+        },
+        "Support Shield": {
+          "Id": 6,
+          "Notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 1,
+              "Constant": 0,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 2,
+              "Shield": 1,
+              "Placeur": 0,
+              "Buff_MP": 1,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 1
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Boringness": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 2,
+              "Support_Shield": 1,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 1,
+          "Mobility": 1,
+          "Roles": ["Shield", "Buff AP", "Buff DI", "Rall Resistance", "Sub Placeur", "Sub Heal", "Buff Crit"]
+
         }
       },
       "Elements": ["Fire", "Earth", "Air"],
@@ -1610,7 +1656,7 @@ export const classData = {
           },
           "Autonomy": 2,
           "Mobility": 1,
-          "Roles": ["Area", "Single Target", "Burst", "Ranged", "Melee", "Entity Stabilized"]
+          "Roles": ["Indirect", "Area", "Melee", "Off Tank", "Entity Stabilized", "Rall MP"]
         },
         "DPT Melee": {
           "Id": 2,
@@ -1650,7 +1696,8 @@ export const classData = {
           },
           "Autonomy": 2,
           "Mobility": 1,
-          "Roles": ["Area", "Single Target", "Burst", "Ranged", "Entity Stabilized"]
+          "Roles": ["Single Target", "Melee", "Burst", "Entity Stabilized", "Rall MP"]
+
         },
         "Support": {
           "Id": 3,
@@ -1690,7 +1737,8 @@ export const classData = {
           },
           "Autonomy": 2,
           "Mobility": 1,
-          "Roles": ["Area", "Single Target", "Burst", "Melee", "Entity Stabilized"]
+          "Roles": ["Sub Shield", "Entity Stabilized", "Rall MP"]
+
         }
     },
     "Elements": ["Water", "Earth", "Air"],
@@ -1738,7 +1786,7 @@ export const classData = {
         },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Heal", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Buff PO", "Rall DI", "Rall Resistance", "Resurection", "Sub DPT", "Anti Shield", "Invulnerability", "Rall Parade"]
+        "Roles": ["Heal", "Sub Placeur", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
       },
       "DPT Melee": {
         "Id": 2,
@@ -1778,7 +1826,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Indirect", "Single Target", "Burst", "Resurection", "Anti Shield", "Rall Resistance", "Invulnerability", "Rall Parade"]
+        "Roles": ["Melee", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
       },
       "Support Placeur": {
         "Id": 3,
@@ -1818,7 +1866,8 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Indirect", "Single Target", "Burst", "Resurection", "Anti Shield", "Rall Resistance", "Invulnerability", "Rall Parade"]
+        "Roles": ["Placeur", "Sub Heal", "Buff DI", "Buff Resistance", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
+
       }
     },
     "Elements": ["Fire", "Water", "Earth"],
@@ -1866,7 +1915,7 @@ export const classData = {
         },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Buff DI", "Buff AP", "Buff MP", "Rall Resistance", "Rall DI", "Rall AP", "Rall MP", "Rall PO", "Support Constant"]
+        "Roles": ["Sub Placeur", "Buff DI", "Rall MP", "Rall WP", "Rall PO", "Anti Heal"]
       },
       "DPT Melee": {
         "Id": 2,
@@ -1906,7 +1955,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Rall Resistance", "Rall DI", "Rall MP"]
+        "Roles": ["Melee", "Ranged", "Burst", "Sub Placeur", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
       },
       "DPT Indirect": {
         "Id": 3,
@@ -1946,7 +1995,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Rall Resistance", "Rall DI", "Rall MP"]
+        "Roles": ["Indirect", "Melee", "Ranged", "Sub Placeur", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
       }
     },
     "Elements": ["Fire", "Earth", "Air"],
@@ -1994,7 +2043,8 @@ export const classData = {
         },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Buff DI Melee", "Buff Crit", "Shield", "Buff Resistance", "Rall MP", "Buff WP", "Entity Stabilized", "Invulnerability", "Support Constant"]
+        "Roles": ["Melee", "Constant", "Sub Placeur", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
+      
       },
       "DPT Flame": {
         "Id": 2,
@@ -2034,7 +2084,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Indirect", "Area", "Ranged", "Buff DI Melee", "Buff Resistance", "Rall MP", "Entity Stabilized", "Invulnerability"]
+        "Roles": ["Melee", "Zone", "Constant", "Sub Placeur", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
       },
       "Support Placeur": {
         "Id": 3,
@@ -2074,7 +2124,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Indirect", "Area", "Ranged", "Buff DI Melee", "Buff Resistance", "Rall MP", "Entity Stabilized", "Invulnerability"]
+        "Roles": ["Placeur", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
       }
     },
     "Elements": ["Fire", "Earth", "Air"],
@@ -2122,7 +2172,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Constant", "Area", "Ranged", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Entity Stabilized", "Rall Parade"]
+        "Roles": ["Melee", "Ranged", "Single Target", "Sub Heal", "Sub Shield", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
       },
       "DPT Indirect": {
         "Id": 2,
@@ -2162,7 +2212,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Burst", "Area", "Ranged", "Melee", "Rall Resistance", "Rall PO", "Entity Stabilized", "Rall Parade"]
+        "Roles": ["Indirect", "Melee", "Ranged", "Area", "Sub Heal", "Sub Shield", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
       },
       "Support Heal": {
         "Id": 3,
@@ -2202,7 +2252,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Constant", "Area", "Ranged", "Rall Resistance", "Rall PO", "Entity Stabilized", "Rall Parade"]
+        "Roles": ["Heal", "Sub DPT", "Sub Shield", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
       },
       "Support Shield": {
         "Id": 4,
@@ -2242,7 +2292,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Constant", "Area", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Entity Stabilized", "Rall Parade"]
+        "Roles": ["Shield", "Sub DPT", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
       }
     },
     "Elements": ["Water", "Earth", "Air"],
@@ -2290,7 +2340,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Area", "Single Target", "Constant", "Melee", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
+        "Roles": ["Melee", "Single Taget", "Buff PM"]
       },
       "DPT Indirect": {
         "Id": 2,
@@ -2330,7 +2380,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Area", "Single Target", "Burst", "Ranged", "Buff AP", "Buff MP", "Buff Resistance", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
+        "Roles": ["Indirect", "Melee", "Ranged", "Sub Placeur", "Buff PM"]
       },
       "Support": {
         "Id": 3,
@@ -2370,7 +2420,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Constant", "Single Target", "Burst", "Melee", "Off Tank", "Buff AP", "Buff MP", "Buff Resistance", "Rall AP", "Rall DI", "Anti Shield", "Anti Heal", "Entity Stabilized", "Rall Parade"]
+        "Roles": ["Sub Placeur", "Buff PM"]
       }
     },
     "Elements": ["Fire", "Water", "Air"],
@@ -2418,7 +2468,8 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Buff AP", "Buff DI", "Entity Stabilized"]
+        "Roles": ["Ranged", "Area", "Single Target", "Burst", "Rall AP", "Buff AP", "Self Stabilized"]
+
       },
       "DPT Cog": {
         "Id": 2,
@@ -2458,7 +2509,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Constant", "Single Target", "Melee", "Off Tank", "Buff AP", "Buff DI", "Entity Stabilized"]
+        "Roles": ["Ranged", "Area", "Constant", "Rall AP", "Buff AP", "Sub Placeur", "Self Stabilized"]
       },
       "Support": {
         "Id": 3,
@@ -2498,7 +2549,7 @@ export const classData = {
         },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Buff AP", "Buff DI", "Sub Shield", "Anti Shield", "Entity Stabilized"]
+        "Roles": ["Placeur", "Rall AP", "Buff AP", "Rall DI", "Self Stabilized", "Sub DPT"]
       }
     },
     "Elements": ["Fire", "Water", "Air"],
