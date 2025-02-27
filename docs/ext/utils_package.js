@@ -300,8 +300,48 @@ export const classData = {
       "Id": 3,
       "Image": "assets/male_eliotrope.png",
       "Voies": {
-        "DPT Elementary": {
+        "DPT Melee": {
           "Id": 1,
+          "Notes": {
+            "DPT": {
+              "Melee": 2,
+              "Ranged": 0,
+              "Area": 2,
+              "Single_Target": 2,
+              "Constant": 0,
+              "Burst": 2
+            },
+            "Support": {
+              "Heal": 0,
+              "Shield": 0,
+              "Placeur": 0,
+              "Buff_MP": 0,
+              "Buff_AP": 0,
+              "Buff_DI": 0,
+              "Protection": 0
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 0,
+              "Boringness": 0
+            },
+            "Team_Support": {
+              "Support_Area": 1,
+              "Support_Heal": 0,
+              "Support_Shield": 0,
+              "Support_Single_Target": 1,
+              "Support_Melee": 1,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 2,
+          "Mobility": 1,
+          "Roles": ["Area", "Single Target", "Burst", "Melee", "Entity Stabilized"]
+        },
+        "DPT Elementary": {
+          "Id": 2,
           "Notes": {
             "DPT": {
               "Melee": 1,
@@ -341,7 +381,7 @@ export const classData = {
           "Roles": ["Area", "Single Target", "Burst", "Ranged", "Melee", "Entity Stabilized"]
         },
         "DPT Ranged": {
-          "Id": 2,
+          "Id": 3,
           "Notes": {
             "DPT": {
               "Melee": 0,
@@ -379,46 +419,6 @@ export const classData = {
           "Autonomy": 2,
           "Mobility": 1,
           "Roles": ["Area", "Single Target", "Burst", "Ranged", "Entity Stabilized"]
-        },
-        "DPT Melee": {
-          "Id": 3,
-          "Notes": {
-            "DPT": {
-              "Melee": 2,
-              "Ranged": 0,
-              "Area": 2,
-              "Single_Target": 2,
-              "Constant": 0,
-              "Burst": 2
-            },
-            "Support": {
-              "Heal": 0,
-              "Shield": 0,
-              "Placeur": 0,
-              "Buff_MP": 0,
-              "Buff_AP": 0,
-              "Buff_DI": 0,
-              "Protection": 0
-            },
-            "Entrave": {
-              "Rall_MP": 0,
-              "Rall_AP": 0,
-              "Rall_DI": 0,
-              "Rall_Resistance": 0,
-              "Boringness": 0
-            },
-            "Team_Support": {
-              "Support_Area": 1,
-              "Support_Heal": 0,
-              "Support_Shield": 0,
-              "Support_Single_Target": 1,
-              "Support_Melee": 1,
-              "Support_Ranged": 0
-            }
-          },
-          "Autonomy": 2,
-          "Mobility": 1,
-          "Roles": ["Area", "Single Target", "Burst", "Melee", "Entity Stabilized"]
         },
         "Support Placeur": {
         "Id": 4,
@@ -1196,47 +1196,47 @@ export const classData = {
     "Id": 10,
     "Image": "assets/male_masqueraider.png",
     "Voies": {
-      "DPT Melee": {
+      "Support Placeur": {
         "Id": 1,
-        "Notes": {
-          "DPT": {
-            "Melee": 0,
-            "Ranged": 2,
-            "Area": 2,
-            "Single_Target": 0,
-            "Constant": 0,
-            "Burst": 1
-          },
-          "Support": {
-            "Heal": 0,
-            "Shield": 0,
-            "Placeur": 0,
-            "Buff_MP": 0,
-            "Buff_AP": 0,
-            "Buff_DI": 0,
-            "Protection": 0
-          },
-          "Entrave": {
-            "Rall_MP": 0,
-            "Rall_AP": 0,
-            "Rall_DI": 0,
-            "Rall_Resistance": 0,
-            "Boringness": 0
-          },
-          "Team_Support": {
-            "Support_Area": 1,
-            "Support_Heal": 0,
-            "Support_Shield": 0,
-            "Support_Single_Target": 0,
-            "Support_Melee": 0,
-            "Support_Ranged": 1
-          }
-        },
-        "Autonomy": 2,
-        "Mobility": 1,
-        "Roles": ["Melee", "Resurection", "Sub Heal", "Rall WP", "Buff Resistance"]
-      },
-      "Support Heal": {
+         "Notes": {
+           "DPT": {
+             "Melee": 0,
+             "Ranged": 0,
+             "Area": 0,
+             "Single_Target": 0,
+             "Constant": 0,
+             "Burst": 0
+           },
+           "Support": {
+             "Heal": 0,
+             "Shield": 0,
+             "Placeur": 1,
+             "Buff_MP": 0,
+             "Buff_AP": 0,
+             "Buff_DI": 0,
+             "Protection": 1
+           },
+           "Entrave": {
+             "Rall_MP": 0,
+             "Rall_AP": 0,
+             "Rall_DI": 0,
+             "Rall_Resistance": 0,
+             "Boringness": 0
+           },
+           "Team_Support": {
+             "Support_Area": 0,
+             "Support_Heal": 0,
+             "Support_Shield": 0,
+             "Support_Single_Target": 1,
+             "Support_Melee": 0,
+             "Support_Ranged": 1
+           }
+         },
+         "Autonomy": 1,
+         "Mobility": 1,
+         "Roles": ["Placeur", "Resurection", "Sub Shield", "Sub Heal", "Rall WP", "Buff Resistance"]
+       },
+       "Support Heal": {
         "Id": 2,
         "Notes": {
           "DPT": {
@@ -1275,7 +1275,6 @@ export const classData = {
         "Autonomy": 2,
         "Mobility": 1,
         "Roles": ["Heal", "Resurection", "Sub DPT", "Sub Shield", "Sub Placeur", "Rall WP", "Buff Resistance"]
-
       },
       "Support Shield": {
         "Id": 3,
@@ -1316,27 +1315,26 @@ export const classData = {
         "Autonomy": 1,
         "Mobility": 1,
         "Roles": ["Shield", "Resurection", "Sub Placeur", "Sub Heal", "Rall WP", "Buff Resistance"]
-
       },
-      "Support Placeur": {
-       "Id": 4,
+      "DPT Melee": {
+        "Id": 4,
         "Notes": {
           "DPT": {
             "Melee": 0,
-            "Ranged": 0,
-            "Area": 0,
+            "Ranged": 2,
+            "Area": 2,
             "Single_Target": 0,
             "Constant": 0,
-            "Burst": 0
+            "Burst": 1
           },
           "Support": {
             "Heal": 0,
             "Shield": 0,
-            "Placeur": 1,
+            "Placeur": 0,
             "Buff_MP": 0,
             "Buff_AP": 0,
             "Buff_DI": 0,
-            "Protection": 1
+            "Protection": 0
           },
           "Entrave": {
             "Rall_MP": 0,
@@ -1346,20 +1344,20 @@ export const classData = {
             "Boringness": 0
           },
           "Team_Support": {
-            "Support_Area": 0,
+            "Support_Area": 1,
             "Support_Heal": 0,
             "Support_Shield": 0,
-            "Support_Single_Target": 1,
+            "Support_Single_Target": 0,
             "Support_Melee": 0,
             "Support_Ranged": 1
           }
         },
-        "Autonomy": 1,
+        "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Placeur", "Resurection", "Sub Shield", "Sub Heal", "Rall WP", "Buff Resistance"]
+        "Roles": ["Melee", "Resurection", "Sub Heal", "Rall WP", "Buff Resistance"]
+      },
 
 
-      }
     },
     "Elements": ["Fire", "Water", "Air"],
     "Mobility": 1
@@ -1368,8 +1366,128 @@ export const classData = {
       "Id": 11,
       "Image": "assets/male_osamodas.png",
       "Voies": {
-        "DPT Invoc": {
+        "Support Shield": {
           "Id": 1,
+          "Notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 1,
+              "Constant": 0,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 2,
+              "Shield": 1,
+              "Placeur": 0,
+              "Buff_MP": 1,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 1
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Boringness": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 2,
+              "Support_Shield": 1,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 1,
+          "Mobility": 1,
+          "Roles": ["Shield", "Buff AP", "Buff DI", "Rall Resistance", "Sub Placeur", "Sub Heal", "Buff Crit"]
+        },
+        "Support Heal": {
+          "Id": 2,
+          "Notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 1,
+              "Constant": 0,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 2,
+              "Shield": 1,
+              "Placeur": 0,
+              "Buff_MP": 1,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 1
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Boringness": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 2,
+              "Support_Shield": 1,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 1,
+          "Mobility": 1,
+          "Roles": ["Heal", "Sub DPT", "Buff AP", "Buff DI", "Rall Resistance", "Sub Placeur", "Buff Crit"]
+        },
+        "Support Placeur": {
+          "Id": 3,
+          "Notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 1,
+              "Constant": 0,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 2,
+              "Shield": 1,
+              "Placeur": 0,
+              "Buff_MP": 1,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 1
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Boringness": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 2,
+              "Support_Shield": 1,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 1,
+          "Mobility": 1,
+          "Roles": ["Placeur", "Buff AP", "Buff DI", "Rall Resistance", "Sub Heal", "Sub Shield", "Buff Crit"]
+        },
+        "DPT Invoc": {
+          "Id": 4,
           "Notes": {
             "DPT": {
               "Melee": 1,
@@ -1409,7 +1527,7 @@ export const classData = {
           "Roles": ["Constant", "Single Target", "Melee", "Ranged", "Sub Heal", "Buff AP", "Buff DI"]
         },
         "DPT Melee": {
-          "Id": 2,
+          "Id": 5,
           "Notes": {
             "DPT": {
               "Melee": 0,
@@ -1450,7 +1568,7 @@ export const classData = {
 
         },
         "DPT Flame": {
-          "Id": 3,
+          "Id": 6,
           "Notes": {
             "DPT": {
               "Melee": 2,
@@ -1489,127 +1607,6 @@ export const classData = {
           "Mobility": 1,
           "Roles": ["Constant", "Area", "Melee", "Sub Heal", "Buff AP", "Buff DI", "Support Area"]
         },
-        "Support Heal": {
-          "Id": 4,
-          "Notes": {
-            "DPT": {
-              "Melee": 0,
-              "Ranged": 0,
-              "Area": 0,
-              "Single_Target": 1,
-              "Constant": 0,
-              "Burst": 0
-            },
-            "Support": {
-              "Heal": 2,
-              "Shield": 1,
-              "Placeur": 0,
-              "Buff_MP": 1,
-              "Buff_AP": 0,
-              "Buff_DI": 1,
-              "Protection": 1
-            },
-            "Entrave": {
-              "Rall_MP": 0,
-              "Rall_AP": 0,
-              "Rall_DI": 0,
-              "Rall_Resistance": 1,
-              "Boringness": 0
-            },
-            "Team_Support": {
-              "Support_Area": 0,
-              "Support_Heal": 2,
-              "Support_Shield": 1,
-              "Support_Single_Target": 1,
-              "Support_Melee": 0,
-              "Support_Ranged": 0
-            }
-          },
-          "Autonomy": 1,
-          "Mobility": 1,
-          "Roles": ["Heal", "Sub DPT", "Buff AP", "Buff DI", "Rall Resistance", "Sub Placeur", "Buff Crit"]
-        },
-        "Support Placeur": {
-          "Id": 5,
-          "Notes": {
-            "DPT": {
-              "Melee": 0,
-              "Ranged": 0,
-              "Area": 0,
-              "Single_Target": 1,
-              "Constant": 0,
-              "Burst": 0
-            },
-            "Support": {
-              "Heal": 2,
-              "Shield": 1,
-              "Placeur": 0,
-              "Buff_MP": 1,
-              "Buff_AP": 0,
-              "Buff_DI": 1,
-              "Protection": 1
-            },
-            "Entrave": {
-              "Rall_MP": 0,
-              "Rall_AP": 0,
-              "Rall_DI": 0,
-              "Rall_Resistance": 1,
-              "Boringness": 0
-            },
-            "Team_Support": {
-              "Support_Area": 0,
-              "Support_Heal": 2,
-              "Support_Shield": 1,
-              "Support_Single_Target": 1,
-              "Support_Melee": 0,
-              "Support_Ranged": 0
-            }
-          },
-          "Autonomy": 1,
-          "Mobility": 1,
-          "Roles": ["Placeur", "Buff AP", "Buff DI", "Rall Resistance", "Sub Heal", "Sub Shield", "Buff Crit"]
-        },
-        "Support Shield": {
-          "Id": 6,
-          "Notes": {
-            "DPT": {
-              "Melee": 0,
-              "Ranged": 0,
-              "Area": 0,
-              "Single_Target": 1,
-              "Constant": 0,
-              "Burst": 0
-            },
-            "Support": {
-              "Heal": 2,
-              "Shield": 1,
-              "Placeur": 0,
-              "Buff_MP": 1,
-              "Buff_AP": 0,
-              "Buff_DI": 1,
-              "Protection": 1
-            },
-            "Entrave": {
-              "Rall_MP": 0,
-              "Rall_AP": 0,
-              "Rall_DI": 0,
-              "Rall_Resistance": 1,
-              "Boringness": 0
-            },
-            "Team_Support": {
-              "Support_Area": 0,
-              "Support_Heal": 2,
-              "Support_Shield": 1,
-              "Support_Single_Target": 1,
-              "Support_Melee": 0,
-              "Support_Ranged": 0
-            }
-          },
-          "Autonomy": 1,
-          "Mobility": 1,
-          "Roles": ["Shield", "Buff AP", "Buff DI", "Rall Resistance", "Sub Placeur", "Sub Heal", "Buff Crit"]
-
-        }
       },
       "Elements": ["Fire", "Earth", "Air"],
       "Mobility": 1
@@ -1748,8 +1745,49 @@ export const classData = {
     "Id": 13,
     "Image": "assets/male_pandawa.png",
     "Voies": {
-      "Support Heal": {
+      "Support Placeur": {
         "Id": 1,
+        "Notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 1,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Boringness": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Placeur", "Sub Heal", "Buff DI", "Buff Resistance", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
+
+      },
+      "Support Heal": {
+        "Id": 2,
         "Notes": {
           "DPT": {
             "Melee": 0,
@@ -1789,7 +1827,7 @@ export const classData = {
         "Roles": ["Heal", "Sub Placeur", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
       },
       "DPT Melee": {
-        "Id": 2,
+        "Id": 3,
         "Notes": {
           "DPT": {
             "Melee": 0,
@@ -1828,47 +1866,7 @@ export const classData = {
         "Mobility": 1,
         "Roles": ["Melee", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
       },
-      "Support Placeur": {
-        "Id": 3,
-        "Notes": {
-          "DPT": {
-            "Melee": 0,
-            "Ranged": 1,
-            "Area": 0,
-            "Single_Target": 2,
-            "Constant": 0,
-            "Burst": 2
-          },
-          "Support": {
-            "Heal": 0,
-            "Shield": 0,
-            "Placeur": 0,
-            "Buff_MP": 0,
-            "Buff_AP": 0,
-            "Buff_DI": 0,
-            "Protection": 1
-          },
-          "Entrave": {
-            "Rall_MP": 0,
-            "Rall_AP": 0,
-            "Rall_DI": 0,
-            "Rall_Resistance": 1,
-            "Boringness": 0
-          },
-          "Team_Support": {
-            "Support_Area": 0,
-            "Support_Heal": 0,
-            "Support_Shield": 0,
-            "Support_Single_Target": 1,
-            "Support_Melee": 0,
-            "Support_Ranged": 1
-          }
-        },
-        "Autonomy": 2,
-        "Mobility": 1,
-        "Roles": ["Placeur", "Sub Heal", "Buff DI", "Buff Resistance", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
 
-      }
     },
     "Elements": ["Fire", "Water", "Earth"],
     "Mobility": 1
@@ -1877,48 +1875,8 @@ export const classData = {
     "Id": 14,
     "Image": "assets/male_rogue.png",
     "Voies": {
-      "Support": {
+      "DPT Mixed": {
         "Id": 1,
-        "Notes": {
-          "DPT": {
-            "Melee": 0,
-            "Ranged": 0,
-            "Area": 0,
-            "Single_Target": 0,
-            "Constant": 0,
-            "Burst": 0
-          },
-          "Support": {
-            "Heal": 0,
-            "Shield": 0,
-            "Placeur": 0,
-            "Buff_MP": 1,
-            "Buff_AP": 1,
-            "Buff_DI": 2,
-            "Protection": 1
-          },
-          "Entrave": {
-            "Rall_MP": 1,
-            "Rall_AP": 1,
-            "Rall_DI": 1,
-            "Rall_Resistance": 1,
-            "Boringness": 0
-          },
-          "Team_Support": {
-            "Support_Area": 0,
-            "Support_Heal": 0,
-            "Support_Shield": 0,
-            "Support_Single_Target": 1,
-            "Support_Melee": 0,
-            "Support_Ranged": 0
-          }
-        },
-        "Autonomy": 1,
-        "Mobility": 1,
-        "Roles": ["Sub Placeur", "Buff DI", "Rall MP", "Rall WP", "Rall PO", "Anti Heal"]
-      },
-      "DPT Melee": {
-        "Id": 2,
         "Notes": {
           "DPT": {
             "Melee": 2,
@@ -1958,7 +1916,7 @@ export const classData = {
         "Roles": ["Melee", "Ranged", "Burst", "Sub Placeur", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
       },
       "DPT Indirect": {
-        "Id": 3,
+        "Id": 2,
         "Notes": {
           "DPT": {
             "Melee": 2,
@@ -1996,7 +1954,48 @@ export const classData = {
         "Autonomy": 2,
         "Mobility": 1,
         "Roles": ["Poison", "Melee", "Ranged", "Sub Placeur", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
-      }
+      },
+      "Support": {
+        "Id": 3,
+        "Notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 0,
+            "Area": 0,
+            "Single_Target": 0,
+            "Constant": 0,
+            "Burst": 0
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 1,
+            "Buff_AP": 1,
+            "Buff_DI": 2,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 1,
+            "Rall_AP": 1,
+            "Rall_DI": 1,
+            "Rall_Resistance": 1,
+            "Boringness": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 0
+          }
+        },
+        "Autonomy": 1,
+        "Mobility": 1,
+        "Roles": ["Sub Placeur", "Buff DI", "Rall MP", "Rall WP", "Rall PO", "Anti Heal"]
+      },
+
     },
     "Elements": ["Fire", "Earth", "Air"],
     "Mobility": 1
@@ -2134,12 +2133,12 @@ export const classData = {
     "Id": 16,
     "Image": "assets/male_sadida.png",
     "Voies": {
-      "DPT Invoc": {
+      "Support Heal": {
         "Id": 1,
         "Notes": {
           "DPT": {
-            "Melee": 1,
-            "Ranged": 1,
+            "Melee": 0,
+            "Ranged": 2,
             "Area": 2,
             "Single_Target": 0,
             "Constant": 2,
@@ -2166,13 +2165,13 @@ export const classData = {
             "Support_Heal": 0,
             "Support_Shield": 0,
             "Support_Single_Target": 0,
-            "Support_Melee": 1,
+            "Support_Melee": 0,
             "Support_Ranged": 1
           }
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Melee", "Ranged", "Single Target", "Sub Heal", "Sub Shield", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
+        "Roles": ["Heal", "Sub DPT", "Sub Shield", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
       },
       "DPT Indirect": {
         "Id": 2,
@@ -2214,12 +2213,12 @@ export const classData = {
         "Mobility": 1,
         "Roles": ["Poison", "Melee", "Ranged", "Area", "Sub Heal", "Sub Shield", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
       },
-      "Support Heal": {
+      "DPT Invoc": {
         "Id": 3,
         "Notes": {
           "DPT": {
-            "Melee": 0,
-            "Ranged": 2,
+            "Melee": 1,
+            "Ranged": 1,
             "Area": 2,
             "Single_Target": 0,
             "Constant": 2,
@@ -2246,15 +2245,15 @@ export const classData = {
             "Support_Heal": 0,
             "Support_Shield": 0,
             "Support_Single_Target": 0,
-            "Support_Melee": 0,
+            "Support_Melee": 1,
             "Support_Ranged": 1
           }
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Heal", "Sub DPT", "Sub Shield", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
+        "Roles": ["Melee", "Ranged", "Single Target", "Sub Heal", "Sub Shield", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
       },
-      "Support Shield": {
+      "Specific Support Shield": {
         "Id": 4,
         "Notes": {
           "DPT": {
@@ -2293,7 +2292,7 @@ export const classData = {
         "Autonomy": 2,
         "Mobility": 1,
         "Roles": ["Shield", "Sub DPT", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
-      }
+      },
     },
     "Elements": ["Water", "Earth", "Air"],
     "Mobility": 1
@@ -2712,6 +2711,10 @@ export const TRANSLATIONS = {
   close: {
     fr: 'Fermer',
     en: 'Close'
+  },
+  summary_roles: {
+    fr: 'Résumé des rôles',
+    en: 'Summary of roles'
   },
   warn_dpt_greater_than_support: {
     fr: 'Nombre de DPT supérieurs à ceux des supports',

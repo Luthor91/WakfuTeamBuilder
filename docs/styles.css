@@ -32,31 +32,50 @@ h3 {
     flex: 1;
     display: flex;
     flex-direction: column;
+    border: 1px solid #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-#language-selector {
+.panel:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Mise à jour du positionnement du sélecteur de langues */
+#language-switcher {
+    position: absolute;
+    top: 20px;
+    left: 20px;
     display: flex;
     gap: 10px;
     align-items: center;
+    padding: 8px;
+    background-color: rgba(51, 51, 51, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 100;
 }
 
 .language-flag {
     width: 30px;
     height: auto;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+    border-radius: 4px;
 }
 
 .language-flag:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.language-flag.active {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    border: 2px solid white;
 }
 
 
-/* Styles pour le panneau de gauche */
-#roles-panel {
-    max-width: 300px;
-}
-
+/* Sélection de rôle améliorée */
 .role-selection {
     display: flex;
     align-items: center;
@@ -65,6 +84,14 @@ h3 {
     background-color: #444;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #555;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.role-selection:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .role-thumbnail {
@@ -93,28 +120,123 @@ h3 {
     background-color: #444;
 }
 
+/* Styles modernisés pour le panneau de gauche */
+#roles-panel {
+    max-width: 300px;
+    position: relative;
+    background: linear-gradient(145deg, #383838, #2d2d2d);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+    overflow: hidden;
+}
+
+#roles-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #5e72e4, #825ee4);
+    z-index: 1;
+}
+
+#roles-panel h3 {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 5px;
+}
+
 .input-container {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    padding: 0 5px;
+    position: relative;
 }
 
 #role-input {
     flex: 1;
-    padding: 8px;
-    border: 2px solid #555;
-    border-radius: 5px;
-    font-size: 12px;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    border: 1px solid #555;
+    border-radius: 8px;
+    font-size: 14px;
     outline: none;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 #role-input:focus {
-    border-color: #555;
+    border-color: #5e72e4;
+    box-shadow: 0 0 0 2px rgba(94, 114, 228, 0.3), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
-.btn {
+#role-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+#btn_export {
+    width: 70%;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+}
+
+#btn_export:hover {
+    background: linear-gradient(135deg, #5d7ec9, #1f3358);
+}
+
+#btn_import {
+    width: 70%;
+    background: linear-gradient(135deg, #485563, #29323c);
+}
+
+#btn_import:hover {
+    background: linear-gradient(135deg, #5d6d79, #343e49);
+}
+
+/* Style pour le panneau des rôles d'équipe */
+#team-roles-panel {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 5px;
+    scrollbar-width: thin;
+    scrollbar-color: #666 #333;
+}
+
+#team-roles-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+#team-roles-panel::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 10px;
+}
+
+#team-roles-panel::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 10px;
+}
+
+/* Amélioration des boutons */
+.btn, #selection-menu button, #simp-mode-btn {
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
@@ -122,17 +244,32 @@ h3 {
     color: white;
     font-size: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.btn:hover {
+.btn:hover, #selection-menu button:hover, #simp-mode-btn:hover {
     background-color: #555;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
 }
 
 
 /* Styles pour le panneau central */
 #team-panel {
     flex: 2;
+}
+
+#team-panel h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: center;
+    padding-left: 5px;
 }
 
 #team-container {
@@ -143,23 +280,26 @@ h3 {
     justify-items: center;
 }
 
+/* Mise à jour des slots */
 .slot {
     width: 100px;
     height: 100px;
     background-color: #444;
-    border: 2px solid #666;
+    border: 2px solid #555;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     overflow: hidden;
-    border-radius: 5px;
-    transition: transform 0.2s, border-color 0.2s;
+    border-radius: 8px;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .slot:hover {
     transform: scale(1.05);
     border-color: #888;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .slot img {
@@ -230,12 +370,15 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #222;
+    background-color: #2a2a2a;
     padding: 15px;
     border-radius: 10px;
+    border: 1px solid #3a3a3a;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Jauges principales */
+
+/* Mise à jour des jauges principales */
 .main-gauge {
     cursor: pointer;
     padding: 12px;
@@ -245,14 +388,16 @@ h3 {
     color: white;
     font-weight: bold;
     text-align: center;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .main-gauge:hover {
     background-color: #555;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Jauges secondaires (sub-gauges) */
+/* Mise à jour des sous-jauges pour afficher 2 par ligne */
 .sub-gauges {
     display: flex;
     flex-wrap: wrap;
@@ -262,13 +407,15 @@ h3 {
 }
 
 .sub-gauge {
-    width: 45%; /* Deux jauges par ligne */
+    width: calc(50% - 5px); /* Deux jauges par ligne avec espacement */
     padding: 10px;
     background-color: #333;
     border-radius: 8px;
     text-align: center;
     color: white;
     font-size: 14px;
+    border: 1px solid #444;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .gauge-bar {
@@ -377,6 +524,35 @@ h3 {
 /* Styles pour le panneau de droite */
 #roles-summary {
     max-width: 250px;
+    position: relative;
+    background: linear-gradient(145deg, #383838, #2d2d2d);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+    overflow: hidden;
+}
+
+#roles-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #5e72e4, #825ee4);
+    z-index: 1;
+}
+
+#roles-summary h3 {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 5px;
 }
 
 #roles-summary div {
@@ -387,17 +563,120 @@ h3 {
     transition: background-color 0.3s;
 }
 
+/* Mise en évidence des rôles présents */
 .role-present {
     background-color: green;
     color: white;
+    border: 2px solid #4CAF50; /* Bordure légèrement plus claire */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Lueur verte */
+    transform: translateY(-1px); /* Légère élévation */
+    transition: all 0.3s ease;
 }
 
+.role-present:hover {
+    box-shadow: 0 0 12px rgba(76, 175, 80, 0.6); /* Lueur plus forte au survol */
+    transform: translateY(-2px); /* Plus d'élévation au survol */
+}
+
+/* Mise à jour des rôles manquants */
 .role-missing {
     background-color: red;
     color: white;
+    border: 2px solid #ff6666; /* Bordure légèrement plus claire */
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.3); /* Légère lueur rouge */
 }
 
+.role-missing:hover {
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.5); /* Lueur plus forte au survol */
+}
+
+
+/* Styles de base pour les messages d'avertissement */
+.warn-message {
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Style pour les avertissements jaunes */
+.warn-yellow {
+    background-color: rgba(255, 204, 0, 0.15);
+    border-left: 4px solid #FFCC00;
+    color: #FFCC00;
+}
+
+.warn-yellow:hover {
+    background-color: rgba(255, 204, 0, 0.2);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+/* Style pour les avertissements rouges */
+.warn-red {
+    background-color: rgba(255, 59, 48, 0.15);
+    border-left: 4px solid #FF3B30;
+    color: #FF3B30;
+}
+
+.warn-red:hover {
+    background-color: rgba(255, 59, 48, 0.2);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+/* Pseudo-élément pour ajouter un symbole avant le texte */
+.warn-yellow::before,
+.warn-red::before {
+    content: "⚠️";
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Style pour les messages de succès verts */
+.warn-green {
+    background-color: rgba(52, 199, 89, 0.15);
+    border-left: 4px solid #34C759;
+    color: #34C759;
+}
+
+.warn-green:hover {
+    background-color: rgba(52, 199, 89, 0.2);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+/* Pseudo-élément pour ajouter un symbole avant le texte */
+.warn-green::before {
+    content: "✓";
+    margin-right: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* Animation subtile d'apparition */
+@keyframes warnFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.warn-message {
+    animation: warnFadeIn 0.3s ease-out forwards;
+}
+
+
 /* Styles pour le menu de sélection */
+/* Menu de sélection amélioré */
 #selection-menu {
     position: fixed;
     top: 50%;
@@ -406,8 +685,9 @@ h3 {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4);
     z-index: 1000;
+    border: 1px solid #444;
 }
 
 #menu-content {
@@ -491,6 +771,7 @@ h3 {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.2s;
+    font-size: 14px;
 }
 
 #selection-menu button:hover {
@@ -526,13 +807,16 @@ h3 {
 }
 
 
+/* Footer amélioré */
 footer {
     margin-top: 20px;
-    padding: 10px;
+    padding: 15px;
     background-color: #333;
     text-align: center;
     color: white;
     font-size: 14px;
+    border-top: 1px solid #444;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
 }
 
 

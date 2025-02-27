@@ -100,45 +100,38 @@ document.getElementById('btn_export').onclick = function() {
 document.getElementById('btn_import').onclick = function() {
     console.log("Import function triggered");
 
-    // Récupérer la valeur du champ de texte où l'utilisateur a collé la chaîne exportée
     const importString = document.getElementById("role-input").value.trim();
 
-    // Vérifier que la chaîne n'est pas vide
     if (importString === "") {
         console.log("No data to import");
         return;
     }
 
-    // Séparer les rôles par le caractère ";"
     const rolePairs = importString.split(";").filter(pair => pair !== "");
 
-    // Parcourir chaque rôle et l'ajouter à l'équipe
+    let index = 0; // Index pour l'écrasement des valeurs dans teamRoles
+
     rolePairs.forEach(pair => {
         const [classId, roleId] = pair.split("-");
 
-        // Assure-toi que classId et roleId sont des valeurs valides et existent dans tes données
         for (const className in classData.Classes) {
             if (classData.Classes[className].Id.toString() === classId) {
-                // Ajouter le rôle à l'équipe (ici tu peux ajouter ce rôle dans l'interface graphique)
                 const classVoies = classData.Classes[className]?.Voies;
 
-                // Vérifier si le rôle existe dans les voies de la classe
                 for (const voieName in classVoies) {
                     if (classVoies[voieName].Id.toString() === roleId) {
-                        // Trouver un slot vide dans l'équipe et affecter la classe et la voie
-                        const emptySlot = teamRoles.findIndex(slot => !slot.class && !slot.voie);
-                        if (emptySlot !== -1) {
-                            teamRoles[emptySlot] = {
+                        // Écraser directement la valeur dans teamRoles
+                        if (index < teamRoles.length) {
+                            teamRoles[index] = {
                                 class: className,
                                 voie: voieName,
-                                image: classData.Classes[className].Image // Assumer que l'image est dans `classData.Classes[className].Image`
+                                image: classData.Classes[className].Image
                             };
 
-                            // Mise à jour de l'élément team-container avec l'image
+                            // Mise à jour de l'affichage
                             const teamContainer = document.getElementById("team-container");
-                            const slotElement = teamContainer.children[emptySlot];
+                            const slotElement = teamContainer.children[index];
                             if (slotElement) {
-                                // Vérifier s'il y a déjà une image et la remplacer
                                 let imgElement = slotElement.querySelector("img");
                                 if (!imgElement) {
                                     imgElement = document.createElement("img");
@@ -147,11 +140,9 @@ document.getElementById('btn_import').onclick = function() {
                                 imgElement.src = classData.Classes[className].Image;
                             }
 
-                            // Mise à jour du team-roles-panel avec la classe et voie
                             const rolesPanel = document.getElementById("team-roles-panel");
-                            const panelSlot = rolesPanel.children[emptySlot];
+                            const panelSlot = rolesPanel.children[index];
                             if (panelSlot) {
-                                // Remplir le menu déroulant de la classe et de la voie
                                 const classSelect = panelSlot.querySelector(".class-select");
                                 const voieSelect = panelSlot.querySelector(".voie-select");
 
@@ -162,6 +153,8 @@ document.getElementById('btn_import').onclick = function() {
                                     voieSelect.value = voieName;
                                 }
                             }
+
+                            index++; // Passer au prochain slot
                         }
                     }
                 }
@@ -172,7 +165,6 @@ document.getElementById('btn_import').onclick = function() {
     console.log("teamRoles : ", teamRoles);
     teamRoles = [...teamRoles];
 
-    // Après l'importation, on met à jour l'interface graphique
     updateRolesPanel();
     updateRolesSummary();
     updateBalanceGauge();
@@ -180,6 +172,7 @@ document.getElementById('btn_import').onclick = function() {
     
     console.log("Import completed");
 };
+
 
 
 document.getElementById('main-gauge-DPT').onclick = function() {
@@ -235,41 +228,6 @@ document.getElementById("flag_english").onclick = function() {
 
 // Fonction pour mettre à jour l'interface
 function updateUI() {
-    // Mettre à jour les titres
-    document.querySelector('h1').textContent = translate('TEAM_BUILDER', currentLanguage);
-    document.querySelectorAll('h3').forEach(h3 => {
-        if (h3.textContent.includes('Roles choice')) {
-            h3.textContent = translate('ROLES_CHOICE', currentLanguage);
-        } else if (h3.textContent.includes('Team composition')) {
-            h3.textContent = translate('TEAM_COMPOSITION', currentLanguage);
-        } else if (h3.textContent.includes('Team roles')) {
-            h3.textContent = translate('TEAM_ROLES', currentLanguage);
-        } else if (h3.textContent.includes('Summary of roles')) {
-            h3.textContent = translate('ROLES_SUMMARY', currentLanguage);
-        }
-    });
-
-    // Mettre à jour la légende
-    document.querySelectorAll('.legend span').forEach(span => {
-        const text = span.textContent.trim();
-        if (text.includes('Role filled')) {
-            span.lastChild.textContent = translate('ROLE_FILLED', currentLanguage);
-        } else if (text.includes('Important role')) {
-            span.lastChild.textContent = translate('ROLE_IMPORTANT_MISSING', currentLanguage);
-        } else if (text.includes('Non-important')) {
-            span.lastChild.textContent = translate('ROLE_OPTIONAL_MISSING', currentLanguage);
-        }
-    });
-
-    // Mettre à jour le bouton de fermeture
-    document.getElementById('close-menu-btn').textContent = translate('CLOSE', currentLanguage);
-
-    // Mettre à jour les sélecteurs de rôles
-    document.querySelectorAll('.voie-select option[value=""]').forEach(option => {
-        option.textContent = translate('CHOOSE_ROLE', currentLanguage);
-    });
-
-    // Mettre à jour le résumé des rôles et autres éléments dynamiques
     updateRolesSummary();
     updateRolesPanel();
     updateTeamRoles();
@@ -538,8 +496,11 @@ function getClassNameFromFile(filename) {
 
 // Mettre à jour le résumé des rôles
 function updateRolesSummary() {
-    const summaryContainer = document.getElementById('roles-summary');
-    summaryContainer.innerHTML = ''; // Vider le contenu existant    
+    const summaryContainerWarns = document.getElementById('roles-summary-content-warns');
+    const summaryContainerRequired = document.getElementById('roles-summary-content-required');
+    
+    summaryContainerWarns.innerHTML = ''; // Vider les warnings
+    summaryContainerRequired.innerHTML = ''; // Vider les rôles requis
     
     const presentRoles = new Set();
     teamRoles.forEach(slot => {
@@ -569,73 +530,53 @@ function updateRolesSummary() {
     updateTeamRoles();
 
     const { dptCount, supportCount } = countRoles();
+    const warningDiv = document.createElement('div');
     if (dptCount > supportCount) {
-        const warningDiv = document.createElement('div');
-        warningDiv.dataset.translator = 'warn_dpt_greater_than_support'
+        warningDiv.dataset.translator = 'warn_dpt_greater_than_support';
         warningDiv.textContent = translate('warn_dpt_greater_than_support', currentLanguage);
-        
-        warningDiv.style.color = 'red';
-        warningDiv.style.fontWeight = 'bold';
-        warningDiv.style.marginBottom = '10px';
-        summaryContainer.appendChild(warningDiv);
+        warningDiv.className = 'warn-message warn-red';
     } else {
-        const warningDiv = document.createElement('div');
-        warningDiv.dataset.translator = 'warn_need_dpt'
-        warningDiv.textContent = translate('warn_need_dpt', currentLanguage)
-
-        warningDiv.style.color = 'red';
-        summaryContainer.appendChild(warningDiv);
-
+        warningDiv.dataset.translator = 'warn_need_dpt';
+        warningDiv.textContent = translate('warn_need_dpt', currentLanguage);
+        warningDiv.className = 'warn-message warn-red';
     }
+    summaryContainerWarns.appendChild(warningDiv);
 
     const elementsDPT = getElementsDPT();
     const requiredElements = ["Fire", "Water", "Earth", "Air"];
-    
-    // Vérification si elementsDPT est vide ou si aucun élément requis n'est trouvé
     const missingElements = requiredElements
         .filter(el => !elementsDPT.includes(el))
         .map(el => TRANSLATIONS.elements[el][currentLanguage]);
-    
-    const warningDiv = document.createElement('div');
-    warningDiv.style.fontWeight = 'bold';
-    warningDiv.style.marginBottom = '10px';
-    
-    // Si des éléments sont manquants
+
     if (missingElements.length > 0) {
+        const warningDiv = document.createElement('div');
         warningDiv.textContent = currentLanguage === 'fr' 
             ? `Manque de l'élément ${missingElements.join(', ')}`
             : `Lack of ${missingElements.join(', ')} element(s)`;
-        warningDiv.style.color = 'yellow';
-    }
-    // Si aucun élément manquant et elementsDPT n'est pas vide
-    else if (elementsDPT.length > 0) {
-        warningDiv.dataset.translator = 'warn_multielement_dpt'
-        warningDiv.textContent = translate('warn_multielement_dpt', currentLanguage)
-        warningDiv.style.color = 'green';
-    }
-    
-    summaryContainer.appendChild(warningDiv);
-    
-    const hasStabilized = hasStabilizedRole();
-    if (!hasStabilized) {
+        warningDiv.className = 'warn-message warn-yellow';
+        summaryContainerWarns.appendChild(warningDiv);
+    } else if (elementsDPT.length > 0) {
         const warningDiv = document.createElement('div');
-        warningDiv.dataset.translator = 'warn_stabilized'
-        warningDiv.textContent = translate('warn_stabilized', currentLanguage);
-        warningDiv.style.color = 'yellow';
-        warningDiv.style.fontWeight = 'bold';
-        warningDiv.style.marginBottom = '10px';
-        summaryContainer.appendChild(warningDiv);
+        warningDiv.dataset.translator = 'warn_multielement_dpt';
+        warningDiv.textContent = translate('warn_multielement_dpt', currentLanguage);
+        warningDiv.className = 'warn-message warn-green';
+        summaryContainerWarns.appendChild(warningDiv);
     }
 
-    const hasInvulnerability = hasInvulnerabilityRole();    
-    if (!hasInvulnerability) {
+    if (!hasStabilizedRole()) {
         const warningDiv = document.createElement('div');
-        warningDiv.dataset.translator = 'warn_invulnerability'
+        warningDiv.dataset.translator = 'warn_stabilized';
+        warningDiv.textContent = translate('warn_stabilized', currentLanguage);
+        warningDiv.className = 'warn-message warn-yellow';
+        summaryContainerWarns.appendChild(warningDiv);
+    }
+
+    if (!hasInvulnerabilityRole()) {
+        const warningDiv = document.createElement('div');
+        warningDiv.dataset.translator = 'warn_invulnerability';
         warningDiv.textContent = translate('warn_invulnerability', currentLanguage);
-        warningDiv.style.color = 'yellow';
-        warningDiv.style.fontWeight = 'bold';
-        warningDiv.style.marginBottom = '10px';
-        summaryContainer.appendChild(warningDiv);
+        warningDiv.className = 'warn-message warn-yellow';
+        summaryContainerWarns.appendChild(warningDiv);
     }
 
     const rolesToCheck = [
@@ -651,10 +592,10 @@ function updateRolesSummary() {
         const roleDiv = document.createElement('div');
         roleDiv.textContent = role;
         roleDiv.className = presentRoles.has(role) ? 'role-present' : 'role-missing';
-        summaryContainer.appendChild(roleDiv);
+        summaryContainerRequired.appendChild(roleDiv);
     });
-    
 }
+
 
 // Mettre à jour le panneau des rôles
 function updateRolesPanel() {
@@ -666,27 +607,60 @@ function updateRolesPanel() {
         if (slotImg) {
             const container = document.createElement('div');
             container.className = 'role-selection';
-            
+
             const thumbnail = document.createElement('img');
             thumbnail.src = slotImg.src;
             thumbnail.className = 'role-thumbnail';
-            
+
             const select = document.createElement('select');
             select.className = 'voie-select';
             const className = getClassNameFromFile(slotImg.src.split('/').pop());
-            
+
             if (className && classData.Classes[className]) {
-                Object.keys(classData.Classes[className].Voies).forEach(voie => {
+                // Création des optgroups pour chaque catégorie
+                const dptGroup = document.createElement('optgroup');
+                dptGroup.label = 'DPT';
+
+                const supportGroup = document.createElement('optgroup');
+                supportGroup.label = 'Support';
+
+                const specificGroup = document.createElement('optgroup');
+                specificGroup.label = 'Specific';
+
+                let defaultOption = null;
+
+                Object.entries(classData.Classes[className].Voies).forEach(([voie, data]) => {
                     const option = document.createElement('option');
                     option.value = voie;
                     option.textContent = voie;
-                    if (teamRoles[index].voie === voie) {
-                        option.selected = true;
+
+                    // Sélectionner l'option ayant "Id": 1 par défaut
+                    if (data.Id === 1) {
+                        defaultOption = option;
                     }
-                    select.appendChild(option);
+
+                    // Ajouter l'option à la bonne catégorie
+                    if (voie.startsWith('DPT')) {
+                        dptGroup.appendChild(option);
+                    } else if (voie.startsWith('Support')) {
+                        supportGroup.appendChild(option);
+                    } else if (voie.startsWith('Specific')) {
+                        specificGroup.appendChild(option);
+                    }
                 });
+
+                // Ajouter les catégories si elles contiennent des options
+                if (dptGroup.children.length > 0) select.appendChild(dptGroup);
+                if (supportGroup.children.length > 0) select.appendChild(supportGroup);
+                if (specificGroup.children.length > 0) select.appendChild(specificGroup);
+
+                // Appliquer la sélection par défaut
+                if (defaultOption) {
+                    defaultOption.selected = true;
+                    teamRoles[index].voie = defaultOption.value;
+                }
             }
-            
+
             select.onchange = (e) => {
                 teamRoles[index] = {
                     class: className,
@@ -695,7 +669,7 @@ function updateRolesPanel() {
                 updateRolesSummary();
                 updateBalanceGauge();
             };
-            
+
             container.appendChild(thumbnail);
             container.appendChild(select);
             rolesPanel.appendChild(container);
@@ -704,6 +678,7 @@ function updateRolesPanel() {
         }
     });
 }
+
 
 function selectClass(imgSrc) {
     if (selectedSlot !== null) {
@@ -763,8 +738,6 @@ function openSelectionMenu(slotIndex) {
 
     menu.classList.remove("hidden");
 }
-
-
 
 
 function createClassImage(imgSrc) {
