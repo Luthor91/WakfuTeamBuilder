@@ -580,12 +580,12 @@ function updateRolesSummary() {
     }
 
     const rolesToCheck = [
-        "Rall Resistance",
-        "Placeur",
-        "Heal",
-        "Shield",
         "DPT",
-        "Resurection"
+        "Heal",
+        "Resurection",
+        "Rall Resistance",
+        "Shield",
+        "Placeur",
     ];
 
     rolesToCheck.forEach(role => {
