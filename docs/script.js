@@ -54,16 +54,21 @@ document.addEventListener('DOMContentLoaded', () => {
     updateRolesSummary();
     updateBalanceGauge();
     updateGauges();
-    changeLanguage("en");
+    setLanguage("en");
     
 });
 
 
-function changeLanguage(language) {
-    currentLanguage = language;
-    updateUI();
-}
+function setLanguage(lang) {
+    currentLanguage = lang;
 
+    document.querySelectorAll("[data-translator]").forEach(element => {
+        const translationKey = element.dataset.translator;
+        if (TRANSLATIONS[translationKey] && TRANSLATIONS[translationKey][lang]) {
+            element.textContent = TRANSLATIONS[translationKey][lang];
+        }
+    });
+}
 
 document.getElementById('btn_export').onclick = function() {
     console.log("Export function triggered");
@@ -220,11 +225,11 @@ document.getElementById('main-gauge-Entrave').onclick = function() {
 }
 
 document.getElementById("flag_french").onclick = function() {
-    changeLanguage("fr");
+    setLanguage("fr");
 };
 
 document.getElementById("flag_english").onclick = function() {
-    changeLanguage("en");
+    setLanguage("en");
 };
 
 
@@ -353,9 +358,6 @@ function updateGauges() {
                         if (!totalStats[statName]) {
                             totalStats[statName] = 0;
                         }
-                        // Ajouter la valeur à la somme, en s'assurant de ne pas dépasser 10
-                        console.log("statName : ", totalStats[statName], " + ", statValue);
-                        
                         totalStats[statName] = Math.min(totalStats[statName] + statValue, 10);
                     }
                 }
@@ -569,37 +571,56 @@ function updateRolesSummary() {
     const { dptCount, supportCount } = countRoles();
     if (dptCount > supportCount) {
         const warningDiv = document.createElement('div');
-        warningDiv.textContent = translate('DPT_SUPPORT_WARNING', currentLanguage);
+        warningDiv.dataset.translator = 'warn_dpt_greater_than_support'
+        warningDiv.textContent = translate('warn_dpt_greater_than_support', currentLanguage);
+        
         warningDiv.style.color = 'red';
-        warningDiv.style.fontWeight = 'bold';
-        warningDiv.style.marginBottom = '10px';
-        summaryContainer.appendChild(warningDiv);
-    }
-
-    const elementsDPT = getElementsDPT();
-    const requiredElements = ["Fire", "Water", "Earth", "Air"];
-    const missingElements = requiredElements.filter(el => !elementsDPT.includes(el));
-    
-    if (missingElements.length > 0) {
-        const warningDiv = document.createElement('div');
-        warningDiv.textContent = `Lack of ${missingElements.join(', ')} element(s)`;
-        warningDiv.style.color = 'yellow';
         warningDiv.style.fontWeight = 'bold';
         warningDiv.style.marginBottom = '10px';
         summaryContainer.appendChild(warningDiv);
     } else {
         const warningDiv = document.createElement('div');
-        warningDiv.textContent = `DPT Multi Elements`;
-        warningDiv.style.color = 'green';
-        warningDiv.style.fontWeight = 'bold';
-        warningDiv.style.marginBottom = '10px';
+        warningDiv.dataset.translator = 'warn_need_dpt'
+        warningDiv.textContent = translate('warn_need_dpt', currentLanguage)
+
+        warningDiv.style.color = 'red';
         summaryContainer.appendChild(warningDiv);
+
     }
 
+    const elementsDPT = getElementsDPT();
+    const requiredElements = ["Fire", "Water", "Earth", "Air"];
+    
+    // Vérification si elementsDPT est vide ou si aucun élément requis n'est trouvé
+    const missingElements = requiredElements
+        .filter(el => !elementsDPT.includes(el))
+        .map(el => TRANSLATIONS.elements[el][currentLanguage]);
+    
+    const warningDiv = document.createElement('div');
+    warningDiv.style.fontWeight = 'bold';
+    warningDiv.style.marginBottom = '10px';
+    
+    // Si des éléments sont manquants
+    if (missingElements.length > 0) {
+        warningDiv.textContent = currentLanguage === 'fr' 
+            ? `Manque de l'élément ${missingElements.join(', ')}`
+            : `Lack of ${missingElements.join(', ')} element(s)`;
+        warningDiv.style.color = 'yellow';
+    }
+    // Si aucun élément manquant et elementsDPT n'est pas vide
+    else if (elementsDPT.length > 0) {
+        warningDiv.dataset.translator = 'warn_multielement_dpt'
+        warningDiv.textContent = translate('warn_multielement_dpt', currentLanguage)
+        warningDiv.style.color = 'green';
+    }
+    
+    summaryContainer.appendChild(warningDiv);
+    
     const hasStabilized = hasStabilizedRole();
     if (!hasStabilized) {
         const warningDiv = document.createElement('div');
-        warningDiv.textContent = "Need Stabilized Class";
+        warningDiv.dataset.translator = 'warn_stabilized'
+        warningDiv.textContent = translate('warn_stabilized', currentLanguage);
         warningDiv.style.color = 'yellow';
         warningDiv.style.fontWeight = 'bold';
         warningDiv.style.marginBottom = '10px';
@@ -609,13 +630,13 @@ function updateRolesSummary() {
     const hasInvulnerability = hasInvulnerabilityRole();    
     if (!hasInvulnerability) {
         const warningDiv = document.createElement('div');
-        warningDiv.textContent = "Need Invulnerability Class";
+        warningDiv.dataset.translator = 'warn_invulnerability'
+        warningDiv.textContent = translate('warn_invulnerability', currentLanguage);
         warningDiv.style.color = 'yellow';
         warningDiv.style.fontWeight = 'bold';
         warningDiv.style.marginBottom = '10px';
         summaryContainer.appendChild(warningDiv);
     }
-
 
     const rolesToCheck = [
         "Rall Resistance",

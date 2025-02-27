@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wakfu Team Builder</title>
+    <title data-translator="title">Wakfu Team Builder</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Wakfu Team Builder</h1>
+    <h1 data-translator="heading">Wakfu Team Builder</h1>
     
     <div id="language-switcher">
         <img src="assets/french_flag.png" alt="Français" class="language-flag" id="flag_french">
@@ -15,24 +15,21 @@
     </div>    
     
     <div class="main-container">
-        <!-- Panneau de gauche - Choix des rôles -->
         <div class="panel" id="roles-panel">
-            <h3>Roles choice</h3>
+            <h3 data-translator="roles_choice">Roles choice</h3>
 
             <div class="input-container">
-                <input type="text" id="role-input" placeholder="Enter team code...">
-                <button id="btn_export" class="btn">Export</button>
-                <button id="btn_import" class="btn">Import</button>
+                <input type="text" id="role-input" placeholder="Enter team code..." data-translator="input_placeholder">
+                <button id="btn_export" class="btn" data-translator="export_button">Export</button>
+                <button id="btn_import" class="btn" data-translator="import_button">Import</button>
             </div>
 
             <div id="team-roles-panel">
-                <!-- Rempli dynamiquement par le JavaScript -->
             </div>
         </div>
 
-        <!-- Panneau central - Sélection d'équipe -->
         <div class="panel" id="team-panel">
-            <h3>Team composition</h3>
+            <h3 data-translator="team_composition">Team composition</h3>
             <div id="team-container">
                 <div class="slot" data-slot="0"></div>
                 <div class="slot" data-slot="1"></div>
@@ -43,16 +40,16 @@
             </div>
             <div id="gauges-container">
                 <div class="main-gauge" id="main-gauge-DPT">
-                    <span>DPT</span>
+                    <span data-translator="gauge_dpt">DPT</span>
                     <div class="gauge-bar" id="gauge-DPT" data-value="0"></div>
                 </div>
                 <div id="sub-gauges-DPT" class="sub-gauges hidden">
-                    <div class="sub-gauge"><span>Corps à Corps / Melee</span><div class="gauge-bar" id="gauge-Melee" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Distance / Ranged</span><div class="gauge-bar" id="gauge-Ranged" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Zone / Area</span><div class="gauge-bar" id="gauge-Area" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Monocible / Single Target</span><div class="gauge-bar" id="gauge-Single_Target" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Constant / Constant</span><div class="gauge-bar" id="gauge-Constant" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Explosion (de saveur) / Burst</span><div class="gauge-bar" id="gauge-Burst" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_melee">Melee</span><div class="gauge-bar" id="gauge-Melee" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_ranged">Ranged</span><div class="gauge-bar" id="gauge-Ranged" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_area">Area</span><div class="gauge-bar" id="gauge-Area" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_single_target">Single Target</span><div class="gauge-bar" id="gauge-Single_Target" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_constant">Constant</span><div class="gauge-bar" id="gauge-Constant" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_burst">Burst</span><div class="gauge-bar" id="gauge-Burst" data-value="0"></div></div>
                 </div>
             
                 <div class="main-gauge" id="main-gauge-Support">
@@ -60,69 +57,65 @@
                     <div class="gauge-bar" id="gauge-Support" data-value="0"></div>
                 </div>
                 <div id="sub-gauges-Support" class="sub-gauges hidden">
-                    <div class="sub-gauge"><span>Soigneur / Heal</span><div class="gauge-bar" id="gauge-Heal" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Armure / Shield</span><div class="gauge-bar" id="gauge-Shield" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Placeur / Placeur</span><div class="gauge-bar" id="gauge-Placeur" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Buff PM / Buff MP</span><div class="gauge-bar" id="gauge-Buff_MP" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Buff PA / Buff AP</span><div class="gauge-bar" id="gauge-Buff_AP" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Buff DI / Buff DI</span><div class="gauge-bar" id="gauge-Buff_DI" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Protection / Protection</span><div class="gauge-bar" id="gauge-Protection" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_heal">Heal</span><div class="gauge-bar" id="gauge-Heal" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_shield">Shield</span><div class="gauge-bar" id="gauge-Shield" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_positioning">Positioning</span><div class="gauge-bar" id="gauge-Placeur" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_buff_mp">Buff MP</span><div class="gauge-bar" id="gauge-Buff_MP" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_buff_ap">Buff AP</span><div class="gauge-bar" id="gauge-Buff_AP" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_buff_di">Buff DI</span><div class="gauge-bar" id="gauge-Buff_DI" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_protection">Protection</span><div class="gauge-bar" id="gauge-Protection" data-value="0"></div></div>
                 </div>
             
+
+                
                 <div class="main-gauge" id="main-gauge-Entrave">
                     <span>Entrave</span>
                     <div class="gauge-bar" id="gauge-Entrave" data-value="0"></div>
                 </div>
                 <div id="sub-gauges-Entrave" class="sub-gauges hidden">
-                    <div class="sub-gauge"><span>Rall PM / Rall MP</span><div class="gauge-bar" id="gauge-Rall_MP" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Rall PA / Rall AP</span><div class="gauge-bar" id="gauge-Rall_AP" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Rall DI / Rall DI</span><div class="gauge-bar" id="gauge-Rall_DI" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Rall Resistance / Rall Resistance</span><div class="gauge-bar" id="gauge-Rall_Resistance" data-value="0"></div></div>
-                    <div class="sub-gauge"><span>Ennuyenceté / Boringness</span><div class="gauge-bar" id="gauge-Boringness" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_rall_mp">Rall MP</span><div class="gauge-bar" id="gauge-Rall_MP" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_rall_ap">Rall AP</span><div class="gauge-bar" id="gauge-Rall_AP" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_rall_di">Rall DI</span><div class="gauge-bar" id="gauge-Rall_DI" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_rall_resistance">Rall Resistance</span><div class="gauge-bar" id="gauge-Rall_Resistance" data-value="0"></div></div>
+                    <div class="sub-gauge"><span data-translator="gauge_map_control">Map Control</span><div class="gauge-bar" id="gauge-Boringness" data-value="0"></div></div>
                 </div>
+                
             </div>
             
-
             <div class="legend">
                 <span>
-                    <span class="legend-green"></span> Role filled by the team
+                    <span class="legend-green"></span> <span data-translator="legend_green">Role filled by the team</span>
                 </span>
                 <span>
-                    <span class="legend-red"></span> Important role not taken by the team
+                    <span class="legend-red"></span> <span data-translator="legend_red">Important role not taken by the team</span>
                 </span>
                 <span>
-                    <span class="legend-yellow"></span> Non-important role not taken by the team
+                    <span class="legend-yellow"></span> <span data-translator="legend_yellow">Non-important role not taken by the team</span>
                 </span>
             </div>
 
-            <!-- Section pour afficher les rôles sous la jauge -->
             <div id="roles-under-gauge">
-                <h3>Team roles</h3>
-                <!-- Les rôles seront insérés dynamiquement ici -->
+                <h3 data-translator="team_roles">Team roles</h3>
             </div>
-
         </div>
 
-        <!-- Panneau de droite - Résumé des rôles -->
         <div class="panel" id="roles-summary">
-            <h3>Summary of roles</h3>
-            <!-- Rempli dynamiquement par le JavaScript -->
+            <h3 data-translator="summary_roles">Summary of roles</h3>
         </div>
     </div>
 
     <div id="selection-menu" class="hidden">
         <div id="menu-content"></div>
-        <button id="close-menu-btn">Close</button>
+        <button id="close-menu-btn" data-translator="close_button">Close</button>
     </div>
 
     <script type="module" src="script.js"></script>
 </body>
 
 <footer>
-    
-    <p>Join <a href="https://discord.gg/evVwcwE4uW">Discord</a> if you have any suggestions.</p>
-    <p>Contact <strong>luthorino</strong> on Discord if you're associal.</p>
-    <p>Mail <strong>luthorino91@gmail.com</strong> if you're too old for Discord.</p>
+    <p data-translator="discord_invite">Join <a href="https://discord.gg/evVwcwE4uW">Discord</a> if you have any suggestions.</p>
+    <p data-translator="contact_discord">Contact <strong>luthorino</strong> on Discord if you're antisocial.</p>
+    <p data-translator="contact_email">Mail <strong>luthorino91@gmail.com</strong> if you're too old for Discord.</p>
 </footer>
 
 </html>

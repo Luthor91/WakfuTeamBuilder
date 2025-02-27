@@ -2565,92 +2565,269 @@ export const LANGUAGES = {
 
 
 export const TRANSLATIONS = {
-  // Titres
-  TEAM_BUILDER: {
-      fr: 'Team Builder Wakfu',
-      en: 'Wakfu Team Builder'
+  title: {
+    fr: 'Team Builder Wakfu',
+    en: 'Wakfu Team Builder'
   },
-  ROLES_CHOICE: {
-      fr: 'Choix des rôles',
-      en: 'Roles choice'
+  heading: {
+    fr: 'Team Builder Wakfu',
+    en: 'Wakfu Team Builder'
   },
-  TEAM_COMPOSITION: {
-      fr: 'Composition d\'équipe',
-      en: 'Team composition'
+  roles_choice: {
+    fr: 'Choix des rôles',
+    en: 'Roles choice'
   },
-  TEAM_ROLES: {
-      fr: 'Rôles d\'équipe',
-      en: 'Team Roles'
+  input_placeholder: {
+    fr: 'Entrez le code de team...',
+    en: 'Enter team code...'
+  },  
+  export_button: {
+    fr: 'Exporter',
+    en: 'Export'
   },
-  ROLES_SUMMARY: {
-      fr: 'Résumé des rôles',
-      en: 'Summary of Roles'
+  import_button: {
+    fr: 'Importer',
+    en: 'Import'
+  },
+  team_composition: {
+    fr: 'Composition de l\'équipe',
+    en: 'Team composition'
+  },
+  gauge_dpt: {
+    fr: 'DPT',
+    en: 'DPT'
+  },
+  legend_green: {
+    fr: 'Rôle rempli par l\'équipe',
+    en: 'Important role not taken by the team'
+  },
+  legend_red: {
+    fr: 'Rôle important non pris par l\'équipe',
+    en: 'Important role not taken by the team'
+  },
+  legend_yellow: {
+    fr: 'Role non important pour l\'équipe',
+    en: 'Non-important role not taken by the team'
+  },
+  dpt_melee: {
+    fr: 'Corps à Corps',
+    en: 'Melee'
+  },
+  dpt_ranged: {
+    fr: 'Distance',
+    en: 'Ranged'
+  },
+  dpt_area: {
+    fr: 'Zone',
+    en: 'Area'
+  },
+  dpt_single_target: {
+    fr: 'Monocible',
+    en: 'Single Target'
+  },
+  dpt_constant: {
+    fr: 'Constant',
+    en: 'Constant'
+  },
+  dpt_burst: {
+    fr: 'Burst',
+    en: 'Burst'
+  },
+  support: {
+    fr: 'Support',
+    en: 'Support'
+  },
+  support_heal: {
+    fr: 'Soigneur',
+    en: 'Heal'
+  },
+  support_shield: {
+    fr: 'Armure',
+    en: 'Shield'
+  },
+  support_placer: {
+    fr: 'Placeur',
+    en: 'Placer'
+  },
+  support_buff_mp: {
+    fr: 'Buff PM',
+    en: 'Buff MP'
+  },
+  support_buff_ap: {
+    fr: 'Buff PA',
+    en: 'Buff AP'
+  },
+  support_buff_di: {
+    fr: 'Buff DI',
+    en: 'Buff DI'
+  },
+  support_protection: {
+    fr: 'Protection',
+    en: 'Protection'
+  },
+  hindrance: {
+    fr: 'Entrave',
+    en: 'Hindrance'
+  },
+  hindrance_mp: {
+    fr: 'Rall PM',
+    en: 'MP Reduction'
+  },
+  hindrance_ap: {
+    fr: 'Rall PA',
+    en: 'AP Reduction'
+  },
+  hindrance_di: {
+    fr: 'Rall DI',
+    en: 'DI Reduction'
+  },
+  hindrance_resistance: {
+    fr: 'Rall Résistance',
+    en: 'Resistance Reduction'
+  },
+  hindrance_boringness: {
+    fr: 'Ennuyenceté',
+    en: 'Boringness'
+  },
+  entity_stabilized: {
+    fr: 'Stabilisation Entité',
+    en: 'Entity Stabilized'
+  },
+  summary_of_roles: {
+    fr: 'Résumé des rôles',
+    en: 'Summary of roles'
+  },
+  role_filled: {
+    fr: 'Rôle rempli par l\'équipe',
+    en: 'Role filled by the team'
+  },
+  important_role_missing: {
+    fr: 'Rôle important non pris par l\'équipe',
+    en: 'Important role not taken by the team'
+  },
+  non_important_role_missing: {
+    fr: 'Rôle non important non pris par l\'équipe',
+    en: 'Non-important role not taken by the team'
+  },
+  close: {
+    fr: 'Fermer',
+    en: 'Close'
+  },
+  warn_dpt_greater_than_support: {
+    fr: 'Nombre de DPT supérieurs à ceux des supports',
+    en: 'Number of DPT greater than Supports.'
+  },
+  warn_stabilized: {
+    fr: 'Besoin d\'une Stabilisation',
+    en: 'Need Stabilized Class.'
+  },
+  warn_invulnerability: {
+    fr: 'Besoin d\'une Invulnérabilité',
+    en: 'Need Invulnerability Class.'
+  },
+  warn_multielement_dpt: {
+    fr: 'DPT Multi Éléments',
+    en: 'DPT Multi Elements'
+  },
+  warn_need_dpt: {
+    fr: 'Besoin d\'un DPT',
+    en: 'Need a DPT.'
+  },
+  discord_invite: {
+    fr: 'Rejoignez le Discord si vous avez des suggestions.',
+    en: 'Join Discord if you have any suggestions.'
+  },
+  contact_discord: {
+    fr: 'Contactez luthorino sur Discord si vous êtes asocial.',
+    en: 'Contact luthorino on Discord if you\'re antisocial.'
+  },
+  contact_mail: {
+    fr: 'Mail luthorino91@gmail.com si vous êtes trop vieux pour Discord.',
+    en: 'Mail luthorino91@gmail.com if you\'re too old for Discord.'
+  },
+  elements: {
+    Fire: { fr: "Feu", en: "Fire" },
+    Water: { fr: "Eau", en: "Water" },
+    Earth: { fr: "Terre", en: "Earth" },
+    Air: { fr: "Air", en: "Air" }
+  },
+  gauge_melee: {
+    fr: 'Corps à Corps',
+    en: 'Melee'
+  },
+  gauge_ranged: {
+    fr: 'Distance',
+    en: 'Ranged'
+  },
+  gauge_area: {
+    fr: 'Zone',
+    en: 'Area'
+  },
+  gauge_single_target: {
+    fr: 'Monocible',
+    en: 'Single Target'
+  },
+  gauge_constant: {
+    fr: 'Constant',
+    en: 'Constant'
+  },
+  gauge_burst: {
+    fr: 'Burst',
+    en: 'Burst'
   },
 
-  // Messages d'avertissement
-  DPT_SUPPORT_WARNING: {
-      fr: 'Nombre de DPT supérieur aux Supports',
-      en: 'Number of DPT greater than Supports'
+  gauge_heal: {
+    fr: 'Soin',
+    en: 'Heal'
   },
-  MISSING_ELEMENTS: {
-      fr: 'Manque d\'élément(s)',
-      en: 'Lack of element(s)'
+  gauge_shield: {
+    fr: 'Don d\'Armure',
+    en: 'Shield'
   },
-  MULTI_ELEMENTS: {
-      fr: 'DPT Multi Éléments',
-      en: 'DPT Multi Elements'
+  gauge_positioning: {
+    fr: 'Placement',
+    en: 'Positioning'
   },
-  NEED_STABILIZED: {
-      fr: 'Besoin d\'une classe pouvant Stabiliser',
-      en: 'Need Stabilized Class'
+  gauge_buff_mp: {
+    fr: 'Boost PM',
+    en: 'Buff MP'
   },
-
-  // Légende
-  ROLE_FILLED: {
-      fr: 'Rôle rempli par l\'équipe',
-      en: 'Role filled by the team'
+  gauge_buff_ap: {
+    fr: 'Boost PA',
+    en: 'Buff AP'
   },
-  ROLE_IMPORTANT_MISSING: {
-      fr: 'Rôle important non pris par l\'équipe',
-      en: 'Important role not taken by the team'
+  gauge_buff_di: {
+    fr: 'Boost DI',
+    en: 'Buff DI'
   },
-  ROLE_OPTIONAL_MISSING: {
-      fr: 'Role non important pour l\'équipe',
-      en: 'Non-important role not taken by the team'
+  gauge_protection: {
+    fr: 'Protection d\'alliés',
+    en: 'Protetion'
   },
-
-  // Interface
-  CHOOSE_ROLE: {
-      fr: 'Choisir le rôle principal',
-      en: 'Choose main role'
+  
+  gauge_rall_mp: {
+    fr: 'Retrait PM',
+    en: 'Rall MP'
   },
-  SIMP_MODE: {
-      fr: 'Mode Simp : ',
-      en: 'Simp Mode : '
+  gauge_rall_ap: {
+    fr: 'Retrait PA',
+    en: 'Rall AP'
   },
-  ON: {
-      fr: 'ACTIVÉ',
-      en: 'ON'
+  gauge_rall_di: {
+    fr: 'Retrait DI',
+    en: 'Rall DI'
   },
-  OFF: {
-      fr: 'DÉSACTIVÉ',
-      en: 'OFF'
+  gauge_rall_resistance: {
+    fr: 'Retrait Resistance',
+    en: 'Rall Resistance'
   },
-  CLOSE: {
-      fr: 'Fermer',
-      en: 'Close'
+  gauge_map_control: {
+    fr: 'Contrôle du terrain',
+    en: 'Map Control'
   },
-
-  // Damage types
-  MELEE: {
-      fr: 'Mêlée',
-      en: 'Melee'
-  },
-  RANGED: {
-      fr: 'Distance',
-      en: 'Ranged'
-  }
 };
+
+
 
 
 export function translate(key, language) {
