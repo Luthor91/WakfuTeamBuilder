@@ -2557,6 +2557,7 @@ export const classData = {
   }
 }
 
+
 export const LANGUAGES = {
   FR: 'fr',
   EN: 'en'
@@ -2829,8 +2830,6 @@ export const TRANSLATIONS = {
     en: 'Map Control'
   },
 };
-
-
 
 
 export function translate(key, language) {

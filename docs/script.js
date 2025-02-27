@@ -119,6 +119,10 @@ document.getElementById('btn_export').onclick = function() {
             }, 50); // Changer l'opacité tous les 50ms
         }, 1500); // Après 1,5 secondes, commencer la disparition
 
+        tooltip.onclick = function() {
+            tooltip.classList.add('hidden');
+        }
+
     }).catch(err => {
         console.error("Failed to copy to clipboard:", err);
     });
