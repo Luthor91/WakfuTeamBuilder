@@ -70,6 +70,7 @@ function setLanguage(lang) {
     });
 }
 
+
 document.getElementById('btn_export').onclick = function() {
     console.log("Export function triggered");
 
@@ -91,6 +92,33 @@ document.getElementById('btn_export').onclick = function() {
     // Copier dans le presse-papier
     navigator.clipboard.writeText(exportString).then(() => {
         console.log("Exported string copied to clipboard:", exportString);
+
+        // Créer et afficher la tooltip près du bouton
+        const tooltip = document.createElement('div');
+        tooltip.textContent = "Code copié dans le presse-papier";
+        tooltip.classList.add('temp-tooltip'); // Ajouter la classe CSS
+
+        // Positionner la tooltip
+        tooltip.style.top = `${this.getBoundingClientRect().top - 40}px`; // Position juste au-dessus du bouton
+        tooltip.style.left = `${this.getBoundingClientRect().left + this.offsetWidth / 2 - 75}px`; // Centré horizontalement par rapport au bouton
+
+        document.body.appendChild(tooltip);
+
+        // Maintenir la tooltip visible pendant 1,5 secondes, puis commencer la disparition
+        setTimeout(() => {
+            // Graduellement rendre la tooltip transparente
+            let opacity = 1;
+            const fadeOut = setInterval(() => {
+                if (opacity <= 0) {
+                    clearInterval(fadeOut);
+                    tooltip.remove(); // Retirer la tooltip une fois qu'elle est complètement transparente
+                } else {
+                    opacity -= 0.05;
+                    tooltip.style.opacity = opacity;
+                }
+            }, 50); // Changer l'opacité tous les 50ms
+        }, 1500); // Après 1,5 secondes, commencer la disparition
+
     }).catch(err => {
         console.error("Failed to copy to clipboard:", err);
     });
@@ -172,7 +200,6 @@ document.getElementById('btn_import').onclick = function() {
     
     console.log("Import completed");
 };
-
 
 
 document.getElementById('main-gauge-DPT').onclick = function() {
