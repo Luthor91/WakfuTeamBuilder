@@ -8,7 +8,7 @@ const IMPORTANT_ROLES = [
 ];
 
 const OPTIONAL_ROLES = [
-    "Burst", "Ranged", "Melee", "Indirect", "Single Target", 
+    "Burst", "Ranged", "Melee", "Poison", "Single Target", 
     "Entity Stabilized", "Enemy Stabilized", "Allies Stabilized", "Self Stabilized", "Invulnerability",
     "Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur", "Off Tank",
     "Buff AP", "Buff MP", "Buff Resistance", "Buff Crit", "Buff PO", "Buff Parade", "Buff WP",
@@ -33,12 +33,6 @@ let selectedSlot = null;
 // Initialisation des événements
 document.addEventListener('DOMContentLoaded', () => {
     
-    const languageSelector = document.getElementById('language-selector');
-    languageSelector.value = currentLanguage;
-    languageSelector.addEventListener('change', (e) => {
-        changeLanguage(e.target.value);
-    });
-
     document.querySelectorAll('.slot').forEach(slot => {
         slot.addEventListener('click', () => {
             openSelectionMenu(parseInt(slot.dataset.slot));
@@ -60,6 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateRolesSummary();
     updateBalanceGauge();
     updateGauges();
+    changeLanguage("en");
+    
 });
 
 
@@ -223,6 +219,14 @@ document.getElementById('main-gauge-Entrave').onclick = function() {
     subGaugeContainer.classList.toggle("hidden");
 }
 
+document.getElementById("flag_french").onclick = function() {
+    changeLanguage("fr");
+};
+
+document.getElementById("flag_english").onclick = function() {
+    changeLanguage("en");
+};
+
 
 // Fonction pour mettre à jour l'interface
 function updateUI() {
@@ -247,15 +251,10 @@ function updateUI() {
             span.lastChild.textContent = translate('ROLE_FILLED', currentLanguage);
         } else if (text.includes('Important role')) {
             span.lastChild.textContent = translate('ROLE_IMPORTANT_MISSING', currentLanguage);
-        } else if (text.includes('Optional role')) {
+        } else if (text.includes('Non-important')) {
             span.lastChild.textContent = translate('ROLE_OPTIONAL_MISSING', currentLanguage);
         }
     });
-
-    // Mettre à jour les labels de la jauge
-    const gaugeLabels = document.querySelectorAll('.gauge-labels span');
-    gaugeLabels[0].textContent = translate('MELEE', currentLanguage);
-    gaugeLabels[1].textContent = translate('RANGED', currentLanguage);
 
     // Mettre à jour le bouton de fermeture
     document.getElementById('close-menu-btn').textContent = translate('CLOSE', currentLanguage);
@@ -641,7 +640,7 @@ function updateRolesPanel() {
     const rolesPanel = document.getElementById('team-roles-panel');
     rolesPanel.innerHTML = '';
 
-    teamRoles.forEach((slot, index) => {
+    teamRoles.forEach((_, index) => {
         const slotImg = document.querySelector(`.slot[data-slot="${index}"] img`);
         if (slotImg) {
             const container = document.createElement('div');
@@ -654,8 +653,6 @@ function updateRolesPanel() {
             const select = document.createElement('select');
             select.className = 'voie-select';
             const className = getClassNameFromFile(slotImg.src.split('/').pop());
-            
-            select.innerHTML = '<option value="">Choose main role</option>';
             
             if (className && classData.Classes[className]) {
                 Object.keys(classData.Classes[className].Voies).forEach(voie => {
@@ -681,6 +678,8 @@ function updateRolesPanel() {
             container.appendChild(thumbnail);
             container.appendChild(select);
             rolesPanel.appendChild(container);
+
+            select.dispatchEvent(new Event('change'));
         }
     });
 }
@@ -716,13 +715,35 @@ function openSelectionMenu(slotIndex) {
 
     Object.keys(classData.Classes).forEach(className => {
         const imgSrc = `male_${className.toLowerCase()}.png`;
+
+        // Vérifier si la classe est déjà prise
+        const isTaken = teamRoles.some(role => role.class === className);
+
+        // Créer un conteneur pour l'image et le texte
+        const container = document.createElement("div");
+        container.classList.add("class-container");
+        if (isTaken) {
+            container.classList.add("taken"); // Ajoute la classe CSS si la classe est prise
+        }
+
+        // Créer l'image
         const img = createClassImage(imgSrc);
-        //img.classList.add("half-image"); // Appliquer le style
-        menuContent.appendChild(img);
+
+        // Créer le texte
+        const textOverlay = document.createElement("div");
+        textOverlay.classList.add("class-name");
+        textOverlay.textContent = className;
+
+        // Ajouter l'image et le texte dans le conteneur
+        container.appendChild(img);
+        container.appendChild(textOverlay);
+        menuContent.appendChild(container);
     });
 
     menu.classList.remove("hidden");
 }
+
+
 
 
 function createClassImage(imgSrc) {

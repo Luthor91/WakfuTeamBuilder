@@ -9,11 +9,10 @@
 <body>
     <h1>Wakfu Team Builder</h1>
     
-    <!--button id="simp-mode-btn">Simp Mode: OFF</button-->
-    <select id="language-selector">
-        <option value="en">English</option>
-        <option value="fr">Français</option>
-    </select>
+    <div id="language-switcher">
+        <img src="assets/french_flag.png" alt="Français" class="language-flag" id="flag_french">
+        <img src="assets/english_flag.png" alt="English" class="language-flag" id="flag_english">
+    </div>    
     
     <div class="main-container">
         <!-- Panneau de gauche - Choix des rôles -->
@@ -92,7 +91,7 @@
                     <span class="legend-red"></span> Important role not taken by the team
                 </span>
                 <span>
-                    <span class="legend-yellow"></span> Optional role not taken by the team
+                    <span class="legend-yellow"></span> Non-important role not taken by the team
                 </span>
             </div>
 

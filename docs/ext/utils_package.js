@@ -546,7 +546,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Indirect", "Single Target", "Burst", "Resurection", "Anti Shield", "Anti Heal", "Rall Resistance", "Invulnerability", "Rall Parade"]
+        "Roles": ["Poison", "Single Target", "Burst", "Resurection", "Anti Shield", "Anti Heal", "Rall Resistance", "Invulnerability", "Rall Parade"]
       }
     },
     "Elements": ["Fire", "Water", "Air"],
@@ -722,7 +722,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Indirect", "Area", "Ranged", "Buff DI Melee", "Buff Resistance", "Rall MP", "Entity Stabilized", "Allies Stabilized", "Enemy Stabilized", "Invulnerability"]
+        "Roles": ["Poison", "Area", "Ranged", "Buff DI Melee", "Buff Resistance", "Rall MP", "Entity Stabilized", "Allies Stabilized", "Enemy Stabilized", "Invulnerability"]
       }
     },
     "Elements": ["Fire", "Water", "Earth"],
@@ -1656,7 +1656,7 @@ export const classData = {
           },
           "Autonomy": 2,
           "Mobility": 1,
-          "Roles": ["Indirect", "Area", "Melee", "Off Tank", "Entity Stabilized", "Rall MP"]
+          "Roles": ["Poison", "Area", "Melee", "Off Tank", "Entity Stabilized", "Rall MP"]
         },
         "DPT Melee": {
           "Id": 2,
@@ -1995,7 +1995,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Indirect", "Melee", "Ranged", "Sub Placeur", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
+        "Roles": ["Poison", "Melee", "Ranged", "Sub Placeur", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
       }
     },
     "Elements": ["Fire", "Earth", "Air"],
@@ -2212,7 +2212,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Indirect", "Melee", "Ranged", "Area", "Sub Heal", "Sub Shield", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
+        "Roles": ["Poison", "Melee", "Ranged", "Area", "Sub Heal", "Sub Shield", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
       },
       "Support Heal": {
         "Id": 3,
@@ -2380,7 +2380,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Indirect", "Melee", "Ranged", "Sub Placeur", "Buff PM"]
+        "Roles": ["Poison", "Melee", "Ranged", "Sub Placeur", "Buff PM"]
       },
       "Support": {
         "Id": 3,
@@ -2615,8 +2615,8 @@ export const TRANSLATIONS = {
       en: 'Important role not taken by the team'
   },
   ROLE_OPTIONAL_MISSING: {
-      fr: 'Rôle optionnel non pris par l\'équipe',
-      en: 'Optional role not taken by the team'
+      fr: 'Role non important pour l\'équipe',
+      en: 'Non-important role not taken by the team'
   },
 
   // Interface
