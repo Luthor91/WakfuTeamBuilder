@@ -2715,15 +2715,15 @@ export const TRANSLATIONS = {
   },
   warn_dpt_greater_than_support: {
     fr: 'Nombre de DPT supérieurs à ceux des supports',
-    en: 'Number of DPT greater than Supports.'
+    en: 'Number of DPT greater than Supports'
   },
   warn_stabilized: {
     fr: 'Besoin d\'une Stabilisation',
-    en: 'Need Stabilized Class.'
+    en: 'Need Stabilized Class'
   },
   warn_invulnerability: {
     fr: 'Besoin d\'une Invulnérabilité',
-    en: 'Need Invulnerability Class.'
+    en: 'Need Invulnerability Class'
   },
   warn_multielement_dpt: {
     fr: 'DPT Multi Éléments',
@@ -2731,7 +2731,7 @@ export const TRANSLATIONS = {
   },
   warn_need_dpt: {
     fr: 'Besoin d\'un DPT',
-    en: 'Need a DPT.'
+    en: 'Need a DPT'
   },
   discord_invite: {
     fr: 'Rejoignez le Discord si vous avez des suggestions.',
