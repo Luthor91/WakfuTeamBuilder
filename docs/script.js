@@ -583,17 +583,44 @@ function updateRolesPanel() {
     const rolesPanel = document.getElementById('team-roles-panel');
     rolesPanel.innerHTML = '';
 
-    let importantSlot = null;
-    let importantPriority = -1; // Niveau de priorité du rôle le plus important trouvé
     const priorityOrder = ["AreaBurst", "Burst", "Area", "Constant"];
+
+    function updateImportantSlot() {
+        let importantSlot = null;
+        let importantPriority = -1;
+
+        teamRoles.forEach((slot, index) => {
+            const slotElement = document.querySelector(`.slot[data-slot="${index}"]`);
+            if (slotElement) {
+                slotElement.classList.remove("slot-important"); // On enlève la classe à tous les slots
+            }
+
+            if (slot.voie) {
+                const className = slot.class;
+                const slotRoles = classData.Classes[className]?.Voies[slot.voie]?.Roles || [];
+
+                let slotPriority = priorityOrder.indexOf(
+                    slotRoles.includes("Area") && slotRoles.includes("Burst") ? "AreaBurst" :
+                    slotRoles.includes("Burst") ? "Burst" :
+                    slotRoles.includes("Area") ? "Area" :
+                    slotRoles.includes("Constant") ? "Constant" : null
+                );
+
+                if (slotPriority !== -1 && (importantSlot === null || slotPriority < importantPriority)) {
+                    importantSlot = slotElement;
+                    importantPriority = slotPriority;
+                }
+            }
+        });
+
+        if (importantSlot) {
+            importantSlot.classList.add("slot-important");
+        }
+    }
 
     teamRoles.forEach((slot, index) => {
         const slotImg = document.querySelector(`.slot[data-slot="${index}"] img`);
         const slotElement = document.querySelector(`.slot[data-slot="${index}"]`);
-
-        if (slotElement) {
-            slotElement.classList.remove("slot-important"); // On enlève la classe à tous les slots
-        }
 
         if (slotImg) {
             const container = document.createElement('div');
@@ -618,29 +645,22 @@ function updateRolesPanel() {
                 specificGroup.label = 'Specific';
 
                 let defaultOption = null;
-                let slotRoles = [];
 
                 Object.entries(classData.Classes[className].Voies).forEach(([voie, data]) => {
                     const option = document.createElement('option');
                     option.value = voie;
                     option.textContent = voie;
 
-                    // Sélection par défaut si Id = 1 et pas encore de voie définie
                     if (data.Id === 1 && slot.voie == null) {
                         defaultOption = option;
                     }
 
-                    // Ajouter au bon optgroup
                     if (voie.startsWith('DPT')) {
                         dptGroup.appendChild(option);
                     } else if (voie.startsWith('Support')) {
                         supportGroup.appendChild(option);
                     } else if (voie.startsWith('Specific')) {
                         specificGroup.appendChild(option);
-                    }
-
-                    if (slot.voie === voie) {
-                        slotRoles = data.Roles; // Récupérer les rôles du personnage actuel
                     }
                 });
 
@@ -657,31 +677,13 @@ function updateRolesPanel() {
                     defaultOption.selected = true;
                     teamRoles[index].voie = defaultOption.value;
                     slot.voie = defaultOption.value;
-                    slotRoles = classData.Classes[className].Voies[defaultOption.value].Roles;
-                }
-
-                console.log("slot :", slot);
-
-                // Vérification des rôles et assignation de "slot-important"
-                let slotPriority = priorityOrder.indexOf(
-                    slotRoles.includes("Area") && slotRoles.includes("Burst") ? "AreaBurst" :
-                    slotRoles.includes("Burst") ? "Burst" :
-                    slotRoles.includes("Area") ? "Area" :
-                    slotRoles.includes("Constant") ? "Constant" : null
-                );
-
-                if (slotPriority !== -1 && (importantSlot === null || slotPriority < importantPriority)) {
-                    importantSlot = slotElement;
-                    importantPriority = slotPriority;
                 }
             }
 
             select.onchange = (e) => {
-                teamRoles[index] = {
-                    class: className,
-                    voie: e.target.value
-                };
+                teamRoles[index].voie = e.target.value;
                 updateRolesSummary();
+                updateImportantSlot(); // Met à jour le slot important à chaque changement
             };
 
             container.appendChild(thumbnail);
@@ -692,10 +694,7 @@ function updateRolesPanel() {
         }
     });
 
-    // Appliquer la classe "slot-important" au slot sélectionné
-    if (importantSlot) {
-        importantSlot.classList.add("slot-important");
-    }
+    updateImportantSlot(); // Appliquer la classe lors du premier affichage
 }
 
 
