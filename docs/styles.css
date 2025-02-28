@@ -83,6 +83,7 @@ body {
     text-align: center;
     background-color: var(--color-bg-main);
     background-image: url('assets/background/background_2.jpg');
+    background-attachment: fixed;
     background-size: cover;
     background-position: center 20%;
     color: var(--color-text-main);
@@ -360,7 +361,7 @@ h3 {
     padding-left: 5px;
 }
 
-#team-top-panel, #team-bottom-panel {
+#team-top-panel, #team-mid-panel, #team-bottom-panel {
     background-color: var(--color-bg-panel);
     opacity: 0.95;
     padding: 15px;
@@ -372,7 +373,7 @@ h3 {
     transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-#team-top-panel:hover, #team-bottom-panel:hover {
+#team-top-panel:hover, #team-mid-panel:hover, #team-bottom-panel:hover {
     box-shadow: 0 6px 12px var(--shadow-dark), 0 3px 6px var(--shadow-medium);
 }
 
@@ -382,8 +383,13 @@ h3 {
 }
 
 /* Ajustement pour le panneau du bas */
-#team-bottom-panel {
+#team-mid-panel {
     flex: 1 0 auto; /* Prend l'espace restant disponible */
+}
+
+/* Ajustement pour le panneau du bas */
+#team-bottom-panel {
+    flex: 2 0 auto; /* Prend l'espace restant disponible */
 }
 
 #team-container {
