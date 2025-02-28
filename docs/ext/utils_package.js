@@ -291,6 +291,46 @@ export const classData = {
           "Autonomy": 1,
           "Mobility": 1,
           "Roles": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
+        },
+        "Specific Distribution Heal": {
+          "Id": 5,
+          "Notes": {
+            "DPT": {
+              "Melee": 0,
+              "Ranged": 0,
+              "Area": 0,
+              "Single_Target": 1,
+              "Constant": 0,
+              "Burst": 0
+            },
+            "Support": {
+              "Heal": 2,
+              "Shield": 1,
+              "Placeur": 0,
+              "Buff_MP": 1,
+              "Buff_AP": 0,
+              "Buff_DI": 1,
+              "Protection": 1
+            },
+            "Entrave": {
+              "Rall_MP": 0,
+              "Rall_AP": 0,
+              "Rall_DI": 0,
+              "Rall_Resistance": 1,
+              "Boringness": 0
+            },
+            "Team_Support": {
+              "Support_Area": 0,
+              "Support_Heal": 2,
+              "Support_Shield": 1,
+              "Support_Single_Target": 1,
+              "Support_Melee": 0,
+              "Support_Ranged": 0
+            }
+          },
+          "Autonomy": 1,
+          "Mobility": 1,
+          "Roles": ["Heal", "Sub Shield", "Sub DPT", "Buff Crit", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
         }
       },
       "Elements": ["Fire", "Water", "Earth"],
@@ -547,7 +587,47 @@ export const classData = {
         "Autonomy": 2,
         "Mobility": 1,
         "Roles": ["Poison", "Single Target", "Burst", "Resurection", "Anti Shield", "Anti Heal", "Rall Resistance", "Invulnerability", "Rall Parade"]
-      }
+      },
+      "Specific Distribution Heal": {
+        "Id": 3,
+        "Notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 1,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Boringness": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Poison", "Single Target", "Burst", "Resurection", "Anti Shield", "Anti Heal", "Rall Resistance", "Invulnerability", "Rall Parade"]
+      },
     },
     "Elements": ["Fire", "Water", "Air"],
     "Mobility": 1
@@ -1139,7 +1219,47 @@ export const classData = {
         "Autonomy": 1,
         "Mobility": 1,
         "Roles": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Entity Stabilized", "Support Burst", "Support Area", "Rall Parade"]
-      }
+      },
+      "Specific Distribution Heal": {
+        "Id": 6,
+        "Notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 1,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Boringness": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Poison", "Single Target", "Burst", "Resurection", "Anti Shield", "Anti Heal", "Rall Resistance", "Invulnerability", "Rall Parade"]
+      },
     },
     "Elements": ["Fire", "Water", "Earth", "Air"],
     "Mobility": 1
@@ -1435,6 +1555,46 @@ export const classData = {
         "Autonomy": 2,
         "Mobility": 1,
         "Roles": ["Melee", "Resurection", "Sub Heal", "Rall WP", "Buff Resistance"]
+      },
+      "Specific Distribution Heal": {
+        "Id": 5,
+        "Notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 1,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Boringness": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Poison", "Single Target", "Burst", "Resurection", "Anti Shield", "Anti Heal", "Rall Resistance", "Invulnerability", "Rall Parade"]
       },
     },
     "Elements": ["Fire", "Water", "Air"],
@@ -2370,6 +2530,46 @@ export const classData = {
         "Autonomy": 2,
         "Mobility": 1,
         "Roles": ["Shield", "Sub DPT", "Buff DI", "Rall DI", "Rall MP", "Rall Resistance"]
+      },
+      "Specific Distribution Heal": {
+        "Id": 5,
+        "Notes": {
+          "DPT": {
+            "Melee": 0,
+            "Ranged": 1,
+            "Area": 0,
+            "Single_Target": 2,
+            "Constant": 0,
+            "Burst": 2
+          },
+          "Support": {
+            "Heal": 0,
+            "Shield": 0,
+            "Placeur": 0,
+            "Buff_MP": 0,
+            "Buff_AP": 0,
+            "Buff_DI": 0,
+            "Protection": 1
+          },
+          "Entrave": {
+            "Rall_MP": 0,
+            "Rall_AP": 0,
+            "Rall_DI": 0,
+            "Rall_Resistance": 1,
+            "Boringness": 0
+          },
+          "Team_Support": {
+            "Support_Area": 0,
+            "Support_Heal": 0,
+            "Support_Shield": 0,
+            "Support_Single_Target": 1,
+            "Support_Melee": 0,
+            "Support_Ranged": 1
+          }
+        },
+        "Autonomy": 2,
+        "Mobility": 1,
+        "Roles": ["Poison", "Single Target", "Burst", "Resurection", "Anti Shield", "Anti Heal", "Rall Resistance", "Invulnerability", "Rall Parade"]
       },
     },
     "Elements": ["Water", "Earth", "Air"],
