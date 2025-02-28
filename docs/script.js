@@ -258,8 +258,7 @@ document.getElementById("flag_english").onclick = function() {
 function updateTeamRoles() {
     const rolesContainer = document.getElementById('roles-under-gauge');
     rolesContainer.innerHTML = ''; // Réinitialiser la section des rôles
-    
-    // Initialiser un tableau de rôles actuels
+
     const currentRoles = [];
     teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
@@ -272,50 +271,55 @@ function updateTeamRoles() {
         }
     });
 
-    // Pour chaque catégorie de rôle, filtrer et afficher les rôles correspondants
     Object.keys(CATEGORIES).forEach(category => {
         const categoryRoles = CATEGORIES[category].filter(role => currentRoles.includes(role));
         const missingImportant = CATEGORIES[category].filter(role => !currentRoles.includes(role) && IMPORTANT_ROLES.includes(role));
         const missingOptional = CATEGORIES[category].filter(role => !currentRoles.includes(role) && OPTIONAL_ROLES.includes(role));
-        
-    // Si la catégorie contient des rôles, on crée un titre de catégorie
-    if (categoryRoles.length || missingImportant.length || missingOptional.length) {
-        const categoryTitle = document.createElement('h4');
-        categoryTitle.textContent = category;
-        categoryTitle.style.cursor = "pointer"; // Indique qu'il est cliquable
 
-        // Ajout de l'événement pour replier/déplier
-        categoryTitle.addEventListener("click", function () {
-            let sibling = categoryTitle.nextElementSibling;
-            while (sibling && sibling.tagName !== "H4") {
-                sibling.style.display = sibling.style.display === "none" ? "inline-block" : "none";
-                sibling = sibling.nextElementSibling;
-            }
-        });
+        if (categoryRoles.length || missingImportant.length || missingOptional.length) {
+            // Création du conteneur de catégorie
+            const categoryContainer = document.createElement('div');
+            categoryContainer.classList.add('role-category');
 
-        rolesContainer.appendChild(categoryTitle);
-    }
+            // Titre de la catégorie
+            const categoryTitle = document.createElement('h4');
+            categoryTitle.textContent = category;
+            categoryTitle.classList.add('category-title');
+            categoryTitle.style.cursor = "pointer"; 
 
-        
-        // Fonction pour ajouter les rôles dans la section
-        const displayRoles = (roles, colorRole) => {
-            roles.forEach(role => {
-                const roleElement = document.createElement('div');
-                roleElement.classList.add('role-item');
-                roleElement.style.color = colorRole;
-                roleElement.textContent = role;
-                rolesContainer.appendChild(roleElement);
+            // Conteneur des rôles
+            const rolesWrapper = document.createElement('div');
+            rolesWrapper.classList.add('roles-wrapper');
+
+            categoryTitle.addEventListener("click", function () {
+                rolesWrapper.style.display = rolesWrapper.style.display === "none" ? "flex" : "none";
             });
-        };
 
-        // Afficher les rôles remplis et manquants
-        displayRoles(categoryRoles, 'green');
-        displayRoles(missingImportant, 'red');
-        displayRoles(missingOptional, 'yellow');
+            // Fonction pour ajouter les rôles avec un style badge
+            const displayRoles = (roles, className) => {
+                roles.forEach(role => {
+                    const roleElement = document.createElement('span');
+                    roleElement.classList.add('role-badge', className);
+                    roleElement.textContent = role;
+                    rolesWrapper.appendChild(roleElement);
+                });
+            };
+
+            // Ajout des rôles avec différentes couleurs
+            displayRoles(categoryRoles, 'filled-role');  // Vert
+            displayRoles(missingImportant, 'important-role'); // Rouge
+            displayRoles(missingOptional, 'optional-role'); // Jaune
+
+            // Ajout des éléments au conteneur
+            categoryContainer.appendChild(categoryTitle);
+            categoryContainer.appendChild(rolesWrapper);
+            rolesContainer.appendChild(categoryContainer);
+        }
     });
 
     updateGauges();
 }
+
 
 function updateGauges() {
     // Objet pour stocker les sommes des statistiques

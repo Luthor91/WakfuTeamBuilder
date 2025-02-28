@@ -605,40 +605,74 @@ h3 {
     display: none;
 }
 
-.role-item {
-    padding: 5px 10px;
-    border-radius: 3px;
+.role-category {
+    margin-bottom: 15px;
+}
+
+.category-title {
+    font-size: 16px;
     font-weight: bold;
-    color: var(--color-text-main);
+    padding: 5px;
+    border-bottom: 2px solid var(--color-border-medium);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-
-.legend {
-    margin-top: 10px;
-    text-align: center;
+.category-title:hover {
+    color: var(--color-highlight);
 }
 
-.legend p {
-    font-size: 14px;
-    margin: 5px 0;
+.roles-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: 8px;
+    margin-top: 10px;
+    padding-left: 10px;
 }
+
+.role-badge {
+    background-color: rgba(255, 255, 255, 0.2); /* Fond léger */
+    border: 2px solid; 
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.filled-role {
+    border-color: #4CAF50;
+    color: #4CAF50;
+}
+
+.important-role {
+    border-color: #E57373;
+    color: #E57373;
+}
+
+.optional-role {
+    border-color: #FFD54F;
+    color: #FFD54F;
+}
+
 
 .legend {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espacement entre chaque élément */
+    gap: 20px;
     margin-top: 10px;
-    color: #ccc;
 }
 
-.legend span {
+.legend-card {
     display: flex;
     align-items: center;
-    white-space: nowrap;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out;
+}
+
+.legend-card:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .legend-green, .legend-red, .legend-yellow {
@@ -648,6 +682,7 @@ h3 {
     display: inline-block;
     margin-right: 5px;
 }
+
 .legend-green { background-color: var(--color-legend-green); }
 .legend-red { background-color: var(--color-legend-red); }
 .legend-yellow { background-color: var(--color-legend-yellow); }
