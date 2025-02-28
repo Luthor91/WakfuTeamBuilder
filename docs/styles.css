@@ -433,6 +433,11 @@ h3 {
     object-position: top;
 }
 
+.slot-important {
+    border-color: #4CAF50; /* Bordure verte plus visible */
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.9); /* Glow plus intense */
+    filter: brightness(1.2);
+}
 
 /* Styles pour la jauge de balance Melee/Ranged */
 .balance-gauge-container {

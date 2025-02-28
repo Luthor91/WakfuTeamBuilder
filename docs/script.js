@@ -583,8 +583,18 @@ function updateRolesPanel() {
     const rolesPanel = document.getElementById('team-roles-panel');
     rolesPanel.innerHTML = '';
 
+    let importantSlot = null;
+    let importantPriority = -1; // Niveau de priorité du rôle le plus important trouvé
+    const priorityOrder = ["AreaBurst", "Burst", "Area", "Constant"];
+
     teamRoles.forEach((slot, index) => {
         const slotImg = document.querySelector(`.slot[data-slot="${index}"] img`);
+        const slotElement = document.querySelector(`.slot[data-slot="${index}"]`);
+
+        if (slotElement) {
+            slotElement.classList.remove("slot-important"); // On enlève la classe à tous les slots
+        }
+
         if (slotImg) {
             const container = document.createElement('div');
             container.className = 'role-selection';
@@ -598,7 +608,6 @@ function updateRolesPanel() {
             const className = getClassNameFromFile(slotImg.src.split('/').pop());
 
             if (className && classData.Classes[className]) {
-                // Création des optgroups pour chaque catégorie
                 const dptGroup = document.createElement('optgroup');
                 dptGroup.label = 'DPT';
 
@@ -609,18 +618,19 @@ function updateRolesPanel() {
                 specificGroup.label = 'Specific';
 
                 let defaultOption = null;
+                let slotRoles = [];
 
                 Object.entries(classData.Classes[className].Voies).forEach(([voie, data]) => {
                     const option = document.createElement('option');
                     option.value = voie;
                     option.textContent = voie;
 
-                    // Sélectionner l'option ayant "Id": 1 par défaut si aucune voie n'est définie
+                    // Sélection par défaut si Id = 1 et pas encore de voie définie
                     if (data.Id === 1 && slot.voie == null) {
                         defaultOption = option;
                     }
 
-                    // Ajouter l'option à la bonne catégorie
+                    // Ajouter au bon optgroup
                     if (voie.startsWith('DPT')) {
                         dptGroup.appendChild(option);
                     } else if (voie.startsWith('Support')) {
@@ -628,14 +638,16 @@ function updateRolesPanel() {
                     } else if (voie.startsWith('Specific')) {
                         specificGroup.appendChild(option);
                     }
+
+                    if (slot.voie === voie) {
+                        slotRoles = data.Roles; // Récupérer les rôles du personnage actuel
+                    }
                 });
 
-                // Ajouter les catégories si elles contiennent des options
                 if (dptGroup.children.length > 0) select.appendChild(dptGroup);
                 if (supportGroup.children.length > 0) select.appendChild(supportGroup);
                 if (specificGroup.children.length > 0) select.appendChild(specificGroup);
 
-                // Appliquer la sélection par défaut si un slot a déjà une voie définie
                 if (slot.voie) {
                     const voieOption = select.querySelector(`option[value="${slot.voie}"]`);
                     if (voieOption) {
@@ -645,10 +657,23 @@ function updateRolesPanel() {
                     defaultOption.selected = true;
                     teamRoles[index].voie = defaultOption.value;
                     slot.voie = defaultOption.value;
+                    slotRoles = classData.Classes[className].Voies[defaultOption.value].Roles;
                 }
 
-                console.log("slot : ", slot);
+                console.log("slot :", slot);
 
+                // Vérification des rôles et assignation de "slot-important"
+                let slotPriority = priorityOrder.indexOf(
+                    slotRoles.includes("Area") && slotRoles.includes("Burst") ? "AreaBurst" :
+                    slotRoles.includes("Burst") ? "Burst" :
+                    slotRoles.includes("Area") ? "Area" :
+                    slotRoles.includes("Constant") ? "Constant" : null
+                );
+
+                if (slotPriority !== -1 && (importantSlot === null || slotPriority < importantPriority)) {
+                    importantSlot = slotElement;
+                    importantPriority = slotPriority;
+                }
             }
 
             select.onchange = (e) => {
@@ -666,6 +691,11 @@ function updateRolesPanel() {
             select.dispatchEvent(new Event('change'));
         }
     });
+
+    // Appliquer la classe "slot-important" au slot sélectionné
+    if (importantSlot) {
+        importantSlot.classList.add("slot-important");
+    }
 }
 
 
