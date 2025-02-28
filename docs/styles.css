@@ -747,7 +747,6 @@ h3 {
 
 .role-present:hover {
     box-shadow: 0 0 12px var(--color-role-present-glow-hover);
-    transform: translateY(-2px); /* Plus d'élévation au survol */
 }
 
 /* Mise à jour des rôles manquants */
