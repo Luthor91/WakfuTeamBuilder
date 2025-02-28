@@ -2599,7 +2599,7 @@ export const TRANSLATIONS = {
   },
   legend_green: {
     fr: 'Rôle rempli par l\'équipe',
-    en: 'Important role not taken by the team'
+    en: 'Role taken by the team'
   },
   legend_red: {
     fr: 'Rôle important non pris par l\'équipe',

@@ -579,12 +579,11 @@ function updateRolesSummary() {
 }
 
 
-// Mettre à jour le panneau des rôles
 function updateRolesPanel() {
     const rolesPanel = document.getElementById('team-roles-panel');
     rolesPanel.innerHTML = '';
 
-    teamRoles.forEach((_, index) => {
+    teamRoles.forEach((slot, index) => {
         const slotImg = document.querySelector(`.slot[data-slot="${index}"] img`);
         if (slotImg) {
             const container = document.createElement('div');
@@ -616,8 +615,8 @@ function updateRolesPanel() {
                     option.value = voie;
                     option.textContent = voie;
 
-                    // Sélectionner l'option ayant "Id": 1 par défaut
-                    if (data.Id === 1) {
+                    // Sélectionner l'option ayant "Id": 1 par défaut si aucune voie n'est définie
+                    if (data.Id === 1 && slot.voie == null) {
                         defaultOption = option;
                     }
 
@@ -636,11 +635,20 @@ function updateRolesPanel() {
                 if (supportGroup.children.length > 0) select.appendChild(supportGroup);
                 if (specificGroup.children.length > 0) select.appendChild(specificGroup);
 
-                // Appliquer la sélection par défaut
-                if (defaultOption) {
+                // Appliquer la sélection par défaut si un slot a déjà une voie définie
+                if (slot.voie) {
+                    const voieOption = select.querySelector(`option[value="${slot.voie}"]`);
+                    if (voieOption) {
+                        voieOption.selected = true;
+                    }
+                } else if (defaultOption) {
                     defaultOption.selected = true;
                     teamRoles[index].voie = defaultOption.value;
+                    slot.voie = defaultOption.value;
                 }
+
+                console.log("slot : ", slot);
+
             }
 
             select.onchange = (e) => {
