@@ -10,8 +10,8 @@
     <h1 data-translator="heading">Wakfu Team Builder</h1>
     
     <div id="language-switcher">
-        <img src="assets/french_flag.png" alt="Français" class="language-flag" id="flag_french">
-        <img src="assets/english_flag.png" alt="English" class="language-flag" id="flag_english">
+        <img src="assets/elements/french_flag.png" alt="Français" class="language-flag" id="flag_french">
+        <img src="assets/elements/english_flag.png" alt="English" class="language-flag" id="flag_english">
     </div>    
     
     <div class="main-container">
@@ -29,74 +29,76 @@
             </div>
         </div>
 
-        <div class="panel" id="team-panel">
-            <h3 data-translator="team_composition">Team composition</h3>
-            <div id="team-container">
-                <div class="slot" data-slot="0"></div>
-                <div class="slot" data-slot="1"></div>
-                <div class="slot" data-slot="2"></div>
-                <div class="slot" data-slot="3"></div>
-                <div class="slot" data-slot="4"></div>
-                <div class="slot" data-slot="5"></div>
-            </div>
-            <div id="gauges-container">
-                <div class="main-gauge" id="main-gauge-DPT">
-                    <span data-translator="gauge_dpt">DPT</span>
-                    <div class="gauge-bar" id="gauge-DPT" data-value="0"></div>
+        <div class="panels-container">
+            <div class="panel" id="team-top-panel">
+                <h3 data-translator="team_composition">Team composition</h3>
+                <div id="team-container">
+                    <div class="slot" data-slot="0"></div>
+                    <div class="slot" data-slot="1"></div>
+                    <div class="slot" data-slot="2"></div>
+                    <div class="slot" data-slot="3"></div>
+                    <div class="slot" data-slot="4"></div>
+                    <div class="slot" data-slot="5"></div>
                 </div>
-                <div id="sub-gauges-DPT" class="sub-gauges hidden">
-                    <div class="sub-gauge"><span data-translator="gauge_melee">Melee</span><div class="gauge-bar" id="gauge-Melee" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_ranged">Ranged</span><div class="gauge-bar" id="gauge-Ranged" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_area">Area</span><div class="gauge-bar" id="gauge-Area" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_single_target">Single Target</span><div class="gauge-bar" id="gauge-Single_Target" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_constant">Constant</span><div class="gauge-bar" id="gauge-Constant" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_burst">Burst</span><div class="gauge-bar" id="gauge-Burst" data-value="0"></div></div>
-                </div>
-            
-                <div class="main-gauge" id="main-gauge-Support">
-                    <span>Support</span>
-                    <div class="gauge-bar" id="gauge-Support" data-value="0"></div>
-                </div>
-                <div id="sub-gauges-Support" class="sub-gauges hidden">
-                    <div class="sub-gauge"><span data-translator="gauge_heal">Heal</span><div class="gauge-bar" id="gauge-Heal" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_shield">Shield</span><div class="gauge-bar" id="gauge-Shield" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_positioning">Positioning</span><div class="gauge-bar" id="gauge-Placeur" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_buff_mp">Buff MP</span><div class="gauge-bar" id="gauge-Buff_MP" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_buff_ap">Buff AP</span><div class="gauge-bar" id="gauge-Buff_AP" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_buff_di">Buff DI</span><div class="gauge-bar" id="gauge-Buff_DI" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_protection">Protection</span><div class="gauge-bar" id="gauge-Protection" data-value="0"></div></div>
-                </div>
-            
-
-                
-                <div class="main-gauge" id="main-gauge-Entrave">
-                    <span>Entrave</span>
-                    <div class="gauge-bar" id="gauge-Entrave" data-value="0"></div>
-                </div>
-                <div id="sub-gauges-Entrave" class="sub-gauges hidden">
-                    <div class="sub-gauge"><span data-translator="gauge_rall_mp">Rall MP</span><div class="gauge-bar" id="gauge-Rall_MP" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_rall_ap">Rall AP</span><div class="gauge-bar" id="gauge-Rall_AP" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_rall_di">Rall DI</span><div class="gauge-bar" id="gauge-Rall_DI" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_rall_resistance">Rall Resistance</span><div class="gauge-bar" id="gauge-Rall_Resistance" data-value="0"></div></div>
-                    <div class="sub-gauge"><span data-translator="gauge_map_control">Map Control</span><div class="gauge-bar" id="gauge-Boringness" data-value="0"></div></div>
-                </div>
-                
-            </div>
-            
-            <div class="legend">
-                <span>
-                    <span class="legend-green"></span> <span data-translator="legend_green">Role filled by the team</span>
-                </span>
-                <span>
-                    <span class="legend-red"></span> <span data-translator="legend_red">Important role not taken by the team</span>
-                </span>
-                <span>
-                    <span class="legend-yellow"></span> <span data-translator="legend_yellow">Non-important role not taken by the team</span>
-                </span>
             </div>
 
-            <div id="roles-under-gauge">
-                <h3 data-translator="team_roles">Team roles</h3>
+            <div class="panel" id="team-bottom-panel">
+                <div id="gauges-container">
+                    <div class="main-gauge" id="main-gauge-DPT">
+                        <span data-translator="gauge_dpt">DPT</span>
+                        <div class="gauge-bar" id="gauge-DPT" data-value="0"></div>
+                    </div>
+                    <div id="sub-gauges-DPT" class="sub-gauges hidden">
+                        <div class="sub-gauge"><span data-translator="gauge_melee">Melee</span><div class="gauge-bar" id="gauge-Melee" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_ranged">Ranged</span><div class="gauge-bar" id="gauge-Ranged" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_area">Area</span><div class="gauge-bar" id="gauge-Area" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_single_target">Single Target</span><div class="gauge-bar" id="gauge-Single_Target" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_constant">Constant</span><div class="gauge-bar" id="gauge-Constant" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_burst">Burst</span><div class="gauge-bar" id="gauge-Burst" data-value="0"></div></div>
+                    </div>
+                
+                    <div class="main-gauge" id="main-gauge-Support">
+                        <span>Support</span>
+                        <div class="gauge-bar" id="gauge-Support" data-value="0"></div>
+                    </div>
+                    <div id="sub-gauges-Support" class="sub-gauges hidden">
+                        <div class="sub-gauge"><span data-translator="gauge_heal">Heal</span><div class="gauge-bar" id="gauge-Heal" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_shield">Shield</span><div class="gauge-bar" id="gauge-Shield" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_positioning">Positioning</span><div class="gauge-bar" id="gauge-Placeur" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_buff_mp">Buff MP</span><div class="gauge-bar" id="gauge-Buff_MP" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_buff_ap">Buff AP</span><div class="gauge-bar" id="gauge-Buff_AP" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_buff_di">Buff DI</span><div class="gauge-bar" id="gauge-Buff_DI" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_protection">Protection</span><div class="gauge-bar" id="gauge-Protection" data-value="0"></div></div>
+                    </div>
+                
+                    <div class="main-gauge" id="main-gauge-Entrave">
+                        <span>Entrave</span>
+                        <div class="gauge-bar" id="gauge-Entrave" data-value="0"></div>
+                    </div>
+                    <div id="sub-gauges-Entrave" class="sub-gauges hidden">
+                        <div class="sub-gauge"><span data-translator="gauge_rall_mp">Rall MP</span><div class="gauge-bar" id="gauge-Rall_MP" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_rall_ap">Rall AP</span><div class="gauge-bar" id="gauge-Rall_AP" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_rall_di">Rall DI</span><div class="gauge-bar" id="gauge-Rall_DI" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_rall_resistance">Rall Resistance</span><div class="gauge-bar" id="gauge-Rall_Resistance" data-value="0"></div></div>
+                        <div class="sub-gauge"><span data-translator="gauge_map_control">Map Control</span><div class="gauge-bar" id="gauge-Boringness" data-value="0"></div></div>
+                    </div>
+                </div>
+                
+                <div class="legend">
+                    <span>
+                        <span class="legend-green"></span> <span data-translator="legend_green">Role filled by the team</span>
+                    </span>
+                    <span>
+                        <span class="legend-red"></span> <span data-translator="legend_red">Important role not taken by the team</span>
+                    </span>
+                    <span>
+                        <span class="legend-yellow"></span> <span data-translator="legend_yellow">Non-important role not taken by the team</span>
+                    </span>
+                </div>
+
+                <div id="roles-under-gauge">
+                    <h3 data-translator="team_roles">Team roles</h3>
+                </div>
             </div>
         </div>
 

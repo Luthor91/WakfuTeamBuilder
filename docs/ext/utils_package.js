@@ -2,7 +2,7 @@ export const classData = {
   "Classes": {
     "Cra": {
       "Id": 1,
-      "Image": "assets/male_cra.png",
+      "Image": "assets/classes/male_cra.png",
       "Voies": {
         "DPT Ranged Area": {
           "Id": 1,
@@ -130,7 +130,7 @@ export const classData = {
     },
     "Ecaflip": {
       "Id": 2,
-      "Image": "assets/male_ecaflip.png",
+      "Image": "assets/classes/male_ecaflip.png",
       "Voies": {
         "DPT Elementary": {
           "Id": 1,
@@ -298,7 +298,7 @@ export const classData = {
     },
     "Eliotrope": {
       "Id": 3,
-      "Image": "assets/male_eliotrope.png",
+      "Image": "assets/classes/male_eliotrope.png",
       "Voies": {
         "DPT Melee": {
           "Id": 1,
@@ -466,7 +466,7 @@ export const classData = {
     },
    "Eniripsa": {
     "Id": 4,
-    "Image": "assets/male_eniripsa.png",
+    "Image": "assets/classes/male_eniripsa.png",
     "Voies": {
       "Support Heal": {
         "Id": 1,
@@ -554,7 +554,7 @@ export const classData = {
     },
     "Enutrof": {
     "Id": 5,
-    "Image": "assets/male_enutrof.png",
+    "Image": "assets/classes/male_enutrof.png",
     "Voies": {
       "Support": {
         "Id": 1,
@@ -642,7 +642,7 @@ export const classData = {
     },
     "Feca": {
     "Id": 6,
-    "Image": "assets/male_feca.png",
+    "Image": "assets/classes/male_feca.png",
     "Voies": {
       "Support Shield": {
         "Id": 1,
@@ -730,7 +730,7 @@ export const classData = {
     },
     "Foggernaut": {
     "Id": 7,
-    "Image": "assets/male_foggernaut.png",
+    "Image": "assets/classes/male_foggernaut.png",
     "Voies": {
       "DPT Elementary": {
         "Id": 1,
@@ -938,7 +938,7 @@ export const classData = {
     },
     "Huppermage": {
     "Id": 8,
-    "Image": "assets/male_huppermage.png",
+    "Image": "assets/classes/male_huppermage.png",
     "Voies": {
       "DPT Elementary": {
         "Id": 1,
@@ -1106,7 +1106,7 @@ export const classData = {
     },
     "Iop": {
     "Id": 9,
-    "Image": "assets/male_iop.png",
+    "Image": "assets/classes/male_iop.png",
     "Voies": {
       "DPT Melee": {
         "Id": 1,
@@ -1194,7 +1194,7 @@ export const classData = {
     },
     "Masqueraider": {
     "Id": 10,
-    "Image": "assets/male_masqueraider.png",
+    "Image": "assets/classes/male_masqueraider.png",
     "Voies": {
       "Support Placeur": {
         "Id": 1,
@@ -1364,7 +1364,7 @@ export const classData = {
     },
     "Osamodas": {
       "Id": 11,
-      "Image": "assets/male_osamodas.png",
+      "Image": "assets/classes/male_osamodas.png",
       "Voies": {
         "Support Shield": {
           "Id": 1,
@@ -1613,7 +1613,7 @@ export const classData = {
     },
     "Ouginak": {
       "Id": 12,
-      "Image": "assets/male_ouginak.png",
+      "Image": "assets/classes/male_ouginak.png",
       "Voies": {
         "DPT Indirect": {
           "Id": 1,
@@ -1743,7 +1743,7 @@ export const classData = {
     },
     "Pandawa": {
     "Id": 13,
-    "Image": "assets/male_pandawa.png",
+    "Image": "assets/classes/male_pandawa.png",
     "Voies": {
       "Support Placeur": {
         "Id": 1,
@@ -1873,7 +1873,7 @@ export const classData = {
     },
     "Rogue": {
     "Id": 14,
-    "Image": "assets/male_rogue.png",
+    "Image": "assets/classes/male_rogue.png",
     "Voies": {
       "DPT Mixed": {
         "Id": 1,
@@ -2002,7 +2002,7 @@ export const classData = {
     },
     "Sacrier": {
     "Id": 15,
-    "Image": "assets/male_sacrier.png",
+    "Image": "assets/classes/male_sacrier.png",
     "Voies": {
       "DPT Melee": {
         "Id": 1,
@@ -2131,7 +2131,7 @@ export const classData = {
     },
     "Sadida": {
     "Id": 16,
-    "Image": "assets/male_sadida.png",
+    "Image": "assets/classes/male_sadida.png",
     "Voies": {
       "Support Heal": {
         "Id": 1,
@@ -2299,7 +2299,7 @@ export const classData = {
     },
     "Sram": {
     "Id": 17,
-    "Image": "assets/male_sram.png",
+    "Image": "assets/classes/male_sram.png",
     "Voies": {
       "DPT Melee": {
         "Id": 1,
@@ -2427,7 +2427,7 @@ export const classData = {
     },
     "Xelor": {
     "Id": 18,
-    "Image": "assets/male_xelor.png",
+    "Image": "assets/classes/male_xelor.png",
     "Voies": {
       "DPT Ranged": {
         "Id": 1,

@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialisation des panneaux
     updateRolesPanel();
     updateRolesSummary();
-    updateBalanceGauge();
     updateGauges();
     setLanguage("en");
     
@@ -199,7 +198,6 @@ document.getElementById('btn_import').onclick = function() {
 
     updateRolesPanel();
     updateRolesSummary();
-    updateBalanceGauge();
     updateTeamRoles();
     
     console.log("Import completed");
@@ -256,16 +254,6 @@ document.getElementById("flag_english").onclick = function() {
     setLanguage("en");
 };
 
-
-// Fonction pour mettre à jour l'interface
-function updateUI() {
-    updateRolesSummary();
-    updateRolesPanel();
-    updateTeamRoles();
-    updateRolesSummary();
-    updateBalanceGauge()
-    updateGauges();
-}
 
 function updateTeamRoles() {
     const rolesContainer = document.getElementById('roles-under-gauge');
@@ -390,46 +378,6 @@ function updateGaugeBar(element, value) {
 }
 
 
-// Fonction pour calculer la balance Melee/Ranged
-function calculateMeleeRangedBalance() {
-    let balance = 0;
-    
-    teamRoles.forEach(slot => {
-        if (slot.class && slot.voie) {
-            const classVoies = classData.Classes[slot.class].Voies;
-            if (classVoies[slot.voie] && slot.voie.includes('DPT')) {
-                const voieValues = classVoies[slot.voie];
-                if (voieValues.Roles.includes('Melee')) {
-                    balance -= 1;
-                }
-                if (voieValues.Roles.includes('Ranged')) {
-                    balance += 1;
-                }
-            }
-        }
-    });
-    
-    return balance;
-}
-
-
-// Fonction pour mettre à jour la jauge
-function updateBalanceGauge() {
-    const balance = calculateMeleeRangedBalance();
-    const gaugeContainer = document.querySelector('.balance-gauge-container');
-    if (!gaugeContainer) return;
-
-    const cursor = gaugeContainer.querySelector('.gauge-cursor');
-    
-    // Calculer la position du curseur (50% est le centre)
-    let position = 50; // Position de base (centre)
-    position += (balance * 10); // Chaque point déplace de 10%
-    position = Math.max(0, Math.min(100, position)); // Limiter entre 0 et 100%
-    
-    cursor.style.left = `${position}%`;
-}
-
-
 // Fonction pour compter les rôles DPT et Support
 function getElementsDPT() {
     let elementsDPT = [];
@@ -512,7 +460,6 @@ function clearSlot(slotIndex) {
     teamRoles[slotIndex] = { class: null, voie: null };
     updateRolesPanel();
     updateRolesSummary();
-    updateBalanceGauge();
     updateTeamRoles();
 }
 
@@ -698,7 +645,6 @@ function updateRolesPanel() {
                     voie: e.target.value
                 };
                 updateRolesSummary();
-                updateBalanceGauge();
             };
 
             container.appendChild(thumbnail);
@@ -716,7 +662,7 @@ function selectClass(imgSrc) {
         const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
         slot.innerHTML = "";
         const img = document.createElement("img");
-        img.src = `assets/${imgSrc}`;
+        img.src = `assets/classes/${imgSrc}`;
         slot.appendChild(img);
         
         const className = getClassNameFromFile(imgSrc);
@@ -727,7 +673,6 @@ function selectClass(imgSrc) {
         
         updateRolesPanel();
         updateRolesSummary();
-        updateBalanceGauge();
     }
     closeSelectionMenu();
 }
@@ -773,7 +718,7 @@ function openSelectionMenu(slotIndex) {
 
 function createClassImage(imgSrc) {
     const img = document.createElement("img");
-    img.src = `assets/${imgSrc}`;
+    img.src = `assets/classes/${imgSrc}`;
     img.dataset.src = imgSrc;  // Stocker l'image actuelle
 
     // Clic droit pour changer le genre
@@ -783,10 +728,10 @@ function createClassImage(imgSrc) {
         let newGender = gender === 'male' ? 'female' : 'male';
 
         let newImgSrc = `${newGender}_${className}`;
-        img.src = `assets/${newImgSrc}`;
+        img.src = `assets/classes/${newImgSrc}`;
         img.dataset.src = newImgSrc;  // Mettre à jour l'image actuelle
 
-        teamRoles[selectedSlot].image = `assets/${newImgSrc}`; 
+        teamRoles[selectedSlot].image = `assets/classes/${newImgSrc}`; 
     };
 
     // Clic gauche normal
