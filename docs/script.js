@@ -62,9 +62,6 @@ function updateAll() {
     updateRolesPanel();
     updateRolesSummary();
     updateGauges(); 
-
-    console.log(teamRoles);
-    
 }
 
 
@@ -441,7 +438,7 @@ function updateGaugeBar(element, value) {
 
 function updateSlotOrder() {
     // Créer une copie du tableau pour ne pas modifier l'original directement
-    let sortedRoles = [...teamRoles];
+    let sortedRoles = JSON.parse(JSON.stringify(teamRoles));
     
     // Définir les critères de tri par ordre de priorité
     const sortingCriteria = [
@@ -838,12 +835,12 @@ function updateRolesPanel() {
                     slot.voie = defaultOption.value;
                 }
                 
+                // Improved onchange handler in updateRolesPanel:
                 select.onchange = (e) => {
+                    // Update the voie for this slot
                     teamRoles[index].voie = e.target.value;
-                    teamRoles = updateSlotOrder();
-                    updateTeamContainer();
-                    updateRolesSummary();
-                    updateImportantSlot();
+                    // Use updateAll to ensure complete refresh
+                    updateAll();
                 };
                 
                 container.appendChild(select);
