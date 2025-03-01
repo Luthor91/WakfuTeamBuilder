@@ -57,10 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function updateAll() {
+    teamRoles = updateSlotOrder();
+    updateTeamContainer();
     updateRolesPanel();
     updateRolesSummary();
-    updateTeamRoles();
     updateGauges(); 
+
+    console.log(teamRoles);
+    
 }
 
 
@@ -145,63 +149,38 @@ document.getElementById('btn_import').onclick = function() {
     }
 
     const rolePairs = importString.split(";").filter(pair => pair !== "");
-
-    let index = 0; // Index pour l'écrasement des valeurs dans teamRoles
-
+    
+    // Réinitialiser teamRoles avec des slots vides
+    teamRoles = Array(6).fill().map(() => ({ class: null, voie: null, image: null }));
+    
+    let index = 0;
     rolePairs.forEach(pair => {
-        const [classId, roleId] = pair.split("-");
-
-        for (const className in classData.Classes) {
-            if (classData.Classes[className].Id.toString() === classId) {
-                const classVoies = classData.Classes[className]?.Voies;
-
-                for (const voieName in classVoies) {
-                    if (classVoies[voieName].Id.toString() === roleId) {
-                        // Écraser directement la valeur dans teamRoles
-                        if (index < teamRoles.length) {
+        if (pair && index < teamRoles.length) {
+            const [classId, roleId] = pair.split("-");
+            
+            // Rechercher la classe correspondant à l'ID
+            for (const className in classData.Classes) {
+                if (classData.Classes[className].Id.toString() === classId) {
+                    const classVoies = classData.Classes[className]?.Voies;
+                    
+                    // Rechercher la voie correspondant à l'ID de rôle
+                    for (const voieName in classVoies) {
+                        if (classVoies[voieName].Id.toString() === roleId) {
                             teamRoles[index] = {
                                 class: className,
                                 voie: voieName,
                                 image: classData.Classes[className].Image
                             };
-
-                            // Mise à jour de l'affichage
-                            const teamContainer = document.getElementById("team-container");
-                            const slotElement = teamContainer.children[index];
-                            if (slotElement) {
-                                let imgElement = slotElement.querySelector("img");
-                                if (!imgElement) {
-                                    imgElement = document.createElement("img");
-                                    slotElement.appendChild(imgElement);
-                                }
-                                imgElement.src = classData.Classes[className].Image;
-                            }
-
-                            const rolesPanel = document.getElementById("team-roles-panel");
-                            const panelSlot = rolesPanel.children[index];
-                            if (panelSlot) {
-                                const classSelect = panelSlot.querySelector(".class-select");
-                                const voieSelect = panelSlot.querySelector(".voie-select");
-
-                                if (classSelect) {
-                                    classSelect.value = className;
-                                }
-                                if (voieSelect) {
-                                    voieSelect.value = voieName;
-                                }
-                            }
-
-                            index++; // Passer au prochain slot
+                            index++;
+                            break;
                         }
                     }
+                    break;
                 }
             }
         }
     });
-
-    console.log("teamRoles : ", teamRoles);
-    teamRoles = [...teamRoles];
-
+    
     updateAll();
     
     console.log("Import completed");
@@ -325,6 +304,79 @@ function updateTeamRoles() {
 }
 
 
+function updateTeamContainer() {
+    // Récupérer le conteneur d'équipe
+    const teamContainer = document.getElementById("team-container");
+    
+    // Parcourir chaque slot dans teamRoles
+    teamRoles.forEach((slot, index) => {
+        // Récupérer l'élément slot correspondant
+        const slotElement = teamContainer.children[index];
+        
+        if (slotElement) {
+            // Si le slot contient une classe (n'est pas vide)
+            if (slot.class) {
+                // Chercher si une image existe déjà dans ce slot
+                let imgElement = slotElement.querySelector("img");
+                
+                // Si aucune image n'existe, en créer une nouvelle
+                if (!imgElement) {
+                    imgElement = document.createElement("img");
+                    slotElement.appendChild(imgElement);
+                }
+                
+                // Mettre à jour la source de l'image
+                if (slot.image) {
+                    imgElement.src = slot.image;
+                } else {
+                    imgElement.src = classData.Classes[slot.class].Image;
+                    // Mettre à jour slot.image pour la cohérence
+                    slot.image = classData.Classes[slot.class].Image;
+                }
+                
+                // Vérifier si la voie existe pour cette classe
+                if (slot.voie && !classData.Classes[slot.class].Voies[slot.voie]) {
+                    console.warn(`La voie ${slot.voie} n'existe pas pour la classe ${slot.class}`);
+                    slot.voie = null; // Réinitialiser si la voie n'est pas valide
+                }
+                
+                // Si la voie n'est pas définie, essayer de définir une voie par défaut
+                if (!slot.voie) {
+                    // Essayer de trouver la première voie disponible
+                    const voies = Object.keys(classData.Classes[slot.class].Voies);
+                    if (voies.length > 0) {
+                        slot.voie = voies[0];
+                    }
+                }
+            } else {
+                // Si le slot est vide, supprimer tout contenu
+                slotElement.innerHTML = "";
+                // Réinitialiser complètement le slot dans teamRoles
+                teamRoles[index] = { class: null, voie: null, image: null };
+            }
+        }
+    });
+    
+    // Mettre à jour également les sélecteurs de voie dans le panneau des rôles
+    const rolesPanel = document.getElementById("team-roles-panel");
+    if (rolesPanel) {
+        teamRoles.forEach((slot, index) => {
+            const panelSlot = rolesPanel.children[index];
+            if (panelSlot) {
+                const voieSelect = panelSlot.querySelector(".voie-select");
+                if (voieSelect && slot.voie) {
+                    // Trouver et sélectionner l'option correspondant à la voie actuelle
+                    const option = voieSelect.querySelector(`option[value="${slot.voie}"]`);
+                    if (option) {
+                        option.selected = true;
+                    }
+                }
+            }
+        });
+    }
+}
+
+
 function updateGauges() {
     // Objet pour stocker les sommes des statistiques
     const totalStats = {};
@@ -384,6 +436,85 @@ function updateGaugeBar(element, value) {
     
     // Appliquer la couleur
     element.style.setProperty('--gauge-color', color);
+}
+
+
+function updateSlotOrder() {
+    // Créer une copie du tableau pour ne pas modifier l'original directement
+    let sortedRoles = [...teamRoles];
+    
+    // Définir les critères de tri par ordre de priorité
+    const sortingCriteria = [
+      // 1. Shield en première position
+      (slot) => {
+        if (!slot.class || !slot.voie) return false;
+        return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes("Shield");
+      },
+      
+      // 2. Heal en deuxième position
+      (slot) => {
+        if (!slot.class || !slot.voie) return false;
+        return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes("Heal");
+      },
+      
+      // 3. Utilitaire en troisième position
+      (slot) => {
+        if (!slot.class || !slot.voie) return false;
+        return slot.voie.includes("Utilitaire");
+      },
+      
+      // 4. Placeur en quatrième position
+      (slot) => {
+        if (!slot.class || !slot.voie) return false;
+        return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes("Placeur");
+      },
+      
+      // 5. Area en cinquième position
+      (slot) => {
+        if (!slot.class || !slot.voie) return false;
+        return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes("Area");
+      },
+      
+      // 6. Burst en sixième position
+      (slot) => {
+        if (!slot.class || !slot.voie) return false;
+        return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes("Burst");
+      }
+    ];
+    
+    // Filtrer les slots non vides
+    const nonEmptySlots = sortedRoles.filter(slot => slot.class && slot.voie);
+    
+    // Filtrer les slots vides
+    const emptySlots = sortedRoles.filter(slot => !slot.class || !slot.voie);
+    
+    // Tableau pour stocker les résultats triés
+    let result = [];
+    
+    // Pour chaque critère, trouver et ajouter les slots correspondants
+    for (const criterion of sortingCriteria) {
+      const matchingSlots = nonEmptySlots.filter(slot => criterion(slot));
+      
+      // Ajouter les slots correspondants au résultat
+      result.push(...matchingSlots);
+      
+      // Retirer les slots correspondants de la liste originale
+      nonEmptySlots.splice(0, nonEmptySlots.length, ...nonEmptySlots.filter(slot => !matchingSlots.includes(slot)));
+    }
+    
+    // Ajouter les slots restants qui n'ont pas été classés
+    result.push(...nonEmptySlots);
+    
+    // Ajouter les slots vides à la fin
+    result.push(...emptySlots);
+    
+    // S'assurer que le tableau a toujours la même taille que l'original
+    while (result.length < teamRoles.length) {
+      result.push({ class: null, voie: null, image: null });
+    }
+    
+    // Retourner le tableau trié au lieu de simplement modifier teamRoles
+    return result.slice(0, teamRoles.length);
 }
 
 
@@ -587,11 +718,19 @@ function updateRolesPanel() {
     const rolesPanel = document.getElementById('team-roles-panel');
     rolesPanel.innerHTML = '';
 
-    const priorityOrder = ["AreaBurst", "Burst", "Area", "Constant"];
+    // Nouvel ordre de priorité
+    const priorityOrder = [
+        ["Area", "Burst", "Ranged", "Melee"], // Combinaison complète en priorité
+        ["Area", "Burst"], // Area + Burst en deuxième
+        ["Area"], // Area seul en troisième
+        ["Burst"], // Burst seul en quatrième
+        ["Constant"] // Constant en dernier
+    ];
 
     function updateImportantSlot() {
         let importantSlot = null;
         let importantPriority = -1;
+        let importantRolesLength = -1;
 
         teamRoles.forEach((slot, index) => {
             const slotElement = document.querySelector(`.slot[data-slot="${index}"]`);
@@ -602,17 +741,31 @@ function updateRolesPanel() {
             if (slot.voie) {
                 const className = slot.class;
                 const slotRoles = classData.Classes[className]?.Voies[slot.voie]?.Roles || [];
+                
+                // Déterminer la priorité en fonction des combinaisons de rôles
+                let slotPriority = -1;
+                
+                for (let i = 0; i < priorityOrder.length; i++) {
+                    const rolesCombo = priorityOrder[i];
+                    // Vérifier si tous les rôles de la combinaison sont présents
+                    const allRolesPresent = rolesCombo.every(role => slotRoles.includes(role));
+                    
+                    if (allRolesPresent) {
+                        slotPriority = i;
+                        break;
+                    }
+                }
 
-                let slotPriority = priorityOrder.indexOf(
-                    slotRoles.includes("Area") && slotRoles.includes("Burst") ? "AreaBurst" :
-                    slotRoles.includes("Burst") ? "Burst" :
-                    slotRoles.includes("Area") ? "Area" :
-                    slotRoles.includes("Constant") ? "Constant" : null
-                );
-
-                if (slotPriority !== -1 && (importantSlot === null || slotPriority < importantPriority)) {
-                    importantSlot = slotElement;
-                    importantPriority = slotPriority;
+                // Si on a trouvé une priorité valide
+                if (slotPriority !== -1) {
+                    // En cas d'égalité de priorité, on compare la longueur du tableau Roles
+                    if (importantSlot === null || 
+                        slotPriority < importantPriority || 
+                        (slotPriority === importantPriority && slotRoles.length > importantRolesLength)) {
+                        importantSlot = slotElement;
+                        importantPriority = slotPriority;
+                        importantRolesLength = slotRoles.length;
+                    }
                 }
             }
         });
@@ -622,23 +775,25 @@ function updateRolesPanel() {
         }
     }
 
+    // Parcourir teamRoles dans son ordre actuel pour maintenir la cohérence
     teamRoles.forEach((slot, index) => {
-        const slotImg = document.querySelector(`.slot[data-slot="${index}"] img`);
-        const slotElement = document.querySelector(`.slot[data-slot="${index}"]`);
-
-        if (slotImg) {
-            const container = document.createElement('div');
-            container.className = 'role-selection';
+        // Créer un conteneur pour chaque slot
+        const container = document.createElement('div');
+        container.className = 'role-selection';
+        container.style.display = 'none';
+        
+        if (slot.class && slot.image) {
+        container.style.display = 'flex';
 
             const thumbnail = document.createElement('img');
-            thumbnail.src = slotImg.src;
+            thumbnail.src = slot.image;
             thumbnail.className = 'role-thumbnail';
-
+            container.appendChild(thumbnail);
+            
             const select = document.createElement('select');
             select.className = 'voie-select';
-            const className = getClassNameFromFile(slotImg.src.split('/').pop());
-
-            if (className && classData.Classes[className]) {
+            
+            if (classData.Classes[slot.class]) {
                 const dptGroup = document.createElement('optgroup');
                 dptGroup.label = 'DPT';
 
@@ -650,7 +805,7 @@ function updateRolesPanel() {
 
                 let defaultOption = null;
 
-                Object.entries(classData.Classes[className].Voies).forEach(([voie, data]) => {
+                Object.entries(classData.Classes[slot.class].Voies).forEach(([voie, data]) => {
                     const option = document.createElement('option');
                     option.value = voie;
                     option.textContent = voie;
@@ -682,20 +837,20 @@ function updateRolesPanel() {
                     teamRoles[index].voie = defaultOption.value;
                     slot.voie = defaultOption.value;
                 }
+                
+                select.onchange = (e) => {
+                    teamRoles[index].voie = e.target.value;
+                    teamRoles = updateSlotOrder();
+                    updateTeamContainer();
+                    updateRolesSummary();
+                    updateImportantSlot();
+                };
+                
+                container.appendChild(select);
             }
-
-            select.onchange = (e) => {
-                teamRoles[index].voie = e.target.value;
-                updateRolesSummary();
-                updateImportantSlot(); // Met à jour le slot important à chaque changement
-            };
-
-            container.appendChild(thumbnail);
-            container.appendChild(select);
-            rolesPanel.appendChild(container);
-
-            select.dispatchEvent(new Event('change'));
         }
+        
+        rolesPanel.appendChild(container);
     });
 
     updateImportantSlot(); // Appliquer la classe lors du premier affichage
@@ -709,17 +864,28 @@ function selectClass(imgSrc) {
         const img = document.createElement("img");
         img.src = `assets/classes/${imgSrc}`;
         slot.appendChild(img);
-        
+
         const className = getClassNameFromFile(imgSrc);
+        let selectedVoie = null;
+
+        Object.entries(classData.Classes[className].Voies).forEach(([voie, data]) => {
+            if (data.Id === 1) {
+                selectedVoie = voie;
+            }
+        });
+
         teamRoles[selectedSlot] = {
             class: className,
-            voie: null
+            voie: selectedVoie,
+            image: `assets/classes/${imgSrc}`
         };
-        
+
         updateAll();
     }
     closeSelectionMenu();
 }
+
+    
 
 
 function openSelectionMenu(slotIndex) {
