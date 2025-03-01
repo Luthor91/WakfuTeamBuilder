@@ -1642,7 +1642,7 @@ export const classData = {
           },
           "Autonomy": 1,
           "Mobility": 1,
-          "Roles": ["Shield", "Buff AP", "Buff DI", "Rall Resistance", "Sub Placeur", "Sub Heal", "Buff Crit", "Buff Crit", "Buff PO", "Rall DI", "Rall Crit", "Rall Parade", "Anti Heal"]
+          "Roles": ["Sub Shield", "Buff AP", "Buff DI", "Rall Resistance", "Sub Placeur", "Sub Heal", "Buff Crit", "Buff Crit", "Buff PO", "Rall DI", "Rall Crit", "Rall Parade", "Anti Heal"]
         },
         "Support Heal": {
           "Id": 2,
