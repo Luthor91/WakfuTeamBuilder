@@ -50,12 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
 
     // Initialisation des panneaux
-    updateRolesPanel();
-    updateRolesSummary();
-    updateGauges();
+    updateAll();
     setLanguage("en");
     
 });
+
+
+function updateAll() {
+    updateRolesPanel();
+    updateRolesSummary();
+    updateTeamRoles();
+    updateGauges(); 
+}
 
 
 function setLanguage(lang) {
@@ -196,9 +202,7 @@ document.getElementById('btn_import').onclick = function() {
     console.log("teamRoles : ", teamRoles);
     teamRoles = [...teamRoles];
 
-    updateRolesPanel();
-    updateRolesSummary();
-    updateTeamRoles();
+    updateAll();
     
     console.log("Import completed");
 };
@@ -356,6 +360,7 @@ function updateGauges() {
     }
 }
 
+
 function updateGaugeBar(element, value) {
     // Mettre à jour l'attribut data-value
     element.setAttribute('data-value', value);
@@ -430,6 +435,7 @@ function hasStabilizedRole() {
     for (const slot of teamRoles) {
         if (slot.class && slot.voie) {
             const classVoies = classData.Classes[slot.class].Voies;
+            
             if (classVoies[slot.voie].Roles.includes("Entity Stabilized") 
                 || classVoies[slot.voie].Roles.includes("Self Stabilized")
             ) {
@@ -462,9 +468,7 @@ function clearSlot(slotIndex) {
     const slot = document.querySelector(`.slot[data-slot="${slotIndex}"]`);
     slot.innerHTML = "";
     teamRoles[slotIndex] = { class: null, voie: null };
-    updateRolesPanel();
-    updateRolesSummary();
-    updateTeamRoles();
+    updateAll();
 }
 
 // Fonction pour obtenir le nom de la classe à partir du nom de fichier
@@ -517,7 +521,7 @@ function updateRolesSummary() {
         warningDiv.dataset.translator = 'warn_dpt_greater_than_support';
         warningDiv.textContent = translate('warn_dpt_greater_than_support', currentLanguage);
         warningDiv.className = 'warn-message warn-red';
-    } else {
+    } else if(dptCount == 0) {
         warningDiv.dataset.translator = 'warn_need_dpt';
         warningDiv.textContent = translate('warn_need_dpt', currentLanguage);
         warningDiv.className = 'warn-message warn-red';
@@ -712,8 +716,7 @@ function selectClass(imgSrc) {
             voie: null
         };
         
-        updateRolesPanel();
-        updateRolesSummary();
+        updateAll();
     }
     closeSelectionMenu();
 }
