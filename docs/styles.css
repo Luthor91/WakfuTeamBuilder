@@ -275,7 +275,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     gap: 10px;
 }
 
