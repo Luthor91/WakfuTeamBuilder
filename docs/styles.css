@@ -983,6 +983,7 @@ h3 {
     top: 0; /* Sera ajusté dynamiquement */
     left: 0; /* Sera ajusté dynamiquement */
     background-color: var(--color-bg-button);
+    opacity: 0.95;
     color: var;
     padding: 8px;
     border-radius: 5px;

@@ -42,7 +42,7 @@ export const classData = {
           },
           "Autonomy": 2,
           "Mobility": 1,
-          "Roles": ["Area", "Burst", "Ranged", "Rall PO", "Buff PO", "Entity Stabilized", "Allies Stabilized", "Enemy Stabilized"]
+          "Roles": ["Area", "Burst", "Ranged", "Rall PO", "Buff PO", "Entity Stabilized", "Allies Stabilized", "Enemy Stabilized", "Rall MP"]
         },
         "DPT Ranged Single Target": {
           "Id": 2,
@@ -82,7 +82,7 @@ export const classData = {
           },
           "Autonomy": 2,
           "Mobility": 1,
-          "Roles": ["Single Target", "Constant", "Rall PO", "Buff PO", "Entity Stabilized", "Allies Stabilized", "Enemy Stabilized"]
+          "Roles": ["Single Target", "Constant", "Rall PO", "Buff PO", "Entity Stabilized", "Allies Stabilized", "Enemy Stabilized", "Rall MP"]
         },
         "Support Utilitaire": {
           "Id": 3,
@@ -122,7 +122,7 @@ export const classData = {
           },
           "Autonomy": 1,
           "Mobility": 1,
-          "Roles": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur", "Entity Stabilized", "Allies Stabilized", "Enemy Stabilized"]
+          "Roles": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur", "Entity Stabilized", "Allies Stabilized", "Enemy Stabilized", "Rall MP"]
         }
       },
       "Elements": ["Fire", "Earth", "Air"],
