@@ -2,7 +2,7 @@ import { classData, LANGUAGES, TRANSLATIONS, translate } from './ext/utils_packa
 
 
 const IMPORTANT_ROLES = [
-    "Area", "Constant", 
+    "Area", "Single Target", 
     "Heal", "Shield", "Placeur", "Resurection",
     "Buff DI", "Rall Resistance"
 ];

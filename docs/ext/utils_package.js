@@ -2151,7 +2151,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Melee", "Ranged", "Burst", "Sub Placeur", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
+        "Roles": ["Constant", "Melee", "Ranged", "Burst", "Sub Placeur", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
       },
       "DPT Indirect": {
         "Id": 2,
@@ -2617,7 +2617,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Melee", "Single Taget", "Buff PM"]
+        "Roles": ["Constant", "Melee", "Single Taget", "Buff PM"]
       },
       "DPT Indirect": {
         "Id": 2,
