@@ -8,7 +8,7 @@ const IMPORTANT_ROLES = [
 ];
 
 const OPTIONAL_ROLES = [
-    "Burst", "Ranged", "Melee", "Poison", "Single Target", 
+    "Burst", "Ranged", "Melee", "Poison", 
     "Entity Stabilized", "Enemy Stabilized", "Allies Stabilized", "Self Stabilized", "Invulnerability",
     "Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur", "Off Tank",
     "Buff AP", "Buff MP", "Buff Resistance", "Buff Crit", "Buff PO", "Buff Parade", "Buff WP",

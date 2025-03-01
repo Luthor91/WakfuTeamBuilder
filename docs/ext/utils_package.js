@@ -972,7 +972,7 @@ export const classData = {
         "Mobility": 1,
         "Roles": ["Constant", "Area", "Melee", "Rall Resistance", "Off Tank", "Rall PO", "Entity Stabilized", "Rall Parade", "Rall Parade", "Rall Crit", "Allies Stabilized"]
       },
-      "Support": {
+      "Support Shield": {
         "Id": 4,
         "Notes": {
           "DPT": {
