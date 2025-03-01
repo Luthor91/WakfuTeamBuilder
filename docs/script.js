@@ -135,15 +135,28 @@ document.getElementById('btn_export').onclick = function() {
 };
 
 
-document.getElementById('btn_import').onclick = function() {
+document.getElementById('btn_import').onclick = async function() {
     console.log("Import function triggered");
 
-    const importString = document.getElementById("role-input").value.trim();
+    let importString = document.getElementById("role-input").value.trim();
+
+    // Si l'entrée est vide, essayer de récupérer le contenu du presse-papiers
+    if (importString === "") {
+        try {
+            importString = await navigator.clipboard.readText();
+            importString = importString.trim();
+            console.log("Presse-papiers récupéré :", importString);
+        } catch (err) {
+            console.error("Impossible d'accéder au presse-papiers :", err);
+            return;
+        }
+    }
 
     if (importString === "") {
-        console.log("No data to import");
+        console.log("Aucune donnée à importer");
         return;
     }
+
 
     const rolePairs = importString.split(";").filter(pair => pair !== "");
     
