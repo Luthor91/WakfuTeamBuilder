@@ -1051,7 +1051,7 @@ h3 {
 
 footer {
     margin-top: 20px;
-    padding: 20px;
+    padding: 15px;
     background-color: var(--color-bg-panel);
     opacity: 0.95;
     text-align: center;
@@ -1067,51 +1067,50 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .footer-section {
-    flex: 1;
-    min-width: 200px;
+    flex: 1 1 200px;
+    min-width: 250px;
+    text-align: left;
+    padding: 10px;
 }
 
 .footer-section h4 {
-    margin-bottom: 10px;
     font-size: 16px;
-    color: var(--color-primary);
-    border-bottom: 2px solid var(--color-border-light);
-    display: inline-block;
-    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .footer-section p {
-    margin: 5px 0;
-    opacity: 0.9;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--color-text-light);
+}
+
+/* Ajustement de la taille des icônes */
+.footer-icon {
+    width: 20px; /* Ajuste la taille des icônes */
+    height: 20px; /* Assure que l'icône est carrée */
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Alignement des liens */
+.footer-section p, .footer-section a {
+    max-width: 250px; /* Assure que le texte reste dans une zone bien définie */
+    text-align: left;
+    margin-left: 10px;
 }
 
 .footer-section a {
     color: white;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: opacity 0.3s ease-in-out;
 }
-
-.footer-section a:hover {
-    opacity: 0.7;
-}
-
-.footer-icon {
-    width: 20px;
-    height: 20px;
-}
-
-.footer-bottom {
-    margin-top: 15px;
-    font-size: 12px;
-    opacity: 0.7;
-}
-
-
