@@ -160,6 +160,60 @@ h3 {
 }
 
 
+#social-network {
+    position: absolute;
+    top: 20px;
+    left: 85%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px;
+    padding-bottom: 0px;
+    background-color: var(--color-bg-language-switcher);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-medium);
+    z-index: 100;
+}
+
+
+.discord-link {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+    border-radius: 15px;
+}
+
+.discord-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.discord-link.active {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    border: 2px solid var(--color-white);
+}
+
+
+.mail-link {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+    border-radius: 5px;
+}
+
+.mail-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.mail-link.active {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    border: 2px solid var(--color-white);
+}
+
+
 /* Sélection de rôle améliorée */
 .role-selection {
     display: flex;
@@ -995,17 +1049,69 @@ h3 {
 }
 
 
-/* Footer amélioré */
 footer {
     margin-top: 20px;
-    padding: 15px;
+    padding: 20px;
     background-color: var(--color-bg-panel);
+    opacity: 0.95;
     text-align: center;
     color: white;
     font-size: 14px;
     border-top: 1px solid var(--color-border-light);
     border-radius: 12px;
     box-shadow: 0 8px 20px var(--shadow-standard);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-border-light);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer-section a:hover {
+    opacity: 0.7;
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-bottom {
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.7;
 }
 
 

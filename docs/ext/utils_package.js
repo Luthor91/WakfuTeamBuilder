@@ -3188,6 +3188,34 @@ export const TRANSLATIONS = {
     fr: 'Contrôle du terrain',
     en: 'Map Control'
   },
+  about: {
+    fr: 'À propos',
+    en: 'About'
+  },
+  contact : {
+    fr: 'Contact',
+    en: 'Contact'
+  },
+  about_text: {
+    fr: 'Wakfu Team Builder est un outil conçu pour optimiser vos équipes dans Wakfu.',
+    en: 'Wakfu Team Builder is a tool designed to optimize your teams in Wakfu.'
+  },
+  credits: {
+    fr: 'Crédits',
+    en: 'Credits'
+  },
+  credits: {
+    fr: 'Crédits',
+    en: 'Credits'
+  },
+  created_by: {
+    fr: 'Créé par Luthorino',
+    en: 'Created by Luthorino'
+  },
+  rights_reserved: {
+    fr: 'Tous droits réservés.',
+    en: 'All rights reserved.'
+  },
 };
 
 
