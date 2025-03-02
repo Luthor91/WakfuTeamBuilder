@@ -2280,7 +2280,7 @@ export const classData = {
         },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Melee", "Constant", "Sub Placeur", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
+        "Roles": ["Melee", "Constant", "Single Target", "Sub Placeur", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
       
       },
       "DPT Flame": {

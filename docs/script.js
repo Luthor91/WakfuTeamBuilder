@@ -452,80 +452,81 @@ function updateGaugeBar(element, value) {
 function updateSlotOrder() {
     // Créer une copie du tableau pour ne pas modifier l'original directement
     let sortedRoles = JSON.parse(JSON.stringify(teamRoles));
-    
+
     // Définir les critères de tri par ordre de priorité
     const sortingCriteria = [
-      // 1. Shield en première position
-      (slot) => {
-        if (!slot.class || !slot.voie) return false;
-        return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes("Shield");
-      },
-      
-      // 2. Heal en deuxième position
-      (slot) => {
-        if (!slot.class || !slot.voie) return false;
-        return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes("Heal");
-      },
-      
-      // 3. Utilitaire en troisième position
-      (slot) => {
-        if (!slot.class || !slot.voie) return false;
-        return slot.voie.includes("Utilitaire");
-      },
-      
-      // 4. Placeur en quatrième position
-      (slot) => {
-        if (!slot.class || !slot.voie) return false;
-        return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes("Placeur");
-      },
-      
-      // 5. Area en cinquième position
-      (slot) => {
-        if (!slot.class || !slot.voie) return false;
-        return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes("Area");
-      },
-      
-      // 6. Burst en sixième position
-      (slot) => {
-        if (!slot.class || !slot.voie) return false;
-        return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes("Burst");
-      }
+        (slot) => slotHasRole(slot, "Shield"),         // 1. Shield
+        (slot) => slotHasRole(slot, "Heal") && slotHasRole(slot, "Sub Shield"), // 2. Heal + Sub Shield
+        (slot) => slotHasRole(slot, "Heal"),           // 3. Heal
+        (slot) => slotVoieContains(slot, "Utilitaire"),     // 4. Utilitaire
+        (slot) => slotHasRole(slot, "Placeur"),        // 5. Placeur
+        (slot) => slotHasRole(slot, "Area"),           // 6. Area
+        (slot) => slotHasRole(slot, "Burst")           // 7. Burst
     ];
-    
+
     // Filtrer les slots non vides
     const nonEmptySlots = sortedRoles.filter(slot => slot.class && slot.voie);
-    
     // Filtrer les slots vides
     const emptySlots = sortedRoles.filter(slot => !slot.class || !slot.voie);
     
     // Tableau pour stocker les résultats triés
     let result = [];
-    
+
     // Pour chaque critère, trouver et ajouter les slots correspondants
     for (const criterion of sortingCriteria) {
-      const matchingSlots = nonEmptySlots.filter(slot => criterion(slot));
-      
-      // Ajouter les slots correspondants au résultat
-      result.push(...matchingSlots);
-      
-      // Retirer les slots correspondants de la liste originale
-      nonEmptySlots.splice(0, nonEmptySlots.length, ...nonEmptySlots.filter(slot => !matchingSlots.includes(slot)));
+        let matchingSlots = nonEmptySlots.filter(slot => criterion(slot));
+        
+        // Trier les éléments correspondants par nombre de rôles en cas d'égalité
+        matchingSlots.sort((a, b) => countRoles(b) - countRoles(a));
+
+        // Ajouter les slots correspondants au résultat
+        result.push(...matchingSlots);
+
+        // Retirer les slots correspondants de la liste originale
+        nonEmptySlots.splice(0, nonEmptySlots.length, ...nonEmptySlots.filter(slot => !matchingSlots.includes(slot)));
     }
-    
+
     // Ajouter les slots restants qui n'ont pas été classés
     result.push(...nonEmptySlots);
-    
+
     // Ajouter les slots vides à la fin
     result.push(...emptySlots);
-    
+
     // S'assurer que le tableau a toujours la même taille que l'original
     while (result.length < teamRoles.length) {
-      result.push({ class: null, voie: null, image: null });
+        result.push({ class: null, voie: null, image: null });
     }
-    
+
     // Retourner le tableau trié au lieu de simplement modifier teamRoles
     return result.slice(0, teamRoles.length);
 }
+
+/**
+ * Vérifie si un slot possède un rôle donné.
+ */
+function slotHasRole(slot, role) {
+    if (!slot.class || !slot.voie) return false;
+    return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes(role);
+}
+
+
+/**
+ * Vérifie si le nom de la "voie" du slot contient un mot spécifique.
+ */
+function slotVoieContains(slot, keyword) {
+    if (!slot.class || !slot.voie) return false;
+    return slot.voie.toLowerCase().includes(keyword.toLowerCase());
+}
+
+
+/**
+ * Compte le nombre total de rôles d'un slot.
+ */
+function countRoles(slot) {
+    if (!slot.class || !slot.voie) return 0;
+    return classData.Classes[slot.class]?.Voies[slot.voie]?.Roles.length || 0;
+}
+
 
 
 // Fonction pour compter les rôles DPT et Support
@@ -549,7 +550,7 @@ function getElementsDPT() {
 
 
 // Fonction pour compter les rôles DPT et Support
-function countRoles() {
+function countRolesDPTandSupport() {
     let dptCount = 0;
     let supportCount = 0;
 
@@ -656,7 +657,7 @@ function updateRolesSummary() {
 
     updateTeamRoles();
 
-    const { dptCount, supportCount } = countRoles();
+    const { dptCount, supportCount } = countRolesDPTandSupport();
     const warningDiv = document.createElement('div');
     if (dptCount > supportCount) {
         warningDiv.dataset.translator = 'warn_dpt_greater_than_support';
