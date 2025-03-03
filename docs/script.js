@@ -277,6 +277,8 @@ function updateTeamRoles() {
             // Titre de la catégorie
             const categoryTitle = document.createElement('h4');
             categoryTitle.textContent = category;
+            categoryTitle.dataset.translator = category.toLocaleLowerCase().replaceAll(' ', '_');
+
             categoryTitle.classList.add('category-title');
             categoryTitle.style.cursor = "pointer"; 
 
@@ -292,8 +294,12 @@ function updateTeamRoles() {
             const displayRoles = (roles, className) => {
                 roles.forEach(role => {
                     const roleElement = document.createElement('span');
+                    const data_translator = role.toLocaleLowerCase().replaceAll(' ', '_');
+
                     roleElement.classList.add('role-badge', className);
                     roleElement.textContent = role;
+                    roleElement.dataset.translator = data_translator;
+                    roleElement.textContent = translate(data_translator, currentLanguage);
                     rolesWrapper.appendChild(roleElement);
                 });
             };
@@ -718,7 +724,9 @@ function updateRolesSummary() {
 
     rolesToCheck.forEach(role => {
         const roleDiv = document.createElement('div');
-        roleDiv.textContent = role;
+        const data_translator = role.toLocaleLowerCase().replaceAll(' ', '_');
+        roleDiv.dataset.translator = data_translator
+        roleDiv.textContent = translate(data_translator, currentLanguage);
         roleDiv.className = presentRoles.has(role) ? 'role-present' : 'role-missing';
         summaryContainerRequired.appendChild(roleDiv);
     });
@@ -924,8 +932,11 @@ function openSelectionMenu(slotIndex) {
 
         // Créer le texte
         const textOverlay = document.createElement("div");
+        const data_translator = className.toLocaleLowerCase().replaceAll(' ', '_');
+
         textOverlay.classList.add("class-name");
-        textOverlay.textContent = className;
+        textOverlay.dataset.translator = data_translator
+        textOverlay.textContent = translate(data_translator, currentLanguage);
 
         // Ajouter l'image et le texte dans le conteneur
         container.appendChild(img);

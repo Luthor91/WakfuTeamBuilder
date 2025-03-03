@@ -2952,6 +2952,84 @@ export const TRANSLATIONS = {
     fr: 'Composition de l\'équipe',
     en: 'Team composition'
   },
+  close_button: {
+    fr: 'Fermer',
+    en: 'Close'
+  },
+
+  cra: {
+    fr: 'Cra',
+    en: 'Cra'
+  },
+  ecaflip: {
+    fr: 'Ecaflip',
+    en: 'Ecaflip'
+  },
+  eliotrope: {
+    fr: 'Eliotrope',
+    en: 'Eliotrope'
+  },
+  eniripsa: {
+    fr: 'Eniripsa',
+    en: 'Eniripsa'
+  },
+  enutrof: {
+    fr: 'Enutrof',
+    en: 'Enutrof'
+  },
+  feca: {
+    fr: 'Feca',
+    en: 'Feca'
+  },
+  foggernaut: {
+    fr: 'Steamer',
+    en: 'Foggernaut'
+  },
+  huppermage: {
+    fr: 'Huppermage',
+    en: 'Huppermage'
+  },
+  iop: {
+    fr: 'Iop',
+    en: 'Iop'
+  },
+  masqueraider: {
+    fr: 'Zobal',
+    en: 'Masqueraider'
+  },
+  osamodas: {
+    fr: 'Osamodas',
+    en: 'Osamodas'
+  },
+  ouginak: {
+    fr: 'Ouginak',
+    en: 'Ouginak'
+  },
+  pandawa: {
+    fr: 'Pandawa',
+    en: 'Pandawa'
+  },
+  rogue: {
+    fr: 'Roublard',
+    en: 'Rogue'
+  },
+  sacrier: {
+    fr: 'Sacrieur',
+    en: 'Sacrier'
+  },
+  sadida: {
+    fr: 'Sadida',
+    en: 'Sadida'
+  },
+  sram: {
+    fr: 'Sram',
+    en: 'Sram'
+  },
+  xelor: {
+    fr: 'Xelor',
+    en: 'Xelor'
+  },
+
   gauge_dpt: {
     fr: 'DPT',
     en: 'DPT'
@@ -2968,89 +3046,177 @@ export const TRANSLATIONS = {
     fr: 'Role non important pour l\'équipe',
     en: 'Non-important role not taken by the team'
   },
-  dpt_melee: {
-    fr: 'Corps à Corps',
-    en: 'Melee'
+  damage_type: {
+    fr: "Type de Dégâts",
+    en: "Damage Type"
   },
-  dpt_ranged: {
-    fr: 'Distance',
-    en: 'Ranged'
+  buff: {
+    fr: "Boost",
+    en: "Buff"
   },
-  dpt_area: {
-    fr: 'Zone',
-    en: 'Area'
+  rall: {
+    fr: "Retrait",
+    en: "Rall"
   },
-  dpt_single_target: {
-    fr: 'Monocible',
-    en: 'Single Target'
+  sub_roles: {
+    fr: "Sous Rôles",
+    en: "Sub Roles"
   },
-  dpt_constant: {
-    fr: 'Constant',
-    en: 'Constant'
+  specific: {
+    fr: "Spécifique",
+    en: "Specific"
   },
-  dpt_burst: {
-    fr: 'Burst',
-    en: 'Burst'
+  single_target: {
+    fr: "Monocible",
+    en: "Single Target"
   },
-  support: {
-    fr: 'Support',
-    en: 'Support'
+  area: {
+    fr: "Zone",
+    en: "Area"
   },
-  support_heal: {
-    fr: 'Soigneur',
-    en: 'Heal'
+  burst: {
+    fr: "Burst",
+    en: "Burst"
   },
-  support_shield: {
-    fr: 'Armure',
-    en: 'Shield'
+  constant: {
+    fr: "Constant",
+    en: "Constant"
   },
-  support_placer: {
-    fr: 'Placeur',
-    en: 'Placer'
+  melee: {
+    fr: "Mêlée",
+    en: "Melee"
   },
-  support_buff_mp: {
-    fr: 'Buff PM',
-    en: 'Buff MP'
+  ranged: {
+    fr: "Distance",
+    en: "Ranged"
   },
-  support_buff_ap: {
-    fr: 'Buff PA',
-    en: 'Buff AP'
+  buff_di: {
+    fr: "Boost DI",
+    en: "Buff DI"
   },
-  support_buff_di: {
-    fr: 'Buff DI',
-    en: 'Buff DI'
+  buff_ap: {
+    fr: "Boost PA",
+    en: "Buff PA"
   },
-  support_protection: {
-    fr: 'Protection',
-    en: 'Protection'
+  buff_mp: {
+    fr: "Boost PM",
+    en: "Boost MP"
   },
-  hindrance: {
-    fr: 'Entrave',
-    en: 'Hindrance'
+  buff_resistance: {
+    fr: "Boost Resistance",
+    en: "Buff Resistance"
   },
-  hindrance_mp: {
-    fr: 'Rall PM',
-    en: 'MP Reduction'
+  buff_crit: {
+    fr: "Boost Critique",
+    en: "Buff Critique"
   },
-  hindrance_ap: {
-    fr: 'Rall PA',
-    en: 'AP Reduction'
+  buff_po: {
+    fr: "Boost PO",
+    en: "Buff PO"
   },
-  hindrance_di: {
-    fr: 'Rall DI',
-    en: 'DI Reduction'
+  buff_parade: {
+    fr: "Boost Parade",
+    en: "Buff Block"
   },
-  hindrance_resistance: {
-    fr: 'Rall Résistance',
-    en: 'Resistance Reduction'
+  buff_wp: {
+    fr: "Boost PW",
+    en: "Buff WP"
   },
-  hindrance_boringness: {
-    fr: 'Ennuyenceté',
-    en: 'Boringness'
+  rall_resistance: {
+    fr: "Retrait Résistance",
+    en: "Rall Resistance"
   },
-  entity_stabilized: {
-    fr: 'Stabilisation Entité',
-    en: 'Entity Stabilized'
+  rall_di: {
+    fr: "Retrait DI",
+    en: "Rall DI"
+  },
+  rall_ap: {
+    fr: "Retrait PA",
+    en: "Rall AP"
+  },
+  rall_mp: {
+    fr: "Retrait PM",
+    en: "Rall MP"
+  },
+  rall_crit: {
+    fr: "Retrait Critique",
+    en: "Rall Critique"
+  },
+  rall_po: {
+    fr: "Retrait PO",
+    en: "Rall PO"
+  },
+  rall_parade: {
+    fr: "Retrait Parade",
+    en: "Rall Block"
+  },
+  rall_wp: {
+    fr: "Retrait PW",
+    en: "Rall WP"
+  },
+  off_tank: {
+    fr: "Off Tank",
+    en: "Off Tank"
+  },
+  sub_shield: {
+    fr: "Sous Shield",
+    en: "Sub Shield"
+  },
+  sub_heal: {
+    fr: "Sous Soigneur",
+    en: "Sub Heal"
+  },
+  sub_dpt: {
+    fr: "Sous DPT",
+    en: "Sub DPT"
+  },
+  placeur: {
+    fr: "Placeur",
+    en: "Positioning"
+  },
+  dpt: {
+    fr: "DPT",
+    en: "DPT"
+  },
+  heal: {
+    fr: "Soigneur",
+    en: "Healer"
+  },
+  shield: {
+    fr: "Armure",
+    en: "Shield"
+  },
+  sub_placeur: {
+    fr: "Sous Placeur",
+    en: "Sub Positioning"
+  },
+  resurection: {
+    fr: "Résurection",
+    en: "Resurection"
+  },
+  anti_shield: {
+    fr: "Anti Armure",
+    en: "Anti Shield"
+  },
+  anti_heal: {
+    fr: "Anti Soin",
+    en: "Anti Heal"
+  },
+  enemy_stabilized: {
+    fr: "Stabilisation Ennemi",
+    en: "Enemy Stabilized"
+  },
+  allies_stabilized: {
+    fr: "Stabilisation Allié",
+    en: "Allies Stabilized"
+  },
+  self_stabilized: {
+    fr: "Stabilisation Lanceur",
+    en: "Self Stabilized"
+  },
+  invulnerability: {
+    fr: "Invulnérabilité",
+    en: "Invulnerability"
   },
   summary_of_roles: {
     fr: 'Résumé des rôles',
