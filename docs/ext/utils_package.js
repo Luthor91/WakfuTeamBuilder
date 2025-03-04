@@ -3107,8 +3107,8 @@ export const TRANSLATIONS = {
     en: "Buff Resistance"
   },
   buff_crit: {
-    fr: "Boost Critique",
-    en: "Buff Critique"
+    fr: "Boost %Critique",
+    en: "Buff Critical Chance"
   },
   buff_po: {
     fr: "Boost PO",
@@ -3139,8 +3139,8 @@ export const TRANSLATIONS = {
     en: "Rall MP"
   },
   rall_crit: {
-    fr: "Retrait Critique",
-    en: "Rall Critique"
+    fr: "Retrait %Critique",
+    en: "Rall Critical Chance"
   },
   rall_po: {
     fr: "Retrait PO",
