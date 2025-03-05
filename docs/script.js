@@ -30,6 +30,7 @@ let teamRoles = Array(6).fill({ class: null, voie: null, image: null });
 let selectedSlot = null;
 
 let isShiftPressed = false;
+let isControlPressed = false;
 
 
 // Initialisation des événements
@@ -51,17 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gestionnaire pour le bouton Fermer
     document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
 
+    loadTeamFromCookie();
+
     // Initialisation des panneaux
     updateAll();
     setLanguage("en");
     
-});
-
-// Add event listeners for shift key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Shift') {
-        isShiftPressed = true;
-    }
 });
 
 
@@ -69,9 +65,19 @@ document.addEventListener('keyup', function(e) {
     if (e.key === 'Shift') {
         isShiftPressed = false;
     }
+    if (e.key === 'Control') {
+        isControlPressed = false;
+    }
+
 });
 
 document.addEventListener('keydown', function(e) {
+    if (e.key === 'Shift') {
+        isShiftPressed = true;
+    }
+    if (e.key === 'Control') {
+        isControlPressed = true;
+    }
     if (e.key === 'Escape') {
         closeSelectionMenu();
     }
@@ -124,11 +130,10 @@ document.getElementById('btn_export').onclick = function() {
         // Créer et afficher la tooltip près du bouton
         const tooltip = document.createElement('div');
         tooltip.textContent = "Code copié dans le presse-papier";
-        tooltip.classList.add('temp-tooltip'); // Ajouter la classe CSS
+        tooltip.classList.add('temp-notification');
 
-        // Positionner la tooltip
-        tooltip.style.top = `${this.getBoundingClientRect().top - 40}px`; // Position juste au-dessus du bouton
-        tooltip.style.left = `${this.getBoundingClientRect().left + this.offsetWidth / 2 - 75}px`; // Centré horizontalement par rapport au bouton
+        tooltip.style.top = `${this.getBoundingClientRect().top - 40}px`;
+        tooltip.style.left = `${this.getBoundingClientRect().left + this.offsetWidth / 2 + 50}px`;
 
         document.body.appendChild(tooltip);
 
@@ -1091,3 +1096,87 @@ function closeSelectionMenu() {
         menu.classList.add("hidden");
     }
 }
+
+
+// Fonction pour sauvegarder teamRoles dans un cookie
+function saveTeamToCookie() {
+    // Convertir teamRoles en chaîne JSON
+    const teamRolesJSON = JSON.stringify(teamRoles);
+    
+    // Définir une date d'expiration (par exemple, 30 jours)
+    const expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 30);
+    
+    // Créer le cookie avec la chaîne JSON
+    document.cookie = `savedTeam=${encodeURIComponent(teamRolesJSON)};expires=${expirationDate.toUTCString()};path=/;SameSite=Strict`;
+    
+    console.log("Équipe sauvegardée dans les cookies");
+    
+    // Afficher une notification à l'utilisateur
+    showNotification("Équipe sauvegardée avec succès!");
+}
+
+// Fonction pour charger teamRoles depuis un cookie
+function loadTeamFromCookie() {
+    // Récupérer tous les cookies
+    const cookies = document.cookie.split(';');
+    
+    // Chercher le cookie 'savedTeam'
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        
+        // Vérifier si c'est notre cookie
+        if (cookie.startsWith('savedTeam=')) {
+            // Extraire la valeur du cookie
+            const teamRolesJSON = decodeURIComponent(cookie.substring('savedTeam='.length));
+            
+            try {
+                // Convertir la chaîne JSON en objet
+                const savedTeam = JSON.parse(teamRolesJSON);
+                
+                // Vérifier que c'est un tableau valide
+                if (Array.isArray(savedTeam) && savedTeam.length <= 6) {
+                    // Mettre à jour teamRoles
+                    teamRoles = savedTeam;
+                    
+                    // Mettre à jour l'interface
+                    updateAll();
+                    
+                    console.log("Équipe chargée depuis les cookies");
+                    
+                    // Afficher une notification à l'utilisateur
+                    showNotification("Équipe chargée avec succès!");
+                    return true;
+                }
+            } catch (error) {
+                console.error("Erreur lors du chargement de l'équipe:", error);
+            }
+        }
+    }
+    
+    console.log("Aucune équipe sauvegardée trouvée dans les cookies");
+    return false;
+}
+
+
+function showNotification(message) {
+    // Créer l'élément de notification
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    notification.classList.add('temp-notification');
+
+    // Ajouter au body
+    document.body.appendChild(notification);
+
+    // Supprimer après 3 secondes avec une animation de fondu
+    setTimeout(() => {
+        notification.classList.add('hide');
+        setTimeout(() => notification.remove(), 500);
+    }, 3000);
+
+    // Supprimer instantanément au clic
+    notification.addEventListener('click', () => {
+        notification.remove();
+    });
+}
+
