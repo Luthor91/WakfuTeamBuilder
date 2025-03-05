@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gestionnaire pour le bouton Fermer
     document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
 
-    loadTeamFromCookie();
+    loadTeamToLocalStorage();
 
     // Initialisation des panneaux
     updateAll();
@@ -928,7 +928,7 @@ function selectClass(imgSrc) {
         };
 
         if (teamRoles.length== 6 ) {
-            saveTeamToCookie();
+            saveTeamToLocalStorage();
         }
 
         updateAll();
@@ -963,7 +963,7 @@ function selectClassWithShift(imgSrc) {
         };
 
         if (teamRoles.length== 6 ) {
-            saveTeamToCookie();
+            saveTeamToLocalStorage();
         }
 
         // Update the display
@@ -1107,7 +1107,7 @@ function closeSelectionMenu() {
 
 
 // Fonction pour sauvegarder teamRoles dans un cookie
-function saveTeamToCookie() {
+function saveTeamToLocalStorage() {
     try {
         // Convertir teamRoles en chaîne JSON et stocker dans localStorage
         localStorage.setItem("savedTeam", JSON.stringify(teamRoles));
@@ -1119,7 +1119,7 @@ function saveTeamToCookie() {
 }
 
 // Fonction pour charger teamRoles depuis un cookie
-function loadTeamFromCookie() {
+function loadTeamToLocalStorage() {
     try {
         // Récupérer les données depuis localStorage
         const teamRolesJSON = localStorage.getItem("savedTeam");
