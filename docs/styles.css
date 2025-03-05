@@ -375,7 +375,7 @@ h3 {
 }
 
 /* Amélioration des boutons */
-.btn, #selection-menu button, #simp-mode-btn {
+.btn, #selection-menu button, #class-container {
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
@@ -391,6 +391,94 @@ h3 {
     background-color: var(--color-bg-button-hover);
     box-shadow: 0 3px 6px var(--shadow-medium);
     transform: translateY(-1px);
+}
+
+
+/* Modal */
+#class-info-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-bg-panel);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px var(--shadow-darker), 0 6px 12px var(--shadow-dark);
+    z-index: 1000;
+    border: 1px solid var(--color-border-light);
+    width: 800px; /* Garde une largeur fixe */
+    min-height: 400px; /* Hauteur minimale pour éviter que ça rétrécisse */
+    font-size: 0.9em; /* Réduction de la police */
+    overflow: hidden; /* Évite les sauts de hauteur */
+}
+
+/* Conteneur d'une voie */
+.class-info-voie {
+    margin-top: 10px;
+}
+
+/* Titre des voies */
+.class-info-voie-title {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color-text-title);
+    cursor: pointer; /* Indique que c'est cliquable */
+}
+
+/* Conteneur des rôles */
+.class-info-roles-container {
+    display: grid;
+    gap: 5px;
+    max-height: 150px; /* Hauteur max des rôles */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, visibility 0.3s ease-out;
+    visibility: visible;
+}
+
+/* Quand replié */
+.class-info-roles-container.hidden {
+    max-height: 0;
+    visibility: hidden;
+}
+
+/* Rôle affiché */
+.role-badge {
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border-light);
+    padding: 5px 8px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 5px var(--shadow-dark);
+    font-size: 0.85em;  /* Réduction de la taille */
+}
+
+/* Bouton de fermeture */
+.close-modal-btn {
+    display: block;
+    margin: 10px auto 0;
+    padding: 4px 8px;
+    border: none;
+    background: red;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+
+/* Bouton de fermeture */
+.close-modal-btn {
+    background-color: var(--color-bg-button);
+    color: var(--color-white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    font-size: 10px;
 }
 
 
@@ -693,6 +781,7 @@ h3 {
     background-color: rgba(255, 255, 255, 0.2); /* Fond léger */
     border: 2px solid; 
     border-radius: 10px;
+    align-content: center;
     padding: 5px 10px;
 }
 
