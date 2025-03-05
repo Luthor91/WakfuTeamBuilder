@@ -1113,8 +1113,6 @@ function saveTeamToCookie() {
         localStorage.setItem("savedTeam", JSON.stringify(teamRoles));
         console.log("Équipe sauvegardée dans le localStorage");
 
-        // Afficher une notification à l'utilisateur
-        //showNotification("Équipe sauvegardée avec succès!");
     } catch (error) {
         console.error("Erreur lors de la sauvegarde de l'équipe:", error);
     }
@@ -1140,7 +1138,7 @@ function loadTeamFromCookie() {
                 console.log("Équipe chargée depuis le localStorage");
 
                 // Afficher une notification à l'utilisateur
-                //showNotification("Équipe chargée avec succès!");
+                showNotification("Équipe chargée avec succès!");
                 return true;
             }
         }
