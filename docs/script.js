@@ -1108,61 +1108,48 @@ function closeSelectionMenu() {
 
 // Fonction pour sauvegarder teamRoles dans un cookie
 function saveTeamToCookie() {
-    // Convertir teamRoles en chaîne JSON
-    const teamRolesJSON = JSON.stringify(teamRoles);
-    
-    // Définir une date d'expiration (par exemple, 30 jours)
-    const expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDate() + 30);
-    
-    // Créer le cookie avec la chaîne JSON
-    document.cookie = `savedTeam=${encodeURIComponent(teamRolesJSON)};expires=${expirationDate.toUTCString()};path=/;SameSite=Strict`;
-    
-    console.log("Équipe sauvegardée dans les cookies");
-    
-    // Afficher une notification à l'utilisateur
-    //showNotification("Équipe sauvegardée avec succès!");
+    try {
+        // Convertir teamRoles en chaîne JSON et stocker dans localStorage
+        localStorage.setItem("savedTeam", JSON.stringify(teamRoles));
+        console.log("Équipe sauvegardée dans le localStorage");
+
+        // Afficher une notification à l'utilisateur
+        //showNotification("Équipe sauvegardée avec succès!");
+    } catch (error) {
+        console.error("Erreur lors de la sauvegarde de l'équipe:", error);
+    }
 }
 
 // Fonction pour charger teamRoles depuis un cookie
 function loadTeamFromCookie() {
-    // Récupérer tous les cookies
-    const cookies = document.cookie.split(';');
-    
-    // Chercher le cookie 'savedTeam'
-    for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        
-        // Vérifier si c'est notre cookie
-        if (cookie.startsWith('savedTeam=')) {
-            // Extraire la valeur du cookie
-            const teamRolesJSON = decodeURIComponent(cookie.substring('savedTeam='.length));
-            
-            try {
-                // Convertir la chaîne JSON en objet
-                const savedTeam = JSON.parse(teamRolesJSON);
+    try {
+        // Récupérer les données depuis localStorage
+        const teamRolesJSON = localStorage.getItem("savedTeam");
+
+        if (teamRolesJSON) {
+            const savedTeam = JSON.parse(teamRolesJSON);
+
+            // Vérifier que c'est un tableau valide (et max 6 éléments)
+            if (Array.isArray(savedTeam) && savedTeam.length <= 6) {
+                // Mettre à jour teamRoles
+                teamRoles = savedTeam;
                 
-                // Vérifier que c'est un tableau valide
-                if (Array.isArray(savedTeam) && savedTeam.length <= 6) {
-                    // Mettre à jour teamRoles
-                    teamRoles = savedTeam;
-                    
-                    // Mettre à jour l'interface
-                    updateAll();
-                    
-                    console.log("Équipe chargée depuis les cookies");
-                    
-                    // Afficher une notification à l'utilisateur
-                    showNotification("Équipe chargée avec succès!");
-                    return true;
-                }
-            } catch (error) {
-                console.error("Erreur lors du chargement de l'équipe:", error);
+                // Mettre à jour l'interface
+                updateAll();
+
+                console.log("Équipe chargée depuis le localStorage");
+
+                // Afficher une notification à l'utilisateur
+                //showNotification("Équipe chargée avec succès!");
+                return true;
             }
         }
+
+        console.log("Aucune équipe sauvegardée trouvée dans le localStorage");
+    } catch (error) {
+        console.error("Erreur lors du chargement de l'équipe:", error);
     }
-    
-    console.log("Aucune équipe sauvegardée trouvée dans les cookies");
+
     return false;
 }
 
