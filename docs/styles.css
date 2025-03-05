@@ -971,22 +971,6 @@ h3 {
 }
 
 
-
-#simp-mode-btn {
-    background-color: var(--color-bg-button);
-    color: var(--color-white);
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-}
-
-#simp-mode-btn:hover {
-    background-color: var(--color-border-dark);
-}
-
 #selection-menu button {
     background-color: var(--color-bg-button);
     color: var(--color-white);

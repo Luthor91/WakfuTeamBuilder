@@ -29,6 +29,8 @@ let currentLanguage = LANGUAGES.EN;
 let teamRoles = Array(6).fill({ class: null, voie: null, image: null });
 let selectedSlot = null;
 
+let isShiftPressed = false;
+
 
 // Initialisation des événements
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,6 +55,26 @@ document.addEventListener('DOMContentLoaded', () => {
     updateAll();
     setLanguage("en");
     
+});
+
+// Add event listeners for shift key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Shift') {
+        isShiftPressed = true;
+    }
+});
+
+
+document.addEventListener('keyup', function(e) {
+    if (e.key === 'Shift') {
+        isShiftPressed = false;
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeSelectionMenu();
+    }
 });
 
 
@@ -876,6 +898,7 @@ function updateRolesPanel() {
 }
 
 
+// Update the original selectClass function
 function selectClass(imgSrc) {
     if (selectedSlot !== null) {
         const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
@@ -905,8 +928,86 @@ function selectClass(imgSrc) {
 }
 
     
+// Modified selectClassWithShift function
+function selectClassWithShift(imgSrc) {
+    if (selectedSlot !== null && selectedSlot < teamRoles.length) {
+        // Add the class to the current slot
+        const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
+        slot.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = `assets/classes/${imgSrc}`;
+        slot.appendChild(img);
+
+        const className = getClassNameFromFile(imgSrc);
+        let selectedVoie = null;
+
+        Object.entries(classData.Classes[className].Voies).forEach(([voie, data]) => {
+            if (data.Id === 1) {
+                selectedVoie = voie;
+            }
+        });
+
+        teamRoles[selectedSlot] = {
+            class: className,
+            voie: selectedVoie,
+            image: `assets/classes/${imgSrc}`
+        };
+
+        // Update the display
+        updateAll();
+        
+        // Update the selection menu to reflect the new "taken" classes
+        updateSelectionMenuTakenClasses();
+
+        // Move to the next slot if available
+        if (selectedSlot < 5) {  // Assuming 6 slots (0-5)
+            selectedSlot++;
+            
+            // Highlight the new selected slot
+            const slots = document.querySelectorAll('.slot');
+            slots.forEach(s => s.classList.remove('selected-slot'));
+            const nextSlot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
+            if (nextSlot) {
+                nextSlot.classList.add('selected-slot');
+            }
+        } else {
+            // If we're at the last slot, close the menu
+            closeSelectionMenu();
+            return;
+        }
+    }
+}
+
+// New function to update the "taken" classes in the selection menu
+function updateSelectionMenuTakenClasses() {
+    const menuContent = document.getElementById("menu-content");
+    if (!menuContent) return;
+    
+    // Get all class containers in the menu
+    const classContainers = menuContent.querySelectorAll(".class-container");
+    
+    // For each container, check if the class is in the team
+    classContainers.forEach(container => {
+        const img = container.querySelector("img");
+        if (img) {
+            const imgSrc = img.dataset.src;
+            const className = getClassNameFromFile(imgSrc);
+            
+            // Check if this class is in the team
+            const isTaken = teamRoles.some(role => role.class === className);
+            
+            // Update the container class accordingly
+            if (isTaken) {
+                container.classList.add("taken");
+            } else {
+                container.classList.remove("taken");
+            }
+        }
+    });
+}
 
 
+// Update the openSelectionMenu function to track shift key state
 function openSelectionMenu(slotIndex) {
     selectedSlot = slotIndex;
     const menu = document.getElementById("selection-menu");
@@ -948,6 +1049,7 @@ function openSelectionMenu(slotIndex) {
 }
 
 
+// Update createClassImage to handle shift-click
 function createClassImage(imgSrc) {
     const img = document.createElement("img");
     img.src = `assets/classes/${imgSrc}`;
@@ -963,12 +1065,20 @@ function createClassImage(imgSrc) {
         img.src = `assets/classes/${newImgSrc}`;
         img.dataset.src = newImgSrc;  // Mettre à jour l'image actuelle
 
-        teamRoles[selectedSlot].image = `assets/classes/${newImgSrc}`; 
+        if (selectedSlot !== null) {
+            teamRoles[selectedSlot].image = `assets/classes/${newImgSrc}`;
+        }
     };
 
-    // Clic gauche normal
-    img.onclick = () => {
-        selectClass(img.dataset.src); // Toujours utiliser l'image actuelle
+    // Clic gauche avec gestion du shift
+    img.onclick = (e) => {
+        if (isShiftPressed) {
+            // If shift is pressed, select this class but don't close the menu
+            selectClassWithShift(img.dataset.src);
+        } else {
+            // Normal behavior for regular click
+            selectClass(img.dataset.src);
+        }
     }
     
     return img;
