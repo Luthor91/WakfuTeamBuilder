@@ -927,6 +927,10 @@ function selectClass(imgSrc) {
             image: `assets/classes/${imgSrc}`
         };
 
+        if (teamRoles.length== 6 ) {
+            saveTeamToCookie();
+        }
+
         updateAll();
     }
     closeSelectionMenu();
@@ -957,6 +961,10 @@ function selectClassWithShift(imgSrc) {
             voie: selectedVoie,
             image: `assets/classes/${imgSrc}`
         };
+
+        if (teamRoles.length== 6 ) {
+            saveTeamToCookie();
+        }
 
         // Update the display
         updateAll();
@@ -1113,7 +1121,7 @@ function saveTeamToCookie() {
     console.log("Équipe sauvegardée dans les cookies");
     
     // Afficher une notification à l'utilisateur
-    showNotification("Équipe sauvegardée avec succès!");
+    //showNotification("Équipe sauvegardée avec succès!");
 }
 
 // Fonction pour charger teamRoles depuis un cookie
