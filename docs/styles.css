@@ -409,7 +409,8 @@ h3 {
     width: 800px; /* Garde une largeur fixe */
     min-height: 400px; /* Hauteur minimale pour éviter que ça rétrécisse */
     font-size: 0.9em; /* Réduction de la police */
-    overflow: hidden; /* Évite les sauts de hauteur */
+    overflow-y: auto; /* Permet de faire défiler la modal verticalement */
+    max-height: 80vh; /* Limiter la hauteur pour ne pas dépasser l'écran */
 }
 
 /* Conteneur d'une voie */
@@ -426,20 +427,18 @@ h3 {
     cursor: pointer; /* Indique que c'est cliquable */
 }
 
-/* Conteneur des rôles */
+/* Conteneur des rôles avec défilement horizontal */
 .class-info-roles-container {
-    display: grid;
+    display: flex;
     gap: 5px;
+    overflow-x: auto; /* Permet de faire défiler horizontalement */
+    white-space: nowrap; /* Empêche l'élément de passer à la ligne suivante */
     max-height: 150px; /* Hauteur max des rôles */
-    overflow: hidden;
-    transition: max-height 0.3s ease-out, visibility 0.3s ease-out;
-    visibility: visible;
 }
 
 /* Quand replié */
 .class-info-roles-container.hidden {
-    max-height: 0;
-    visibility: hidden;
+    display: none; /* Cache l'élément quand il est replié */
 }
 
 /* Rôle affiché */
@@ -453,21 +452,6 @@ h3 {
     box-shadow: 0 2px 5px var(--shadow-dark);
     font-size: 0.85em;  /* Réduction de la taille */
 }
-
-/* Bouton de fermeture */
-.close-modal-btn {
-    display: block;
-    margin: 10px auto 0;
-    padding: 4px 8px;
-    border: none;
-    background: red;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 0.9em;
-}
-
 
 /* Bouton de fermeture */
 .close-modal-btn {
