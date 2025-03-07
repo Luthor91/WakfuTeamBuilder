@@ -1249,6 +1249,8 @@ function saveCurrentTeam() {
 function showSavedTeamsMenu() {
     const savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
     const menu = document.getElementById("saved-teams-menu");
+
+    if (menu === null) return;
     menu.innerHTML = ""; // Vider le contenu existant
     
     if (savedTeams.length == 0) {
@@ -1388,7 +1390,8 @@ function deleteTeam(index) {
     savedTeams.splice(index, 1);
     localStorage.setItem("savedTeams", JSON.stringify(savedTeams));
     showNotification("Équipe supprimée !");
-    document.querySelector(".saved-teams-menu").remove();
+    toggleSavedTeamsMenu();
+    //document.querySelector(".saved-teams-menu").remove();
     showSavedTeamsMenu();
 }
 
