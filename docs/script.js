@@ -1250,7 +1250,7 @@ function showSavedTeamsMenu() {
     const savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
     const menu = document.getElementById("saved-teams-menu");
     menu.innerHTML = ""; // Vider le contenu existant
-    console.log('1');
+    console.log("savedTeams : ", savedTeams);
     
     if (savedTeams == []) return;
     console.log('2');
