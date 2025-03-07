@@ -25,7 +25,7 @@ const CATEGORIES = {
 };
 
 
-let currentLanguage = LANGUAGES.EN;
+let currentLanguage = LANGUAGES.FR;
 let teamRoles = Array(6).fill({ class: null, voie: null, image: null });
 let selectedSlot = null;
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadTeamToLocalStorage();
     // Initialisation des panneaux
     updateAll();
-    setLanguage("en");
+    setLanguage(currentLanguage);
 });
 
 
