@@ -49,6 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    
+    // Gestionnaires d'événements pour les boutons
+    document.getElementById("save-team-button").addEventListener("click", saveCurrentTeam);
+    document.getElementById("show-teams-button").addEventListener("click", toggleSavedTeamsMenu);
+
     // Gestionnaire pour le bouton Fermer
     document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
 
@@ -1167,11 +1172,12 @@ function loadTeamToLocalStorage() {
 }
 
 
-function showNotification(message) {
+function showNotification(message, color = null) {
     // Créer l'élément de notification
     const notification = document.createElement('div');
     notification.textContent = message;
     notification.classList.add('temp-notification');
+    notification.style.backgroundColor = color ? color : 'green'
 
     // Ajouter au body
     document.body.appendChild(notification);
@@ -1248,3 +1254,140 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("class-info-display").appendChild(closeButton);
 });
+
+
+/**
+ * Handling favorite team
+ */
+
+// Fonction pour sauvegarder l'équipe actuelle dans le localStorage
+function saveCurrentTeam() {
+    let savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
+    
+    if (savedTeams.length >= 10) {
+        showNotification("Supprimez une équipe avant d'en rajouter une.", "red");
+        return;
+    }
+    savedTeams.push(teamRoles);
+    localStorage.setItem("savedTeams", JSON.stringify(savedTeams));
+    showNotification("Équipe ajoutée aux favoris !");
+}
+
+// Fonction pour afficher le menu des équipes sauvegardées
+function showSavedTeamsMenu() {
+    const savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
+    const menu = document.createElement("div");
+    menu.classList.add("saved-teams-menu");
+
+    savedTeams.forEach((team, index) => {
+        const teamContainer = document.createElement("div");
+        teamContainer.classList.add("favorite-team-container");
+
+        team.forEach(member => {
+            const memberContainer = document.createElement("div");
+            memberContainer.classList.add("member-container");
+
+            const img = document.createElement("img");
+            img.src = member.image;
+            img.classList.add("member-image");
+
+            const voie = document.createElement("span");
+            voie.textContent = member.voie;
+            voie.classList.add("member-voie");
+
+            memberContainer.appendChild(img);
+            memberContainer.appendChild(voie);
+            teamContainer.appendChild(memberContainer);
+        });
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "❌";
+        deleteButton.classList.add("delete-button");
+        deleteButton.addEventListener("click", (e) => {
+            e.stopPropagation();
+            confirmDeleteTeam(index);
+        });
+
+        teamContainer.appendChild(deleteButton);
+        teamContainer.addEventListener("click", () => applySavedTeam(team));
+        menu.appendChild(teamContainer);
+    });
+
+    document.body.appendChild(menu);
+}
+
+// Fonction pour appliquer une équipe sauvegardée
+function applySavedTeam(team) {
+    teamRoles = team;
+    updateAll();
+    toggleSavedTeamsMenu(); // Ferme le menu après avoir appliqué l'équipe
+}
+
+// Fonction pour afficher une modal de confirmation
+function showConfirmationModal(message, onConfirm) {
+    // Créer l'overlay
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+
+    // Créer la modal
+    const modal = document.createElement("div");
+    modal.classList.add("confirmation-modal");
+
+    // Ajouter le message
+    const messageElement = document.createElement("p");
+    messageElement.textContent = message;
+    modal.appendChild(messageElement);
+
+    // Ajouter les boutons
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.classList.add("buttons-container");
+
+    const confirmButton = document.createElement("button");
+    confirmButton.textContent = "Oui";
+    confirmButton.classList.add("confirm-button");
+    confirmButton.addEventListener("click", () => {
+        onConfirm();
+        document.body.removeChild(overlay);
+    });
+
+    const cancelButton = document.createElement("button");
+    cancelButton.textContent = "Non";
+    cancelButton.classList.add("cancel-button");
+    cancelButton.addEventListener("click", () => {
+        document.body.removeChild(overlay);
+    });
+
+    buttonsContainer.appendChild(confirmButton);
+    buttonsContainer.appendChild(cancelButton);
+    modal.appendChild(buttonsContainer);
+
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+}
+
+// Fonction pour confirmer la suppression d'une équipe
+function confirmDeleteTeam(index) {
+    showConfirmationModal("Êtes-vous sûr de vouloir supprimer cette équipe ?", () => {
+        deleteTeam(index);
+    });
+}
+
+// Fonction pour supprimer une équipe du localStorage
+function deleteTeam(index) {
+    let savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
+    savedTeams.splice(index, 1);
+    localStorage.setItem("savedTeams", JSON.stringify(savedTeams));
+    showNotification("Équipe supprimée !");
+    document.querySelector(".saved-teams-menu").remove();
+    showSavedTeamsMenu();
+}
+
+// Fonction pour basculer la visibilité du menu des équipes sauvegardées
+function toggleSavedTeamsMenu() {
+    const existingMenu = document.querySelector(".saved-teams-menu");
+    if (existingMenu) {
+        existingMenu.remove();
+    } else {
+        showSavedTeamsMenu();
+    }
+}
