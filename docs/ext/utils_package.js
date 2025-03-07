@@ -2748,7 +2748,7 @@ export const classData = {
         "Roles": ["Ranged", "Area", "Single Target", "Burst", "Rall AP", "Buff AP", "Self Stabilized"]
 
       },
-      "DPT Poison": {
+      "DPT Indirect": {
         "Id": 2,
         "Notes": {
           "DPT": {
@@ -3053,6 +3053,14 @@ export const TRANSLATIONS = {
   dpt_elementary: {
     fr: 'DPT Elémentaire',
     en: 'DPT Elementary'
+  },
+  dpt_indirect: {
+    fr: 'DPT Indirect',
+    en: 'DPT Indirect'
+  },
+  dpt_cog: {
+    fr: 'DPT Rouage',
+    en: 'DPT Cog'
   },
 
   support_shield: {
