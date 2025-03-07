@@ -1256,7 +1256,6 @@ function showSavedTeamsMenu() {
         return;
     }
 
-
     savedTeams.forEach((team, index) => {
         const teamContainer = document.createElement("div");
         teamContainer.classList.add("favorite-team-container");
