@@ -61,7 +61,7 @@ start_index = js_content.find('export const classData = {')
 end_index = js_content.find('};', start_index) + 2
 
 # Replace the old classData with the new one
-new_js_content = js_content[:start_index] + 'export const classData = ' + json.dumps(class_data, indent=4) + js_content[end_index:]
+new_js_content = js_content[:start_index] + 'export const classData = ' + json.dumps(class_data, indent=4) + ';' + js_content[end_index:]
 
 # Save the updated JavaScript file
 with open('./docs/ext/utils_package.js', 'w') as js_file:
