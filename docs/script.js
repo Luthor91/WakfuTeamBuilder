@@ -1070,11 +1070,17 @@ function createClassImage(imgSrc) {
     // Clic droit pour changer le genre
     img.oncontextmenu = (e) => {
         e.preventDefault();
-        const [gender, className] = img.getAttribute('src').split('_');
-        let newGender = gender === 'male' ? 'female' : 'male';
 
+        // Extraire seulement le nom du fichier sans le chemin complet
+        const filename = img.src.split('/').pop();  // "male_warrior.png"
+        const [gender, className] = filename.split('_');
+
+        let newGender = gender === 'male' ? 'female' : 'male';
         let newImgSrc = `${newGender}_${className}`;
+
         img.src = `assets/classes/${newImgSrc}`;
+        console.log(img.src);
+        
         img.dataset.src = newImgSrc;  // Mettre à jour l'image actuelle
 
         if (selectedSlot !== null) {
