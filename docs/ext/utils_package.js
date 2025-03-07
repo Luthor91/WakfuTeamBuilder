@@ -482,7 +482,7 @@ export const classData = {
                         }
                     }
                 },
-                "Specific Distribution Heal": {
+                "DPT Indirect": {
                     "Notes": {
                         "DPT": {
                             "Melee": 0,
@@ -517,12 +517,8 @@ export const classData = {
                             "Support_Ranged": 0
                         }
                     }
-                }
-            }
-        },
-        "Enirpsa": {
-            "Voies": {
-                "DPT Indirect": {
+                },
+                "Specific Distribution Heal": {
                     "Notes": {
                         "DPT": {
                             "Melee": 0,
@@ -1484,7 +1480,7 @@ export const classData = {
                 }
             }
         },
-        "Ouginiak": {
+        "Ouginak": {
             "Voies": {
                 "DPT Melee": {
                     "Notes": {

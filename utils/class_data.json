@@ -482,7 +482,7 @@
                         }
                     }
                 },
-                "Specific Distribution Heal": {
+                "DPT Indirect": {
                     "Notes": {
                         "DPT": {
                             "Melee": 0,
@@ -517,12 +517,8 @@
                             "Support_Ranged": 0
                         }
                     }
-                }
-            }
-        },
-        "Enirpsa": {
-            "Voies": {
-                "DPT Indirect": {
+                },
+                "Specific Distribution Heal": {
                     "Notes": {
                         "DPT": {
                             "Melee": 0,
@@ -1484,7 +1480,7 @@
                 }
             }
         },
-        "Ouginiak": {
+        "Ouginak": {
             "Voies": {
                 "DPT Melee": {
                     "Notes": {

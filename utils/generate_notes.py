@@ -2,7 +2,7 @@ import json
 import pandas as pd
 
 # Load the Excel file
-excel_file = './utils/data.xlsx'
+excel_file = "./utils/Wak'Team.xlsx"
 df = pd.read_excel(excel_file, sheet_name='Notes', engine='openpyxl')
 
 # Define the keys for the Notes dictionary
