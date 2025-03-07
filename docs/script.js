@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault(); // Empêche l'apparition du menu contextuel par défaut
                 const slotIndex = parseInt(slot.getAttribute('data-slot'));
                 clearSlot(slotIndex);
+                updateAll();
             });
         } else {
             console.error('Slot is null');
@@ -95,7 +96,7 @@ function updateAll() {
     updateTeamContainer();
     updateRolesPanel();
     updateRolesSummary();
-    updateGauges(); 
+    updateGauges();
 }
 
 
@@ -420,7 +421,18 @@ function updateTeamContainer() {
 function updateGauges() {
     // Objet pour stocker les sommes des statistiques
     const totalStats = {};
-    
+
+    // Vérifier si l'équipe contient au moins un membre avec une classe et une voie définies
+    const hasMembers = teamRoles.some(slot => slot.class && slot.voie);
+
+    if (!hasMembers) {
+        // Si aucun membre n'est défini, réinitialiser toutes les jauges à 0
+        document.querySelectorAll("[id^='gauge-']").forEach(gauge => {
+            updateGaugeBar(gauge, 0);
+        });
+        return;
+    }
+
     // Parcourir tous les membres de l'équipe et additionner leurs stats
     teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
@@ -434,20 +446,20 @@ function updateGauges() {
                         // Initialiser la stat si elle n'existe pas encore
                         if (!totalStats[statName]) {
                             totalStats[statName] = 0;
-                        }
-                        totalStats[statName] = Math.min(totalStats[statName] + statValue, 10);
+                        }                        
+                        totalStats[statName] += statValue;
                     }
                 }
             }
         }
     });
-    
+
     // Mettre à jour les jauges avec les sommes calculées
     for (const statName in totalStats) {
         const statGaugeId = `gauge-${statName}`;
         const statElement = document.getElementById(statGaugeId);
         if (statElement) {
-            updateGaugeBar(statElement, totalStats[statName]);
+            updateGaugeBar(statElement, Math.min(totalStats[statName], 10));
         }
     }
 }
