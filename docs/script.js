@@ -1261,17 +1261,20 @@ function showSavedTeamsMenu() {
         teamContainer.classList.add("favorite-team-container");
 
         team.forEach(member => {
-
-
             const memberContainer = document.createElement("div");
             memberContainer.classList.add("member-container");
             const img = document.createElement("img");
 
             if (member.voie === null) {
-                return;
+                member.voie = '';
             }
             
-            img.src = member.image;
+            if (member.image) {
+                img.src = member.image;
+            } else {
+                img.src = ""; // Pas d'image par défaut
+                img.style.backgroundColor = "transparent"; // Carré transparent
+            }
             img.classList.add("member-image");
 
             const voie = document.createElement("span");
@@ -1284,6 +1287,15 @@ function showSavedTeamsMenu() {
             memberContainer.appendChild(voie);
             teamContainer.appendChild(memberContainer);
         });
+
+        // Ajouter un espace vide si l'équipe a moins de six membres
+        if (team.length < 6) {
+            const emptySpace = document.createElement("div");
+            const emptyImg = document.createElement("img");
+            emptyImg.style.backgroundColor = "transparent"; // Carré transparent
+            emptySpace.appendChild(emptyImg);
+            teamContainer.appendChild(emptySpace);
+        }
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "❌";
