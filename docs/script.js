@@ -1391,7 +1391,6 @@ function deleteTeam(index) {
     localStorage.setItem("savedTeams", JSON.stringify(savedTeams));
     showNotification("Équipe supprimée !");
     toggleSavedTeamsMenu();
-    //document.querySelector(".saved-teams-menu").remove();
     showSavedTeamsMenu();
 }
 
