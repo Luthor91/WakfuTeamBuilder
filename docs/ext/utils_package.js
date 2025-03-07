@@ -3030,6 +3030,49 @@ export const TRANSLATIONS = {
     en: 'Xelor'
   },
 
+  dpt_ranged: {
+    fr: 'DPT Distance',
+    en: 'DPT Ranged'
+  },
+  dpt_glyph_ranged: {
+    fr: 'DPT Distance Glyphe',
+    en: 'DPT Glyph Ranged'
+  },
+  dpt_ranged_area: {
+    fr: 'DPT Distance Zone',
+    en: 'DPT Ranged Area'
+  },
+  dpt_melee: {
+    fr: 'DPT Mêlée',
+    en: 'DPT Melee'
+  },
+  dpt_elementary: {
+    fr: 'DPT Elémentaire',
+    en: 'DPT Elementary'
+  },
+  
+  support_shield: {
+    fr: 'Support Armure',
+    en: 'Support Shield'
+  },
+  support_heal: {
+    fr: 'Support Soin',
+    en: 'Support Heal'
+  },
+  support_placeur: {
+    fr: 'Support Placeur',
+    en: 'Support Positioning'
+  },
+  support_utilitaire: {
+    fr: 'Support Utilitaire',
+    en: 'Support Utilitary'
+  },
+
+  specific_distribution_heal: {
+    fr: 'Specifique Distribution Heal',
+    en: 'Specific Distribution Heal'
+  },
+
   gauge_dpt: {
     fr: 'DPT',
     en: 'DPT'

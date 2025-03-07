@@ -35,34 +35,32 @@ let isControlPressed = false;
 
 // Initialisation des événements
 document.addEventListener('DOMContentLoaded', () => {
-    
     document.querySelectorAll('.slot').forEach(slot => {
-        slot.addEventListener('click', () => {
-            openSelectionMenu(parseInt(slot.dataset.slot));
-        });
-        
-        // Ajout du gestionnaire de clic droit
-        slot.addEventListener('contextmenu', (e) => {
-            e.preventDefault(); // Empêche l'apparition du menu contextuel par défaut
-            const slotIndex = parseInt(slot.dataset.slot);
-            clearSlot(slotIndex);
-        });
+        if (slot) {
+            slot.addEventListener('click', () => {
+                openSelectionMenu(parseInt(slot.getAttribute('data-slot')));
+            });
+
+            // Ajout du gestionnaire de clic droit
+            slot.addEventListener('contextmenu', (e) => {
+                e.preventDefault(); // Empêche l'apparition du menu contextuel par défaut
+                const slotIndex = parseInt(slot.getAttribute('data-slot'));
+                clearSlot(slotIndex);
+            });
+        } else {
+            console.error('Slot is null');
+        }
     });
 
-    
     // Gestionnaires d'événements pour les boutons
     document.getElementById("save-team-button").addEventListener("click", saveCurrentTeam);
     document.getElementById("show-teams-button").addEventListener("click", toggleSavedTeamsMenu);
-
     // Gestionnaire pour le bouton Fermer
     document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
-
     loadTeamToLocalStorage();
-
     // Initialisation des panneaux
     updateAll();
     setLanguage("en");
-    
 });
 
 
@@ -87,6 +85,7 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeSelectionMenu();
         closeRolesModal();
+        toggleSavedTeamsMenu(true);
     }
 });
 
@@ -102,9 +101,8 @@ function updateAll() {
 
 function setLanguage(lang) {
     currentLanguage = lang;
-
     document.querySelectorAll("[data-translator]").forEach(element => {
-        const translationKey = element.dataset.translator;
+        const translationKey = element.getAttribute('data-translator'); 
         if (TRANSLATIONS[translationKey] && TRANSLATIONS[translationKey][lang]) {
             element.textContent = TRANSLATIONS[translationKey][lang];
         }
@@ -273,7 +271,7 @@ document.getElementById('main-gauge-Entrave').onclick = function() {
     subGaugeContainer.classList.toggle("hidden");
 }
 
-document.getElementById("flag_french").onclick = function() {
+document.getElementById("flag_french").onclick = function() {    
     setLanguage("fr");
 };
 
@@ -285,7 +283,6 @@ document.getElementById("flag_english").onclick = function() {
 function updateTeamRoles() {
     const rolesContainer = document.getElementById('roles-under-gauge');
     rolesContainer.innerHTML = ''; // Réinitialiser la section des rôles
-
     const currentRoles = [];
     teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
@@ -297,59 +294,48 @@ function updateTeamRoles() {
             }
         }
     });
-
     Object.keys(CATEGORIES).forEach(category => {
         const categoryRoles = CATEGORIES[category].filter(role => currentRoles.includes(role));
         const missingImportant = CATEGORIES[category].filter(role => !currentRoles.includes(role) && IMPORTANT_ROLES.includes(role));
         const missingOptional = CATEGORIES[category].filter(role => !currentRoles.includes(role) && OPTIONAL_ROLES.includes(role));
-
         if (categoryRoles.length || missingImportant.length || missingOptional.length) {
             // Création du conteneur de catégorie
             const categoryContainer = document.createElement('div');
             categoryContainer.classList.add('role-category');
-
             // Titre de la catégorie
             const categoryTitle = document.createElement('h4');
             categoryTitle.textContent = category;
-            categoryTitle.dataset.translator = category.toLocaleLowerCase().replaceAll(' ', '_');
-
+            categoryTitle.setAttribute('data-translator', category.toLocaleLowerCase().replaceAll(' ', '_'));
             categoryTitle.classList.add('category-title');
             categoryTitle.style.cursor = "pointer"; 
-
             // Conteneur des rôles
             const rolesWrapper = document.createElement('div');
             rolesWrapper.classList.add('roles-wrapper');
-
             categoryTitle.addEventListener("click", function () {
                 rolesWrapper.style.display = rolesWrapper.style.display === "none" ? "flex" : "none";
             });
-
             // Fonction pour ajouter les rôles avec un style badge
             const displayRoles = (roles, className) => {
                 roles.forEach(role => {
                     const roleElement = document.createElement('span');
                     const data_translator = role.toLocaleLowerCase().replaceAll(' ', '_');
-
                     roleElement.classList.add('role-badge', className);
                     roleElement.textContent = role;
-                    roleElement.dataset.translator = data_translator;
+                    roleElement.setAttribute('data-translator', data_translator);
                     roleElement.textContent = translate(data_translator, currentLanguage);
                     rolesWrapper.appendChild(roleElement);
                 });
             };
-
             // Ajout des rôles avec différentes couleurs
-            displayRoles(categoryRoles, 'filled-role');  // Vert
+            displayRoles(categoryRoles, 'filled-role'); // Vert
             displayRoles(missingImportant, 'important-role'); // Rouge
             displayRoles(missingOptional, 'optional-role'); // Jaune
-
             // Ajout des éléments au conteneur
             categoryContainer.appendChild(categoryTitle);
             categoryContainer.appendChild(rolesWrapper);
             rolesContainer.appendChild(categoryContainer);
         }
     });
-
     updateGauges();
 }
 
@@ -357,24 +343,26 @@ function updateTeamRoles() {
 function updateTeamContainer() {
     // Récupérer le conteneur d'équipe
     const teamContainer = document.getElementById("team-container");
-    
+
     // Parcourir chaque slot dans teamRoles
     teamRoles.forEach((slot, index) => {
         // Récupérer l'élément slot correspondant
         const slotElement = teamContainer.children[index];
-        
+
         if (slotElement) {
+            slotElement.setAttribute('data-slot', index); // Assigner l'attribut data-slot
+
             // Si le slot contient une classe (n'est pas vide)
             if (slot.class) {
                 // Chercher si une image existe déjà dans ce slot
                 let imgElement = slotElement.querySelector("img");
-                
+
                 // Si aucune image n'existe, en créer une nouvelle
                 if (!imgElement) {
                     imgElement = document.createElement("img");
                     slotElement.appendChild(imgElement);
                 }
-                
+
                 // Mettre à jour la source de l'image
                 if (slot.image) {
                     imgElement.src = slot.image;
@@ -383,13 +371,13 @@ function updateTeamContainer() {
                     // Mettre à jour slot.image pour la cohérence
                     slot.image = classData.Classes[slot.class].Image;
                 }
-                
+
                 // Vérifier si la voie existe pour cette classe
                 if (slot.voie && !classData.Classes[slot.class].Voies[slot.voie]) {
                     console.warn(`La voie ${slot.voie} n'existe pas pour la classe ${slot.class}`);
                     slot.voie = null; // Réinitialiser si la voie n'est pas valide
                 }
-                
+
                 // Si la voie n'est pas définie, essayer de définir une voie par défaut
                 if (!slot.voie) {
                     // Essayer de trouver la première voie disponible
@@ -404,9 +392,11 @@ function updateTeamContainer() {
                 // Réinitialiser complètement le slot dans teamRoles
                 teamRoles[index] = { class: null, voie: null, image: null };
             }
+        } else {
+            console.error('Slot element is null');
         }
     });
-    
+
     // Mettre à jour également les sélecteurs de voie dans le panneau des rôles
     const rolesPanel = document.getElementById("team-roles-panel");
     if (rolesPanel) {
@@ -648,9 +638,13 @@ function hasInvulnerabilityRole() {
 // Fonction pour vider un slot
 function clearSlot(slotIndex) {
     const slot = document.querySelector(`.slot[data-slot="${slotIndex}"]`);
-    slot.innerHTML = "";
-    teamRoles[slotIndex] = { class: null, voie: null };
-    updateAll();
+    if (slot) {
+        slot.innerHTML = "";
+        teamRoles[slotIndex] = { class: null, voie: null, image: null };
+        updateAll();
+    } else {
+        console.error('Slot is null');
+    }
 }
 
 // Fonction pour obtenir le nom de la classe à partir du nom de fichier
@@ -700,11 +694,11 @@ function updateRolesSummary() {
     const { dptCount, supportCount } = countRolesDPTandSupport();
     const warningDiv = document.createElement('div');
     if (dptCount > supportCount) {
-        warningDiv.dataset.translator = 'warn_dpt_greater_than_support';
+        warningDiv.setAttribute('data-translator', 'warn_dpt_greater_than_support');
         warningDiv.textContent = translate('warn_dpt_greater_than_support', currentLanguage);
         warningDiv.className = 'warn-message warn-red';
     } else if(dptCount == 0) {
-        warningDiv.dataset.translator = 'warn_need_dpt';
+        warningDiv.setAttribute('data-translator', 'warn_need_dpt');
         warningDiv.textContent = translate('warn_need_dpt', currentLanguage);
         warningDiv.className = 'warn-message warn-red';
     }
@@ -725,7 +719,7 @@ function updateRolesSummary() {
         summaryContainerWarns.appendChild(warningDiv);
     } else if (elementsDPT.length > 0) {
         const warningDiv = document.createElement('div');
-        warningDiv.dataset.translator = 'warn_multielement_dpt';
+        warningDiv.setAttribute('data-translator', 'warn_multielement_dpt');
         warningDiv.textContent = translate('warn_multielement_dpt', currentLanguage);
         warningDiv.className = 'warn-message warn-green';
         summaryContainerWarns.appendChild(warningDiv);
@@ -733,7 +727,7 @@ function updateRolesSummary() {
 
     if (!hasStabilizedRole()) {
         const warningDiv = document.createElement('div');
-        warningDiv.dataset.translator = 'warn_stabilized';
+        warningDiv.setAttribute('data-translator', 'warn_stabilized');
         warningDiv.textContent = translate('warn_stabilized', currentLanguage);
         warningDiv.className = 'warn-message warn-yellow';
         summaryContainerWarns.appendChild(warningDiv);
@@ -741,7 +735,7 @@ function updateRolesSummary() {
 
     if (!hasInvulnerabilityRole()) {
         const warningDiv = document.createElement('div');
-        warningDiv.dataset.translator = 'warn_invulnerability';
+        warningDiv.setAttribute('data-translator', 'warn_invulnerability');
         warningDiv.textContent = translate('warn_invulnerability', currentLanguage);
         warningDiv.className = 'warn-message warn-yellow';
         summaryContainerWarns.appendChild(warningDiv);
@@ -759,7 +753,7 @@ function updateRolesSummary() {
     rolesToCheck.forEach(role => {
         const roleDiv = document.createElement('div');
         const data_translator = role.toLocaleLowerCase().replaceAll(' ', '_');
-        roleDiv.dataset.translator = data_translator
+        roleDiv.setAttribute('data-translator', data_translator);
         roleDiv.textContent = translate(data_translator, currentLanguage);
         roleDiv.className = presentRoles.has(role) ? 'role-present' : 'role-missing';
         summaryContainerRequired.appendChild(roleDiv);
@@ -910,35 +904,34 @@ function updateRolesPanel() {
 }
 
 
-// Update the original selectClass function
 function selectClass(imgSrc) {
     if (selectedSlot !== null) {
         const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
-        slot.innerHTML = "";
-        const img = document.createElement("img");
-        img.src = `assets/classes/${imgSrc}`;
-        slot.appendChild(img);
+        if (slot) {
+            slot.innerHTML = "";
+            const img = document.createElement("img");
+            img.src = `${imgSrc}`;            
+            slot.appendChild(img);
 
-        const className = getClassNameFromFile(imgSrc);
-        let selectedVoie = null;
-
-        Object.entries(classData.Classes[className].Voies).forEach(([voie, data]) => {
-            if (data.Id === 1) {
-                selectedVoie = voie;
+            const className = getClassNameFromFile(imgSrc);
+            let selectedVoie = null;
+            Object.entries(classData.Classes[className].Voies).forEach(([voie, data]) => {
+                if (data.Id === 1) {
+                    selectedVoie = voie;
+                }
+            });
+            teamRoles[selectedSlot] = {
+                class: className,
+                voie: selectedVoie,
+                image: `${imgSrc}`
+            };
+            if (teamRoles.length == 6) {
+                saveTeamToLocalStorage();
             }
-        });
-
-        teamRoles[selectedSlot] = {
-            class: className,
-            voie: selectedVoie,
-            image: `assets/classes/${imgSrc}`
-        };
-
-        if (teamRoles.length== 6 ) {
-            saveTeamToLocalStorage();
+            updateAll();
+        } else {
+            console.error('Slot is null');
         }
-
-        updateAll();
     }
     closeSelectionMenu();
 }
@@ -947,53 +940,50 @@ function selectClass(imgSrc) {
 // Modified selectClassWithShift function
 function selectClassWithShift(imgSrc) {
     if (selectedSlot !== null && selectedSlot < teamRoles.length) {
-        // Add the class to the current slot
         const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
-        slot.innerHTML = "";
-        const img = document.createElement("img");
-        img.src = `assets/classes/${imgSrc}`;
-        slot.appendChild(img);
-
-        const className = getClassNameFromFile(imgSrc);
-        let selectedVoie = null;
-
-        Object.entries(classData.Classes[className].Voies).forEach(([voie, data]) => {
-            if (data.Id === 1) {
-                selectedVoie = voie;
+        if (slot) {
+            slot.innerHTML = "";
+            const img = document.createElement("img");
+            img.src = `${imgSrc}`;
+            slot.appendChild(img);
+            const className = getClassNameFromFile(imgSrc);
+            let selectedVoie = null;
+            Object.entries(classData.Classes[className].Voies).forEach(([voie, data]) => {
+                if (data.Id === 1) {
+                    selectedVoie = voie;
+                }
+            });
+            teamRoles[selectedSlot] = {
+                class: className,
+                voie: selectedVoie,
+                image: `${imgSrc}`
+            };
+            if (teamRoles.length == 6) {
+                saveTeamToLocalStorage();
             }
-        });
+            updateAll();
 
-        teamRoles[selectedSlot] = {
-            class: className,
-            voie: selectedVoie,
-            image: `assets/classes/${imgSrc}`
-        };
+            // Update the selection menu to reflect the new "taken" classes
+            updateSelectionMenuTakenClasses();
 
-        if (teamRoles.length== 6 ) {
-            saveTeamToLocalStorage();
-        }
+            // Move to the next slot if available
+            if (selectedSlot < 5) { // Assuming 6 slots (0-5)
+                selectedSlot++;
 
-        // Update the display
-        updateAll();
-        
-        // Update the selection menu to reflect the new "taken" classes
-        updateSelectionMenuTakenClasses();
-
-        // Move to the next slot if available
-        if (selectedSlot < 5) {  // Assuming 6 slots (0-5)
-            selectedSlot++;
-            
-            // Highlight the new selected slot
-            const slots = document.querySelectorAll('.slot');
-            slots.forEach(s => s.classList.remove('selected-slot'));
-            const nextSlot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
-            if (nextSlot) {
-                nextSlot.classList.add('selected-slot');
+                // Highlight the new selected slot
+                const slots = document.querySelectorAll('.slot');
+                slots.forEach(s => s.classList.remove('selected-slot'));
+                const nextSlot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
+                if (nextSlot) {
+                    nextSlot.classList.add('selected-slot');
+                }
+            } else {
+                // If we're at the last slot, close the menu
+                closeSelectionMenu();
+                return;
             }
         } else {
-            // If we're at the last slot, close the menu
-            closeSelectionMenu();
-            return;
+            console.error('Slot is null');
         }
     }
 }
@@ -1010,7 +1000,7 @@ function updateSelectionMenuTakenClasses() {
     classContainers.forEach(container => {
         const img = container.querySelector("img");
         if (img) {
-            const imgSrc = img.dataset.src;
+            const imgSrc = img.getAttribute('src');            
             const className = getClassNameFromFile(imgSrc);
             
             // Check if this class is in the team
@@ -1032,39 +1022,30 @@ function openSelectionMenu(slotIndex) {
     selectedSlot = slotIndex;
     const menu = document.getElementById("selection-menu");
     const menuContent = document.getElementById("menu-content");
-
     menuContent.innerHTML = "";
-
     Object.keys(classData.Classes).forEach(className => {
         const imgSrc = `male_${className.toLowerCase()}.png`;
-
         // Vérifier si la classe est déjà prise
         const isTaken = teamRoles.some(role => role.class === className);
-
         // Créer un conteneur pour l'image et le texte
         const container = document.createElement("div");
         container.classList.add("class-container");
         if (isTaken) {
             container.classList.add("taken"); // Ajoute la classe CSS si la classe est prise
         }
-
         // Créer l'image
         const img = createClassImage(imgSrc);
-
         // Créer le texte
         const textOverlay = document.createElement("div");
         const data_translator = className.toLocaleLowerCase().replaceAll(' ', '_');
-
         textOverlay.classList.add("class-name");
-        textOverlay.dataset.translator = data_translator
+        textOverlay.setAttribute('data-translator', data_translator);
         textOverlay.textContent = translate(data_translator, currentLanguage);
-
         // Ajouter l'image et le texte dans le conteneur
         container.appendChild(img);
         container.appendChild(textOverlay);
         menuContent.appendChild(container);
     });
-
     menu.classList.remove("hidden");
 }
 
@@ -1073,12 +1054,11 @@ function openSelectionMenu(slotIndex) {
 function createClassImage(imgSrc) {
     const img = document.createElement("img");
     img.src = `assets/classes/${imgSrc}`;
-    img.dataset.src = imgSrc;  // Stocker l'image actuelle
-
+    
     // Clic droit pour changer le genre
     img.oncontextmenu = (e) => {
         e.preventDefault();
-        const [gender, className] = img.dataset.src.split('_');
+        const [gender, className] = img.getAttribute('src').split('_');
         let newGender = gender === 'male' ? 'female' : 'male';
 
         let newImgSrc = `${newGender}_${className}`;
@@ -1094,9 +1074,7 @@ function createClassImage(imgSrc) {
     img.onclick = (e) => {
 
         if (isControlPressed) {
-            const className = img.dataset.src.split('_', 2)[1].split('.', 1)[0];
-            console.log(className);
-            
+            const className = img.getAttribute('src').split('_', 2)[1].split('.', 1)[0];
             showClassRoles(className);
             return;
             
@@ -1104,10 +1082,10 @@ function createClassImage(imgSrc) {
 
         if (isShiftPressed) {
             // If shift is pressed, select this class but don't close the menu
-            selectClassWithShift(img.dataset.src);
+            selectClassWithShift(img.getAttribute('src'));
         } else {
             // Normal behavior for regular click
-            selectClass(img.dataset.src);
+            selectClass(img.getAttribute('src'));
         }
     }
     
@@ -1143,31 +1121,25 @@ function loadTeamToLocalStorage() {
     try {
         // Récupérer les données depuis localStorage
         const teamRolesJSON = localStorage.getItem("savedTeam");
-
         if (teamRolesJSON) {
             const savedTeam = JSON.parse(teamRolesJSON);
-
             // Vérifier que c'est un tableau valide (et max 6 éléments)
             if (Array.isArray(savedTeam) && savedTeam.length <= 6) {
                 // Mettre à jour teamRoles
                 teamRoles = savedTeam;
-                
+
                 // Mettre à jour l'interface
                 updateAll();
-
                 console.log("Équipe chargée depuis le localStorage");
-
                 // Afficher une notification à l'utilisateur
                 showNotification("Équipe chargée avec succès!");
                 return true;
             }
         }
-
         console.log("Aucune équipe sauvegardée trouvée dans le localStorage");
     } catch (error) {
         console.error("Erreur lors du chargement de l'équipe:", error);
     }
-
     return false;
 }
 
@@ -1276,8 +1248,8 @@ function saveCurrentTeam() {
 // Fonction pour afficher le menu des équipes sauvegardées
 function showSavedTeamsMenu() {
     const savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
-    const menu = document.createElement("div");
-    menu.classList.add("saved-teams-menu");
+    const menu = document.getElementById("saved-teams-menu");
+    menu.innerHTML = ""; // Vider le contenu existant
 
     savedTeams.forEach((team, index) => {
         const teamContainer = document.createElement("div");
@@ -1292,7 +1264,9 @@ function showSavedTeamsMenu() {
             img.classList.add("member-image");
 
             const voie = document.createElement("span");
-            voie.textContent = member.voie;
+            const data_translator = member.voie.toLowerCase().replaceAll(' ', '_');
+            voie.setAttribute("data-translator", data_translator);
+            voie.textContent = translate(data_translator, currentLanguage);
             voie.classList.add("member-voie");
 
             memberContainer.appendChild(img);
@@ -1313,7 +1287,7 @@ function showSavedTeamsMenu() {
         menu.appendChild(teamContainer);
     });
 
-    document.body.appendChild(menu);
+    menu.classList.remove("hidden"); // Afficher le menu
 }
 
 // Fonction pour appliquer une équipe sauvegardée
@@ -1325,6 +1299,11 @@ function applySavedTeam(team) {
 
 // Fonction pour afficher une modal de confirmation
 function showConfirmationModal(message, onConfirm) {
+    // Vérifier si une modal de confirmation est déjà affichée
+    if (document.querySelector('.confirmation-modal')) {
+        return;
+    }
+
     // Créer l'overlay
     const overlay = document.createElement("div");
     overlay.classList.add("overlay");
@@ -1360,9 +1339,17 @@ function showConfirmationModal(message, onConfirm) {
     buttonsContainer.appendChild(confirmButton);
     buttonsContainer.appendChild(cancelButton);
     modal.appendChild(buttonsContainer);
-
     overlay.appendChild(modal);
     document.body.appendChild(overlay);
+
+    // Ajouter un gestionnaire d'événements pour la touche "Entrée"
+    document.addEventListener("keydown", function handleKeydown(event) {
+        if (event.key === "Enter") {
+            onConfirm();
+            document.body.removeChild(overlay);
+            document.removeEventListener("keydown", handleKeydown);
+        }
+    });
 }
 
 // Fonction pour confirmer la suppression d'une équipe
@@ -1383,11 +1370,15 @@ function deleteTeam(index) {
 }
 
 // Fonction pour basculer la visibilité du menu des équipes sauvegardées
-function toggleSavedTeamsMenu() {
-    const existingMenu = document.querySelector(".saved-teams-menu");
-    if (existingMenu) {
-        existingMenu.remove();
-    } else {
+function toggleSavedTeamsMenu(escapePressed = false) {
+    const menu = document.getElementById("saved-teams-menu");
+
+    if (menu.classList.contains("hidden")) {
+        if (escapePressed == true) {
+            return;
+        }
         showSavedTeamsMenu();
+    } else {
+        menu.classList.add("hidden");
     }
 }
