@@ -2599,6 +2599,12 @@ export const classData = {
     }
 };
 
+export const LANGUAGES = {
+  FR: 'fr',
+  EN: 'en'
+};
+
+
 export const TRANSLATIONS = {
   title: {
     fr: 'Team Builder Wakfu',
