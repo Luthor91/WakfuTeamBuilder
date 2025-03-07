@@ -1,0 +1,15 @@
+it", "Buff DI", "Buff WP", "Resurection", "Buff MP", "Rall Resistance", "Self Stabilized", "Invulnerability"]
+        }
+      },
+      "Elements": ["Fire", "Water", "Earth"],
+      "Mobility": 1
+    },
+    "Eliotrope": {
+      "Id": 3,
+      "Image": "assets/classes/male_eliotrope.png",
+      "Voies": {
+        "DPT Melee": {
+          "Id": 1,
+          "Notes": {
+    "DPT": {
+        "Melee": 0,
