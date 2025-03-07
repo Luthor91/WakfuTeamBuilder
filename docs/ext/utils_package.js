@@ -3046,11 +3046,15 @@ export const TRANSLATIONS = {
     fr: 'DPT Mêlée',
     en: 'DPT Melee'
   },
+  dpt_mixed: {
+    fr: 'DPT Mixte',
+    en: 'DPT Mixed'
+  },
   dpt_elementary: {
     fr: 'DPT Elémentaire',
     en: 'DPT Elementary'
   },
-  
+
   support_shield: {
     fr: 'Support Armure',
     en: 'Support Shield'

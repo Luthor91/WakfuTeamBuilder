@@ -1261,10 +1261,16 @@ function showSavedTeamsMenu() {
         teamContainer.classList.add("favorite-team-container");
 
         team.forEach(member => {
+
+
             const memberContainer = document.createElement("div");
             memberContainer.classList.add("member-container");
-
             const img = document.createElement("img");
+
+            if (member.voie === null) {
+                return;
+            }
+            
             img.src = member.image;
             img.classList.add("member-image");
 
