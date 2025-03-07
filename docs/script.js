@@ -1250,10 +1250,11 @@ function showSavedTeamsMenu() {
     const savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
     const menu = document.getElementById("saved-teams-menu");
     menu.innerHTML = ""; // Vider le contenu existant
-    console.log("savedTeams : ", savedTeams);
     
-    if (savedTeams == []) return;
-    console.log('2');
+    if (savedTeams.length == 0) {
+        showNotification("Aucune équipe dans les favoris.", "red");
+        return;
+    }
 
 
     savedTeams.forEach((team, index) => {
