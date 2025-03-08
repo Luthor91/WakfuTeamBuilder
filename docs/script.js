@@ -1089,7 +1089,7 @@ function createClassImage(imgSrc) {
     };
 
     // Clic gauche avec gestion du shift
-    img.onclick = (e) => {
+    img.onclick = (_) => {
 
         if (isControlPressed) {
             const className = img.getAttribute('src').split('_', 2)[1].split('.', 1)[0];
