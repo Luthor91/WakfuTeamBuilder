@@ -22,8 +22,9 @@ try:
     # 1. Download the Google Spreadsheet as XLSX format.
     gauth = GoogleAuth()
     gauth.LocalWebserverAuth()
-    url = "https://www.googleapis.com/drive/v3/files/" + EXCEL_ID + "/export?mimeType=application%2Fvnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    url = "https://www.googleapis.com/drive/v3/files/" + EXCEL_ID + "?alt=media"
     res = requests.get(url, headers={"Authorization": "Bearer " + gauth.attr['credentials'].access_token})
+
 except Exception as e:
     print(f"ErreurLoading Excel From Drive: {e}")
 
