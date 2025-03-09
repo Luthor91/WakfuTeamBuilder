@@ -18,17 +18,15 @@ NOTES_KEYS = {
 
 EXCEL_ID = "11OnqMQkiQ_dymwbhPrwnQzVzRrugPcWs4upTTumQ9Rs"
 
+
 try:
+
     # 1. Download the Google Spreadsheet as XLSX format.
     gauth = GoogleAuth()
     gauth.LocalWebserverAuth()
     url = "https://www.googleapis.com/drive/v3/files/" + EXCEL_ID + "?alt=media"
     res = requests.get(url, headers={"Authorization": "Bearer " + gauth.attr['credentials'].access_token})
 
-except Exception as e:
-    print(f"ErreurLoading Excel From Drive: {e}")
-
-try:
     # Load the Excel file
     df = pd.read_excel(BytesIO(res.content), usecols=None, sheet_name='Notes')
 
