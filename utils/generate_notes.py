@@ -29,8 +29,7 @@ except Exception as e:
 
 try:
     # Load the Excel file
-    excel_file = "./utils/Wak'Team.xlsx"
-    df = pd.read_excel(excel_file, sheet_name='Notes', engine='openpyxl')
+    df = pd.read_excel(BytesIO(res.content), usecols=None, sheet_name='Notes')
 
     # Initialize the JSON structure
     class_data = {
