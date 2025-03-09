@@ -4,6 +4,7 @@ PORT := 8000
 VENV := venv
 EXCEL_FILE := utils/data.xlsx
 PYTHON_SCRIPT := utils/generate_notes.py
+REQUIREMENTS := utils/requirements.txt
 OUTPUT_JSON := utils/class_data.json
 
 GIT_REPO := https://github.com/Luthor91/WakfuTeamBuilder.git
@@ -28,7 +29,7 @@ update_data: setup_venv
 setup_venv:
 	@echo "Setting up virtual environment..."
 	$(PYTHON) -m venv $(VENV)
-	$(VENV)/Scripts/pip install pandas openpyxl
+	$(VENV)/Scripts/pip install -r $(REQUIREMENTS)
 
 # Cible pour supprimer l'environnement virtuel
 clean_venv:

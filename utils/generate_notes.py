@@ -3,6 +3,10 @@ import pandas as pd
 import re
 import os
 import shutil
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+import requests
+from io import BytesIO
 
 # Define the keys for the Notes dictionary
 NOTES_KEYS = {
@@ -11,6 +15,17 @@ NOTES_KEYS = {
     "Entrave": ["Rall_MP", "Rall_AP", "Rall_DI", "Rall_Resistance", "Boringness"],
     "Team_Support": ["Support_Area", "Support_Heal", "Support_Shield", "Support_Single_Target", "Support_Melee", "Support_Ranged"]
 }
+
+EXCEL_ID = "11OnqMQkiQ_dymwbhPrwnQzVzRrugPcWs4upTTumQ9Rs"
+
+try:
+    # 1. Download the Google Spreadsheet as XLSX format.
+    gauth = GoogleAuth()
+    gauth.LocalWebserverAuth()
+    url = "https://www.googleapis.com/drive/v3/files/" + EXCEL_ID + "/export?mimeType=application%2Fvnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    res = requests.get(url, headers={"Authorization": "Bearer " + gauth.attr['credentials'].access_token})
+except Exception as e:
+    print(f"ErreurLoading Excel From Drive: {e}")
 
 try:
     # Load the Excel file
