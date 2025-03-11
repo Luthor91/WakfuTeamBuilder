@@ -1,16 +1,8 @@
-import json
 import pandas as pd
-import re
 import os
 import shutil
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 from google.oauth2.service_account import Credentials
-from googleapiclient.discovery import build
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
-import requests
-from io import BytesIO
 
 # Define the keys for the Notes dictionary
 NOTES_KEYS = {
@@ -22,10 +14,12 @@ NOTES_KEYS = {
 
 EXCEL_ID = "11OnqMQkiQ_dymwbhPrwnQzVzRrugPcWs4upTTumQ9Rs"
 CLIENT_SECRET_FILE = "client_secrets.json"
+LOCAL_EXCEL_PATH = "utils/datas/Wak'Team.xlsx"
+JS_FILE_PATH = '../docs/js/dataModel/class.js'
+JS_BACKUP_PATH = '../utils/backup/utils_package.js.backup'
 
 
 def authorize_google_sheets():
-
     try:
         scopes = [
             'https://www.googleapis.com/auth/spreadsheets',
@@ -33,15 +27,12 @@ def authorize_google_sheets():
         ]
 
         creds = Credentials.from_service_account_file('utils/' + CLIENT_SECRET_FILE, scopes=scopes)
-
-        # Autoriser l'accès à Google Sheets
         client = gspread.authorize(creds)
         print("Connexion établie avec succès à Google Sheets")
         return client
     except Exception as e:
         print(f"Erreur d'authentification Google Sheets: {type(e).__name__} - {str(e)}")
         raise
-
 
 def read_google_sheet(client):
     try:
@@ -54,20 +45,34 @@ def read_google_sheet(client):
         print(f"Erreur de lecture de la feuille Google Sheets: {type(e).__name__} - {str(e)}")
         raise
 
-
-
-def backup_js_file(js_file_path):
+def read_local_excel():
     try:
-        backup_path = js_file_path + '.backup'
-        shutil.copy2(js_file_path, backup_path)
-        print(f"Une sauvegarde a été créée à {backup_path}")
+        print(f"Lecture du fichier Excel local : {LOCAL_EXCEL_PATH}")
+        data = pd.read_excel(LOCAL_EXCEL_PATH, sheet_name='Notes')
+        print("Lecture réussie depuis le fichier Excel local")
+        return data
+    except Exception as e:
+        print(f"Erreur de lecture du fichier Excel local: {type(e).__name__} - {str(e)}")
+        raise
+
+def backup_js_file():
+    try:
+        shutil.copy2(JS_FILE_PATH, JS_BACKUP_PATH)
+        print(f"Une sauvegarde a été créée à {JS_BACKUP_PATH}")
     except Exception as e:
         print(f"Erreur lors de la sauvegarde du fichier JS: {type(e).__name__} - {str(e)}")
         raise
 
 try:
-    client = authorize_google_sheets()
-    df = read_google_sheet(client)
+    try:
+        # Tenter d'accéder à Google Sheets
+        client = authorize_google_sheets()
+        df = read_google_sheet(client)
+    except Exception:
+        print("Échec de l'accès à Google Sheets, tentative de récupération du fichier local.")
+        # Si l'accès échoue, utiliser le fichier Excel local
+        df = read_local_excel()
+
     class_data = {"Classes": {}}
 
     for index, row in df.iterrows():
@@ -100,9 +105,9 @@ try:
         except Exception as e:
             print(f"Erreur lors du traitement de la ligne {index + 1}: {type(e).__name__} - {str(e)}")
 
-    js_file_path = './docs/ext/utils_package.js'
-    if not os.path.exists(js_file_path):
-        raise FileNotFoundError(f"Le fichier {js_file_path} n'existe pas")
-    backup_js_file(js_file_path)
+    if not os.path.exists(JS_FILE_PATH):
+        raise FileNotFoundError(f"Le fichier {JS_FILE_PATH} n'existe pas")
+    backup_js_file()
+
 except Exception as e:
     print(f"Erreur principale: {type(e).__name__} - {str(e)}")
