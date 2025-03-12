@@ -1,6 +1,6 @@
 import { CLASS_DATA } from '../dataModel/class.js';
 import { translate } from '../utils/translate.js';
-import { G_teamRoles } from '../dataModel/team.js';
+import { g_teamRoles } from '../dataModel/team.js';
 
 
 let selectedSlot = null;
@@ -15,7 +15,7 @@ function openSelectionMenu(slotIndex) {
     Object.keys(CLASS_DATA.Classes).forEach(className => {
         const imgSrc = `male_${className.toLowerCase()}.png`;
         // Vérifier si la classe est déjà prise
-        const isTaken = G_teamRoles.some(role => role.class === className);
+        const isTaken = g_teamRoles.some(role => role.class === className);
         // Créer un conteneur pour l'image et le texte
         const container = document.createElement("div");
         container.classList.add("class-container");

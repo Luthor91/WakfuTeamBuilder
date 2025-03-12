@@ -1,8 +1,9 @@
-import { G_teamRoles } from '../dataModel/team.js';
+import { getTeamRoles, setTeamRoles } from '../dataModel/team.js';
 
 function updateSlotOrder() {
     // Créer une copie du tableau pour ne pas modifier l'original directement
-    let sortedRoles = JSON.parse(JSON.stringify(G_teamRoles));
+    const l_teamRoles = getTeamRoles();
+    let sortedRoles = JSON.parse(JSON.stringify(l_teamRoles));
 
     // Définir les critères de tri par ordre de priorité
     const sortingCriteria = [
@@ -44,20 +45,21 @@ function updateSlotOrder() {
     result.push(...emptySlots);
 
     // S'assurer que le tableau a toujours la même taille que l'original
-    while (result.length < G_teamRoles.length) {
+    while (result.length < l_teamRoles.length) {
         result.push({ class: null, voie: null, image: null });
     }
 
-    // Retourner le tableau trié au lieu de simplement modifier G_teamRoles
-    return result.slice(0, G_teamRoles.length);
+    // Retourner le tableau trié au lieu de simplement modifier g_teamRoles
+    return result.slice(0, l_teamRoles.length);
 }
 
 function updateTeamContainer() {
     // Récupérer le conteneur d'équipe
     const teamContainer = document.getElementById("team-container");
+    let l_teamRoles = getTeamRoles();
 
-    // Parcourir chaque slot dans G_teamRoles
-    G_teamRoles.forEach((slot, index) => {
+    // Parcourir chaque slot dans teamRoles
+    l_teamRoles.forEach((slot, index) => {
         // Récupérer l'élément slot correspondant
         const slotElement = teamContainer.children[index];
 
@@ -101,8 +103,8 @@ function updateTeamContainer() {
             } else {
                 // Si le slot est vide, supprimer tout contenu
                 slotElement.innerHTML = "";
-                // Réinitialiser complètement le slot dans G_teamRoles
-                G_teamRoles[index] = { class: null, voie: null, image: null };
+                // Réinitialiser complètement le slot dans l_teamRoles
+                l_teamRoles[index] = { class: null, voie: null, image: null };
             }
         } else {
             console.error('Slot element is null');
@@ -112,7 +114,7 @@ function updateTeamContainer() {
     // Mettre à jour également les sélecteurs de voie dans le panneau des rôles
     const rolesPanel = document.getElementById("team-roles-panel");
     if (rolesPanel) {
-        G_teamRoles.forEach((slot, index) => {
+        l_teamRoles.forEach((slot, index) => {
             const panelSlot = rolesPanel.children[index];
             if (panelSlot) {
                 const voieSelect = panelSlot.querySelector(".voie-select");
@@ -126,13 +128,15 @@ function updateTeamContainer() {
             }
         });
     }
+
+    setTeamRoles(l_teamRoles);
 }
 
 function clearSlot(slotIndex) {
     const slot = document.querySelector(`.slot[data-slot="${slotIndex}"]`);
     if (slot) {
       slot.innerHTML = "";
-      G_teamRoles[slotIndex] = { class: null, voie: null, image: null };
+      g_teamRoles[slotIndex] = { class: null, voie: null, image: null };
       saveTeamToLocalStorage();
       updateAll();
     } else {

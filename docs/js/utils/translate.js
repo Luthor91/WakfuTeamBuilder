@@ -1,7 +1,6 @@
-import { TRANSLATIONS, G_CurrentLanguage } from '../dataModel/translation.js';
+import { TRANSLATIONS, setCurrentLanguage } from '../dataModel/translation.js';
 
 function setLanguage(lang) {
-    G_CurrentLanguage = lang;
     document.querySelectorAll("[data-translator]").forEach(element => {
         const translationKey = element.getAttribute('data-translator');
         if (TRANSLATIONS[translationKey] && TRANSLATIONS[translationKey][lang]) {

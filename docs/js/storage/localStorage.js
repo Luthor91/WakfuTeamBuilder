@@ -21,7 +21,7 @@ function saveCurrentTeam() {
 // Fonction pour sauvegarder G_teamRol  es dans un cookie
 function saveTeamToLocalStorage() {
     try {
-        // Convertir G_teamRoles en chaîne JSON et stocker dans localStorage
+        // Convertir g_teamRoles en chaîne JSON et stocker dans localStorage
         const teamRoles = getTeamRoles();
         localStorage.setItem("savedTeam", JSON.stringify(teamRoles));
         console.log("Équipe sauvegardée dans le localStorage");
@@ -31,7 +31,7 @@ function saveTeamToLocalStorage() {
     }
 }
 
-// Fonction pour charger G_teamRoles depuis un cookie
+// Fonction pour charger g_teamRoles depuis un cookie
 function loadTeamToLocalStorage() {
     try {
         // Récupérer les données depuis localStorage
@@ -40,7 +40,7 @@ function loadTeamToLocalStorage() {
             const savedTeam = JSON.parse(teamRolesJSON);
             // Vérifier que c'est un tableau valide (et max 6 éléments)
             if (Array.isArray(savedTeam) && savedTeam.length <= 6) {
-                // Mettre à jour G_teamRoles
+                // Mettre à jour g_teamRoles
                 setTeamRoles(savedTeam);
 
                 // Mettre à jour l'interface

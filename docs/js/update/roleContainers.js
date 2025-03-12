@@ -1,5 +1,7 @@
 import { ROLES_TO_CHECK } from "../dataModel/role.js";
-import { G_teamRoles } from '../dataModel/team.js';
+import { getTeamRoles, setTeamRoles } from '../dataModel/team.js';
+import { updateTeamRoles } from '../update/teamContainer.js'
+
 
 
 
@@ -11,8 +13,9 @@ function updateRolesPanel() {
         let importantSlot = null;
         let importantPriority = -1;
         let importantRolesLength = -1;
+        let l_teamRoles = getTeamRoles();
 
-        G_teamRoles.forEach((slot, index) => {
+        l_teamRoles.forEach((slot, index) => {
             const slotElement = document.querySelector(`.slot[data-slot="${index}"]`);
             if (slotElement) {
                 slotElement.classList.remove("slot-important"); // On enlève la classe à tous les slots
@@ -55,8 +58,8 @@ function updateRolesPanel() {
         }
     }
 
-    // Parcourir G_teamRoles dans son ordre actuel pour maintenir la cohérence
-    G_teamRoles.forEach((slot, index) => {
+    // Parcourir g_teamRoles dans son ordre actuel pour maintenir la cohérence
+    l_teamRoles.forEach((slot, index) => {
         // Créer un conteneur pour chaque slot
         const container = document.createElement('div');
         container.className = 'role-selection';
@@ -114,14 +117,15 @@ function updateRolesPanel() {
                     }
                 } else if (defaultOption) {
                     defaultOption.selected = true;
-                    G_teamRoles[index].voie = defaultOption.value;
+                    l_teamRoles[index].voie = defaultOption.value;
                     slot.voie = defaultOption.value;
                 }
                 
                 // Improved onchange handler in updateRolesPanel:
                 select.onchange = (e) => {
                     // Update the voie for this slot
-                    G_teamRoles[index].voie = e.target.value;
+                    l_teamRoles[index].voie = e.target.value;
+                    setTeamRoles(l_teamRoles);
                     // Use updateAll to ensure complete refresh
                     updateAll();
                 };
@@ -132,7 +136,7 @@ function updateRolesPanel() {
         
         rolesPanel.appendChild(container);
     });
-
+    setTeamRoles(l_teamRoles);
     updateImportantSlot(); // Appliquer la classe lors du premier affichage
 }
 
@@ -144,7 +148,10 @@ function updateRolesSummary() {
     summaryContainerRequired.innerHTML = ''; // Vider les rôles requis
     
     const presentRoles = new Set();
-    G_teamRoles.forEach(slot => {
+
+    let l_teamRoles = getTeamRoles();
+
+    l_teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
             const classVoies = CLASS_DATA.Classes[slot.class].Voies;
             if (classVoies[slot.voie]) {
@@ -168,6 +175,7 @@ function updateRolesSummary() {
         }
     });
 
+    setTeamRoles(l_teamRoles);
     updateTeamRoles();
 
     const { dptCount, supportCount } = countRolesDPTandSupport();
@@ -232,4 +240,69 @@ function updateRolesSummary() {
 }
 
 
-export { updateRolesPanel, updateRolesSummary };
+function updateTeamRoles() {
+    const rolesContainer = document.getElementById('roles-under-gauge');
+    rolesContainer.innerHTML = ''; // Réinitialiser la section des rôles
+    const currentRoles = [];
+
+    let l_teamRoles = getTeamRoles();
+    l_teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = classData.Classes[slot.class].Voies;
+            if (classVoies[slot.voie]) {
+                classVoies[slot.voie].Roles.forEach(role => {
+                    currentRoles.push(role);
+                });
+            }
+        }
+    });
+
+    Object.keys(CATEGORIES).forEach(category => {
+        const categoryRoles = CATEGORIES[category].filter(role => currentRoles.includes(role));
+        const missingImportant = CATEGORIES[category].filter(role => !currentRoles.includes(role) && IMPORTANT_ROLES.includes(role));
+        const missingOptional = CATEGORIES[category].filter(role => !currentRoles.includes(role) && OPTIONAL_ROLES.includes(role));
+        if (categoryRoles.length || missingImportant.length || missingOptional.length) {
+            // Création du conteneur de catégorie
+            const categoryContainer = document.createElement('div');
+            categoryContainer.classList.add('role-category');
+            // Titre de la catégorie
+            const categoryTitle = document.createElement('h4');
+            categoryTitle.textContent = category;
+            categoryTitle.setAttribute('data-translator', category.toLocaleLowerCase().replaceAll(' ', '_'));
+            categoryTitle.classList.add('category-title');
+            categoryTitle.style.cursor = "pointer"; 
+            // Conteneur des rôles
+            const rolesWrapper = document.createElement('div');
+            rolesWrapper.classList.add('roles-wrapper');
+            categoryTitle.addEventListener("click", function () {
+                rolesWrapper.style.display = rolesWrapper.style.display === "none" ? "flex" : "none";
+            });
+            // Fonction pour ajouter les rôles avec un style badge
+            const displayRoles = (roles, className) => {
+                roles.forEach(role => {
+                    const roleElement = document.createElement('span');
+                    const data_translator = role.toLocaleLowerCase().replaceAll(' ', '_');
+                    roleElement.classList.add('role-badge', className);
+                    roleElement.textContent = role;
+                    roleElement.setAttribute('data-translator', data_translator);
+                    roleElement.textContent = translate(data_translator, currentLanguage);
+                    rolesWrapper.appendChild(roleElement);
+                });
+            };
+
+            // Ajout des rôles avec différentes couleurs
+            displayRoles(categoryRoles, 'filled-role'); // Vert
+            displayRoles(missingImportant, 'important-role'); // Rouge
+            displayRoles(missingOptional, 'optional-role'); // Jaune
+            // Ajout des éléments au conteneur
+            categoryContainer.appendChild(categoryTitle);
+            categoryContainer.appendChild(rolesWrapper);
+            rolesContainer.appendChild(categoryContainer);
+        }
+    });
+    
+    setTeamRoles(l_teamRoles);
+    updateGauges();
+}
+
+export { updateRolesPanel, updateRolesSummary, updateTeamRoles };

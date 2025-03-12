@@ -1,16 +1,16 @@
-import { G_teamRoles } from '../dataModel/team.js';
+import { g_teamRoles } from '../dataModel/team.js';
 
 
 function updateGauges() {
     const totalStats = {};
-    const hasMembers = G_teamRoles.some(slot => slot.class && slot.voie);
+    const hasMembers = g_teamRoles.some(slot => slot.class && slot.voie);
     if (!hasMembers) {
         document.querySelectorAll("[id^='gauge-']").forEach(gauge => {
         updateGaugeBar(gauge, 0);
         });
         return;
     }
-    G_teamRoles.forEach(slot => {
+    g_teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
         const classVoies = CLASS_DATA.Classes[slot.class].Voies;
         if (classVoies[slot.voie]) {

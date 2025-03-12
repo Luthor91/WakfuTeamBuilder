@@ -532,15 +532,4 @@ rights_reserved: {
 },
 };
 
-let G_CurrentLanguage;
-
-function setCurrentLanguage(l_CurrentLanguage) {
-    G_CurrentLanguage = l_CurrentLanguage;
-}
-
-function getCurrentLanguage() {
-    return G_CurrentLanguage;
-}
-
-
-export { LANGUAGES, TRANSLATIONS, setCurrentLanguage, getCurrentLanguage };
+export { LANGUAGES, TRANSLATIONS };
