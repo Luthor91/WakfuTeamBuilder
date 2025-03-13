@@ -6,8 +6,8 @@ import { updateAll } from '../update/update.js';
 function exportTeamRoles() {
     console.log("Export function triggered");
     let result = [];
-    const teamRoles = getTeamRoles();
-    teamRoles.forEach(slot => {
+    const l_teamRoles = getTeamRoles();
+    l_teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
         const classVoies = CLASS_DATA.Classes[slot.class]?.Voies;
         if (classVoies && classVoies[slot.voie]) {
@@ -51,17 +51,17 @@ async function importTeamRoles() {
         return;
     }
     const rolePairs = importString.split(";").filter(pair => pair !== "");
-    let teamRoles = initTeamRoles();
+    let l_teamRoles = initTeamRoles();
     let index = 0;
     rolePairs.forEach(pair => {
-        if (pair && index < teamRoles.length) {
+        if (pair && index < l_teamRoles.length) {
         const [classId, roleId] = pair.split("-");
         for (const className in CLASS_DATA.Classes) {
             if (CLASS_DATA.Classes[className].Id.toString() === classId) {
             const classVoies = CLASS_DATA.Classes[className]?.Voies;
             for (const voieName in classVoies) {
                 if (classVoies[voieName].Id.toString() === roleId) {
-                    teamRoles[index] = {
+                    l_teamRoles[index] = {
                     class: className,
                     voie: voieName,
                     image: CLASS_DATA.Classes[className].Image
@@ -75,7 +75,7 @@ async function importTeamRoles() {
         }
         }
     });
-    setTeamRoles(teamRoles);
+    setTeamRoles(l_teamRoles);
     updateAll();
     console.log("Import completed");
 }

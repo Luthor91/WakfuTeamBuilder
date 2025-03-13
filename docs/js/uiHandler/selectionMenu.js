@@ -1,7 +1,11 @@
 import { CLASS_DATA } from '../dataModel/class.js';
 import { translate } from '../utils/translate.js';
-import { g_teamRoles } from '../dataModel/team.js';
-
+import { getTeamRoles, setTeamRoles } from '../dataModel/team.js';
+import { getCurrentLanguage } from '../dataModel/translation.js';
+import { getControlPressed, getShiftPressed } from '../events/eventKeyboardHandler.js';
+import { saveTeamToLocalStorage } from '../storage/localStorage.js';
+import { updateAll } from '../update/update.js';
+import { showSavedTeamsMenu } from './favorite.js';
 
 let selectedSlot = null;
 
@@ -15,7 +19,8 @@ function openSelectionMenu(slotIndex) {
     Object.keys(CLASS_DATA.Classes).forEach(className => {
         const imgSrc = `male_${className.toLowerCase()}.png`;
         // Vérifier si la classe est déjà prise
-        const isTaken = g_teamRoles.some(role => role.class === className);
+        let l_teamRoles = getTeamRoles();
+        const isTaken = l_teamRoles.some(role => role.class === className);
         // Créer un conteneur pour l'image et le texte
         const container = document.createElement("div");
         container.classList.add("class-container");
@@ -23,13 +28,14 @@ function openSelectionMenu(slotIndex) {
             container.classList.add("taken"); // Ajoute la classe CSS si la classe est prise
         }
         // Créer l'image
-        const img = createClassImage(imgSrc);
+        const img = _createClassImage(imgSrc);
         // Créer le texte
         const textOverlay = document.createElement("div");
         const data_translator = className.toLocaleLowerCase().replaceAll(' ', '_');
+        const l_currentLanguage = getCurrentLanguage();
         textOverlay.classList.add("class-name");
         textOverlay.setAttribute('data-translator', data_translator);
-        textOverlay.textContent = translate(data_translator, currentLanguage);
+        textOverlay.textContent = translate(data_translator, l_currentLanguage);
         // Ajouter l'image et le texte dans le conteneur
         container.appendChild(img);
         container.appendChild(textOverlay);
@@ -59,5 +65,98 @@ function toggleSavedTeamsMenu(escapePressed = false) {
     }
 }
 
+// Update createClassImage to handle shift-click
+function _createClassImage(imgSrc) {
+    const img = document.createElement("img");
+    img.src = `assets/classes/${imgSrc}`;
+    
+    // Clic droit pour changer le genre
+    img.oncontextmenu = (e) => {
+        e.preventDefault();
+
+        // Extraire seulement le nom du fichier sans le chemin complet
+        const filename = img.src.split('/').pop();  // "male_warrior.png"
+        const [gender, className] = filename.split('_');
+
+        let newGender = gender === 'male' ? 'female' : 'male';
+        let newImgSrc = `${newGender}_${className}`;
+
+        img.src = `assets/classes/${newImgSrc}`;
+        console.log(img.src);
+        
+        img.dataset.src = newImgSrc;  // Mettre à jour l'image actuelle
+
+        if (selectedSlot !== null) {
+            let l_teamRoles = getTeamRoles();
+            l_teamRoles[selectedSlot].image = `assets/classes/${newImgSrc}`;
+            setTeamRoles(l_teamRoles);
+        }
+    };
+
+    // Clic gauche avec gestion du shift
+    img.onclick = (_) => {
+
+        const l_isControlPressed = getControlPressed();
+        if (l_isControlPressed) {
+            const className = img.getAttribute('src').split('_', 2)[1].split('.', 1)[0];
+            showClassRoles(className);
+            return;
+            
+        }
+
+        const l_isShiftPressed = getShiftPressed();
+        if (l_isShiftPressed) {
+            // If shift is pressed, select this class but don't close the menu
+            selectClassWithShift(img.getAttribute('src'));
+        } else {
+            // Normal behavior for regular click
+            _selectClass(img.getAttribute('src'));
+        }
+    }
+    
+    return img;
+}
+
+function _selectClass(imgSrc) {
+    if (selectedSlot !== null) {
+        const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
+        if (slot) {
+            slot.innerHTML = "";
+            const img = document.createElement("img");
+            img.src = `${imgSrc}`;            
+            slot.appendChild(img);
+
+            const className = _getClassNameFromFile(imgSrc);
+            let selectedVoie = null;
+            Object.entries(CLASS_DATA.Classes[className].Voies).forEach(([voie, data]) => {
+                if (data.Id === 1) {
+                    selectedVoie = voie;
+                }
+            });
+            let l_teamRoles = getTeamRoles();
+            l_teamRoles[selectedSlot] = {
+                class: className,
+                voie: selectedVoie,
+                image: `${imgSrc}`
+            };
+            
+            setTeamRoles(l_teamRoles);
+            saveTeamToLocalStorage();
+            updateAll();
+        } else {
+            console.error('Slot is null');
+        }
+    }
+    closeSelectionMenu();
+}
+
+// Fonction pour obtenir le nom de la classe à partir du nom de fichier
+function _getClassNameFromFile(filename) {
+    const classMatch = filename.match(/(male|female)_(\w+)\.png/);
+    if (classMatch) {
+        return classMatch[2].charAt(0).toUpperCase() + classMatch[2].slice(1);
+    }
+    return null;
+}
 
 export { openSelectionMenu, closeSelectionMenu, toggleSavedTeamsMenu };

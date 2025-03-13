@@ -151,6 +151,10 @@ dpt_indirect: {
     fr: 'DPT Indirect',
     en: 'DPT Indirect'
 },
+dpt_poison: {
+    fr: 'DPT Poison',
+    en: 'DPT Poison'
+},
 dpt_cog: {
     fr: 'DPT Rouage',
     en: 'DPT Cog'
@@ -532,4 +536,15 @@ rights_reserved: {
 },
 };
 
-export { LANGUAGES, TRANSLATIONS };
+let G_currentLanguage;
+
+function setCurrentLanguage(l_currentLanguage) {
+    G_currentLanguage = l_currentLanguage;
+}
+
+function getCurrentLanguage() {
+    return G_currentLanguage;
+}
+
+
+export { LANGUAGES, TRANSLATIONS, setCurrentLanguage, getCurrentLanguage };

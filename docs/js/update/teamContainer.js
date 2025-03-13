@@ -1,8 +1,10 @@
 import { getTeamRoles, setTeamRoles } from '../dataModel/team.js';
+import { CLASS_DATA } from '../dataModel/class.js';
+import { countRoles } from './roleContainers.js';
 
 function updateSlotOrder() {
     // Créer une copie du tableau pour ne pas modifier l'original directement
-    const l_teamRoles = getTeamRoles();
+    let l_teamRoles = getTeamRoles();
     let sortedRoles = JSON.parse(JSON.stringify(l_teamRoles));
 
     // Définir les critères de tri par ordre de priorité
@@ -49,16 +51,16 @@ function updateSlotOrder() {
         result.push({ class: null, voie: null, image: null });
     }
 
-    // Retourner le tableau trié au lieu de simplement modifier g_teamRoles
+    // Retourner le tableau trié au lieu de simplement modifier teamRoles
     return result.slice(0, l_teamRoles.length);
 }
 
 function updateTeamContainer() {
     // Récupérer le conteneur d'équipe
     const teamContainer = document.getElementById("team-container");
-    let l_teamRoles = getTeamRoles();
 
     // Parcourir chaque slot dans teamRoles
+    let l_teamRoles = getTeamRoles();
     l_teamRoles.forEach((slot, index) => {
         // Récupérer l'élément slot correspondant
         const slotElement = teamContainer.children[index];
@@ -103,13 +105,15 @@ function updateTeamContainer() {
             } else {
                 // Si le slot est vide, supprimer tout contenu
                 slotElement.innerHTML = "";
-                // Réinitialiser complètement le slot dans l_teamRoles
+                // Réinitialiser complètement le slot dans teamRoles
                 l_teamRoles[index] = { class: null, voie: null, image: null };
             }
         } else {
             console.error('Slot element is null');
-        }
+        }   
     });
+
+    setTeamRoles(l_teamRoles);
 
     // Mettre à jour également les sélecteurs de voie dans le panneau des rôles
     const rolesPanel = document.getElementById("team-roles-panel");
@@ -128,21 +132,37 @@ function updateTeamContainer() {
             }
         });
     }
-
-    setTeamRoles(l_teamRoles);
 }
 
 function clearSlot(slotIndex) {
     const slot = document.querySelector(`.slot[data-slot="${slotIndex}"]`);
     if (slot) {
-      slot.innerHTML = "";
-      g_teamRoles[slotIndex] = { class: null, voie: null, image: null };
-      saveTeamToLocalStorage();
-      updateAll();
+        slot.innerHTML = "";
+        let l_teamRoles = getTeamRoles();
+        l_teamRoles[slotIndex] = { class: null, voie: null, image: null };
+        setTeamRoles(l_teamRoles);
+        saveTeamToLocalStorage();
+        updateAll();
     } else {
-      console.error('Slot is null');
+        console.error('Slot is null');
     }
 }
 
+/**
+ * Vérifie si un slot possède un rôle donné.
+ */
+function slotHasRole(slot, role) {
+    if (!slot.class || !slot.voie) return false;
+    return CLASS_DATA.Classes[slot.class]?.Voies[slot.voie]?.Roles.includes(role);
+}
 
-export { updateSlotOrder, updateTeamContainer, clearSlot };
+
+/**
+ * Vérifie si le nom de la "voie" du slot contient un mot spécifique.
+ */
+function slotVoieContains(slot, keyword) {
+    if (!slot.class || !slot.voie) return false;
+    return slot.voie.toLowerCase().includes(keyword.toLowerCase());
+}
+
+export { updateSlotOrder, updateTeamContainer, clearSlot, slotHasRole, slotVoieContains };

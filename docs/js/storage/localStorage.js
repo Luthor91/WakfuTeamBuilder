@@ -1,7 +1,9 @@
 import { getTeamRoles, setTeamRoles } from '../dataModel/team.js';
 import { showNotification } from '../uiHandler/popup.js';
+import { updateAll } from '../update/update.js';
+import { toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
 
-const teamRoles = getTeamRoles();
+
 
 // Fonction pour sauvegarder l'équipe actuelle dans le localStorage
 function saveCurrentTeam() {
@@ -12,18 +14,18 @@ function saveCurrentTeam() {
         return;
     }
 
-    const teamRoles = getTeamRoles();
-    savedTeams.push(teamRoles);
+    const l_teamRoles = getTeamRoles();
+    savedTeams.push(l_teamRoles);
     localStorage.setItem("savedTeams", JSON.stringify(savedTeams));
     showNotification("Équipe ajoutée aux favoris !");
 }
 
-// Fonction pour sauvegarder G_teamRol  es dans un cookie
+// Fonction pour sauvegarder teamRoles dans un cookie
 function saveTeamToLocalStorage() {
     try {
-        // Convertir g_teamRoles en chaîne JSON et stocker dans localStorage
-        const teamRoles = getTeamRoles();
-        localStorage.setItem("savedTeam", JSON.stringify(teamRoles));
+        // Convertir teamRoles en chaîne JSON et stocker dans localStorage
+        const l_teamRoles = getTeamRoles();
+        localStorage.setItem("savedTeam", JSON.stringify(l_teamRoles));
         console.log("Équipe sauvegardée dans le localStorage");
 
     } catch (error) {
@@ -31,7 +33,17 @@ function saveTeamToLocalStorage() {
     }
 }
 
-// Fonction pour charger g_teamRoles depuis un cookie
+
+// Fonction pour appliquer une équipe sauvegardée
+function applySavedTeam(team) {
+    setTeamRoles(team);
+    updateAll();
+    saveTeamToLocalStorage();
+    toggleSavedTeamsMenu(); // Ferme le menu après avoir appliqué l'équipe
+}
+
+
+// Fonction pour charger teamRoles depuis un cookie
 function loadTeamToLocalStorage() {
     try {
         // Récupérer les données depuis localStorage
@@ -40,7 +52,7 @@ function loadTeamToLocalStorage() {
             const savedTeam = JSON.parse(teamRolesJSON);
             // Vérifier que c'est un tableau valide (et max 6 éléments)
             if (Array.isArray(savedTeam) && savedTeam.length <= 6) {
-                // Mettre à jour g_teamRoles
+                // Mettre à jour teamRoles
                 setTeamRoles(savedTeam);
 
                 // Mettre à jour l'interface
@@ -59,4 +71,4 @@ function loadTeamToLocalStorage() {
 }
 
 
-export { saveCurrentTeam, saveTeamToLocalStorage, loadTeamToLocalStorage };
+export { saveCurrentTeam, saveTeamToLocalStorage, loadTeamToLocalStorage, applySavedTeam };

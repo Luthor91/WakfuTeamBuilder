@@ -1,7 +1,10 @@
-import { ROLES_TO_CHECK } from "../dataModel/role.js";
+import { ROLES_TO_CHECK, CATEGORIES, IMPORTANT_ROLES, OPTIONAL_ROLES, PRIORITY_ORDER } from "../dataModel/role.js";
+import { TRANSLATIONS, getCurrentLanguage } from '../dataModel/translation.js';
 import { getTeamRoles, setTeamRoles } from '../dataModel/team.js';
-import { updateTeamRoles } from '../update/teamContainer.js'
-
+import { translate } from '../utils/translate.js';
+import { updateGauges } from './gauge.js';
+import { updateAll } from './update.js';
+import { CLASS_DATA } from "../dataModel/class.js";
 
 
 
@@ -13,8 +16,8 @@ function updateRolesPanel() {
         let importantSlot = null;
         let importantPriority = -1;
         let importantRolesLength = -1;
-        let l_teamRoles = getTeamRoles();
 
+        let l_teamRoles = getTeamRoles();
         l_teamRoles.forEach((slot, index) => {
             const slotElement = document.querySelector(`.slot[data-slot="${index}"]`);
             if (slotElement) {
@@ -58,7 +61,8 @@ function updateRolesPanel() {
         }
     }
 
-    // Parcourir g_teamRoles dans son ordre actuel pour maintenir la cohérence
+    // Parcourir teamRoles dans son ordre actuel pour maintenir la cohérence
+    let l_teamRoles = getTeamRoles();
     l_teamRoles.forEach((slot, index) => {
         // Créer un conteneur pour chaque slot
         const container = document.createElement('div');
@@ -125,8 +129,9 @@ function updateRolesPanel() {
                 select.onchange = (e) => {
                     // Update the voie for this slot
                     l_teamRoles[index].voie = e.target.value;
-                    setTeamRoles(l_teamRoles);
+
                     // Use updateAll to ensure complete refresh
+                    setTeamRoles(l_teamRoles);
                     updateAll();
                 };
                 
@@ -148,9 +153,7 @@ function updateRolesSummary() {
     summaryContainerRequired.innerHTML = ''; // Vider les rôles requis
     
     const presentRoles = new Set();
-
     let l_teamRoles = getTeamRoles();
-
     l_teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
             const classVoies = CLASS_DATA.Classes[slot.class].Voies;
@@ -175,31 +178,32 @@ function updateRolesSummary() {
         }
     });
 
-    setTeamRoles(l_teamRoles);
-    updateTeamRoles();
+    _updateTeamRoles();
 
-    const { dptCount, supportCount } = countRolesDPTandSupport();
+    const { dptCount, supportCount } = _countRolesDPTandSupport();
     const warningDiv = document.createElement('div');
+    const l_currentLanguage = getCurrentLanguage();
+
     if (dptCount > supportCount) {
         warningDiv.setAttribute('data-translator', 'warn_dpt_greater_than_support');
-        warningDiv.textContent = translate('warn_dpt_greater_than_support', currentLanguage);
+        warningDiv.textContent = translate('warn_dpt_greater_than_support', l_currentLanguage);
         warningDiv.className = 'warn-message warn-red';
     } else if(dptCount == 0) {
         warningDiv.setAttribute('data-translator', 'warn_need_dpt');
-        warningDiv.textContent = translate('warn_need_dpt', currentLanguage);
+        warningDiv.textContent = translate('warn_need_dpt', l_currentLanguage);
         warningDiv.className = 'warn-message warn-red';
     }
     summaryContainerWarns.appendChild(warningDiv);
 
-    const elementsDPT = getElementsDPT();
+    const elementsDPT = _getElementsDPT();
     const requiredElements = ["Fire", "Water", "Earth", "Air"];
     const missingElements = requiredElements
         .filter(el => !elementsDPT.includes(el))
-        .map(el => TRANSLATIONS.elements[el][currentLanguage]);
+        .map(el => TRANSLATIONS.elements[el][l_currentLanguage]);
 
     if (missingElements.length > 0) {
         const warningDiv = document.createElement('div');
-        warningDiv.textContent = currentLanguage === 'fr' 
+        warningDiv.textContent = l_currentLanguage === 'fr' 
             ? `Manque de l'élément ${missingElements.join(', ')}`
             : `Lack of ${missingElements.join(', ')} element(s)`;
         warningDiv.className = 'warn-message warn-yellow';
@@ -207,23 +211,23 @@ function updateRolesSummary() {
     } else if (elementsDPT.length > 0) {
         const warningDiv = document.createElement('div');
         warningDiv.setAttribute('data-translator', 'warn_multielement_dpt');
-        warningDiv.textContent = translate('warn_multielement_dpt', currentLanguage);
+        warningDiv.textContent = translate('warn_multielement_dpt', l_currentLanguage);
         warningDiv.className = 'warn-message warn-green';
         summaryContainerWarns.appendChild(warningDiv);
     }
 
-    if (!hasStabilizedRole()) {
+    if (!_hasStabilizedRole()) {
         const warningDiv = document.createElement('div');
         warningDiv.setAttribute('data-translator', 'warn_stabilized');
-        warningDiv.textContent = translate('warn_stabilized', currentLanguage);
+        warningDiv.textContent = translate('warn_stabilized', l_currentLanguage);
         warningDiv.className = 'warn-message warn-yellow';
         summaryContainerWarns.appendChild(warningDiv);
     }
 
-    if (!hasInvulnerabilityRole()) {
+    if (!_hasInvulnerabilityRole()) {
         const warningDiv = document.createElement('div');
         warningDiv.setAttribute('data-translator', 'warn_invulnerability');
-        warningDiv.textContent = translate('warn_invulnerability', currentLanguage);
+        warningDiv.textContent = translate('warn_invulnerability', l_currentLanguage);
         warningDiv.className = 'warn-message warn-yellow';
         summaryContainerWarns.appendChild(warningDiv);
     }
@@ -233,22 +237,20 @@ function updateRolesSummary() {
         const roleDiv = document.createElement('div');
         const data_translator = role.toLocaleLowerCase().replaceAll(' ', '_');
         roleDiv.setAttribute('data-translator', data_translator);
-        roleDiv.textContent = translate(data_translator, currentLanguage);
+        roleDiv.textContent = translate(data_translator, l_currentLanguage);
         roleDiv.className = presentRoles.has(role) ? 'role-present' : 'role-missing';
         summaryContainerRequired.appendChild(roleDiv);
     });
 }
 
-
-function updateTeamRoles() {
+function _updateTeamRoles() {
     const rolesContainer = document.getElementById('roles-under-gauge');
     rolesContainer.innerHTML = ''; // Réinitialiser la section des rôles
     const currentRoles = [];
-
     let l_teamRoles = getTeamRoles();
     l_teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
-            const classVoies = classData.Classes[slot.class].Voies;
+            const classVoies = CLASS_DATA.Classes[slot.class].Voies;
             if (classVoies[slot.voie]) {
                 classVoies[slot.voie].Roles.forEach(role => {
                     currentRoles.push(role);
@@ -256,7 +258,6 @@ function updateTeamRoles() {
             }
         }
     });
-
     Object.keys(CATEGORIES).forEach(category => {
         const categoryRoles = CATEGORIES[category].filter(role => currentRoles.includes(role));
         const missingImportant = CATEGORIES[category].filter(role => !currentRoles.includes(role) && IMPORTANT_ROLES.includes(role));
@@ -279,17 +280,17 @@ function updateTeamRoles() {
             });
             // Fonction pour ajouter les rôles avec un style badge
             const displayRoles = (roles, className) => {
+                const l_currentLanguage = getCurrentLanguage();
                 roles.forEach(role => {
                     const roleElement = document.createElement('span');
                     const data_translator = role.toLocaleLowerCase().replaceAll(' ', '_');
                     roleElement.classList.add('role-badge', className);
                     roleElement.textContent = role;
                     roleElement.setAttribute('data-translator', data_translator);
-                    roleElement.textContent = translate(data_translator, currentLanguage);
+                    roleElement.textContent = translate(data_translator, l_currentLanguage);
                     rolesWrapper.appendChild(roleElement);
                 });
             };
-
             // Ajout des rôles avec différentes couleurs
             displayRoles(categoryRoles, 'filled-role'); // Vert
             displayRoles(missingImportant, 'important-role'); // Rouge
@@ -300,9 +301,96 @@ function updateTeamRoles() {
             rolesContainer.appendChild(categoryContainer);
         }
     });
-    
-    setTeamRoles(l_teamRoles);
     updateGauges();
 }
 
-export { updateRolesPanel, updateRolesSummary, updateTeamRoles };
+/**
+ * Compte le nombre total de rôles d'un slot.
+ */
+function countRoles(slot) {
+    if (!slot.class || !slot.voie) return 0;
+    return CLASS_DATA.Classes[slot.class]?.Voies[slot.voie]?.Roles.length || 0;
+}
+
+
+
+// Fonction pour compter les rôles DPT et Support
+function _getElementsDPT() {
+    let elementsDPT = [];
+
+    const l_teamRoles = getTeamRoles();
+    l_teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = CLASS_DATA.Classes[slot.class].Voies;
+            const classElements = CLASS_DATA.Classes[slot.class].Elements;
+            if (classVoies[slot.voie]) {
+                if (slot.voie.startsWith('DPT')) {
+                    elementsDPT.push(...classElements)
+                }
+            }
+        }
+    });
+    
+    return elementsDPT;
+}
+
+
+// Fonction pour compter les rôles DPT et Support
+function _countRolesDPTandSupport() {
+    let dptCount = 0;
+    let supportCount = 0;
+
+    const l_teamRoles = getTeamRoles();
+    l_teamRoles.forEach(slot => {
+        if (slot.class && slot.voie) {
+            const classVoies = CLASS_DATA.Classes[slot.class].Voies;
+            if (classVoies[slot.voie]) {
+                if (slot.voie.startsWith('DPT')) {
+                    dptCount++;
+                } else if (slot.voie.startsWith('Support')) {
+                    supportCount++;
+                }
+            }
+        }
+    });
+    
+
+    return { dptCount, supportCount };
+}
+
+
+// Fonction pour compter les rôles DPT et Support
+function _hasStabilizedRole() {
+    const l_teamRoles = getTeamRoles();
+    for (const slot of l_teamRoles) {
+        if (slot.class && slot.voie) {
+            const classVoies = CLASS_DATA.Classes[slot.class].Voies;
+            
+            if (classVoies[slot.voie].Roles.includes("Entity Stabilized") 
+                || classVoies[slot.voie].Roles.includes("Self Stabilized")
+            ) {
+                return true;
+            }
+        }
+    };
+    
+    return false;
+}
+
+
+// Fonction pour compter les rôles DPT et Support
+function _hasInvulnerabilityRole() {
+    const l_teamRoles = getTeamRoles();
+    for (const slot of l_teamRoles) {
+        if (slot.class && slot.voie) {
+            const classVoies = CLASS_DATA.Classes[slot.class].Voies;
+            if (classVoies[slot.voie].Roles.includes("Invulnerability")) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
+export { updateRolesPanel, updateRolesSummary, countRoles };
