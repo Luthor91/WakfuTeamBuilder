@@ -6,6 +6,7 @@ import { getControlPressed, getShiftPressed } from '../events/eventKeyboardHandl
 import { saveTeamToLocalStorage } from '../storage/localStorage.js';
 import { updateAll } from '../update/update.js';
 import { showSavedTeamsMenu } from './favorite.js';
+import { showClassRoles } from '../uiHandler/classInfos.js';
 
 let selectedSlot = null;
 
@@ -150,6 +151,88 @@ function _selectClass(imgSrc) {
     closeSelectionMenu();
 }
 
+// Modified selectClassWithShift function
+function selectClassWithShift(imgSrc) {
+    const l_teamRoles = getTeamRoles();
+    if (selectedSlot !== null && selectedSlot < l_teamRoles.length) {
+        const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
+        if (slot) {
+            slot.innerHTML = "";
+            const img = document.createElement("img");
+            img.src = `${imgSrc}`;
+            slot.appendChild(img);
+            const className = _getClassNameFromFile(imgSrc);
+            let selectedVoie = null;
+            Object.entries(CLASS_DATA.Classes[className].Voies).forEach(([voie, data]) => {
+                if (data.Id === 1) {
+                    selectedVoie = voie;
+                }
+            });
+            let l_teamRoles = getTeamRoles();
+            l_teamRoles[selectedSlot] = {
+                class: className,
+                voie: selectedVoie,
+                image: `${imgSrc}`
+            };
+            setTeamRoles(l_teamRoles);
+                
+            saveTeamToLocalStorage();
+            updateAll();
+
+            // Update the selection menu to reflect the new "taken" classes
+            _updateSelectionMenuTakenClasses();
+
+            // Move to the next slot if available
+            if (selectedSlot < 5) { // Assuming 6 slots (0-5)
+                selectedSlot++;
+
+                // Highlight the new selected slot
+                const slots = document.querySelectorAll('.slot');
+                slots.forEach(s => s.classList.remove('selected-slot'));
+                const nextSlot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
+                if (nextSlot) {
+                    nextSlot.classList.add('selected-slot');
+                }
+            } else {
+                // If we're at the last slot, close the menu
+                closeSelectionMenu();
+                return;
+            }
+        } else {
+            console.error('Slot is null');
+        }
+    }
+}
+
+// New function to update the "taken" classes in the selection menu
+function _updateSelectionMenuTakenClasses() {
+    const menuContent = document.getElementById("menu-content");
+    if (!menuContent) return;
+    
+    // Get all class containers in the menu
+    const classContainers = menuContent.querySelectorAll(".class-container");
+    
+    // For each container, check if the class is in the team
+    classContainers.forEach(container => {
+        const img = container.querySelector("img");
+        if (img) {
+            const imgSrc = img.getAttribute('src');            
+            const className = _getClassNameFromFile(imgSrc);
+            
+            // Check if this class is in the team
+            const l_teamRoles = getTeamRoles();
+            const isTaken = l_teamRoles.some(role => role.class === className);
+            
+            // Update the container class accordingly
+            if (isTaken) {
+                container.classList.add("taken");
+            } else {
+                container.classList.remove("taken");
+            }
+        }
+    });
+}
+
 // Fonction pour obtenir le nom de la classe à partir du nom de fichier
 function _getClassNameFromFile(filename) {
     const classMatch = filename.match(/(male|female)_(\w+)\.png/);
@@ -159,4 +242,4 @@ function _getClassNameFromFile(filename) {
     return null;
 }
 
-export { openSelectionMenu, closeSelectionMenu, toggleSavedTeamsMenu };
+export { openSelectionMenu, closeSelectionMenu, toggleSavedTeamsMenu, selectClassWithShift };

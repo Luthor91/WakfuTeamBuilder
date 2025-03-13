@@ -41,7 +41,7 @@ function setShiftPressed(l_isShiftPressed) {
 }
 
 function getControlPressed() {
-  return g_isShiftPressed;
+  return g_isControlPressed;
 }
 
 function setControlPressed(l_isControlPressed) {

@@ -2,6 +2,7 @@ import { getTeamRoles, setTeamRoles } from '../dataModel/team.js';
 import { CLASS_DATA } from '../dataModel/class.js';
 import { countRoles } from './roleContainers.js';
 import { saveTeamToLocalStorage } from '../storage/localStorage.js';
+import { updateAll } from '../update/update.js';
 
 function updateSlotOrder() {
     // Créer une copie du tableau pour ne pas modifier l'original directement
