@@ -129,7 +129,6 @@ function updateRolesPanel() {
                 select.onchange = (e) => {
                     // Update the voie for this slot
                     l_teamRoles[index].voie = e.target.value;
-
                     // Use updateAll to ensure complete refresh
                     setTeamRoles(l_teamRoles);
                     updateAll();
