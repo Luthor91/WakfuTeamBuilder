@@ -1,5 +1,8 @@
+import { inInConstruction } from "../dataModel/global.js";
+
 document.addEventListener('DOMContentLoaded', () => {
-  /*
-    event
-  */
+	const banner = document.getElementById("construction-banner");
+	if (inInConstruction) {
+		banner.style.display = "block";
+	}
 });

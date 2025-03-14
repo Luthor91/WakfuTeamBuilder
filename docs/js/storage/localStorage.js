@@ -1,4 +1,4 @@
-import { getTeamRoles, setTeamRoles } from '../dataModel/team.js';
+import { getTeamRoles, setTeamRoles, isTeamRolesEmpty } from '../dataModel/team.js';
 import { showNotification } from '../uiHandler/popup.js';
 import { updateAll } from '../update/update.js';
 import { toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
@@ -59,6 +59,8 @@ function loadTeamToLocalStorage() {
                 updateAll();
                 console.log("Équipe chargée depuis le localStorage");
                 // Afficher une notification à l'utilisateur
+                if(isTeamRolesEmpty() === true) return false;
+
                 showNotification("Équipe chargée avec succès!");
                 return true;
             }

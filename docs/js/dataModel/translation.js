@@ -9,6 +9,10 @@ title: {
     fr: 'Team Builder Wakfu',
     en: 'Wakfu Team Builder'
 },
+website_construction: {
+    fr: '⚠️ Site en construction ⚠️',
+    en: '⚠️ Website in progress !⚠️'
+},
 heading: {
     fr: 'Team Builder Wakfu',
     en: 'Wakfu Team Builder'
@@ -536,14 +540,14 @@ rights_reserved: {
 },
 };
 
-let G_currentLanguage;
+let g_currentLanguage = 'fr';
 
 function setCurrentLanguage(l_currentLanguage) {
-    G_currentLanguage = l_currentLanguage;
+    g_currentLanguage = l_currentLanguage;
 }
 
 function getCurrentLanguage() {
-    return G_currentLanguage;
+    return g_currentLanguage;
 }
 
 
