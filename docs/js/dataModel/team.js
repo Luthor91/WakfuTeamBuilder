@@ -24,6 +24,10 @@ function isTeamRolesFull() {
     return (countEmptySpace == 0);
 }
 
+function teamHasClass(l_className) {
+    return g_teamRoles.some(role => role.class === l_className);
+}
+
 function setTeamRoles(l_teamRoles) {
     g_teamRoles = l_teamRoles;
 }
@@ -33,4 +37,4 @@ function getTeamRoles() {
     return g_teamRoles;
 }
 
-export { initTeamRoles, isTeamRolesEmpty, isTeamRolesFull, setTeamRoles, getTeamRoles };
+export { initTeamRoles, isTeamRolesEmpty, isTeamRolesFull, teamHasClass, setTeamRoles, getTeamRoles };

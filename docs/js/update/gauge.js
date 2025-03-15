@@ -1,4 +1,4 @@
-import { getTeamRoles } from '../dataModel/team.js';
+import { getTeamRoles, isTeamRolesEmpty } from '../dataModel/team.js';
 import { CLASS_DATA } from '../dataModel/class.js';
 
 
@@ -6,14 +6,14 @@ import { CLASS_DATA } from '../dataModel/class.js';
 function updateGauges() {
     const totalStats = {};
 
-    let l_teamRoles = getTeamRoles();
-    const hasMembers = l_teamRoles.some(slot => slot.class && slot.voie);
-    if (!hasMembers) {
+    if (isTeamRolesEmpty()) {
         document.querySelectorAll("[id^='gauge-']").forEach(gauge => {
-        updateGaugeBar(gauge, 0);
+            updateGaugeBar(gauge, 0);
         });
         return;
     }
+
+    const l_teamRoles = getTeamRoles();
     l_teamRoles.forEach(slot => {
         if (slot.class && slot.voie) {
         const classVoies = CLASS_DATA.Classes[slot.class].Voies;
@@ -36,7 +36,7 @@ function updateGauges() {
         const statGaugeId = `gauge-${statName}`;
         const statElement = document.getElementById(statGaugeId);
         if (statElement) {
-        updateGaugeBar(statElement, Math.min(totalStats[statName], 10));
+            updateGaugeBar(statElement, Math.min(totalStats[statName], 10));
         }
     }
 }

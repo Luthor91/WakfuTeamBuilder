@@ -1,6 +1,6 @@
 import { CLASS_DATA } from '../dataModel/class.js';
 import { translate } from '../utils/translate.js';
-import { getTeamRoles, setTeamRoles } from '../dataModel/team.js';
+import { getTeamRoles, setTeamRoles, teamHasClass } from '../dataModel/team.js';
 import { getCurrentLanguage } from '../dataModel/translation.js';
 import { getControlPressed, getShiftPressed } from '../events/eventKeyboardHandler.js';
 import { saveTeamToLocalStorage } from '../storage/localStorage.js';
@@ -20,8 +20,7 @@ function openSelectionMenu(slotIndex) {
     Object.keys(CLASS_DATA.Classes).forEach(className => {
         const imgSrc = `male_${className.toLowerCase()}.png`;
         // Vérifier si la classe est déjà prise
-        let l_teamRoles = getTeamRoles();
-        const isTaken = l_teamRoles.some(role => role.class === className);
+        const isTaken = teamHasClass(className);
         // Créer un conteneur pour l'image et le texte
         const container = document.createElement("div");
         container.classList.add("class-container");
@@ -219,12 +218,8 @@ function _updateSelectionMenuTakenClasses() {
             const imgSrc = img.getAttribute('src');            
             const className = _getClassNameFromFile(imgSrc);
             
-            // Check if this class is in the team
-            const l_teamRoles = getTeamRoles();
-            const isTaken = l_teamRoles.some(role => role.class === className);
-            
             // Update the container class accordingly
-            if (isTaken) {
+            if (teamHasClass(className)) {
                 container.classList.add("taken");
             } else {
                 container.classList.remove("taken");
