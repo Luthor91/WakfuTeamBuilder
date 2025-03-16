@@ -1,4 +1,4 @@
-import { openSelectionMenu, closeSelectionMenu, toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
+import { openSelectionMenu, hideSelectionMenu, toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
 import { saveCurrentTeam, loadTeamToLocalStorage } from '../storage/localStorage.js';
 import { updateAll } from '../update/update.js';
 import { clearSlot } from '../update/teamContainer.js';
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById("save-team-button").addEventListener("click", saveCurrentTeam);
     document.getElementById("show-teams-button").addEventListener("click", toggleSavedTeamsMenu);
-    document.getElementById('close-menu-btn').addEventListener('click', closeSelectionMenu);
+    document.getElementById('close-menu-btn').addEventListener('click', hideSelectionMenu);
 
     loadTeamToLocalStorage();
     updateAll();

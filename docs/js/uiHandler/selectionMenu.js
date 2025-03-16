@@ -5,7 +5,7 @@ import { getCurrentLanguage } from '../dataModel/translation.js';
 import { getControlPressed, getShiftPressed } from '../events/eventKeyboardHandler.js';
 import { saveTeamToLocalStorage } from '../storage/localStorage.js';
 import { updateAll } from '../update/update.js';
-import { showSavedTeamsMenu } from './favorite.js';
+import { showFavoriteTeamsMenu } from './favorite.js';
 import { showClassRoles } from '../uiHandler/classInfos.js';
 
 let selectedSlot = null;
@@ -44,7 +44,7 @@ function openSelectionMenu(slotIndex) {
     menu.classList.remove("hidden");
 }
 
-function closeSelectionMenu() {    
+function hideSelectionMenu() {    
     const menu = document.getElementById("selection-menu");
     if (menu) {
         menu.classList.add("hidden");
@@ -59,7 +59,7 @@ function toggleSavedTeamsMenu(escapePressed = false) {
         if (escapePressed == true) {
             return;
         }
-        showSavedTeamsMenu();
+        showFavoriteTeamsMenu();
     } else {
         menu.classList.add("hidden");
     }
@@ -107,17 +107,17 @@ function _createClassImage(imgSrc) {
         const l_isShiftPressed = getShiftPressed();
         if (l_isShiftPressed) {
             // If shift is pressed, select this class but don't close the menu
-            selectClassWithShift(img.getAttribute('src'));
+            _selectMultipleClasses(img.getAttribute('src'));
         } else {
             // Normal behavior for regular click
-            _selectClass(img.getAttribute('src'));
+            _selectSingleClass(img.getAttribute('src'));
         }
     }
     
     return img;
 }
 
-function _selectClass(imgSrc) {
+function _selectSingleClass(imgSrc) {
     if (selectedSlot !== null) {
         const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
         if (slot) {
@@ -147,11 +147,11 @@ function _selectClass(imgSrc) {
             console.error('Slot is null');
         }
     }
-    closeSelectionMenu();
+    hideSelectionMenu();
 }
 
-// Modified selectClassWithShift function
-function selectClassWithShift(imgSrc) {
+// Modified _selectMultipleClasses function
+function _selectMultipleClasses(imgSrc) {
     const l_teamRoles = getTeamRoles();
     if (selectedSlot !== null && selectedSlot < l_teamRoles.length) {
         const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
@@ -179,7 +179,7 @@ function selectClassWithShift(imgSrc) {
             updateAll();
 
             // Update the selection menu to reflect the new "taken" classes
-            _updateSelectionMenuTakenClasses();
+            _updateSelectionMenuWithTakenClasses();
 
             // Move to the next slot if available
             if (selectedSlot < 5) { // Assuming 6 slots (0-5)
@@ -194,7 +194,7 @@ function selectClassWithShift(imgSrc) {
                 }
             } else {
                 // If we're at the last slot, close the menu
-                closeSelectionMenu();
+                hideSelectionMenu();
                 return;
             }
         } else {
@@ -204,7 +204,7 @@ function selectClassWithShift(imgSrc) {
 }
 
 // New function to update the "taken" classes in the selection menu
-function _updateSelectionMenuTakenClasses() {
+function _updateSelectionMenuWithTakenClasses() {
     const menuContent = document.getElementById("menu-content");
     if (!menuContent) return;
     
@@ -237,4 +237,4 @@ function _getClassNameFromFile(filename) {
     return null;
 }
 
-export { openSelectionMenu, closeSelectionMenu, toggleSavedTeamsMenu, selectClassWithShift };
+export { openSelectionMenu, hideSelectionMenu, toggleSavedTeamsMenu, _selectMultipleClasses };

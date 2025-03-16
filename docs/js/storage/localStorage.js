@@ -35,7 +35,7 @@ function saveTeamToLocalStorage() {
 
 
 // Fonction pour appliquer une équipe sauvegardée
-function applySavedTeam(team) {
+function applyFavoriteTeam(team) {
     setTeamRoles(team);
     updateAll();
     saveTeamToLocalStorage();
@@ -73,4 +73,4 @@ function loadTeamToLocalStorage() {
 }
 
 
-export { saveCurrentTeam, saveTeamToLocalStorage, loadTeamToLocalStorage, applySavedTeam };
+export { saveCurrentTeam, saveTeamToLocalStorage, loadTeamToLocalStorage, applyFavoriteTeam };

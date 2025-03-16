@@ -1,5 +1,5 @@
 import { closeRolesModal } from '../uiHandler/classInfos.js';
-import { closeSelectionMenu, toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
+import { hideSelectionMenu, toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
 
 
 let g_isShiftPressed = false;
@@ -25,7 +25,7 @@ document.addEventListener('keydown', function(e) {
     g_isControlPressed = true;
   }
   if (e.key === 'Escape') {
-    closeSelectionMenu();
+    hideSelectionMenu();
     closeRolesModal();
     toggleSavedTeamsMenu(true);
   }

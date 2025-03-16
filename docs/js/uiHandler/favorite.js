@@ -1,11 +1,11 @@
 import { getCurrentLanguage } from '../dataModel/translation.js';
 import { translate } from '../utils/translate.js';
-import { applySavedTeam } from '../storage/localStorage.js';
+import { applyFavoriteTeam } from '../storage/localStorage.js';
 
 
 
 // Fonction pour afficher le menu des équipes sauvegardées
-function showSavedTeamsMenu() {
+function showFavoriteTeamsMenu() {
     const savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
     const menu = document.getElementById("saved-teams-menu");
 
@@ -68,11 +68,11 @@ function showSavedTeamsMenu() {
         });
 
         teamContainer.appendChild(deleteButton);
-        teamContainer.addEventListener("click", () => applySavedTeam(team));
+        teamContainer.addEventListener("click", () => applyFavoriteTeam(team));
         menu.appendChild(teamContainer);
     });
 
     menu.classList.remove("hidden"); // Afficher le menu
 }
 
-export { showSavedTeamsMenu };
+export { showFavoriteTeamsMenu };
