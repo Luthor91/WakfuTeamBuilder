@@ -28,13 +28,25 @@ function teamHasClass(l_className) {
     return g_teamRoles.some(role => role.class === l_className);
 }
 
+function isTeamHasEmptySlot(l_index) {
+    let isSlotEmpty = false;
+    g_teamRoles.forEach((slot, index) => {
+        if (index == l_index) {
+            isSlotEmpty = (slot.class == null);
+            console.log("slot ", index, " est vide");
+            
+        }
+    });
+
+    return isSlotEmpty;
+}
+
 function setTeamRoles(l_teamRoles) {
     g_teamRoles = l_teamRoles;
 }
-
 
 function getTeamRoles() {
     return g_teamRoles;
 }
 
-export { initTeamRoles, isTeamRolesEmpty, isTeamRolesFull, teamHasClass, setTeamRoles, getTeamRoles };
+export { initTeamRoles, isTeamRolesEmpty, isTeamRolesFull, teamHasClass, isTeamHasEmptySlot, setTeamRoles, getTeamRoles };

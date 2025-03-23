@@ -4,8 +4,8 @@ import { setTeamRoles } from '../dataModel/team.js';
 import { updateGauges } from '../update/gauge.js';
 
 function updateAll() {
-    const teamRolesUpdated = updateSlotOrder();
-    setTeamRoles(teamRolesUpdated);
+    const l_teamRoles = updateSlotOrder();
+    setTeamRoles(l_teamRoles);
     updateTeamContainer();
     updateRolesPanel();
     updateRolesSummary();

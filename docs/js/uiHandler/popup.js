@@ -1,4 +1,4 @@
-function showNotification(message, color = null) {
+function displayNotification(message, color = null) {
     // Créer l'élément de notification
     const notification = document.createElement('div');
     notification.textContent = message;
@@ -22,4 +22,4 @@ function showNotification(message, color = null) {
 
 
 
-export { showNotification };
+export { displayNotification };

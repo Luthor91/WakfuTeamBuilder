@@ -1,3 +1,20 @@
+const CLASS_LIST = {
+    "fr": [ 
+        "Feca", "Osamodas", "Enutrof", "Sram", 
+        "Xelor", "Ecaflip", "Eniripsa", "Iop", 
+        "Cra", "Sadida", "Sacrieur", "Pandawa", 
+        "Roublard", "Zobal", "Ouginak", "Steamer",
+        "Eliotrope", "Huppermage"
+    ], 
+    "en": [ 
+        "Feca", "Osamodas", "Enutrof", "Sram", 
+        "Xelor", "Ecaflip", "Eniripsa", "Iop", 
+        "Cra", "Sadida", "Sacrier", "Pandawa", 
+        "Rogue", "Masqueraider", "Ouginak", "Foggernaut",
+        "Eliotrope", "Huppermage"
+    ], 
+};
+
 const CLASS_DATA = {
   "Classes": {
     "Cra": {
@@ -2898,4 +2915,4 @@ const CLASS_DATA = {
   }
 };
 
-export { CLASS_DATA };
+export { CLASS_LIST, CLASS_DATA };

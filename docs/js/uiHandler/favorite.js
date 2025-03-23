@@ -5,7 +5,7 @@ import { applyFavoriteTeam } from '../storage/localStorage.js';
 
 
 // Fonction pour afficher le menu des équipes sauvegardées
-function showFavoriteTeamsMenu() {
+function displayFavoriteTeamsMenu() {
     const savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
     const menu = document.getElementById("saved-teams-menu");
 
@@ -13,7 +13,7 @@ function showFavoriteTeamsMenu() {
     menu.innerHTML = ""; // Vider le contenu existant
     
     if (savedTeams.length == 0) {
-        showNotification("Aucune équipe dans les favoris.", "red");
+        displayNotification("Aucune équipe dans les favoris.", "red");
         return;
     }
 
@@ -75,4 +75,4 @@ function showFavoriteTeamsMenu() {
     menu.classList.remove("hidden"); // Afficher le menu
 }
 
-export { showFavoriteTeamsMenu };
+export { displayFavoriteTeamsMenu };

@@ -1,5 +1,5 @@
 import { getTeamRoles, setTeamRoles, isTeamRolesEmpty } from '../dataModel/team.js';
-import { showNotification } from '../uiHandler/popup.js';
+import { displayNotification } from '../uiHandler/popup.js';
 import { updateAll } from '../update/update.js';
 import { toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
 
@@ -10,14 +10,14 @@ function saveCurrentTeam() {
     let savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
     
     if (savedTeams.length >= 10) {
-        showNotification("Supprimez une équipe avant d'en rajouter une.", "red");
+        displayNotification("Supprimez une équipe avant d'en rajouter une.", "red");
         return;
     }
 
     const l_teamRoles = getTeamRoles();
     savedTeams.push(l_teamRoles);
     localStorage.setItem("savedTeams", JSON.stringify(savedTeams));
-    showNotification("Équipe ajoutée aux favoris !");
+    displayNotification("Équipe ajoutée aux favoris !");
 }
 
 // Fonction pour sauvegarder teamRoles dans un cookie
@@ -61,7 +61,7 @@ function loadTeamToLocalStorage() {
                 // Afficher une notification à l'utilisateur
                 if(isTeamRolesEmpty() === true) return false;
 
-                showNotification("Équipe chargée avec succès!");
+                displayNotification("Équipe chargée avec succès!");
                 return true;
             }
         }

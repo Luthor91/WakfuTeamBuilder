@@ -5,8 +5,8 @@ import { getCurrentLanguage } from '../dataModel/translation.js';
 import { getControlPressed, getShiftPressed } from '../events/eventKeyboardHandler.js';
 import { saveTeamToLocalStorage } from '../storage/localStorage.js';
 import { updateAll } from '../update/update.js';
-import { showFavoriteTeamsMenu } from './favorite.js';
-import { showClassRoles } from '../uiHandler/classInfos.js';
+import { displayFavoriteTeamsMenu } from './favorite.js';
+import { displayClassRoles } from '../uiHandler/classInfos.js';
 
 let selectedSlot = null;
 
@@ -59,7 +59,7 @@ function toggleSavedTeamsMenu(escapePressed = false) {
         if (escapePressed == true) {
             return;
         }
-        showFavoriteTeamsMenu();
+        displayFavoriteTeamsMenu();
     } else {
         menu.classList.add("hidden");
     }
@@ -99,7 +99,7 @@ function _createClassImage(imgSrc) {
         const l_isControlPressed = getControlPressed();
         if (l_isControlPressed) {
             const className = img.getAttribute('src').split('_', 2)[1].split('.', 1)[0];
-            showClassRoles(className);
+            displayClassRoles(className);
             return;
             
         }

@@ -1,7 +1,7 @@
 import { CLASS_DATA } from '../dataModel/class.js';
 
 
-function showClassRoles(className) {
+function displayClassRoles(className) {
     const formattedClassName = className.charAt(0).toUpperCase() + className.slice(1);
     if (!CLASS_DATA.Classes[formattedClassName]) {
         console.error("Classe non trouvée :", className);
@@ -48,9 +48,9 @@ function showClassRoles(className) {
     document.getElementById("class-info-display").style.display = "block";
 }
 
-function closeRolesModal() {
+function hideRolesModal() {
     document.getElementById("class-info-display").style.display = "none";
 }
 
 
-export { showClassRoles, closeRolesModal };
+export { displayClassRoles, hideRolesModal };

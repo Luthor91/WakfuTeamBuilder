@@ -1335,6 +1335,42 @@ h3 {
     opacity: 0;
 }
 
+#autocomplete-container {
+    position: fixed;
+    bottom: 0;
+    left: 40%;
+    right: 40%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: gray;
+    display: none;
+    flex-direction: column-reverse;
+    align-items: center;
+    z-index: 1000;
+}
+
+#autocomplete-input {
+    padding: 5px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.autocomplete-item {
+    padding: 3px;
+    color: gray;
+}
+
+.highlighted {
+    color: black;
+    font-weight: bold;
+}
+
+.selected {
+    background-color: yellow;
+    font-weight: bold;
+}
 
 footer {
     margin-top: 20px;

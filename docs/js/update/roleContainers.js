@@ -96,6 +96,7 @@ function updateRolesPanel() {
                     const option = document.createElement('option');
                     option.value = voie;
                     option.textContent = voie;
+                    option.setAttribute("data-translator", voie.toLowerCase().replaceAll(' ', '_'));
 
                     if (data.Id === 1 && slot.voie == null) {
                         defaultOption = option;
