@@ -29,17 +29,11 @@ function teamHasClass(l_className) {
 }
 
 function isTeamHasEmptySlot(l_index) {
-    let isSlotEmpty = false;
-    g_teamRoles.forEach((slot, index) => {
-        if (index == l_index) {
-            isSlotEmpty = (slot.class == null);
-            console.log("slot ", index, " est vide");
-            
-        }
-    });
-
-    return isSlotEmpty;
+    return g_teamRoles.some((slot, index) => 
+        index === l_index && slot.class == null && slot.voie == null && slot.image == null
+    );
 }
+
 
 function setTeamRoles(l_teamRoles) {
     g_teamRoles = l_teamRoles;

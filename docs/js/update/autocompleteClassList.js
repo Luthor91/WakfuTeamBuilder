@@ -13,6 +13,7 @@ function updateAutocompleteClassList(filter) {
 
     items.forEach(item => {
         const text = item.dataset.value;
+        
         if (text.toLowerCase().startsWith(filter.toLowerCase())) {
             item.style.display = "block";
             visibleCount++;
@@ -48,11 +49,10 @@ function validateClassListSelection() {
     if (!selectedItem) return;
 
     const value = selectedItem.textContent;
-    const loweredValue = selectedItem.textContent.toLowerCase();
 
     let l_teamRoles = initTeamRoles();
 
-    for (const [index, slot] of l_teamRoles.entries()) {
+    for (const [index, _] of l_teamRoles.entries()) {
         
         if (!isTeamHasEmptySlot(index)) continue;
 
@@ -67,6 +67,8 @@ function validateClassListSelection() {
         );
             
         if (voieName) {
+            console.log("Index selectionné : ", index);
+            
             l_teamRoles[index] = {
                 class: value,
                 voie: voieName,
@@ -75,7 +77,7 @@ function validateClassListSelection() {
             input.textContent = "";
             console.log(l_teamRoles);
             
-            break; // Sortir de la boucle après avoir rempli un slot vide
+            break;
         }
     }
 

@@ -1,6 +1,6 @@
 import { hideRolesModal } from '../uiHandler/classInfos.js';
 import { hideSelectionMenu, toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
-import { displayAutocompleteClassList, getAutocompleteValidated, hideAutocompleteClassList, isAutocompleteClassListDisplayed, toggleAutocompleteClassList } from '../uiHandler/autocompleteClassList.js';
+import { getAutocompleteValidated, hideAutocompleteClassList, toggleAutocompleteClassList } from '../uiHandler/autocompleteClassList.js';
 import { updateAutocompleteClassList, validateClassListSelection } from '../update/autocompleteClassList.js';
 
 
