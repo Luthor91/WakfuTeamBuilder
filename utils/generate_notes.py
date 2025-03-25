@@ -15,8 +15,8 @@ NOTES_KEYS = {
 EXCEL_ID = "11OnqMQkiQ_dymwbhPrwnQzVzRrugPcWs4upTTumQ9Rs"
 CLIENT_SECRET_FILE = "client_secrets.json"
 LOCAL_EXCEL_PATH = "utils/datas/Wak'Team.xlsx"
-JS_FILE_PATH = '../docs/js/dataModel/class.js'
-JS_BACKUP_PATH = '../utils/backup/utils_package.js.backup'
+JS_FILE_PATH = 'docs/js/dataModel/class.js'
+JS_BACKUP_PATH = 'utils/backup/utils_package.js.backup'
 
 
 def authorize_google_sheets():

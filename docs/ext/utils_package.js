@@ -9,11 +9,11 @@ export const classData = {
           "Notes": {
     'DPT': {
         'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Ranged': 4.0,
+        'Area': 5.0,
+        'Single_Target': 3.0,
+        'Constant': 3.0,
+        'Burst': 4.0
     },
     'Support': {
         'Heal': 0.0,
@@ -48,11 +48,11 @@ export const classData = {
           "Notes": {
     'DPT': {
         'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Ranged': 5.0,
+        'Area': 3.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 3.0
     },
     'Support': {
         'Heal': 0.0,
@@ -88,10 +88,10 @@ export const classData = {
           "Notes": {
     'DPT': {
         'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 1.0,
         'Burst': 0.0
     },
     'Support': {
@@ -135,16 +135,16 @@ export const classData = {
           "Id": 1,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 4.0,
+        'Ranged': 4.0,
+        'Area': 3.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 3.0
     },
     'Support': {
-        'Heal': 0.0,
-        'Shield': 0.0,
+        'Heal': 2.0,
+        'Shield': 1.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
@@ -175,15 +175,15 @@ export const classData = {
           "Notes": {
     'DPT': {
         'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Ranged': 4.0,
+        'Area': 3.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 3.0
     },
     'Support': {
-        'Heal': 0.0,
-        'Shield': 0.0,
+        'Heal': 2.0,
+        'Shield': 1.0,
         'Placeur': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
@@ -214,16 +214,16 @@ export const classData = {
           "Id": 3,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 4.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 2.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 3.0
     },
     'Support': {
-        'Heal': 0.0,
-        'Shield': 0.0,
+        'Heal': 2.0,
+        'Shield': 1.0,
         'Placeur': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
@@ -254,16 +254,16 @@ export const classData = {
           "Id": 4,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
-        'Shield': 0.0,
+        'Heal': 4.0,
+        'Shield': 1.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
@@ -294,17 +294,17 @@ export const classData = {
           "Id": 5,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
-        'Shield': 0.0,
-        'Placeur': 0.0,
+        'Heal': 3.0,
+        'Shield': 2.0,
+        'Placeur': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -342,15 +342,15 @@ export const classData = {
           "Id": 1,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 5.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 5.0,
+        'Single_Target': 5.0,
+        'Constant': 1.0,
+        'Burst': 5.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
@@ -381,15 +381,15 @@ export const classData = {
           "Id": 2,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 4.0,
+        'Ranged': 4.0,
+        'Area': 4.0,
+        'Single_Target': 4.0,
+        'Constant': 1.0,
+        'Burst': 5.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
@@ -422,14 +422,14 @@ export const classData = {
           "Notes": {
     'DPT': {
         'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Ranged': 5.0,
+        'Area': 3.0,
+        'Single_Target': 5.0,
+        'Constant': 1.0,
+        'Burst': 5.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
@@ -461,15 +461,15 @@ export const classData = {
         "Id": 4,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 4.0,
         'Buff_MP': 0.0,
@@ -509,16 +509,16 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 1.0,
+        'Single_Target': 3.0,
+        'Constant': 1.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
-        'Shield': 0.0,
+        'Heal': 5.0,
+        'Shield': 1.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
@@ -548,15 +548,15 @@ export const classData = {
         "Id": 2,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 3.0,
+        'Ranged': 3.0,
+        'Area': 1.0,
+        'Single_Target': 3.0,
+        'Constant': 2.0,
+        'Burst': 4.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 2.0,
         'Shield': 0.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
@@ -588,16 +588,16 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
-        'Shield': 0.0,
+        'Heal': 4.0,
+        'Shield': 3.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
@@ -636,15 +636,15 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
@@ -675,15 +675,15 @@ export const classData = {
         "Id": 2,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 5.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 1.0,
+        'Single_Target': 5.0,
+        'Constant': 5.0,
+        'Burst': 3.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
@@ -715,15 +715,15 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 4.0,
+        'Ranged': 3.0,
+        'Area': 4.0,
+        'Single_Target': 3.0,
+        'Constant': 3.0,
+        'Burst': 3.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
@@ -763,12 +763,12 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
         'Heal': 0.0,
@@ -777,7 +777,7 @@ export const classData = {
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
-        'Protection': 0.0
+        'Protection': 3.0
     },
     'Entrave': {
         'Rall_MP': 0.0,
@@ -802,12 +802,12 @@ export const classData = {
         "Id": 2,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 5.0,
+        'Area': 5.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 5.0
     },
     'Support': {
         'Heal': 0.0,
@@ -850,12 +850,12 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 3.0,
+        'Ranged': 4.0,
+        'Area': 5.0,
+        'Single_Target': 3.0,
+        'Constant': 5.0,
+        'Burst': 4.0
     },
     'Support': {
         'Heal': 0.0,
@@ -864,7 +864,7 @@ export const classData = {
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
-        'Protection': 0.0
+        'Protection': 1.0
     },
     'Entrave': {
         'Rall_MP': 0.0,
@@ -890,11 +890,11 @@ export const classData = {
         "Notes": {
     'DPT': {
         'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Ranged': 4.0,
+        'Area': 5.0,
+        'Single_Target': 3.0,
+        'Constant': 5.0,
+        'Burst': 4.0
     },
     'Support': {
         'Heal': 0.0,
@@ -903,7 +903,7 @@ export const classData = {
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
-        'Protection': 0.0
+        'Protection': 1.0
     },
     'Entrave': {
         'Rall_MP': 0.0,
@@ -929,12 +929,12 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 4.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 1.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 4.0
     },
     'Support': {
         'Heal': 0.0,
@@ -943,7 +943,7 @@ export const classData = {
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
-        'Protection': 0.0
+        'Protection': 1.0
     },
     'Entrave': {
         'Rall_MP': 0.0,
@@ -969,12 +969,12 @@ export const classData = {
         "Id": 4,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
         'Heal': 0.0,
@@ -983,7 +983,7 @@ export const classData = {
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
-        'Protection': 0.0
+        'Protection': 4.0
     },
     'Entrave': {
         'Rall_MP': 0.0,
@@ -1017,15 +1017,15 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 4.0,
+        'Ranged': 4.0,
+        'Area': 4.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 3.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 3.0,
         'Shield': 0.0,
         'Placeur': 3.0,
         'Buff_MP': 0.0,
@@ -1057,14 +1057,14 @@ export const classData = {
         "Notes": {
     'DPT': {
         'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Ranged': 4.0,
+        'Area': 4.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 3.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 3.0,
         'Shield': 0.0,
         'Placeur': 3.0,
         'Buff_MP': 0.0,
@@ -1096,15 +1096,15 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 4.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 2.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 3.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 3.0,
         'Shield': 0.0,
         'Placeur': 3.0,
         'Buff_MP': 0.0,
@@ -1136,15 +1136,15 @@ export const classData = {
         "Id": 4,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 4.0,
         'Shield': 0.0,
         'Placeur': 0.0,
         'Buff_MP': 0.0,
@@ -1155,7 +1155,7 @@ export const classData = {
     'Entrave': {
         'Rall_MP': 0.0,
         'Rall_AP': 0.0,
-        'Rall_DI': 0.0,
+        'Rall_DI': 3.0,
         'Rall_Resistance': 0.0,
         'Boringness': 0
     },
@@ -1176,15 +1176,15 @@ export const classData = {
         "Id": 5,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 2.0,
         'Shield': 0.0,
         'Placeur': 4.0,
         'Buff_MP': 0.0,
@@ -1216,15 +1216,15 @@ export const classData = {
         "Id": 6,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 3.0,
         'Shield': 0.0,
         'Placeur': 4.0,
         'Buff_MP': 0.0,
@@ -1264,12 +1264,12 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 4.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 1.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 3.0
     },
     'Support': {
         'Heal': 0.0,
@@ -1303,12 +1303,12 @@ export const classData = {
         "Id": 2,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 4.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 4.0,
+        'Single_Target': 2.0,
+        'Constant': 4.0,
+        'Burst': 3.0
     },
     'Support': {
         'Heal': 0.0,
@@ -1343,12 +1343,12 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
         'Heal': 0.0,
@@ -1391,15 +1391,15 @@ export const classData = {
         "Id": 1,
          "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 5.0,
         'Buff_MP': 0.0,
@@ -1430,15 +1430,15 @@ export const classData = {
         "Id": 2,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 4.0,
         'Shield': 0.0,
         'Placeur': 5.0,
         'Buff_MP': 0.0,
@@ -1470,15 +1470,15 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 5.0,
         'Buff_MP': 0.0,
@@ -1510,15 +1510,15 @@ export const classData = {
         "Id": 4,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 4.0,
+        'Ranged': 1.0,
+        'Area': 2.0,
+        'Single_Target': 4.0,
+        'Constant': 1.0,
+        'Burst': 5.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 2.0,
         'Shield': 0.0,
         'Placeur': 3.0,
         'Buff_MP': 0.0,
@@ -1550,15 +1550,15 @@ export const classData = {
         "Id": 5,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 3.0,
         'Shield': 0.0,
         'Placeur': 5.0,
         'Buff_MP': 0.0,
@@ -1598,15 +1598,15 @@ export const classData = {
           "Id": 1,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 2.0,
         'Shield': 0.0,
         'Placeur': 4.0,
         'Buff_MP': 0.0,
@@ -1637,15 +1637,15 @@ export const classData = {
           "Id": 2,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 4.0,
         'Shield': 0.0,
         'Placeur': 4.0,
         'Buff_MP': 0.0,
@@ -1677,15 +1677,15 @@ export const classData = {
           "Id": 3,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 2.0,
         'Shield': 0.0,
         'Placeur': 4.0,
         'Buff_MP': 0.0,
@@ -1717,15 +1717,15 @@ export const classData = {
           "Id": 4,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 4.0,
+        'Ranged': 4.0,
+        'Area': 4.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 4.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 2.0,
         'Shield': 0.0,
         'Placeur': 3.0,
         'Buff_MP': 0.0,
@@ -1757,12 +1757,12 @@ export const classData = {
           "Id": 5,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 5.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 5.0,
+        'Single_Target': 1.0,
+        'Constant': 5.0,
+        'Burst': 2.0
     },
     'Support': {
         'Heal': 0.0,
@@ -1798,15 +1798,15 @@ export const classData = {
           "Id": 6,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 4.0,
+        'Area': 4.0,
+        'Single_Target': 1.0,
+        'Constant': 4.0,
+        'Burst': 4.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 2.0,
         'Buff_MP': 0.0,
@@ -1846,12 +1846,12 @@ export const classData = {
           "Id": 1,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 4.0,
+        'Ranged': 4.0,
+        'Area': 3.0,
+        'Single_Target': 1.0,
+        'Constant': 4.0,
+        'Burst': 1.0
     },
     'Support': {
         'Heal': 0.0,
@@ -1885,12 +1885,12 @@ export const classData = {
           "Id": 2,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 4.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 2.0,
+        'Single_Target': 4.0,
+        'Constant': 3.0,
+        'Burst': 4.0
     },
     'Support': {
         'Heal': 0.0,
@@ -1926,12 +1926,12 @@ export const classData = {
           "Id": 3,
           "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
         'Heal': 0.0,
@@ -1975,15 +1975,15 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 2.0,
         'Shield': 0.0,
         'Placeur': 5.0,
         'Buff_MP': 0.0,
@@ -2015,15 +2015,15 @@ export const classData = {
         "Id": 2,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 3.0,
         'Shield': 0.0,
         'Placeur': 5.0,
         'Buff_MP': 0.0,
@@ -2055,15 +2055,15 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 3.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 3.0,
+        'Single_Target': 3.0,
+        'Constant': 3.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 2.0,
         'Shield': 0.0,
         'Placeur': 4.0,
         'Buff_MP': 0.0,
@@ -2104,12 +2104,12 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 4.0,
+        'Ranged': 4.0,
+        'Area': 3.0,
+        'Single_Target': 3.0,
+        'Constant': 3.0,
+        'Burst': 3.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2143,12 +2143,12 @@ export const classData = {
         "Id": 2,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 4.0,
+        'Ranged': 4.0,
+        'Area': 5.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 5.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2183,12 +2183,12 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2232,12 +2232,12 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 5.0,
+        'Ranged': 1.0,
+        'Area': 3.0,
+        'Single_Target': 5.0,
+        'Constant': 5.0,
+        'Burst': 2.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2272,12 +2272,12 @@ export const classData = {
         "Id": 2,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 5.0,
+        'Ranged': 1.0,
+        'Area': 4.0,
+        'Single_Target': 3.0,
+        'Constant': 3.0,
+        'Burst': 4.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2312,12 +2312,12 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2360,15 +2360,15 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 5.0,
         'Shield': 0.0,
         'Placeur': 3.0,
         'Buff_MP': 0.0,
@@ -2399,15 +2399,15 @@ export const classData = {
         "Id": 2,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 3.0,
+        'Ranged': 3.0,
+        'Area': 3.0,
+        'Single_Target': 2.0,
+        'Constant': 3.0,
+        'Burst': 3.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 2.0,
         'Shield': 0.0,
         'Placeur': 1.0,
         'Buff_MP': 0.0,
@@ -2439,15 +2439,15 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 3.0,
+        'Ranged': 3.0,
+        'Area': 1.0,
+        'Single_Target': 4.0,
+        'Constant': 3.0,
+        'Burst': 5.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 2.0,
         'Shield': 0.0,
         'Placeur': 3.0,
         'Buff_MP': 0.0,
@@ -2479,17 +2479,17 @@ export const classData = {
         "Id": 4,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
-        'Placeur': 0.0,
+        'Placeur': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2498,7 +2498,7 @@ export const classData = {
     'Entrave': {
         'Rall_MP': 0.0,
         'Rall_AP': 0.0,
-        'Rall_DI': 0.0,
+        'Rall_DI': 5.0,
         'Rall_Resistance': 0.0,
         'Boringness': 0
     },
@@ -2519,17 +2519,17 @@ export const classData = {
         "Id": 5,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 2.0,
+        'Ranged': 2.0,
+        'Area': 2.0,
+        'Single_Target': 2.0,
+        'Constant': 2.0,
+        'Burst': 2.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 3.0,
         'Shield': 0.0,
-        'Placeur': 0.0,
+        'Placeur': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2538,7 +2538,7 @@ export const classData = {
     'Entrave': {
         'Rall_MP': 0.0,
         'Rall_AP': 0.0,
-        'Rall_DI': 0.0,
+        'Rall_DI': 5.0,
         'Rall_Resistance': 0.0,
         'Boringness': 0
     },
@@ -2567,12 +2567,12 @@ export const classData = {
         "Id": 1,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
+        'Melee': 4.0,
         'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Area': 2.0,
+        'Single_Target': 4.0,
+        'Constant': 4.0,
+        'Burst': 2.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2606,12 +2606,12 @@ export const classData = {
         "Id": 2,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2695,11 +2695,11 @@ export const classData = {
         "Notes": {
     'DPT': {
         'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Ranged': 5.0,
+        'Area': 4.0,
+        'Single_Target': 5.0,
+        'Constant': 1.0,
+        'Burst': 4.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2735,11 +2735,11 @@ export const classData = {
         "Notes": {
     'DPT': {
         'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Ranged': 4.0,
+        'Area': 3.0,
+        'Single_Target': 4.0,
+        'Constant': 2.0,
+        'Burst': 3.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2775,12 +2775,12 @@ export const classData = {
         "Id": 3,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 4.0,
+        'Area': 5.0,
+        'Single_Target': 1.0,
+        'Constant': 5.0,
+        'Burst': 1.0
     },
     'Support': {
         'Heal': 0.0,
@@ -2815,15 +2815,15 @@ export const classData = {
         "Id": 4,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 4.0,
         'Buff_MP': 0.0,
@@ -2855,15 +2855,15 @@ export const classData = {
         "Id": 5,
         "Notes": {
     'DPT': {
-        'Melee': 0.0,
-        'Ranged': 0.0,
-        'Area': 0.0,
-        'Single_Target': 0.0,
-        'Constant': 0.0,
-        'Burst': 0.0
+        'Melee': 1.0,
+        'Ranged': 1.0,
+        'Area': 1.0,
+        'Single_Target': 1.0,
+        'Constant': 1.0,
+        'Burst': 1.0
     },
     'Support': {
-        'Heal': 0.0,
+        'Heal': 1.0,
         'Shield': 0.0,
         'Placeur': 4.0,
         'Buff_MP': 0.0,
