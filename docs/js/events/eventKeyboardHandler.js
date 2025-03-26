@@ -1,7 +1,7 @@
 import { hideRolesModal } from '../uiHandler/classInfos.js';
 import { hideSelectionMenu, toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
-import { getAutocompleteValidated, hideAutocompleteClassList, toggleAutocompleteClassList } from '../uiHandler/autocompleteClassList.js';
-import { updateAutocompleteClassList, validateClassListSelection } from '../update/autocompleteClassList.js';
+import { getAutocompleteValidated, hideAutocompleteClassList, toggleAutocompleteClassList } from '../uiHandler/autoCompleteClassList.js';
+import { updateAutocompleteClassList, validateClassListSelection } from '../update/autoCompleteClassList.js';
 
 
 let g_isShiftPressed = false;

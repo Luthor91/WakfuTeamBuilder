@@ -1,7 +1,7 @@
 import { CLASS_DATA, CLASS_LIST } from "../dataModel/class.js";
 import { initTeamRoles, isTeamHasEmptySlot, setTeamRoles } from "../dataModel/team.js";
 import { saveTeamToLocalStorage } from "../storage/localStorage.js";
-import { setAutocompleteValidated } from "../uiHandler/autocompleteClassList.js";
+import { setAutocompleteValidated } from "../uiHandler/autoCompleteClassList.js";
 import { updateAll } from './update.js';
 
 
