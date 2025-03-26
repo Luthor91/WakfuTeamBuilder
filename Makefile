@@ -3,8 +3,7 @@ PORT := 8000
 
 VENV := venv
 EXCEL_FILE := utils/data.xlsx
-PYTHON_SCRIPT := utils/generate_notes.py
-REQUIREMENTS := utils/requirements.txt
+PARSING_SCRIPT := utils/js/parsing.js
 OUTPUT_JSON := utils/class_data.json
 
 GIT_REPO := https://github.com/Luthor91/WakfuTeamBuilder.git
@@ -22,14 +21,12 @@ deploy: update_data
 	@git push $(GIT_REPO)
 
 update_data: setup_venv
-	@echo "Running Python script..."
-	$(VENV)/Scripts/python $(PYTHON_SCRIPT)
+	@echo "Running Parsing script..."
+	node $(PARSING_SCRIPT)
 
 # Cible pour configurer l'environnement virtuel
 setup_venv:
-	@echo "Setting up virtual environment..."
-	$(PYTHON) -m venv $(VENV)
-	$(VENV)/Scripts/pip install -r $(REQUIREMENTS)
+	npm install xlsx
 
 # Cible pour supprimer l'environnement virtuel
 clean_venv:
