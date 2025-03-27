@@ -1,7 +1,7 @@
 import { CLASS_DATA } from '../dataModel/class.js';
 
 
-function _loadRolesModal(className) {
+function displayClassRoles(className) {
     const formattedClassName = className.charAt(0).toUpperCase() + className.slice(1);
     if (!CLASS_DATA.Classes[formattedClassName]) {
         console.error("Classe non trouvée :", className);
@@ -44,26 +44,13 @@ function _loadRolesModal(className) {
     document.querySelectorAll(".class-info-roles-container").forEach(container => {
         container.style.gridTemplateColumns = `repeat(${maxRoles}, 1fr)`;
     });
+    // Affichage de la modal
+    document.getElementById("class-info-display").style.display = "block";
 }
 
 function hideRolesModal() {
     document.getElementById("class-info-display").style.display = "none";
 }
 
-function displayRolesModal() {
-    document.getElementById("class-info-display").style.display = "block";
-}
 
-
-function toggleRolesModal(className) {
-    const classRolesContainer = document.getElementById("class-info-roles");
-    if (classRolesContainer.style.display == 'block') {
-        hideRolesModal();
-    } else {
-        _loadRolesModal(className);
-        displayRolesModal();
-
-    }
-}
-
-export { hideRolesModal, displayRolesModal, toggleRolesModal };
+export { displayClassRoles, hideRolesModal };

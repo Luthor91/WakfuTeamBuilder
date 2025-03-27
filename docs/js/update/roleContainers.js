@@ -126,7 +126,6 @@ function updateRolesPanel() {
                     slot.voie = defaultOption.value;
                 }
                 
-                // Improved onchange handler in updateRolesPanel:
                 select.onchange = (e) => {
                     // Update the voie for this slot
                     l_teamRoles[index].voie = e.target.value;
@@ -165,8 +164,8 @@ function updateRolesSummary() {
                 } else if (classVoies[slot.voie].Roles.includes('Shield')) {
                     presentRoles.add('Shield');
                 }
-                if (classVoies[slot.voie].Roles.includes('Positionning')) {
-                    presentRoles.add('Positionning');
+                if (classVoies[slot.voie].Roles.includes('Placeur')) {
+                    presentRoles.add('Placeur');
                 }
                 if (classVoies[slot.voie].Roles.includes('Rall Resistance')) {
                     presentRoles.add('Rall Resistance');

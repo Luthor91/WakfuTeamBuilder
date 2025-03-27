@@ -172,7 +172,7 @@ support_heal: {
     fr: 'Support Soin',
     en: 'Support Heal'
 },
-support_positionning: {
+support_placeur: {
     fr: 'Support Placeur',
     en: 'Support Positioning'
 },
@@ -326,7 +326,7 @@ sub_dpt: {
     fr: "Sous DPT",
     en: "Sub DPT"
 },
-positionning: {
+placeur: {
     fr: "Placeur",
     en: "Positioning"
 },
@@ -342,7 +342,7 @@ shield: {
     fr: "Armure",
     en: "Shield"
 },
-sub_positionning: {
+sub_placeur: {
     fr: "Sous Placeur",
     en: "Sub Positioning"
 },

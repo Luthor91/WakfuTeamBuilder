@@ -4,6 +4,7 @@ import { countRoles } from './roleContainers.js';
 import { saveTeamToLocalStorage } from '../storage/localStorage.js';
 import { updateAll } from '../update/update.js';
 
+
 function updateSlotOrder() {
     // Créer une copie du tableau pour ne pas modifier l'original directement
     let l_teamRoles = getTeamRoles();
@@ -15,7 +16,7 @@ function updateSlotOrder() {
         (slot) => slotHasRole(slot, "Heal") && slotHasRole(slot, "Sub Shield"), // 2. Heal + Sub Shield
         (slot) => slotHasRole(slot, "Heal"),           // 3. Heal
         (slot) => slotVoieContains(slot, "Utilitaire"),     // 4. Utilitaire
-        (slot) => slotHasRole(slot, "Positionning"),        // 5. Positionning
+        (slot) => slotHasRole(slot, "Placeur"),        // 5. Placeur
         (slot) => slotHasRole(slot, "Area"),           // 6. Area
         (slot) => slotHasRole(slot, "Burst")           // 7. Burst
     ];
@@ -57,57 +58,60 @@ function updateSlotOrder() {
     return result.slice(0, l_teamRoles.length);
 }
 
+
 function updateTeamContainer() {
-    // Récupérer le conteneur d'équipe
     const teamContainer = document.getElementById("team-container");
 
-    // Parcourir chaque slot dans teamRoles
     let l_teamRoles = getTeamRoles();
     l_teamRoles.forEach((slot, index) => {
-        // Récupérer l'élément slot correspondant
         const slotElement = teamContainer.children[index];
 
         if (slotElement) {
-            slotElement.setAttribute('data-slot', index); // Assigner l'attribut data-slot
+            slotElement.setAttribute('data-slot', index);
 
-            // Si le slot contient une classe (n'est pas vide)
             if (slot.class) {
-                // Chercher si une image existe déjà dans ce slot
                 let imgElement = slotElement.querySelector("img");
 
-                // Si aucune image n'existe, en créer une nouvelle
                 if (!imgElement) {
                     imgElement = document.createElement("img");
                     slotElement.appendChild(imgElement);
                 }
 
-                // Mettre à jour la source de l'image
                 if (slot.image) {
                     imgElement.src = slot.image;
                 } else {
                     imgElement.src = CLASS_DATA.Classes[slot.class].Image;
-                    // Mettre à jour slot.image pour la cohérence
                     slot.image = CLASS_DATA.Classes[slot.class].Image;
                 }
 
-                // Vérifier si la voie existe pour cette classe
                 if (slot.voie && !CLASS_DATA.Classes[slot.class].Voies[slot.voie]) {
                     console.warn(`La voie ${slot.voie} n'existe pas pour la classe ${slot.class}`);
-                    slot.voie = null; // Réinitialiser si la voie n'est pas valide
+                    slot.voie = null;
                 }
 
-                // Si la voie n'est pas définie, essayer de définir une voie par défaut
                 if (!slot.voie) {
-                    // Essayer de trouver la première voie disponible
                     const voies = Object.keys(CLASS_DATA.Classes[slot.class].Voies);
                     if (voies.length > 0) {
                         slot.voie = voies[0];
                     }
                 }
+
+                // Ajout du bouton de suppression (si absent)
+                let deleteButton = slotElement.querySelector(".delete-button");
+                if (!deleteButton) {
+                    deleteButton = document.createElement("div");
+                    deleteButton.classList.add("delete-button-slot");
+                    deleteButton.textContent = "✖";
+                    deleteButton.onclick = (event) => {
+                        // Empêche l'ouverture du pannel de selection de classe
+                        event.stopPropagation(); 
+                        clearSlot(index);
+                    };
+                    slotElement.appendChild(deleteButton);
+                }
+
             } else {
-                // Si le slot est vide, supprimer tout contenu
                 slotElement.innerHTML = "";
-                // Réinitialiser complètement le slot dans teamRoles
                 l_teamRoles[index] = { class: null, voie: null, image: null };
             }
         } else {
@@ -117,7 +121,6 @@ function updateTeamContainer() {
 
     setTeamRoles(l_teamRoles);
 
-    // Mettre à jour également les sélecteurs de voie dans le panneau des rôles
     const rolesPanel = document.getElementById("team-roles-panel");
     if (rolesPanel) {
         l_teamRoles.forEach((slot, index) => {
@@ -125,7 +128,6 @@ function updateTeamContainer() {
             if (panelSlot) {
                 const voieSelect = panelSlot.querySelector(".voie-select");
                 if (voieSelect && slot.voie) {
-                    // Trouver et sélectionner l'option correspondant à la voie actuelle
                     const option = voieSelect.querySelector(`option[value="${slot.voie}"]`);
                     if (option) {
                         option.selected = true;
@@ -135,6 +137,7 @@ function updateTeamContainer() {
         });
     }
 }
+
 
 function clearSlot(slotIndex) {
     const slot = document.querySelector(`.slot[data-slot="${slotIndex}"]`);

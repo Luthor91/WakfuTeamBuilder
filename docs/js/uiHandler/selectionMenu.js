@@ -6,48 +6,57 @@ import { getControlPressed, getShiftPressed } from '../events/eventKeyboardHandl
 import { saveTeamToLocalStorage } from '../storage/localStorage.js';
 import { updateAll } from '../update/update.js';
 import { displayFavoriteTeamsMenu } from './favorite.js';
-import { toggleRolesModal } from '../uiHandler/classInfos.js';
+import { displayClassRoles } from '../uiHandler/classInfos.js';
 
 let selectedSlot = null;
+let g_currentClassIndex = -1;
+let g_isSelectionMenuDislayed = false;
 
-
-// Update the openSelectionMenu function to track shift key state
 function openSelectionMenu(slotIndex) {
     selectedSlot = slotIndex;
     const menu = document.getElementById("selection-menu");
     const menuContent = document.getElementById("menu-content");
     menuContent.innerHTML = "";
+
     Object.keys(CLASS_DATA.Classes).forEach(className => {
         const imgSrc = `male_${className.toLowerCase()}.png`;
-        // Vérifier si la classe est déjà prise
         const isTaken = teamHasClass(className);
-        // Créer un conteneur pour l'image et le texte
+
+        // Conteneur principal
         const container = document.createElement("div");
         container.classList.add("class-container");
         if (isTaken) {
-            container.classList.add("taken"); // Ajoute la classe CSS si la classe est prise
+            container.classList.add("taken");
         }
-        // Créer l'image
+
+        // Image de classe
         const img = _createClassImage(imgSrc);
-        // Créer le texte
+
+        // Nom de la classe
         const textOverlay = document.createElement("div");
         const data_translator = className.toLocaleLowerCase().replaceAll(' ', '_');
         const l_currentLanguage = getCurrentLanguage();
         textOverlay.classList.add("class-name");
         textOverlay.setAttribute('data-translator', data_translator);
         textOverlay.textContent = translate(data_translator, l_currentLanguage);
-        // Ajouter l'image et le texte dans le conteneur
+
+        // Ajout des éléments dans le conteneur
         container.appendChild(img);
         container.appendChild(textOverlay);
         menuContent.appendChild(container);
     });
+
     menu.classList.remove("hidden");
+    g_isSelectionMenuDislayed = true;
+
 }
+
 
 function hideSelectionMenu() {    
     const menu = document.getElementById("selection-menu");
     if (menu) {
         menu.classList.add("hidden");
+        g_isSelectionMenuDislayed = false;
     }
 }
 
@@ -60,9 +69,16 @@ function toggleSavedTeamsMenu(escapePressed = false) {
             return;
         }
         displayFavoriteTeamsMenu();
+        g_isSelectionMenuDislayed = true;
     } else {
         menu.classList.add("hidden");
+        g_isSelectionMenuDislayed = false;
+
     }
+}
+
+function isSelectionMenuDisplayed() {
+    return g_isSelectionMenuDislayed;
 }
 
 // Update createClassImage to handle shift-click
@@ -95,27 +111,33 @@ function _createClassImage(imgSrc) {
 
     // Clic gauche avec gestion du shift
     img.onclick = (_) => {
-
-        const l_isControlPressed = getControlPressed();
-        if (l_isControlPressed) {
-            const className = img.getAttribute('src').split('_', 2)[1].split('.', 1)[0];
-            toggleRolesModal(className);
-            return;
-            
-        }
-
-        const l_isShiftPressed = getShiftPressed();
-        if (l_isShiftPressed) {
-            // If shift is pressed, select this class but don't close the menu
-            _selectMultipleClasses(img.getAttribute('src'));
-        } else {
-            // Normal behavior for regular click
-            _selectSingleClass(img.getAttribute('src'));
-        }
+        handleClickOnSelectionMenuImage(img);
     }
     
     return img;
 }
+
+
+function handleClickOnSelectionMenuImage(img) {
+    const l_isControlPressed = getControlPressed();
+    if (l_isControlPressed) {
+        const className = img.getAttribute('src').split('_', 2)[1].split('.', 1)[0];
+        displayClassRoles(className);
+        return;
+        
+    }
+
+    const l_isShiftPressed = getShiftPressed();
+    if (l_isShiftPressed) {
+        // If shift is pressed, select this class but don't close the menu
+        _selectMultipleClasses(img.getAttribute('src'));
+    } else {
+        // Normal behavior for regular click
+        _selectSingleClass(img.getAttribute('src'));
+    }
+    
+}
+
 
 function _selectSingleClass(imgSrc) {
     if (selectedSlot !== null) {
@@ -237,4 +259,30 @@ function _getClassNameFromFile(filename) {
     return null;
 }
 
-export { openSelectionMenu, hideSelectionMenu, toggleSavedTeamsMenu, _selectMultipleClasses };
+function updateFocus() {
+    const menuContent = document.getElementById("menu-content");
+    const items = menuContent.children;
+    // Retirer le focus de tous les éléments
+    Array.from(items).forEach(item => item.classList.remove("focused-selectionMenu"));
+
+    if (g_currentClassIndex >= 0 && g_currentClassIndex < items.length) {
+        items[g_currentClassIndex].classList.add("focused-selectionMenu");
+    }
+}
+
+
+function getCurrentClassIndex() {
+    return g_currentClassIndex;
+}
+
+function setCurrentClassIndex(l_currentClassIndex) {
+    g_currentClassIndex = l_currentClassIndex;
+    updateFocus(g_currentClassIndex);
+}
+
+export { 
+    openSelectionMenu, hideSelectionMenu, toggleSavedTeamsMenu, 
+    _selectMultipleClasses, updateFocus, getCurrentClassIndex, 
+    setCurrentClassIndex, isSelectionMenuDisplayed, handleClickOnSelectionMenuImage,
+    g_currentClassIndex
+};
