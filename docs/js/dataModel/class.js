@@ -229,6 +229,7 @@ const CLASS_DATA = {
                         "Buff DI",
                         "Resurection",
                         "Buff WP",
+                        "Rall WP",
                         "Rall Resistance",
                         "Self Stabilized"
                     ]
@@ -279,6 +280,7 @@ const CLASS_DATA = {
                         "Buff Crit",
                         "Buff DI",
                         "Resurection",
+                        "Rall WP",
                         "Rall Resistance",
                         "Self Stabilized"
                     ]
@@ -330,6 +332,7 @@ const CLASS_DATA = {
                         "Buff DI",
                         "Resurection",
                         "Buff WP",
+                        "Rall WP",
                         "Rall Resistance",
                         "Self Stabilized"
                     ]
@@ -381,6 +384,7 @@ const CLASS_DATA = {
                         "Buff WP",
                         "Resurection",
                         "Buff MP",
+                        "Rall WP",
                         "Rall Resistance",
                         "Self Stabilized",
                         "Invulnerability"
@@ -434,6 +438,7 @@ const CLASS_DATA = {
                         "Resurection",
                         "Buff MP",
                         "Rall Resistance",
+                        "Rall WP",
                         "Self Stabilized",
                         "Invulnerability"
                     ]
@@ -2896,6 +2901,7 @@ const CLASS_DATA = {
                     "Mobility": 1,
                     "Roles": [
                         "Melee",
+                        "Zone",
                         "Constant",
                         "Single Target",
                         "Sub Placeur",
