@@ -18,7 +18,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -57,7 +57,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -97,7 +97,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -121,7 +121,7 @@ export const classData = {
   },
           "Autonomy": 1,
           "Mobility": 1,
-          "Roles": ["Rall PO", "Buff PO", "Rall Crit", "Sub Placeur", "Entity Stabilized", "Allies Stabilized", "Enemy Stabilized", "Rall MP"]
+          "Roles": ["Rall PO", "Buff PO", "Rall Crit", "Sub Positionning", "Entity Stabilized", "Allies Stabilized", "Enemy Stabilized", "Rall MP"]
         }
       },
       "Elements": ["Fire", "Earth", "Air"],
@@ -145,7 +145,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -184,7 +184,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -224,7 +224,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -264,7 +264,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -304,7 +304,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 0.0,
+        'Positionning': 0.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -352,7 +352,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -391,7 +391,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -431,7 +431,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -457,7 +457,7 @@ export const classData = {
           "Mobility": 1,
           "Roles": ["Area", "Single Target", "Burst", "Ranged", "Entity Stabilized"]
         },
-        "Support Placeur": {
+        "Support Positionning": {
         "Id": 4,
         "Notes": {
     'DPT': {
@@ -471,7 +471,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 4.0,
+        'Positionning': 4.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -495,7 +495,7 @@ export const classData = {
   },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Placeur", "Buff AP", "Sub Heal", "Sub Shield", "Entity Stabilized"]
+        "Roles": ["Positionning", "Buff AP", "Sub Heal", "Sub Shield", "Entity Stabilized"]
       }
     },
     "Elements": ["Water", "Earth", "Air"],
@@ -519,7 +519,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -558,7 +558,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -598,7 +598,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -646,7 +646,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -685,7 +685,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -725,7 +725,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -773,7 +773,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -812,7 +812,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -860,7 +860,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -899,7 +899,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -939,7 +939,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -979,7 +979,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1003,7 +1003,7 @@ export const classData = {
   },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Shield", "Rall MP", "Rall Resistance", "Buff PO", "Buff DI Range", "Sub Placeur", "Anti Heal", "Entity Stabilized", "Support Constant", "Support Area", "Rall Parade", "Rall Crit", "Allies Stabilized"]
+        "Roles": ["Shield", "Rall MP", "Rall Resistance", "Buff PO", "Buff DI Range", "Sub Positionning", "Anti Heal", "Entity Stabilized", "Support Constant", "Support Area", "Rall Parade", "Rall Crit", "Allies Stabilized"]
       }
     },
     "Elements": ["Fire", "Water", "Earth", "Stasis"],
@@ -1027,7 +1027,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1066,7 +1066,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1106,7 +1106,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1146,7 +1146,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 0.0,
+        'Positionning': 0.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1170,7 +1170,7 @@ export const classData = {
   },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Entity Stabilized", "Support Burst", "Support Area", "Rall Parade"]
+        "Roles": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Positionning", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Entity Stabilized", "Support Burst", "Support Area", "Rall Parade"]
       },
       "Support Utilitaire": {
         "Id": 5,
@@ -1186,7 +1186,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 4.0,
+        'Positionning': 4.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1210,7 +1210,7 @@ export const classData = {
   },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Entity Stabilized", "Support Burst", "Support Area", "Rall Parade"]
+        "Roles": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Positionning", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Entity Stabilized", "Support Burst", "Support Area", "Rall Parade"]
       },
       "Specific Distribution Heal": {
         "Id": 6,
@@ -1226,7 +1226,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 4.0,
+        'Positionning': 4.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1250,7 +1250,7 @@ export const classData = {
   },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Placeur", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Entity Stabilized", "Support Burst", "Support Area", "Rall Parade"]
+        "Roles": ["Sub DPT", "Rall MP", "Buff MP", "Buff AP", "Buff Resistance", "Sub Positionning", "Rall Crit", "Rall AP", "Rall DI", "Rall PO", "Buff Crit", "Anti Shield", "Anti Heal", "Entity Stabilized", "Support Burst", "Support Area", "Rall Parade"]
       },
     },
     "Elements": ["Fire", "Water", "Earth", "Air"],
@@ -1274,7 +1274,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1313,7 +1313,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1353,7 +1353,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1387,7 +1387,7 @@ export const classData = {
     "Id": 10,
     "Image": "assets/classes/male_masqueraider.png",
     "Voies": {
-      "Support Placeur": {
+      "Support Positionning": {
         "Id": 1,
          "Notes": {
     'DPT': {
@@ -1401,7 +1401,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 5.0,
+        'Positionning': 5.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1424,7 +1424,7 @@ export const classData = {
     }
 },  "Autonomy": 1,
          "Mobility": 1,
-         "Roles": ["Placeur", "Resurection", "Sub Shield", "Sub Heal", "Rall WP", "Buff Resistance"]
+         "Roles": ["Positionning", "Resurection", "Sub Shield", "Sub Heal", "Rall WP", "Buff Resistance"]
        },
       "Support Heal": {
         "Id": 2,
@@ -1440,7 +1440,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 5.0,
+        'Positionning': 5.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1464,7 +1464,7 @@ export const classData = {
   },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Heal", "Resurection", "Sub DPT", "Sub Shield", "Sub Placeur", "Rall WP", "Buff Resistance"]
+        "Roles": ["Heal", "Resurection", "Sub DPT", "Sub Shield", "Sub Positionning", "Rall WP", "Buff Resistance"]
       },
       "Support Shield": {
         "Id": 3,
@@ -1480,7 +1480,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 5.0,
+        'Positionning': 5.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1504,7 +1504,7 @@ export const classData = {
   },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Shield", "Resurection", "Sub Placeur", "Sub Heal", "Rall WP", "Buff Resistance"]
+        "Roles": ["Shield", "Resurection", "Sub Positionning", "Sub Heal", "Rall WP", "Buff Resistance"]
       },
       "DPT Melee": {
         "Id": 4,
@@ -1520,7 +1520,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1560,7 +1560,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 5.0,
+        'Positionning': 5.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1584,7 +1584,7 @@ export const classData = {
   },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Heal", "Resurection", "Sub DPT", "Sub Shield", "Sub Placeur", "Rall WP", "Buff Resistance"]
+        "Roles": ["Heal", "Resurection", "Sub DPT", "Sub Shield", "Sub Positionning", "Rall WP", "Buff Resistance"]
       },
     },
     "Elements": ["Fire", "Water", "Air"],
@@ -1608,7 +1608,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 4.0,
+        'Positionning': 4.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1631,7 +1631,7 @@ export const classData = {
     }
 },  "Autonomy": 1,
           "Mobility": 1,
-          "Roles": ["Sub Shield", "Buff AP", "Buff DI", "Rall Resistance", "Sub Placeur", "Sub Heal", "Buff Crit", "Buff Crit", "Buff PO", "Rall DI", "Rall Crit", "Rall Parade", "Anti Heal"]
+          "Roles": ["Sub Shield", "Buff AP", "Buff DI", "Rall Resistance", "Sub Positionning", "Sub Heal", "Buff Crit", "Buff Crit", "Buff PO", "Rall DI", "Rall Crit", "Rall Parade", "Anti Heal"]
         },
         "Support Heal": {
           "Id": 2,
@@ -1647,7 +1647,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 4.0,
+        'Positionning': 4.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1671,9 +1671,9 @@ export const classData = {
   },
           "Autonomy": 1,
           "Mobility": 1,
-          "Roles": ["Heal", "Sub DPT", "Buff AP", "Buff DI", "Rall Resistance", "Sub Placeur", "Buff Crit", "Buff Crit", "Buff PO", "Rall DI", "Rall Crit", "Rall Parade", "Anti Heal"]
+          "Roles": ["Heal", "Sub DPT", "Buff AP", "Buff DI", "Rall Resistance", "Sub Positionning", "Buff Crit", "Buff Crit", "Buff PO", "Rall DI", "Rall Crit", "Rall Parade", "Anti Heal"]
         },
-        "Support Placeur": {
+        "Support Positionning": {
           "Id": 3,
           "Notes": {
     'DPT': {
@@ -1687,7 +1687,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 4.0,
+        'Positionning': 4.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1711,7 +1711,7 @@ export const classData = {
   },
           "Autonomy": 1,
           "Mobility": 1,
-          "Roles": ["Placeur", "Buff AP", "Buff DI", "Rall Resistance", "Sub Heal", "Sub Shield", "Buff Crit", "Buff PO", "Rall DI", "Rall Crit", "Rall Parade", "Anti Heal"]
+          "Roles": ["Positionning", "Buff AP", "Buff DI", "Rall Resistance", "Sub Heal", "Sub Shield", "Buff Crit", "Buff PO", "Rall DI", "Rall Crit", "Rall Parade", "Anti Heal"]
         },
         "DPT Invoc": {
           "Id": 4,
@@ -1727,7 +1727,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1767,7 +1767,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1808,7 +1808,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1856,7 +1856,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1895,7 +1895,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1936,7 +1936,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -1971,7 +1971,7 @@ export const classData = {
     "Id": 13,
     "Image": "assets/classes/male_pandawa.png",
     "Voies": {
-      "Support Placeur": {
+      "Support Positionning": {
         "Id": 1,
         "Notes": {
     'DPT': {
@@ -1985,7 +1985,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 5.0,
+        'Positionning': 5.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2008,7 +2008,7 @@ export const classData = {
     }
 },  "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Placeur", "Sub Heal", "Buff DI", "Buff Resistance", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
+        "Roles": ["Positionning", "Sub Heal", "Buff DI", "Buff Resistance", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
 
       },
       "Support Heal": {
@@ -2025,7 +2025,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 5.0,
+        'Positionning': 5.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2049,7 +2049,7 @@ export const classData = {
   },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Heal", "Sub Placeur", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
+        "Roles": ["Heal", "Sub Positionning", "Sub DPT", "Buff DI", "Buff Resistance", "Buff MP", "Rall MP", "Rall Resistance", "Entity Stabilized"]
       },
       "DPT Melee": {
         "Id": 3,
@@ -2065,7 +2065,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 4.0,
+        'Positionning': 4.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2114,7 +2114,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2137,7 +2137,7 @@ export const classData = {
     }
 },  "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Constant", "Melee", "Ranged", "Burst", "Sub Placeur", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
+        "Roles": ["Constant", "Melee", "Ranged", "Burst", "Sub Positionning", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
       },
       "DPT Indirect": {
         "Id": 2,
@@ -2153,7 +2153,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2177,7 +2177,7 @@ export const classData = {
   },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Poison", "Melee", "Ranged", "Sub Placeur", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
+        "Roles": ["Poison", "Melee", "Ranged", "Sub Positionning", "Rall MP", "Rall WP", "Rall PO", "Anti Heal", "Anti Shield"]
       },
       "Support Utilitaire": {
         "Id": 3,
@@ -2193,7 +2193,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2217,7 +2217,7 @@ export const classData = {
   },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Sub Placeur", "Buff DI", "Rall MP", "Rall WP", "Rall PO", "Anti Heal"]
+        "Roles": ["Sub Positionning", "Buff DI", "Rall MP", "Rall WP", "Rall PO", "Anti Heal"]
       },
 
     },
@@ -2242,7 +2242,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2265,7 +2265,7 @@ export const classData = {
     }
 },  "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Melee", "Constant", "Single Target", "Sub Placeur", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
+        "Roles": ["Melee", "Constant", "Single Target", "Sub Positionning", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
       
       },
       "DPT Flame": {
@@ -2282,7 +2282,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2306,9 +2306,9 @@ export const classData = {
   },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Melee", "Zone", "Constant", "Sub Placeur", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
+        "Roles": ["Melee", "Zone", "Constant", "Sub Positionning", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
       },
-      "Support Placeur": {
+      "Support Positionning": {
         "Id": 3,
         "Notes": {
     'DPT': {
@@ -2322,7 +2322,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 5.0,
+        'Positionning': 5.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2346,7 +2346,7 @@ export const classData = {
   },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Placeur", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
+        "Roles": ["Positionning", "Buff DI", "Rall MP", "Self Stabilized", "Allies Stabilized"]
       }
     },
     "Elements": ["Fire", "Earth", "Air"],
@@ -2370,7 +2370,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2409,7 +2409,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 1.0,
+        'Positionning': 1.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2449,7 +2449,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2489,7 +2489,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 0.0,
+        'Positionning': 0.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2529,7 +2529,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 0.0,
+        'Positionning': 0.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2577,7 +2577,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 2.0,
+        'Positionning': 2.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2616,7 +2616,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2640,7 +2640,7 @@ export const classData = {
   },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Poison", "Melee", "Ranged", "Sub Placeur", "Buff PM"]
+        "Roles": ["Poison", "Melee", "Ranged", "Sub Positionning", "Buff PM"]
       },
       "Support": {
         "Id": 3,
@@ -2656,7 +2656,7 @@ export const classData = {
           "Support": {
             "Heal": 0,
             "Shield": 0,
-            "Placeur": 0,
+            "Positionning": 0,
             "Buff_MP": 1,
             "Buff_AP": 1,
             "Buff_DI": 0,
@@ -2680,7 +2680,7 @@ export const classData = {
         },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Sub Placeur", "Buff PM"]
+        "Roles": ["Sub Positionning", "Buff PM"]
       }
     },
     "Elements": ["Fire", "Water", "Air"],
@@ -2704,7 +2704,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2744,7 +2744,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2785,7 +2785,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 3.0,
+        'Positionning': 3.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2809,9 +2809,9 @@ export const classData = {
   },
         "Autonomy": 2,
         "Mobility": 1,
-        "Roles": ["Ranged", "Area", "Constant", "Rall AP", "Buff AP", "Sub Placeur", "Self Stabilized"]
+        "Roles": ["Ranged", "Area", "Constant", "Rall AP", "Buff AP", "Sub Positionning", "Self Stabilized"]
       },
-      "Support Placeur": {
+      "Support Positionning": {
         "Id": 4,
         "Notes": {
     'DPT': {
@@ -2825,7 +2825,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 4.0,
+        'Positionning': 4.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2849,7 +2849,7 @@ export const classData = {
   },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Placeur", "Rall AP", "Buff AP", "Rall DI", "Self Stabilized", "Sub DPT"]
+        "Roles": ["Positionning", "Rall AP", "Buff AP", "Rall DI", "Self Stabilized", "Sub DPT"]
       },
       "Support Utilitaire": {
         "Id": 5,
@@ -2865,7 +2865,7 @@ export const classData = {
     'Support': {
         'Heal': 0.0,
         'Shield': 0.0,
-        'Placeur': 4.0,
+        'Positionning': 4.0,
         'Buff_MP': 0.0,
         'Buff_AP': 0.0,
         'Buff_DI': 0.0,
@@ -2889,7 +2889,7 @@ export const classData = {
   },
         "Autonomy": 1,
         "Mobility": 1,
-        "Roles": ["Placeur", "Rall AP", "Buff AP", "Rall DI", "Self Stabilized", "Sub DPT"]
+        "Roles": ["Positionning", "Rall AP", "Buff AP", "Rall DI", "Self Stabilized", "Sub DPT"]
       },
     },
     "Elements": ["Fire", "Water", "Air"],
@@ -3052,8 +3052,8 @@ export const TRANSLATIONS = {
     fr: 'Support Soin',
     en: 'Support Heal'
   },
-  support_placeur: {
-    fr: 'Support Placeur',
+  support_positionning: {
+    fr: 'Support Positionning',
     en: 'Support Positioning'
   },
   support_utilitaire: {
@@ -3206,8 +3206,8 @@ export const TRANSLATIONS = {
     fr: "Sous DPT",
     en: "Sub DPT"
   },
-  placeur: {
-    fr: "Placeur",
+  positionning: {
+    fr: "Positionning",
     en: "Positioning"
   },
   dpt: {
@@ -3222,8 +3222,8 @@ export const TRANSLATIONS = {
     fr: "Armure",
     en: "Shield"
   },
-  sub_placeur: {
-    fr: "Sous Placeur",
+  sub_positionning: {
+    fr: "Sous Positionning",
     en: "Sub Positioning"
   },
   resurection: {

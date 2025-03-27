@@ -3,14 +3,14 @@ import { classData, LANGUAGES, TRANSLATIONS, translate } from './ext/utils_packa
 
 const IMPORTANT_ROLES = [
     "Area", "Single Target", 
-    "Heal", "Shield", "Placeur", "Resurection",
+    "Heal", "Shield", "Positionning", "Resurection",
     "Buff DI", "Rall Resistance"
 ];
 
 const OPTIONAL_ROLES = [
     "Burst", "Ranged", "Melee", "Poison", 
     "Entity Stabilized", "Enemy Stabilized", "Allies Stabilized", "Self Stabilized", "Invulnerability",
-    "Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Placeur", "Off Tank",
+    "Sub Shield", "Sub Heal", "Sub DPT", "Sub Tank", "Sub Positionning", "Off Tank",
     "Buff AP", "Buff MP", "Buff Resistance", "Buff Crit", "Buff PO", "Buff Parade", "Buff WP",
     "Rall AP", "Rall MP", "Rall DI", "Rall Crit", "Rall PO", "Rall Parade", "Rall WP",
     "Anti Shield", "Anti Heal"
@@ -20,7 +20,7 @@ const CATEGORIES = {
     'Damage Type': ["Constant", "Burst", "Single Target", "Area", "Melee", "Ranged", "Indirect"],
     'Buff': ["Buff DI", "Buff AP", "Buff MP", "Buff Resistance", "Buff Crit", "Buff PO", "Buff Parade", "Buff WP"],
     'Rall': ["Rall DI", "Rall AP", "Rall MP", "Rall Resistance", "Rall Crit", "Rall PO", "Rall Parade", "Rall WP"],
-    'Sub Roles': ["Off Tank", "Sub Shield", "Sub Heal", "Sub DPT", "Sub Placeur"],
+    'Sub Roles': ["Off Tank", "Sub Shield", "Sub Heal", "Sub DPT", "Sub Positionning"],
     'Specific': ["Resurection", "Anti Shield", "Anti Heal", "Enemy Stabilized", "Allies Stabilized", "Self Stabilized", "Invulnerability"]
 };
 
@@ -501,7 +501,7 @@ function updateSlotOrder() {
         (slot) => slotHasRole(slot, "Heal") && slotHasRole(slot, "Sub Shield"), // 2. Heal + Sub Shield
         (slot) => slotHasRole(slot, "Heal"),           // 3. Heal
         (slot) => slotVoieContains(slot, "Utilitaire"),     // 4. Utilitaire
-        (slot) => slotHasRole(slot, "Placeur"),        // 5. Placeur
+        (slot) => slotHasRole(slot, "Positionning"),        // 5. Positionning
         (slot) => slotHasRole(slot, "Area"),           // 6. Area
         (slot) => slotHasRole(slot, "Burst")           // 7. Burst
     ];
@@ -688,8 +688,8 @@ function updateRolesSummary() {
                 } else if (classVoies[slot.voie].Roles.includes('Shield')) {
                     presentRoles.add('Shield');
                 }
-                if (classVoies[slot.voie].Roles.includes('Placeur')) {
-                    presentRoles.add('Placeur');
+                if (classVoies[slot.voie].Roles.includes('Positionning')) {
+                    presentRoles.add('Positionning');
                 }
                 if (classVoies[slot.voie].Roles.includes('Rall Resistance')) {
                     presentRoles.add('Rall Resistance');
@@ -759,7 +759,7 @@ function updateRolesSummary() {
         "Resurection",
         "Rall Resistance",
         "Shield",
-        "Placeur",
+        "Positionning",
     ];
 
     rolesToCheck.forEach(role => {

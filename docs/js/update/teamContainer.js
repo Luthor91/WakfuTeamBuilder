@@ -15,7 +15,7 @@ function updateSlotOrder() {
         (slot) => slotHasRole(slot, "Heal") && slotHasRole(slot, "Sub Shield"), // 2. Heal + Sub Shield
         (slot) => slotHasRole(slot, "Heal"),           // 3. Heal
         (slot) => slotVoieContains(slot, "Utilitaire"),     // 4. Utilitaire
-        (slot) => slotHasRole(slot, "Placeur"),        // 5. Placeur
+        (slot) => slotHasRole(slot, "Positionning"),        // 5. Positionning
         (slot) => slotHasRole(slot, "Area"),           // 6. Area
         (slot) => slotHasRole(slot, "Burst")           // 7. Burst
     ];

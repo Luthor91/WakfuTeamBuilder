@@ -13,7 +13,7 @@ from io import BytesIO
 # Define the keys for the Notes dictionary
 NOTES_KEYS = {
     "DPT": ["Melee", "Ranged", "Area", "Single_Target", "Constant", "Burst"],
-    "Support": ["Heal", "Shield", "Placeur", "Buff_MP", "Buff_AP", "Buff_DI", "Protection"],
+    "Support": ["Heal", "Shield", "Positionning", "Buff_MP", "Buff_AP", "Buff_DI", "Protection"],
     "Entrave": ["Rall_MP", "Rall_AP", "Rall_DI", "Rall_Resistance", "Boringness"],
     "Team_Support": ["Support_Area", "Support_Heal", "Support_Shield", "Support_Single_Target", "Support_Melee", "Support_Ranged"]
 }

@@ -35,7 +35,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -85,7 +85,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -134,7 +134,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -162,7 +162,7 @@ const CLASS_DATA = {
                         "Rall PO",
                         "Buff PO",
                         "Rall Crit",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Entity Stabilized",
                         "Allies Stabilized",
                         "Enemy Stabilized",
@@ -195,7 +195,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 1,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -248,7 +248,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 1,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -298,7 +298,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 1,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -350,7 +350,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 4,
                             "Shield": 1,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -403,7 +403,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 2,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -468,7 +468,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -514,7 +514,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -561,7 +561,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -593,7 +593,7 @@ const CLASS_DATA = {
                         "Entity Stabilized"
                     ]
                 },
-                "Support Placeur": {
+                "Support Positionning": {
                     "Id": 4,
                     "Notes": {
                         "DPT": {
@@ -607,7 +607,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 4,
+                            "Positionning": 4,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -632,7 +632,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Placeur",
+                        "Positionning",
                         "Buff AP",
                         "Sub Heal",
                         "Sub Shield",
@@ -665,7 +665,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 5,
                             "Shield": 1,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -720,7 +720,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -770,7 +770,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 4,
                             "Shield": 3,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -837,7 +837,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -887,7 +887,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -935,7 +935,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -995,7 +995,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1047,7 +1047,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1110,7 +1110,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1163,7 +1163,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1215,7 +1215,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1267,7 +1267,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1297,7 +1297,7 @@ const CLASS_DATA = {
                         "Rall Resistance",
                         "Buff PO",
                         "Buff DI Range",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Anti Heal",
                         "Entity Stabilized",
                         "Support Constant",
@@ -1334,7 +1334,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1389,7 +1389,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1442,7 +1442,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1497,7 +1497,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 4,
                             "Shield": 0,
-                            "Placeur": 0,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1527,7 +1527,7 @@ const CLASS_DATA = {
                         "Buff MP",
                         "Buff AP",
                         "Buff Resistance",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Rall Crit",
                         "Rall AP",
                         "Rall DI",
@@ -1555,7 +1555,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Placeur": 4,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1585,7 +1585,7 @@ const CLASS_DATA = {
                         "Buff MP",
                         "Buff AP",
                         "Buff Resistance",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Rall Crit",
                         "Rall AP",
                         "Rall DI",
@@ -1613,7 +1613,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 0,
-                            "Placeur": 4,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1643,7 +1643,7 @@ const CLASS_DATA = {
                         "Buff MP",
                         "Buff AP",
                         "Buff Resistance",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Rall Crit",
                         "Rall AP",
                         "Rall DI",
@@ -1684,7 +1684,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1734,7 +1734,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1784,7 +1784,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1830,7 +1830,7 @@ const CLASS_DATA = {
             "Id": 10,
             "Image": "assets/classes/male_masqueraider.png",
             "Voies": {
-                "Support Placeur": {
+                "Support Positionning": {
                     "Id": 1,
                     "Notes": {
                         "DPT": {
@@ -1844,7 +1844,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 5,
+                            "Positionning": 5,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1869,7 +1869,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Placeur",
+                        "Positionning",
                         "Resurection",
                         "Sub Shield",
                         "Sub Heal",
@@ -1891,7 +1891,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 4,
                             "Shield": 0,
-                            "Placeur": 5,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1920,7 +1920,7 @@ const CLASS_DATA = {
                         "Resurection",
                         "Sub DPT",
                         "Sub Shield",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Rall WP",
                         "Buff Resistance"
                     ]
@@ -1939,7 +1939,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 5,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1966,7 +1966,7 @@ const CLASS_DATA = {
                     "Roles": [
                         "Shield",
                         "Resurection",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Sub Heal",
                         "Rall WP",
                         "Buff Resistance"
@@ -1986,7 +1986,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2032,7 +2032,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 0,
-                            "Placeur": 5,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2061,7 +2061,7 @@ const CLASS_DATA = {
                         "Resurection",
                         "Sub DPT",
                         "Sub Shield",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Rall WP",
                         "Buff Resistance"
                     ]
@@ -2092,7 +2092,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Placeur": 4,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2121,7 +2121,7 @@ const CLASS_DATA = {
                         "Buff AP",
                         "Buff DI",
                         "Rall Resistance",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Sub Heal",
                         "Buff Crit",
                         "Buff Crit",
@@ -2146,7 +2146,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 4,
                             "Shield": 0,
-                            "Placeur": 4,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2176,7 +2176,7 @@ const CLASS_DATA = {
                         "Buff AP",
                         "Buff DI",
                         "Rall Resistance",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Buff Crit",
                         "Buff Crit",
                         "Buff PO",
@@ -2186,7 +2186,7 @@ const CLASS_DATA = {
                         "Anti Heal"
                     ]
                 },
-                "Support Placeur": {
+                "Support Positionning": {
                     "Id": 3,
                     "Notes": {
                         "DPT": {
@@ -2200,7 +2200,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Placeur": 4,
+                            "Positionning": 4,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2225,7 +2225,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Placeur",
+                        "Positionning",
                         "Buff AP",
                         "Buff DI",
                         "Rall Resistance",
@@ -2253,7 +2253,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2301,7 +2301,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2348,7 +2348,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2408,7 +2408,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2455,7 +2455,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2501,7 +2501,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2543,7 +2543,7 @@ const CLASS_DATA = {
             "Id": 13,
             "Image": "assets/classes/male_pandawa.png",
             "Voies": {
-                "Support Placeur": {
+                "Support Positionning": {
                     "Id": 1,
                     "Notes": {
                         "DPT": {
@@ -2557,7 +2557,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Placeur": 5,
+                            "Positionning": 5,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2582,7 +2582,7 @@ const CLASS_DATA = {
                     "Autonomy": 2,
                     "Mobility": 1,
                     "Roles": [
-                        "Placeur",
+                        "Positionning",
                         "Sub Heal",
                         "Buff DI",
                         "Buff Resistance",
@@ -2606,7 +2606,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 0,
-                            "Placeur": 5,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2632,7 +2632,7 @@ const CLASS_DATA = {
                     "Mobility": 1,
                     "Roles": [
                         "Heal",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Sub DPT",
                         "Buff DI",
                         "Buff Resistance",
@@ -2656,7 +2656,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Placeur": 4,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2714,7 +2714,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2743,7 +2743,7 @@ const CLASS_DATA = {
                         "Melee",
                         "Ranged",
                         "Burst",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Rall MP",
                         "Rall WP",
                         "Rall PO",
@@ -2765,7 +2765,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2793,7 +2793,7 @@ const CLASS_DATA = {
                         "Poison",
                         "Melee",
                         "Ranged",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Rall MP",
                         "Rall WP",
                         "Rall PO",
@@ -2815,7 +2815,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2840,7 +2840,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Buff DI",
                         "Rall MP",
                         "Rall WP",
@@ -2874,7 +2874,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2902,7 +2902,7 @@ const CLASS_DATA = {
                         "Melee",
                         "Constant",
                         "Single Target",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Buff DI",
                         "Rall MP",
                         "Self Stabilized",
@@ -2923,7 +2923,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2951,14 +2951,14 @@ const CLASS_DATA = {
                         "Melee",
                         "Area",
                         "Constant",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Buff DI",
                         "Rall MP",
                         "Self Stabilized",
                         "Allies Stabilized"
                     ]
                 },
-                "Support Placeur": {
+                "Support Positionning": {
                     "Id": 3,
                     "Notes": {
                         "DPT": {
@@ -2972,7 +2972,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 5,
+                            "Positionning": 5,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2997,7 +2997,7 @@ const CLASS_DATA = {
                     "Autonomy": 2,
                     "Mobility": 1,
                     "Roles": [
-                        "Placeur",
+                        "Positionning",
                         "Buff DI",
                         "Rall MP",
                         "Self Stabilized",
@@ -3030,7 +3030,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 5,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3079,7 +3079,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Placeur": 1,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3131,7 +3131,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3182,7 +3182,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3230,7 +3230,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3291,7 +3291,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 2,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3336,7 +3336,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3364,7 +3364,7 @@ const CLASS_DATA = {
                         "Poison",
                         "Melee",
                         "Ranged",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Buff PM"
                     ]
                 },
@@ -3382,7 +3382,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3407,7 +3407,7 @@ const CLASS_DATA = {
                     "Autonomy": 2,
                     "Mobility": 1,
                     "Roles": [
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Buff PM"
                     ]
                 }
@@ -3437,7 +3437,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3485,7 +3485,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3533,7 +3533,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Placeur": 3,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3563,11 +3563,11 @@ const CLASS_DATA = {
                         "Constant",
                         "Rall AP",
                         "Buff AP",
-                        "Sub Placeur",
+                        "Sub Positionning",
                         "Self Stabilized"
                     ]
                 },
-                "Support Placeur": {
+                "Support Positionning": {
                     "Id": 4,
                     "Notes": {
                         "DPT": {
@@ -3581,7 +3581,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 4,
+                            "Positionning": 4,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3606,7 +3606,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Placeur",
+                        "Positionning",
                         "Rall AP",
                         "Buff AP",
                         "Rall DI",
@@ -3628,7 +3628,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Placeur": 4,
+                            "Positionning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3653,7 +3653,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Placeur",
+                        "Positionning",
                         "Rall AP",
                         "Buff AP",
                         "Rall DI",
