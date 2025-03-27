@@ -280,7 +280,6 @@ const CLASS_DATA = {
                         "Buff Crit",
                         "Buff DI",
                         "Resurection",
-                        "Rall WP",
                         "Rall Resistance",
                         "Self Stabilized"
                     ]
@@ -2901,7 +2900,6 @@ const CLASS_DATA = {
                     "Mobility": 1,
                     "Roles": [
                         "Melee",
-                        "Zone",
                         "Constant",
                         "Single Target",
                         "Sub Placeur",
@@ -2951,7 +2949,7 @@ const CLASS_DATA = {
                     "Mobility": 1,
                     "Roles": [
                         "Melee",
-                        "Zone",
+                        "Area",
                         "Constant",
                         "Sub Placeur",
                         "Buff DI",
