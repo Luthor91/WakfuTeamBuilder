@@ -2,6 +2,7 @@ import { getTeamRoles, setTeamRoles, isTeamRolesEmpty } from '../dataModel/team.
 import { displayNotification } from '../uiHandler/popup.js';
 import { updateAll } from '../update/update.js';
 import { toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
+import { displayFavoriteTeamsMenu } from '../uiHandler/favorite.js';
 
 
 
@@ -73,4 +74,15 @@ function loadTeamToLocalStorage() {
 }
 
 
-export { saveCurrentTeam, saveTeamToLocalStorage, loadTeamToLocalStorage, applyFavoriteTeam };
+// Fonction pour supprimer une équipe du localStorage
+function deleteTeam(index) {
+    let savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
+    savedTeams.splice(index, 1);
+    localStorage.setItem("savedTeams", JSON.stringify(savedTeams));
+    displayNotification("Équipe supprimée !");
+    toggleSavedTeamsMenu();
+    displayFavoriteTeamsMenu();
+}
+
+
+export { saveCurrentTeam, saveTeamToLocalStorage, loadTeamToLocalStorage, applyFavoriteTeam, deleteTeam };

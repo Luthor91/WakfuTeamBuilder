@@ -1,6 +1,7 @@
 import { getCurrentLanguage } from '../dataModel/translation.js';
 import { translate } from '../utils/translate.js';
-import { applyFavoriteTeam } from '../storage/localStorage.js';
+import { applyFavoriteTeam, deleteTeam } from '../storage/localStorage.js';
+import { displayNotification, showConfirmationModal } from './popup.js';
 
 
 
@@ -73,6 +74,14 @@ function displayFavoriteTeamsMenu() {
     });
 
     menu.classList.remove("hidden"); // Afficher le menu
+}
+
+
+// Fonction pour confirmer la suppression d'une équipe
+function confirmDeleteTeam(index) {
+    showConfirmationModal("Êtes-vous sûr de vouloir supprimer cette équipe ?", () => {
+        deleteTeam(index);
+    });
 }
 
 export { displayFavoriteTeamsMenu };
