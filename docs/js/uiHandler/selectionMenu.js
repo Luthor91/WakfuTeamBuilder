@@ -6,7 +6,7 @@ import { getControlPressed, getShiftPressed } from '../events/eventKeyboardHandl
 import { saveTeamToLocalStorage } from '../storage/localStorage.js';
 import { updateAll } from '../update/update.js';
 import { displayFavoriteTeamsMenu } from './favorite.js';
-import { displayClassRoles } from '../uiHandler/classInfos.js';
+import { toggleRolesModal } from '../uiHandler/classInfos.js';
 
 let selectedSlot = null;
 
@@ -99,7 +99,7 @@ function _createClassImage(imgSrc) {
         const l_isControlPressed = getControlPressed();
         if (l_isControlPressed) {
             const className = img.getAttribute('src').split('_', 2)[1].split('.', 1)[0];
-            displayClassRoles(className);
+            toggleRolesModal(className);
             return;
             
         }
