@@ -60,10 +60,10 @@ document.addEventListener('keydown', function(e) {
   }
 
   if (e.key === "Delete") {    
-    const l_focusedIndex = getFocusedSlot();
-    console.log("Slot ", l_focusedIndex, " will be deleted");
-    if (l_focusedIndex !== -1) {
-      clearSlot(l_focusedIndex);
+    const l_focusedSlotIndex = getFocusedSlot();
+    console.log("Slot ", l_focusedSlotIndex, " will be deleted");
+    if (l_focusedSlotIndex !== -1) {
+      clearSlot(l_focusedSlotIndex);
       updateAll();
     }
   }
@@ -72,24 +72,24 @@ document.addEventListener('keydown', function(e) {
   const items = document.getElementById("menu-content").children;
   const l_currentClassIndex = getCurrentClassIndex();
 
-  if (e.key === "Enter") {
+  if (e.key === "Enter") {    
       g_isEnterPressed = true;
 
     if (getAutocompleteValidated() == true) {
       validateClassListSelection();
     }
 
-    const l_focusedIndex = getFocusedSlot();
-    if (l_focusedIndex !== -1 && !isSelectionMenuDisplayed()) {
-      console.log("Slot ", l_focusedIndex, " will be filled");
+    const l_focusedSlotIndex = getFocusedSlot();
+    if (l_focusedSlotIndex !== -1 && !isSelectionMenuDisplayed()) {
+      console.log("Slot ", l_focusedSlotIndex, " will be filled");
       // Minus 1 parce que l'index des slots commence à 0
-      openSelectionMenu(l_focusedIndex - 1);
+      openSelectionMenu(l_focusedSlotIndex);
     }
 
     if (l_currentClassIndex >= 0 && isSelectionMenuDisplayed()) {
-      console.log("clic");
       items[l_currentClassIndex].click();
       const img = items[l_currentClassIndex].children[0];
+      
       handleClickOnSelectionMenuImage(img);
 
     }
@@ -97,16 +97,24 @@ document.addEventListener('keydown', function(e) {
 
   const l_isSelectionMenuDisplayed = isSelectionMenuDisplayed();
   if (e.key === "ArrowRight") {
-    if (l_isSelectionMenuDisplayed && l_currentClassIndex < items.length - 1) setCurrentClassIndex(l_currentClassIndex + 1);
+    if (l_isSelectionMenuDisplayed && l_currentClassIndex < items.length - 1) {
+      setCurrentClassIndex(l_currentClassIndex + 1);
+    }
   }
   if (e.key === "ArrowLeft") {
-    if (l_isSelectionMenuDisplayed && l_currentClassIndex > 0) setCurrentClassIndex(l_currentClassIndex - 1);
+    if (l_isSelectionMenuDisplayed && l_currentClassIndex > 0) {
+      setCurrentClassIndex(l_currentClassIndex - 1);
+    }
   }
   if (e.key === "ArrowDown") {
-    if (l_isSelectionMenuDisplayed && l_currentClassIndex + 6 < items.length) setCurrentClassIndex(l_currentClassIndex + 6);
+    if (l_isSelectionMenuDisplayed && l_currentClassIndex + 6 < items.length) {
+      setCurrentClassIndex(l_currentClassIndex + 6);
+    }
   }  
   if (e.key === "ArrowUp") {
-    if (l_isSelectionMenuDisplayed && l_currentClassIndex - 6 >= 0) setCurrentClassIndex(l_currentClassIndex - 6);
+    if (l_isSelectionMenuDisplayed && l_currentClassIndex - 6 >= 0) {
+        setCurrentClassIndex(l_currentClassIndex - 6);
+      }
   }
 
   if (e.key >= 1 && e.key <= 6) { 

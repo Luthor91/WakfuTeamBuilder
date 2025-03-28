@@ -57,6 +57,7 @@ function hideSelectionMenu() {
     if (menu) {
         menu.classList.add("hidden");
         g_isSelectionMenuDislayed = false;
+        setCurrentClassIndex(-1);
     }
 }
 
@@ -124,7 +125,6 @@ function handleClickOnSelectionMenuImage(img) {
         const className = img.getAttribute('src').split('_', 2)[1].split('.', 1)[0];
         displayClassRoles(className);
         return;
-        
     }
 
     const l_isShiftPressed = getShiftPressed();
@@ -142,6 +142,8 @@ function handleClickOnSelectionMenuImage(img) {
 function _selectSingleClass(imgSrc) {
     if (selectedSlot !== null) {
         const slot = document.querySelector(`.slot[data-slot="${selectedSlot}"]`);
+        console.log("selectedSlot : ", selectedSlot);
+        
         if (slot) {
             slot.innerHTML = "";
             const img = document.createElement("img");
