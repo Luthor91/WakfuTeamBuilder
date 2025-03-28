@@ -1,7 +1,7 @@
 import { hideRolesModal } from '../uiHandler/classInfos.js';
 import { g_currentClassIndex, getCurrentClassIndex, handleClickOnSelectionMenuImage, hideSelectionMenu, isSelectionMenuDisplayed, openSelectionMenu, setCurrentClassIndex, toggleSavedTeamsMenu } from '../uiHandler/selectionMenu.js';
-import { getAutocompleteValidated, hideAutocompleteClassList, toggleAutocompleteClassList } from '../uiHandler/autocompleteClassList.js';
-import { updateAutocompleteClassList, validateClassListSelection } from '../update/autocompleteClassList.js';
+import { getAutocompleteValidated, hideAutocompleteClassList, toggleAutocompleteClassList } from '../uiHandler/autoCompleteClassList.js';
+import { updateAutocompleteClassList, validateClassListSelection } from '../update/autoCompleteClassList.js';
 import { focusSlot, getFocusedSlot, setFocusedSlot } from '../uiHandler/slot.js';
 import { clearSlot } from '../update/teamContainer.js';
 import { updateAll } from '../update/update.js';
