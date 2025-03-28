@@ -80,13 +80,13 @@ document.addEventListener('keydown', function(e) {
     }
 
     const l_focusedIndex = getFocusedSlot();
-    if (l_focusedIndex !== -1) {
+    if (l_focusedIndex !== -1 && !isSelectionMenuDisplayed()) {
       console.log("Slot ", l_focusedIndex, " will be filled");
       // Minus 1 parce que l'index des slots commence à 0
       openSelectionMenu(l_focusedIndex - 1);
     }
 
-    if (l_currentClassIndex >= 0) {
+    if (l_currentClassIndex >= 0 && isSelectionMenuDisplayed()) {
       console.log("clic");
       items[l_currentClassIndex].click();
       const img = items[l_currentClassIndex].children[0];
