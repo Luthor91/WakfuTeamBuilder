@@ -15,8 +15,8 @@ function updateSlotOrder() {
         (slot) => slotHasRole(slot, "Shield"),         // 1. Shield
         (slot) => slotHasRole(slot, "Heal") && slotHasRole(slot, "Sub Shield"), // 2. Heal + Sub Shield
         (slot) => slotHasRole(slot, "Heal"),           // 3. Heal
-        (slot) => slotVoieContains(slot, "Utilitaire"),     // 4. Utilitaire
-        (slot) => slotHasRole(slot, "Placeur"),        // 5. Placeur
+        (slot) => slotVoieContains(slot, "Utilitary"),     // 4. Utilitaire
+        (slot) => slotHasRole(slot, "Positioning"),        // 5. Placeur
         (slot) => slotHasRole(slot, "Area"),           // 6. Area
         (slot) => slotHasRole(slot, "Burst")           // 7. Burst
     ];
@@ -96,7 +96,7 @@ function updateTeamContainer() {
                     }
                 }
 
-                // Ajout du bouton de suppression (si absent)
+                // Ajout du bouton de suppression
                 let deleteButton = slotElement.querySelector(".delete-button");
                 if (!deleteButton) {
                     deleteButton = document.createElement("div");

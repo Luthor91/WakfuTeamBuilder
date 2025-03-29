@@ -26,8 +26,8 @@ const CLASS_DATA = {
                     "Notes": {
                         "DPT": {
                             "Melee": 0,
-                            "Ranged": 5,
-                            "Area": 5,
+                            "Ranged": 4,
+                            "Area": 4,
                             "Single_Target": 3,
                             "Constant": 3,
                             "Burst": 4
@@ -35,7 +35,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -76,7 +76,7 @@ const CLASS_DATA = {
                     "Notes": {
                         "DPT": {
                             "Melee": 0,
-                            "Ranged": 5,
+                            "Ranged": 4,
                             "Area": 3,
                             "Single_Target": 4,
                             "Constant": 4,
@@ -85,7 +85,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -120,7 +120,7 @@ const CLASS_DATA = {
                         "Rall MP"
                     ]
                 },
-                "Support Utilitaire": {
+                "Support Utilitary": {
                     "Id": 3,
                     "Notes": {
                         "DPT": {
@@ -134,7 +134,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -162,7 +162,7 @@ const CLASS_DATA = {
                         "Rall PO",
                         "Buff PO",
                         "Rall Crit",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Entity Stabilized",
                         "Allies Stabilized",
                         "Enemy Stabilized",
@@ -194,8 +194,8 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 2,
-                            "Shield": 1,
-                            "Positionning": 0,
+                            "Shield": 2,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -247,8 +247,8 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 2,
-                            "Shield": 1,
-                            "Positionning": 0,
+                            "Shield": 2,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -297,8 +297,8 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 2,
-                            "Shield": 1,
-                            "Positionning": 0,
+                            "Shield": 2,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -349,8 +349,8 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 4,
-                            "Shield": 1,
-                            "Positionning": 0,
+                            "Shield": 2,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -403,7 +403,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 2,
-                            "Positionning": 0,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -458,17 +458,17 @@ const CLASS_DATA = {
                     "Id": 1,
                     "Notes": {
                         "DPT": {
-                            "Melee": 5,
+                            "Melee": 4,
                             "Ranged": 0,
-                            "Area": 5,
-                            "Single_Target": 5,
+                            "Area": 4,
+                            "Single_Target": 4,
                             "Constant": 1,
-                            "Burst": 5
+                            "Burst": 4
                         },
                         "Support": {
                             "Heal": 1,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -509,12 +509,12 @@ const CLASS_DATA = {
                             "Area": 4,
                             "Single_Target": 4,
                             "Constant": 1,
-                            "Burst": 5
+                            "Burst": 4
                         },
                         "Support": {
                             "Heal": 1,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -552,16 +552,16 @@ const CLASS_DATA = {
                     "Notes": {
                         "DPT": {
                             "Melee": 0,
-                            "Ranged": 5,
+                            "Ranged": 4,
                             "Area": 3,
-                            "Single_Target": 5,
+                            "Single_Target": 4,
                             "Constant": 1,
-                            "Burst": 5
+                            "Burst": 4
                         },
                         "Support": {
                             "Heal": 1,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -593,7 +593,7 @@ const CLASS_DATA = {
                         "Entity Stabilized"
                     ]
                 },
-                "Support Positionning": {
+                "Support Positioning": {
                     "Id": 4,
                     "Notes": {
                         "DPT": {
@@ -607,7 +607,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Positionning": 4,
+                            "Positioning": 4,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -632,7 +632,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Positionning",
+                        "Positioning",
                         "Buff AP",
                         "Sub Heal",
                         "Sub Shield",
@@ -663,13 +663,13 @@ const CLASS_DATA = {
                             "Burst": 2
                         },
                         "Support": {
-                            "Heal": 5,
+                            "Heal": 4,
                             "Shield": 1,
-                            "Positionning": 0,
+                            "Positioning": 2,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 1,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -719,12 +719,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 2,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -770,11 +770,11 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 4,
                             "Shield": 3,
-                            "Positionning": 0,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -823,7 +823,7 @@ const CLASS_DATA = {
             "Id": 5,
             "Image": "assets/classes/male_enutrof.png",
             "Voies": {
-                "Support Utilitaire": {
+                "Support Utilitary": {
                     "Id": 1,
                     "Notes": {
                         "DPT": {
@@ -837,11 +837,11 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 2,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 2,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -877,19 +877,19 @@ const CLASS_DATA = {
                     "Id": 2,
                     "Notes": {
                         "DPT": {
-                            "Melee": 5,
+                            "Melee": 4,
                             "Ranged": 0,
                             "Area": 1,
-                            "Single_Target": 5,
-                            "Constant": 5,
+                            "Single_Target": 4,
+                            "Constant": 4,
                             "Burst": 3
                         },
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 2,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 1,
                             "Buff_DI": 0,
                             "Protection": 0
                         },
@@ -935,9 +935,9 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 2,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 1,
                             "Buff_DI": 0,
                             "Protection": 0
                         },
@@ -994,12 +994,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 0,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 4,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 3
+                            "Protection": 4
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1038,20 +1038,20 @@ const CLASS_DATA = {
                     "Notes": {
                         "DPT": {
                             "Melee": 1,
-                            "Ranged": 5,
-                            "Area": 5,
+                            "Ranged": 4,
+                            "Area": 4,
                             "Single_Target": 1,
                             "Constant": 1,
-                            "Burst": 5
+                            "Burst": 4
                         },
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1102,15 +1102,15 @@ const CLASS_DATA = {
                         "DPT": {
                             "Melee": 3,
                             "Ranged": 4,
-                            "Area": 5,
+                            "Area": 4,
                             "Single_Target": 3,
-                            "Constant": 5,
+                            "Constant": 4,
                             "Burst": 4
                         },
                         "Support": {
                             "Heal": 0,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1155,15 +1155,15 @@ const CLASS_DATA = {
                         "DPT": {
                             "Melee": 0,
                             "Ranged": 4,
-                            "Area": 5,
+                            "Area": 4,
                             "Single_Target": 3,
-                            "Constant": 5,
+                            "Constant": 4,
                             "Burst": 4
                         },
                         "Support": {
                             "Heal": 0,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1214,8 +1214,8 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 0,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1266,8 +1266,8 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 0,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 4,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1297,7 +1297,7 @@ const CLASS_DATA = {
                         "Rall Resistance",
                         "Buff PO",
                         "Buff DI Range",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Anti Heal",
                         "Entity Stabilized",
                         "Support Constant",
@@ -1333,12 +1333,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 3,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 3,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 2,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1388,12 +1388,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 3,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 3,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 2,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1441,12 +1441,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 3,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 3,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 2,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1496,12 +1496,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 4,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 0,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 2,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1527,7 +1527,7 @@ const CLASS_DATA = {
                         "Buff MP",
                         "Buff AP",
                         "Buff Resistance",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Rall Crit",
                         "Rall AP",
                         "Rall DI",
@@ -1541,7 +1541,7 @@ const CLASS_DATA = {
                         "Rall Parade"
                     ]
                 },
-                "Support Utilitaire": {
+                "Support Utilitary": {
                     "Id": 5,
                     "Notes": {
                         "DPT": {
@@ -1554,12 +1554,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 2,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 4,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 2,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 3
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1585,7 +1585,7 @@ const CLASS_DATA = {
                         "Buff MP",
                         "Buff AP",
                         "Buff Resistance",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Rall Crit",
                         "Rall AP",
                         "Rall DI",
@@ -1612,12 +1612,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 3,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 2,
+                            "Positioning": 4,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 2,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1643,7 +1643,7 @@ const CLASS_DATA = {
                         "Buff MP",
                         "Buff AP",
                         "Buff Resistance",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Rall Crit",
                         "Rall AP",
                         "Rall DI",
@@ -1683,12 +1683,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 0,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 1,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 1,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1733,12 +1733,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 0,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 1,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 1,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1770,7 +1770,7 @@ const CLASS_DATA = {
                         "Enemy Stabilized"
                     ]
                 },
-                "Support Utilitaire": {
+                "Support Utilitary": {
                     "Id": 3,
                     "Notes": {
                         "DPT": {
@@ -1783,12 +1783,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 0,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 1,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 4,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1830,7 +1830,7 @@ const CLASS_DATA = {
             "Id": 10,
             "Image": "assets/classes/male_masqueraider.png",
             "Voies": {
-                "Support Positionning": {
+                "Support Positioning": {
                     "Id": 1,
                     "Notes": {
                         "DPT": {
@@ -1844,7 +1844,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Positionning": 5,
+                            "Positioning": 5,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -1869,7 +1869,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Positionning",
+                        "Positioning",
                         "Resurection",
                         "Sub Shield",
                         "Sub Heal",
@@ -1890,12 +1890,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 4,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 2,
+                            "Positioning": 4,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1920,7 +1920,7 @@ const CLASS_DATA = {
                         "Resurection",
                         "Sub DPT",
                         "Sub Shield",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Rall WP",
                         "Buff Resistance"
                     ]
@@ -1938,12 +1938,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 1,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 4,
+                            "Positioning": 4,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 3
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -1966,7 +1966,7 @@ const CLASS_DATA = {
                     "Roles": [
                         "Shield",
                         "Resurection",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Sub Heal",
                         "Rall WP",
                         "Buff Resistance"
@@ -1981,12 +1981,12 @@ const CLASS_DATA = {
                             "Area": 2,
                             "Single_Target": 4,
                             "Constant": 1,
-                            "Burst": 5
+                            "Burst": 4
                         },
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2032,7 +2032,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 0,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2061,7 +2061,7 @@ const CLASS_DATA = {
                         "Resurection",
                         "Sub DPT",
                         "Sub Shield",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Rall WP",
                         "Buff Resistance"
                     ]
@@ -2078,7 +2078,7 @@ const CLASS_DATA = {
             "Id": 11,
             "Image": "assets/classes/male_osamodas.png",
             "Voies": {
-                "Support Utilitaire": {
+                "Support Utilitary": {
                     "Id": 1,
                     "Notes": {
                         "DPT": {
@@ -2091,12 +2091,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 2,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 3,
+                            "Positioning": 4,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 3,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2121,7 +2121,7 @@ const CLASS_DATA = {
                         "Buff AP",
                         "Buff DI",
                         "Rall Resistance",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Sub Heal",
                         "Buff Crit",
                         "Buff Crit",
@@ -2145,12 +2145,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 4,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 3,
+                            "Positioning": 4,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 3,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2176,7 +2176,7 @@ const CLASS_DATA = {
                         "Buff AP",
                         "Buff DI",
                         "Rall Resistance",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Buff Crit",
                         "Buff Crit",
                         "Buff PO",
@@ -2186,7 +2186,7 @@ const CLASS_DATA = {
                         "Anti Heal"
                     ]
                 },
-                "Support Positionning": {
+                "Support Positioning": {
                     "Id": 3,
                     "Notes": {
                         "DPT": {
@@ -2200,7 +2200,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Positionning": 4,
+                            "Positioning": 4,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2225,7 +2225,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Positionning",
+                        "Positioning",
                         "Buff AP",
                         "Buff DI",
                         "Rall Resistance",
@@ -2252,12 +2252,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 2,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 3,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 3,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2291,21 +2291,21 @@ const CLASS_DATA = {
                     "Id": 5,
                     "Notes": {
                         "DPT": {
-                            "Melee": 5,
+                            "Melee": 4,
                             "Ranged": 0,
-                            "Area": 5,
+                            "Area": 4,
                             "Single_Target": 1,
-                            "Constant": 5,
+                            "Constant": 4,
                             "Burst": 2
                         },
                         "Support": {
                             "Heal": 0,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 2,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 2,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2347,12 +2347,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 1,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 3,
+                            "Positioning": 2,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 3,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2408,7 +2408,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2455,7 +2455,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2487,7 +2487,7 @@ const CLASS_DATA = {
                         "Rall MP"
                     ]
                 },
-                "Support Utilitaire": {
+                "Support Utilitary": {
                     "Id": 3,
                     "Notes": {
                         "DPT": {
@@ -2500,12 +2500,12 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 0,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2543,7 +2543,7 @@ const CLASS_DATA = {
             "Id": 13,
             "Image": "assets/classes/male_pandawa.png",
             "Voies": {
-                "Support Positionning": {
+                "Support Positioning": {
                     "Id": 1,
                     "Notes": {
                         "DPT": {
@@ -2557,7 +2557,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Positionning": 5,
+                            "Positioning": 5,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2582,7 +2582,7 @@ const CLASS_DATA = {
                     "Autonomy": 2,
                     "Mobility": 1,
                     "Roles": [
-                        "Positionning",
+                        "Positioning",
                         "Sub Heal",
                         "Buff DI",
                         "Buff Resistance",
@@ -2606,11 +2606,11 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 3,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 4,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2632,7 +2632,7 @@ const CLASS_DATA = {
                     "Mobility": 1,
                     "Roles": [
                         "Heal",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Sub DPT",
                         "Buff DI",
                         "Buff Resistance",
@@ -2656,11 +2656,11 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 2,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 4,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2714,7 +2714,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2743,7 +2743,7 @@ const CLASS_DATA = {
                         "Melee",
                         "Ranged",
                         "Burst",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Rall MP",
                         "Rall WP",
                         "Rall PO",
@@ -2757,15 +2757,15 @@ const CLASS_DATA = {
                         "DPT": {
                             "Melee": 4,
                             "Ranged": 4,
-                            "Area": 5,
+                            "Area": 4,
                             "Single_Target": 2,
                             "Constant": 2,
-                            "Burst": 5
+                            "Burst": 4
                         },
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2793,7 +2793,7 @@ const CLASS_DATA = {
                         "Poison",
                         "Melee",
                         "Ranged",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Rall MP",
                         "Rall WP",
                         "Rall PO",
@@ -2801,7 +2801,7 @@ const CLASS_DATA = {
                         "Anti Shield"
                     ]
                 },
-                "Support Utilitaire": {
+                "Support Utilitary": {
                     "Id": 3,
                     "Notes": {
                         "DPT": {
@@ -2815,11 +2815,11 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2840,7 +2840,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Buff DI",
                         "Rall MP",
                         "Rall WP",
@@ -2864,21 +2864,21 @@ const CLASS_DATA = {
                     "Id": 1,
                     "Notes": {
                         "DPT": {
-                            "Melee": 5,
+                            "Melee": 4,
                             "Ranged": 1,
                             "Area": 3,
-                            "Single_Target": 5,
-                            "Constant": 5,
+                            "Single_Target": 4,
+                            "Constant": 4,
                             "Burst": 2
                         },
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2902,7 +2902,7 @@ const CLASS_DATA = {
                         "Melee",
                         "Constant",
                         "Single Target",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Buff DI",
                         "Rall MP",
                         "Self Stabilized",
@@ -2913,7 +2913,7 @@ const CLASS_DATA = {
                     "Id": 2,
                     "Notes": {
                         "DPT": {
-                            "Melee": 5,
+                            "Melee": 4,
                             "Ranged": 1,
                             "Area": 4,
                             "Single_Target": 3,
@@ -2923,11 +2923,11 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -2951,14 +2951,14 @@ const CLASS_DATA = {
                         "Melee",
                         "Area",
                         "Constant",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Buff DI",
                         "Rall MP",
                         "Self Stabilized",
                         "Allies Stabilized"
                     ]
                 },
-                "Support Positionning": {
+                "Support Positioning": {
                     "Id": 3,
                     "Notes": {
                         "DPT": {
@@ -2972,7 +2972,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 5,
+                            "Positioning": 5,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -2997,7 +2997,7 @@ const CLASS_DATA = {
                     "Autonomy": 2,
                     "Mobility": 1,
                     "Roles": [
-                        "Positionning",
+                        "Positioning",
                         "Buff DI",
                         "Rall MP",
                         "Self Stabilized",
@@ -3028,18 +3028,18 @@ const CLASS_DATA = {
                             "Burst": 2
                         },
                         "Support": {
-                            "Heal": 5,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Heal": 4,
+                            "Shield": 3,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
-                            "Rall_DI": 5,
+                            "Rall_DI": 4,
                             "Rall_Resistance": 0,
                             "Boringness": 0
                         },
@@ -3078,17 +3078,17 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 2,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
-                            "Rall_DI": 5,
+                            "Rall_DI": 4,
                             "Rall_Resistance": 0,
                             "Boringness": 0
                         },
@@ -3126,21 +3126,21 @@ const CLASS_DATA = {
                             "Area": 1,
                             "Single_Target": 4,
                             "Constant": 3,
-                            "Burst": 5
+                            "Burst": 4
                         },
                         "Support": {
                             "Heal": 2,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 1,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
-                            "Rall_DI": 5,
+                            "Rall_DI": 4,
                             "Rall_Resistance": 0,
                             "Boringness": 0
                         },
@@ -3181,17 +3181,17 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 1,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 3,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
-                            "Rall_DI": 5,
+                            "Rall_DI": 4,
                             "Rall_Resistance": 0,
                             "Boringness": 0
                         },
@@ -3229,17 +3229,17 @@ const CLASS_DATA = {
                         },
                         "Support": {
                             "Heal": 3,
-                            "Shield": 0,
-                            "Positionning": 0,
+                            "Shield": 3,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
-                            "Rall_DI": 5,
+                            "Rall_DI": 4,
                             "Rall_Resistance": 0,
                             "Boringness": 0
                         },
@@ -3291,7 +3291,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3336,7 +3336,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3364,7 +3364,7 @@ const CLASS_DATA = {
                         "Poison",
                         "Melee",
                         "Ranged",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Buff PM"
                     ]
                 },
@@ -3382,7 +3382,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3407,7 +3407,7 @@ const CLASS_DATA = {
                     "Autonomy": 2,
                     "Mobility": 1,
                     "Roles": [
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Buff PM"
                     ]
                 }
@@ -3428,20 +3428,20 @@ const CLASS_DATA = {
                     "Notes": {
                         "DPT": {
                             "Melee": 0,
-                            "Ranged": 5,
+                            "Ranged": 4,
                             "Area": 4,
-                            "Single_Target": 5,
+                            "Single_Target": 4,
                             "Constant": 1,
                             "Burst": 4
                         },
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 3,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 4,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -3485,11 +3485,11 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 3,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 4,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -3525,19 +3525,19 @@ const CLASS_DATA = {
                         "DPT": {
                             "Melee": 1,
                             "Ranged": 4,
-                            "Area": 5,
+                            "Area": 4,
                             "Single_Target": 1,
-                            "Constant": 5,
+                            "Constant": 4,
                             "Burst": 1
                         },
                         "Support": {
                             "Heal": 0,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 3,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 4,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -3563,11 +3563,11 @@ const CLASS_DATA = {
                         "Constant",
                         "Rall AP",
                         "Buff AP",
-                        "Sub Positionning",
+                        "Sub Positioning",
                         "Self Stabilized"
                     ]
                 },
-                "Support Positionning": {
+                "Support Positioning": {
                     "Id": 4,
                     "Notes": {
                         "DPT": {
@@ -3581,7 +3581,7 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Positionning": 4,
+                            "Positioning": 4,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
@@ -3606,7 +3606,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Positionning",
+                        "Positioning",
                         "Rall AP",
                         "Buff AP",
                         "Rall DI",
@@ -3614,7 +3614,7 @@ const CLASS_DATA = {
                         "Sub DPT"
                     ]
                 },
-                "Support Utilitaire": {
+                "Support Utilitary": {
                     "Id": 5,
                     "Notes": {
                         "DPT": {
@@ -3628,11 +3628,11 @@ const CLASS_DATA = {
                         "Support": {
                             "Heal": 1,
                             "Shield": 0,
-                            "Positionning": 0,
+                            "Positioning": 4,
                             "Buff_MP": 0,
-                            "Buff_AP": 0,
+                            "Buff_AP": 4,
                             "Buff_DI": 0,
-                            "Protection": 0
+                            "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
@@ -3653,7 +3653,7 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
-                        "Positionning",
+                        "Positioning",
                         "Rall AP",
                         "Buff AP",
                         "Rall DI",

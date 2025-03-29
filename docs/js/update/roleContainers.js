@@ -97,7 +97,7 @@ function updateRolesPanel() {
                     option.value = voie;
                     option.textContent = voie;
                     option.setAttribute("data-translator", voie.toLowerCase().replaceAll(' ', '_'));
-
+                    
                     if (data.Id === 1 && slot.voie == null) {
                         defaultOption = option;
                     }
@@ -164,8 +164,8 @@ function updateRolesSummary() {
                 } else if (classVoies[slot.voie].Roles.includes('Shield')) {
                     presentRoles.add('Shield');
                 }
-                if (classVoies[slot.voie].Roles.includes('Placeur')) {
-                    presentRoles.add('Placeur');
+                if (classVoies[slot.voie].Roles.includes('Positioning')) {
+                    presentRoles.add('Positioning');
                 }
                 if (classVoies[slot.voie].Roles.includes('Rall Resistance')) {
                     presentRoles.add('Rall Resistance');

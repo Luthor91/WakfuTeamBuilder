@@ -1,9 +1,9 @@
 PYTHON := python3
 PORT := 8000
 
-VENV := venv
+PATH_SRC := utils/src/js
 EXCEL_FILE := utils/data.xlsx
-PARSING_SCRIPT := utils/parsing.js
+PARSING_SCRIPT := "$(PATH_SRC)/parsing.js"
 OUTPUT_JSON := utils/class_data.json
 
 GIT_REPO := https://github.com/Luthor91/WakfuTeamBuilder.git
@@ -26,7 +26,7 @@ update_data:
 
 # Cible pour configurer l'environnement virtuel
 setup_npm:
-	npm install xlsx
+	cd $(PATH_SRC) && npm install xlsx
 
 # Cible pour nettoyer les fichiers générés
 clean:
