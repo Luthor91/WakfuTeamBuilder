@@ -16,9 +16,11 @@ const NOTES_KEYS = {
 
 // Lire le fichier Excel
 const workbook = XLSX.readFile(excelFile);
-const sheetName = workbook.SheetNames[0];
-const sheet = workbook.Sheets[sheetName];
-const data = XLSX.utils.sheet_to_json(sheet, { defval: "" });
+
+const sheetNotes = "Notes";
+const sheetRoles = "Rôles";
+const dataNotes = XLSX.utils.sheet_to_json(sheetNotes, { defval: "" });
+const dataRoles = XLSX.utils.sheet_to_json(sheetRoles, { defval: "" });
 
 // Lire le fichier JavaScript et extraire CLASS_DATA
 fs.readFile(javascriptFile, 'utf8', (err, jsContent) => {
@@ -44,7 +46,7 @@ fs.readFile(javascriptFile, 'utf8', (err, jsContent) => {
     }
 
     // Mise à jour des notes
-    data.forEach(row => {
+    dataNotes.forEach(row => {
         let firstCol = Object.keys(row)[0];
         if (!row[firstCol]) return;
 
@@ -75,6 +77,26 @@ fs.readFile(javascriptFile, 'utf8', (err, jsContent) => {
 
         // Mettre à jour uniquement les "Notes"
         existingClassData["Classes"][className]["Voies"][voieName]["Notes"] = notesStructure;
+    });
+
+    // Mise à jour des roles
+    dataRoles.forEach(row => {
+        let firstCol = Object.keys(row)[0];
+        let secondCol = Object.keys(row)[1];
+        if (!row[firstCol] || !row[secondCol]) return;
+    
+        let classVoie = String(row[firstCol]).split('.');
+        if (classVoie.length < 2) return;
+    
+        let [className, voieName] = classVoie;
+    
+        if (!existingClassData["Classes"]?.[className]?.["Voies"]?.[voieName]) return;
+    
+        // Transformation de la liste de mots en tableau JSON
+        let rolesList = row[secondCol].split(',').map(mot => mot.trim()).filter(mot => mot !== "");
+    
+        // Mise à jour des "Roles" avec la liste des mots
+        existingClassData["Classes"][className]["Voies"][voieName]["Roles"] = rolesList;
     });
 
     // Convertir en JSON et générer un JSON propre sans trailing commas
