@@ -5,4 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (inInConstruction) {
 		banner.style.display = "block";
 	}
+	updateAll();
+	updateGauges();
 });

@@ -52,5 +52,14 @@ function hideRolesModal() {
     document.getElementById("class-info-display").style.display = "none";
 }
 
+function toggleClassRolesModal(className) {
+    const rolesModal = document.getElementById("class-info-display");
 
-export { displayClassRoles, hideRolesModal };
+    if (rolesModal.style.display === "none") {
+        displayClassRoles(className);
+    } else {
+        hideRolesModal();
+    }
+}
+
+export { displayClassRoles, hideRolesModal, toggleClassRolesModal };

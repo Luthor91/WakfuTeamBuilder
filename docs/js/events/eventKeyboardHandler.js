@@ -37,7 +37,7 @@ document.addEventListener('keyup', function(e) {
 
 });
 
-// .focus()
+
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Shift') {
     g_isShiftPressed = true;

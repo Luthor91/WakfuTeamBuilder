@@ -510,6 +510,10 @@ gauge_map_control: {
     fr: 'Contrôle du terrain',
     en: 'Map Control'
 },
+infos_class_selection_menu : {
+    fr: 'Infos Classe',
+    en: 'Class Infos' 
+},
 about: {
     fr: 'À propos',
     en: 'About'
