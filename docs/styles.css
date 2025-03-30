@@ -577,16 +577,23 @@ h3 {
     transform: translateY(-1px);
 }
 
-#selection-menu-header {
+#selection-menu-footer {
     display: flex;
     justify-content: space-between; /* Répartit l'espace entre les éléments */
     align-items: center;
     padding: 8px 12px;
     background-color: var(--color-bg-menu);
     border-bottom: 1px solid var(--color-border-medium);
+    margin-bottom: 10px;
 }
 
-#info-shortcut {
+#shortcuts-container {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.shortcut {
     display: flex;
     align-items: center;
     gap: 5px;

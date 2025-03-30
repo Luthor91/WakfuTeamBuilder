@@ -151,16 +151,27 @@
 
     <div id="selection-menu" class="hidden">
         <div id="menu-content"></div>
-        <!--button id="close-menu-btn" data-translator="close_button">Close</button-->
+    
+        <!-- Footer avec les raccourcis et le bouton de fermeture -->
         <div id="selection-menu-footer"> 
-            <span id="info-shortcut">
-                <img src="assets/icons/control-key.png" alt="CTRL" class="key-icon"> + 
-                <img src="assets/icons/mouse-click.png" alt="Click" class="key-icon"> 
-                <span data-translator="infos_class_selection_menu">Infos Classe</span>
-            </span>
-            <button id="close-menu-btn" data-translator="close_button">Close</button>
+            <div id="shortcuts-container">
+                <span class="shortcut">
+                    <img src="assets/icons/control-key.png" alt="CTRL" class="key-icon"> + 
+                    <img src="assets/icons/mouse-click.png" alt="Click" class="key-icon"> 
+                    <span data-translator="infos_class_selection_menu">Infos Classe</span>
+                </span>
+                <span class="shortcut">
+                    <img src="assets/icons/shift-key.png" alt="SHIFT" class="key-icon"> + 
+                    <img src="assets/icons/mouse-click.png" alt="Click" class="key-icon"> 
+                    <span data-translator="multi_select_selection_menu">Sélection multiple</span>
+                </span>
+            </div>
+    
         </div>
+        <button id="close-menu-btn" data-translator="close_button">Close</button>
+
     </div>
+    
 
     <div id="class-info-display" style="display: none;">
         <h2>Rôles de la classe</h2>

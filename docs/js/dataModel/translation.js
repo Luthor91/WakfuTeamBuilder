@@ -514,6 +514,10 @@ infos_class_selection_menu : {
     fr: 'Infos Classe',
     en: 'Class Infos' 
 },
+multi_select_selection_menu : {
+    fr: 'Sélection multiple',
+    en: 'Multiple select'  
+},
 about: {
     fr: 'À propos',
     en: 'About'
