@@ -329,7 +329,7 @@ h3 {
     border-radius: 0 0 5px 5px;
 }
 
-.delete-button {
+.delete-button-favorite {
     background-color: red;
     color: white;
     border: none;
@@ -339,7 +339,7 @@ h3 {
     margin-left: 10px;
 }
 
-.delete-button:hover {
+.delete-button-favorite:hover {
     background-color: darkred;
 }
 

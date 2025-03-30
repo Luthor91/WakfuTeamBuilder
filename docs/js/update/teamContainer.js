@@ -97,7 +97,7 @@ function updateTeamContainer() {
                 }
 
                 // Ajout du bouton de suppression
-                let deleteButton = slotElement.querySelector(".delete-button");
+                let deleteButton = slotElement.querySelector(".delete-button-slot");
                 if (!deleteButton) {
                     deleteButton = document.createElement("div");
                     deleteButton.classList.add("delete-button-slot");

@@ -1,6 +1,7 @@
 import { getCurrentLanguage } from '../dataModel/translation.js';
 import { translate } from '../utils/translate.js';
-import { applyFavoriteTeam } from '../storage/localStorage.js';
+import { applyFavoriteTeam, deleteTeamFromLocalStorage } from '../storage/localStorage.js';
+import { displayConfirmationModal } from './popup.js';
 
 
 
@@ -61,10 +62,15 @@ function displayFavoriteTeamsMenu() {
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "❌";
-        deleteButton.classList.add("delete-button");
+        deleteButton.classList.add("delete-button-favorite");
         deleteButton.addEventListener("click", (e) => {
             e.stopPropagation();
-            confirmDeleteTeam(index);
+            displayConfirmationModal("Êtes-vous sûr de vouloir supprimer cette équipe ?", () => {
+                deleteTeamFromLocalStorage(index);
+                refreshFavoriteTeamsMenu();
+
+            });
+            
         });
 
         teamContainer.appendChild(deleteButton);
@@ -75,4 +81,31 @@ function displayFavoriteTeamsMenu() {
     menu.classList.remove("hidden"); // Afficher le menu
 }
 
-export { displayFavoriteTeamsMenu };
+// Fonction pour basculer la visibilité du menu des équipes sauvegardées
+function toggleFavoriteTeamsMenu(escapePressed = false) {
+    const menu = document.getElementById("saved-teams-menu");
+
+    if (menu.classList.contains("hidden")) {
+        if (escapePressed == true) {
+            return;
+        }
+        displayFavoriteTeamsMenu();
+    } else {
+        menu.classList.add("hidden");
+
+    }
+}
+
+function refreshFavoriteTeamsMenu() {
+    const menu = document.getElementById("saved-teams-menu");
+
+    if (menu.classList.contains("hidden")) {
+        displayFavoriteTeamsMenu();
+    } else {
+        menu.classList.add("hidden");
+        displayFavoriteTeamsMenu();
+    }
+
+}
+
+export { displayFavoriteTeamsMenu, toggleFavoriteTeamsMenu, refreshFavoriteTeamsMenu };

@@ -72,5 +72,12 @@ function loadTeamToLocalStorage() {
     return false;
 }
 
+// Fonction pour supprimer une équipe du localStorage
+function deleteTeamFromLocalStorage(index) {
+    let savedTeams = JSON.parse(localStorage.getItem("savedTeams")) || [];
+    savedTeams.splice(index, 1);
+    localStorage.setItem("savedTeams", JSON.stringify(savedTeams));
+    displayNotification("Équipe supprimée !");
+}
 
-export { saveCurrentTeam, saveTeamToLocalStorage, loadTeamToLocalStorage, applyFavoriteTeam };
+export { saveCurrentTeam, saveTeamToLocalStorage, loadTeamToLocalStorage, applyFavoriteTeam, deleteTeamFromLocalStorage };

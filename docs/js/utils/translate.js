@@ -12,7 +12,7 @@ function setLanguage(lang) {
 
 
 function translate(key, language) {
-    if (key === null) return;
+    if (key === null || key === "") return;
     
     if (!TRANSLATIONS[key]) {
         console.warn(`Missing translation key: ${key}`);
