@@ -18,9 +18,11 @@ const NOTES_KEYS = {
 const workbook = XLSX.readFile(excelFile);
 
 const sheetNotes = "Notes";
-const sheetRoles = "Rôles";
-const dataNotes = XLSX.utils.sheet_to_json(sheetNotes, { defval: "" });
-const dataRoles = XLSX.utils.sheet_to_json(sheetRoles, { defval: "" });
+const sheetRoles = "Roles";
+
+console.log("Feuilles disponibles dans le fichier Excel :", workbook.SheetNames);
+const dataNotes = XLSX.utils.sheet_to_json(workbook.Sheets[sheetNotes], { defval: "" });
+const dataRoles = XLSX.utils.sheet_to_json(workbook.Sheets[sheetRoles], { defval: "" });
 
 // Lire le fichier JavaScript et extraire CLASS_DATA
 fs.readFile(javascriptFile, 'utf8', (err, jsContent) => {
@@ -78,9 +80,10 @@ fs.readFile(javascriptFile, 'utf8', (err, jsContent) => {
         // Mettre à jour uniquement les "Notes"
         existingClassData["Classes"][className]["Voies"][voieName]["Notes"] = notesStructure;
     });
-
+    
     // Mise à jour des roles
     dataRoles.forEach(row => {
+
         let firstCol = Object.keys(row)[0];
         let secondCol = Object.keys(row)[1];
         if (!row[firstCol] || !row[secondCol]) return;
@@ -97,6 +100,11 @@ fs.readFile(javascriptFile, 'utf8', (err, jsContent) => {
     
         // Mise à jour des "Roles" avec la liste des mots
         existingClassData["Classes"][className]["Voies"][voieName]["Roles"] = rolesList;
+
+        if (className === 'Huppermage') {
+            console.log(rolesList);
+            
+        }
     });
 
     // Convertir en JSON et générer un JSON propre sans trailing commas
