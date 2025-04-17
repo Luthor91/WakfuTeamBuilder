@@ -157,11 +157,15 @@ function updateRolesSummary() {
         if (slot.class && slot.voie) {
             const classVoies = CLASS_DATA.Classes[slot.class].Voies;
             if (classVoies[slot.voie]) {
+                console.log(slot.class, " pour ", slot.voie, classVoies[slot.voie].Roles);
+                
                 if (slot.voie.startsWith('DPT')) {
                     presentRoles.add('DPT');
-                } else if (classVoies[slot.voie].Roles.includes('Heal')) {
+                }
+                if (classVoies[slot.voie].Roles.includes('Heal')) {
                     presentRoles.add('Heal');
-                } else if (classVoies[slot.voie].Roles.includes('Shield')) {
+                }
+                if (classVoies[slot.voie].Roles.includes('Shield')) {
                     presentRoles.add('Shield');
                 }
                 if (classVoies[slot.voie].Roles.includes('Positioning')) {

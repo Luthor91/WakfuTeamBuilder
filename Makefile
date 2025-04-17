@@ -1,4 +1,4 @@
-PYTHON := python3
+PYTHON := python3.11
 PORT := 8000
 
 PATH_SRC := utils/src/js
@@ -15,7 +15,7 @@ serve:
 	@echo "Starting server on http://127.0.0.1:$(PORT)"
 	$(PYTHON) -m http.server $(PORT)
 
-deploy: update_data
+deploy: update_data	
 	@git add .
 	@git commit -m "update"
 	@git push $(GIT_REPO)
