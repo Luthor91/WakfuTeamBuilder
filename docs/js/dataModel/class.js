@@ -195,16 +195,16 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 2,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 0
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -249,16 +249,16 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 2,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 0
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -300,16 +300,16 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 2,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 0
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -351,16 +351,16 @@ const CLASS_DATA = {
                             "Heal": 4,
                             "Shield": 2,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 0
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -399,16 +399,16 @@ const CLASS_DATA = {
                             "Heal": 3,
                             "Shield": 2,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 0
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -462,12 +462,12 @@ const CLASS_DATA = {
                             "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 0
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 3,
+                            "Rall_AP": 4,
                             "Rall_DI": 0,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -510,12 +510,12 @@ const CLASS_DATA = {
                             "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 0
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 3,
+                            "Rall_AP": 4,
                             "Rall_DI": 0,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -559,12 +559,12 @@ const CLASS_DATA = {
                             "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 0
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 3,
+                            "Rall_AP": 4,
                             "Rall_DI": 0,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -663,16 +663,16 @@ const CLASS_DATA = {
                             "Heal": 4,
                             "Shield": 1,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 1,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 4,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 2,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -716,16 +716,16 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 1,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 4,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 2,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -774,16 +774,16 @@ const CLASS_DATA = {
                             "Heal": 4,
                             "Shield": 3,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 4,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 2,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -840,16 +840,16 @@ const CLASS_DATA = {
                             "Heal": 1,
                             "Shield": 0,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 2,
-                            "Buff_DI": 0,
+                            "Buff_DI": 4,
                             "Protection": 1
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 4,
+                            "Rall_AP": 2,
                             "Rall_DI": 4,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 4,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -887,16 +887,16 @@ const CLASS_DATA = {
                             "Heal": 1,
                             "Shield": 0,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 1,
-                            "Buff_DI": 0,
+                            "Buff_DI": 4,
                             "Protection": 0
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 4,
                             "Rall_AP": 0,
                             "Rall_DI": 3,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 4,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -936,16 +936,16 @@ const CLASS_DATA = {
                             "Heal": 1,
                             "Shield": 0,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 1,
-                            "Buff_DI": 0,
+                            "Buff_DI": 4,
                             "Protection": 0
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 4,
                             "Rall_AP": 0,
                             "Rall_DI": 3,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 4,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -998,9 +998,9 @@ const CLASS_DATA = {
                             "Heal": 0,
                             "Shield": 4,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 4
                         },
                         "Entrave": {
@@ -1051,9 +1051,9 @@ const CLASS_DATA = {
                             "Heal": 0,
                             "Shield": 0,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
@@ -1114,14 +1114,14 @@ const CLASS_DATA = {
                             "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 3,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -1169,14 +1169,14 @@ const CLASS_DATA = {
                             "Positioning": 2,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 3,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -1223,14 +1223,14 @@ const CLASS_DATA = {
                             "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 3,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -1276,14 +1276,14 @@ const CLASS_DATA = {
                             "Positioning": 3,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 4
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 3,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -1339,14 +1339,14 @@ const CLASS_DATA = {
                             "Heal": 3,
                             "Shield": 1,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 2,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 3,
+                            "Rall_AP": 3,
                             "Rall_DI": 2,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -1401,14 +1401,14 @@ const CLASS_DATA = {
                             "Heal": 3,
                             "Shield": 1,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 2,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 3,
+                            "Rall_AP": 3,
                             "Rall_DI": 2,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -1462,14 +1462,14 @@ const CLASS_DATA = {
                             "Heal": 3,
                             "Shield": 1,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 2,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 3,
+                            "Rall_AP": 3,
                             "Rall_DI": 2,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -1524,14 +1524,14 @@ const CLASS_DATA = {
                             "Heal": 4,
                             "Shield": 1,
                             "Positioning": 0,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 2,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 3,
+                            "Rall_AP": 3,
                             "Rall_DI": 3,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -1580,14 +1580,14 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 1,
                             "Positioning": 4,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 2,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 3
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 3,
+                            "Rall_AP": 3,
                             "Rall_DI": 3,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -1638,14 +1638,14 @@ const CLASS_DATA = {
                             "Heal": 3,
                             "Shield": 2,
                             "Positioning": 4,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 2,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 3,
+                            "Rall_AP": 3,
                             "Rall_DI": 3,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -1710,7 +1710,7 @@ const CLASS_DATA = {
                             "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 1,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 1
                         },
                         "Entrave": {
@@ -1758,7 +1758,7 @@ const CLASS_DATA = {
                             "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 1,
-                            "Buff_DI": 0,
+                            "Buff_DI": 2,
                             "Protection": 1
                         },
                         "Entrave": {
@@ -1806,7 +1806,7 @@ const CLASS_DATA = {
                             "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 4,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
@@ -1908,16 +1908,16 @@ const CLASS_DATA = {
                             "Heal": 4,
                             "Shield": 2,
                             "Positioning": 4,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_AP": 4,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -1961,16 +1961,16 @@ const CLASS_DATA = {
                             "Heal": 1,
                             "Shield": 4,
                             "Positioning": 4,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 3
                         },
                         "Entrave": {
                             "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_AP": 4,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -2014,16 +2014,16 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 0,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 0
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -2122,16 +2122,16 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 3,
                             "Positioning": 4,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 3,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 2,
+                            "Rall_AP": 2,
                             "Rall_DI": 3,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 4,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -2177,16 +2177,16 @@ const CLASS_DATA = {
                             "Heal": 4,
                             "Shield": 3,
                             "Positioning": 4,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 3,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 2,
+                            "Rall_AP": 2,
                             "Rall_DI": 3,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 2,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -2285,16 +2285,16 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 1,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 3,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 2,
+                            "Rall_AP": 2,
                             "Rall_DI": 1,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 2,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -2334,16 +2334,16 @@ const CLASS_DATA = {
                             "Heal": 0,
                             "Shield": 1,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 2,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 2,
+                            "Rall_AP": 2,
                             "Rall_DI": 1,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -2380,16 +2380,16 @@ const CLASS_DATA = {
                             "Heal": 1,
                             "Shield": 3,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 3,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 2,
+                            "Rall_AP": 2,
                             "Rall_DI": 1,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 2,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -2655,16 +2655,16 @@ const CLASS_DATA = {
                             "Heal": 3,
                             "Shield": 0,
                             "Positioning": 4,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 1,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -2702,16 +2702,16 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 0,
                             "Positioning": 4,
-                            "Buff_MP": 0,
+                            "Buff_MP": 3,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
                             "Rall_MP": 0,
                             "Rall_AP": 0,
                             "Rall_DI": 0,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 1,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -2765,7 +2765,7 @@ const CLASS_DATA = {
                             "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 0
                         },
                         "Entrave": {
@@ -2814,7 +2814,7 @@ const CLASS_DATA = {
                             "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 0
                         },
                         "Entrave": {
@@ -2864,7 +2864,7 @@ const CLASS_DATA = {
                             "Positioning": 1,
                             "Buff_MP": 0,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
@@ -3077,16 +3077,16 @@ const CLASS_DATA = {
                             "Heal": 4,
                             "Shield": 3,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 3,
                             "Rall_AP": 0,
                             "Rall_DI": 4,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -3125,16 +3125,16 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 1,
                             "Positioning": 1,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 3,
                             "Rall_AP": 0,
                             "Rall_DI": 4,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -3178,16 +3178,16 @@ const CLASS_DATA = {
                             "Heal": 2,
                             "Shield": 1,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 1
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 3,
                             "Rall_AP": 0,
                             "Rall_DI": 4,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -3230,16 +3230,16 @@ const CLASS_DATA = {
                             "Heal": 1,
                             "Shield": 3,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 3,
                             "Rall_AP": 0,
                             "Rall_DI": 4,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -3277,16 +3277,16 @@ const CLASS_DATA = {
                             "Heal": 3,
                             "Shield": 3,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
-                            "Buff_DI": 0,
+                            "Buff_DI": 3,
                             "Protection": 2
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
+                            "Rall_MP": 3,
                             "Rall_AP": 0,
                             "Rall_DI": 4,
-                            "Rall_Resistance": 0,
+                            "Rall_Resistance": 3,
                             "Boringness": 0
                         },
                         "Team_Support": {
@@ -3337,14 +3337,14 @@ const CLASS_DATA = {
                             "Heal": 0,
                             "Shield": 0,
                             "Positioning": 2,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
                             "Protection": 0
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 1,
+                            "Rall_AP": 1,
                             "Rall_DI": 0,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -3384,14 +3384,14 @@ const CLASS_DATA = {
                             "Heal": 0,
                             "Shield": 0,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
                             "Protection": 0
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 1,
+                            "Rall_AP": 3,
                             "Rall_DI": 0,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -3431,14 +3431,14 @@ const CLASS_DATA = {
                             "Heal": 0,
                             "Shield": 0,
                             "Positioning": 3,
-                            "Buff_MP": 0,
+                            "Buff_MP": 4,
                             "Buff_AP": 0,
                             "Buff_DI": 0,
                             "Protection": 0
                         },
                         "Entrave": {
-                            "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_MP": 1,
+                            "Rall_AP": 3,
                             "Rall_DI": 0,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -3494,7 +3494,7 @@ const CLASS_DATA = {
                         },
                         "Entrave": {
                             "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_AP": 4,
                             "Rall_DI": 0,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -3542,7 +3542,7 @@ const CLASS_DATA = {
                         },
                         "Entrave": {
                             "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_AP": 4,
                             "Rall_DI": 0,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -3592,7 +3592,7 @@ const CLASS_DATA = {
                         },
                         "Entrave": {
                             "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_AP": 4,
                             "Rall_DI": 0,
                             "Rall_Resistance": 0,
                             "Boringness": 0
@@ -3689,7 +3689,7 @@ const CLASS_DATA = {
                         },
                         "Entrave": {
                             "Rall_MP": 0,
-                            "Rall_AP": 0,
+                            "Rall_AP": 4,
                             "Rall_DI": 0,
                             "Rall_Resistance": 0,
                             "Boringness": 0
