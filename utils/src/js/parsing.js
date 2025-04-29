@@ -18,7 +18,7 @@ const NOTES_KEYS = {
 const workbook = XLSX.readFile(excelFile);
 
 const sheetNotes = "Notes";
-const sheetRoles = "Roles";
+const sheetRoles = "Rôles";
 
 console.log("Feuilles disponibles dans le fichier Excel :", workbook.SheetNames);
 const dataNotes = XLSX.utils.sheet_to_json(workbook.Sheets[sheetNotes], { defval: "" });
@@ -100,11 +100,7 @@ fs.readFile(javascriptFile, 'utf8', (err, jsContent) => {
     
         // Mise à jour des "Roles" avec la liste des mots
         existingClassData["Classes"][className]["Voies"][voieName]["Roles"] = rolesList;
-
-        if (className === 'Huppermage') {
-            console.log(rolesList);
-            
-        }
+        console.log("Mise à jour de la classe ", className, " pour le gameplay ", voieName)
     });
 
     // Convertir en JSON et générer un JSON propre sans trailing commas

@@ -61,7 +61,7 @@ const CLASS_DATA = {
                     "Mobility": 1,
                     "Roles": [
                         "Constant",
-                        "SIngle Target",
+                        "Area",
                         "Ranged",
                         "Buff PO",
                         "Rall PO",
@@ -110,7 +110,7 @@ const CLASS_DATA = {
                     "Mobility": 1,
                     "Roles": [
                         "Constant",
-                        "Area",
+                        "Single Target",
                         "Burst",
                         "Ranged",
                         "Buff PO",
@@ -446,7 +446,7 @@ const CLASS_DATA = {
             "Image": "assets/classes/male_eliotrope.png",
             "Voies": {
                 "DPT Melee": {
-                    "Id": 1,
+                    "Id": 3,
                     "Notes": {
                         "DPT": {
                             "Melee": 4,
@@ -543,7 +543,7 @@ const CLASS_DATA = {
                     ]
                 },
                 "DPT Ranged": {
-                    "Id": 3,
+                    "Id": 1,
                     "Notes": {
                         "DPT": {
                             "Melee": 0,
@@ -635,6 +635,54 @@ const CLASS_DATA = {
                         "Sub Shield",
                         "Entity Stabilized"
                     ]
+                },
+                "Support Heal": {
+                    "Id": 5,
+                    "Notes": {
+                        "DPT": {
+                            "Melee": 2,
+                            "Ranged": 2,
+                            "Area": 2,
+                            "Single_Target": 2,
+                            "Constant": 2,
+                            "Burst": 2
+                        },
+                        "Support": {
+                            "Heal": 1,
+                            "Shield": 0,
+                            "Positioning": 4,
+                            "Buff_MP": 0,
+                            "Buff_AP": 0,
+                            "Buff_DI": 0,
+                            "Protection": 0
+                        },
+                        "Entrave": {
+                            "Rall_MP": 0,
+                            "Rall_AP": 0,
+                            "Rall_DI": 0,
+                            "Rall_Resistance": 0,
+                            "Boringness": 0
+                        },
+                        "Team_Support": {
+                            "Support_Area": 0,
+                            "Support_Heal": 0,
+                            "Support_Shield": 0,
+                            "Support_Single_Target": 0,
+                            "Support_Melee": 0,
+                            "Support_Ranged": 0
+                        }
+                    },
+                    "Autonomy": 1,
+                    "Mobility": 1,
+                    "Roles": [
+                        "Heal",
+                        "Buff AP",
+                        "Buff MP",
+                        "Rall MP",
+                        "Rall AP",
+                        "Enemy Stabilized",
+                        "Allies Stabilized"
+                    ]
                 }
             },
             "Elements": [
@@ -698,7 +746,8 @@ const CLASS_DATA = {
                         "Resurection",
                         "Buff PO",
                         "Anti Heal",
-                        "Anti Shield"
+                        "Anti Shield",
+                        "Rall Crit"
                     ]
                 },
                 "DPT Indirect": {
@@ -810,7 +859,8 @@ const CLASS_DATA = {
                         "Buff PO",
                         "Anti Heal",
                         "Anti Shield",
-                        "Shield"
+                        "Shield",
+                        "Rall Crit"
                     ]
                 }
             },
@@ -869,7 +919,8 @@ const CLASS_DATA = {
                         "Rall Resistance",
                         "Rall DI",
                         "Rall MP",
-                        "Sub Heal"
+                        "Sub Heal",
+                        "Rall AP"
                     ]
                 },
                 "DPT Melee": {
@@ -1033,7 +1084,8 @@ const CLASS_DATA = {
                         "Allies Stabilized",
                         "Self Stabilized",
                         "Buff PO",
-                        "Buff Parade"
+                        "Buff Parade",
+                        "Enemy Stabilized"
                     ]
                 },
                 "DPT Glyph Ranged": {
@@ -1082,7 +1134,10 @@ const CLASS_DATA = {
                         "Sub Positioning",
                         "Buff WP",
                         "Invulnerability",
-                        "Buff Resistance"
+                        "Buff Resistance",
+                        "Enemy Stabilized",
+                        "Allies Stabilized",
+                        "Self Stabilized"
                     ]
                 }
             },
@@ -1548,11 +1603,11 @@ const CLASS_DATA = {
                     "Autonomy": 1,
                     "Mobility": 1,
                     "Roles": [
+                        "Heal",
                         "Buff DI",
                         "Buff Crit",
                         "Rall DI",
                         "Rall Parade",
-                        "Heal",
                         "Positioning",
                         "Enemy Stabilized",
                         "Allies Stabilized",
@@ -2043,7 +2098,6 @@ const CLASS_DATA = {
                         "Melee",
                         "Rall WP",
                         "Sub Heal",
-                        "Sub Positioning",
                         "Resurection"
                     ]
                 },
@@ -3107,7 +3161,8 @@ const CLASS_DATA = {
                         "Buff Resistance",
                         "Buff MP",
                         "Rall Resistance",
-                        "Rall PO"
+                        "Rall PO",
+                        "Buff DI"
                     ]
                 },
                 "DPT Indirect": {
@@ -3212,7 +3267,8 @@ const CLASS_DATA = {
                         "Sub Shield",
                         "Resurection",
                         "Self Stabilized",
-                        "Sub Heal"
+                        "Sub Heal",
+                        "Buff DI"
                     ]
                 },
                 "Specific Support Shield": {
@@ -3259,7 +3315,8 @@ const CLASS_DATA = {
                         "Buff Resistance",
                         "Buff MP",
                         "Rall Resistance",
-                        "Rall PO"
+                        "Rall PO",
+                        "Buff DI"
                     ]
                 },
                 "Specific Distribution Heal": {
@@ -3307,7 +3364,8 @@ const CLASS_DATA = {
                         "Buff Resistance",
                         "Buff MP",
                         "Rall Resistance",
-                        "Rall PO"
+                        "Rall PO",
+                        "Buff DI"
                     ]
                 }
             },
@@ -3364,7 +3422,6 @@ const CLASS_DATA = {
                         "Constant",
                         "Melee",
                         "Single Target",
-                        "Area",
                         "Buff MP",
                         "Rall AP"
                     ]
