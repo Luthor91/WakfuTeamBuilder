@@ -3162,7 +3162,8 @@ const CLASS_DATA = {
                         "Buff MP",
                         "Rall Resistance",
                         "Rall PO",
-                        "Buff DI"
+                        "Buff DI",
+                        "Resurection"
                     ]
                 },
                 "DPT Indirect": {
@@ -3316,7 +3317,8 @@ const CLASS_DATA = {
                         "Buff MP",
                         "Rall Resistance",
                         "Rall PO",
-                        "Buff DI"
+                        "Buff DI",
+                        "Resurection"
                     ]
                 },
                 "Specific Distribution Heal": {
@@ -3365,7 +3367,8 @@ const CLASS_DATA = {
                         "Buff MP",
                         "Rall Resistance",
                         "Rall PO",
-                        "Buff DI"
+                        "Buff DI",
+                        "Resurection"
                     ]
                 }
             },
