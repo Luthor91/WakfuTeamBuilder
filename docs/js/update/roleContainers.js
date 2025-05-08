@@ -227,7 +227,7 @@ function updateRolesSummary() {
         summaryContainerWarns.appendChild(warningDiv);
     }
 
-    if (!_hasInvulnerabilityRole()) {
+    if (false) { // Old :_hasInvulnerabilityRole
         const warningDiv = document.createElement('div');
         warningDiv.setAttribute('data-translator', 'warn_invulnerability');
         warningDiv.textContent = translate('warn_invulnerability', l_currentLanguage);
